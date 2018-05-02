@@ -8,7 +8,7 @@
 
            <div class="jumbotron jumbotron-fluid" style="margin-top: -30px;">
   <div class="container-fluid">
-    <img src="{{asset("/images/layout/db.jpg")}}" class="img-circle" alt="User Image">
+    <img src="{{asset("/images/layout/db.jpg")}}" class="img-circle" alt="User jjjImage">
   </div>
 </div>
 
