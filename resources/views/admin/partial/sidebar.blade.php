@@ -3,6 +3,7 @@
         <div class="user-panel">
             <div class="pull-left image">
                 <img src="{{asset("images/layout/profile.jpg")}}" class="img-circle" alt="User Image">
+                <img src="{{asset("images/layout/db.jpg")}}" class="img-responsive" alt="DB Image">
             </div>
             <div class="pull-left info">
                 <p>{{Auth::user()->name}}</p>
