@@ -1,0 +1,31 @@
+.row.justify-content-center{
+    max-width: 600px;
+    display: block;
+    margin: auto;
+    padding: 15px;
+    background-color:#fff;
+}
+.card-header{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.login-logo{
+    display: block;
+    margin: 30px auto 20px;
+    max-width: 600px;
+    width: 100%;
+}
+.login-logo img{
+    width: 100%;
+}
+.col-form-label.text-right{
+    font-size: 16px;
+    margin-top: 5px;
+}
+.login-title{
+	color: #fff;
+	font-family:Raleway,sans-serif;
+	
+}
