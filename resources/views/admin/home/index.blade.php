@@ -5,15 +5,12 @@
     <div class="content-wrapper">
         <section class="content-header">
 
-           <div class="container " >
-             <ol class="breadcrumb">
-       <li class="breadcrumb-item">
-         <a href="#">Dashboard</a>
-       </li>
-       <li class="breadcrumb-item active">My Dashboard</li>
-     </ol>
-           </div>
 
+           <div class="jumbotron jumbotron-fluid" style="margin-top: -30px;">
+  <div class="container-fluid">
+    <img class="img-responsive" src="/images/layout/db.jpg" alt="no image" />
+  </div>
+</div>
 
         </section>
         <section class="content">
