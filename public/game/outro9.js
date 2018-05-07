@@ -5170,7 +5170,7 @@ p.nominalBounds = new cjs.Rectangle(-185.3,-20.4,357.6,76);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_3},{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).wait(1));
 
-}).prototype = getMCSymbolPrototype(lib.tBm6, new cjs.Rectangle(-59.3,-27.1,400.4,129.7), null);
+}).prototype = getMCSymbolPrototype(lib.tBm6, new cjs.Rectangle(-59.3,-27.1,400.4,129.6), null);
 
 
 (lib.tBm5 = function(mode,startPosition,loop) {
@@ -5406,7 +5406,7 @@ p.nominalBounds = new cjs.Rectangle(-185.3,-20.4,357.6,76);
 	this.timeline.addTween(cjs.Tween.get(this.mcCont).wait(1));
 
 	// Layer_1
-	this.myTxt = new cjs.Text("Jadi, alat itulah yang dia gunakan untuk\nmengecilkan Matahari sebelum merampasnya.", "italic bold 20px 'Quantico'", "#0EE0E0");
+	this.myTxt = new cjs.Text("Jadi, alat itulah yang dia gunakan untuk mengecilkan Matahari sebelum merampasnya.", "italic bold 20px 'Quantico'", "#0EE0E0");
 	this.myTxt.name = "myTxt";
 	this.myTxt.textAlign = "center";
 	this.myTxt.lineHeight = 31;
@@ -5518,7 +5518,7 @@ p.nominalBounds = new cjs.Rectangle(-185.3,-20.4,357.6,76);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.shape_3},{t:this.shape_2},{t:this.shape_1},{t:this.shape}]},1).wait(1));
 
 	// Layer_1
-	this.myTxt1 = new cjs.Text("Masa untuk awak beritahu saya \nmengenai cyborg bermata satu itu.", "italic bold 20px 'Quantico'", "#0EE0E0");
+	this.myTxt1 = new cjs.Text("Masa untuk awak beritahu saya mengenai cyborg bermata satu itu.", "italic bold 20px 'Quantico'", "#0EE0E0");
 	this.myTxt1.name = "myTxt1";
 	this.myTxt1.textAlign = "center";
 	this.myTxt1.lineHeight = 31;
@@ -5881,7 +5881,7 @@ p.nominalBounds = new cjs.Rectangle(-106.9,0.1,358.2,72.5);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance}]}).to({state:[{t:this.instance_1}]},1).wait(1));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-139.4,-47.1,400.4,129.2);
+p.nominalBounds = new cjs.Rectangle(-139.4,-47.1,400.4,129.1);
 
 
 (lib.dialogue5 = function(mode,startPosition,loop) {
@@ -6535,14 +6535,14 @@ lib.properties = {
 	color: "#000099",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/outro9/Bitmap1.png?1524647861332", id:"Bitmap1"},
-		{src:"images/outro9/Bitmap10.png?1524647861332", id:"Bitmap10"},
-		{src:"images/outro9/Bitmap11.png?1524647861332", id:"Bitmap11"},
-		{src:"images/outro9/Bitmap5.png?1524647861332", id:"Bitmap5"},
-		{src:"images/outro9/Bitmap7copy.png?1524647861332", id:"Bitmap7copy"},
-		{src:"images/outro9/Bitmap8copy.png?1524647861333", id:"Bitmap8copy"},
-		{src:"sounds/danceMusic.mp3?1524647861333", id:"danceMusic"},
-		{src:"sounds/questionComplete.mp3?1524647861333", id:"questionComplete"}
+		{src:"images/outro9/Bitmap1.png?1522677787743", id:"Bitmap1"},
+		{src:"images/outro9/Bitmap10.png?1522677787743", id:"Bitmap10"},
+		{src:"images/outro9/Bitmap11.png?1522677787743", id:"Bitmap11"},
+		{src:"images/outro9/Bitmap5.png?1522677787743", id:"Bitmap5"},
+		{src:"images/outro9/Bitmap7copy.png?1522677787743", id:"Bitmap7copy"},
+		{src:"images/outro9/Bitmap8copy.png?1522677787743", id:"Bitmap8copy"},
+		{src:"sounds/danceMusic.mp3?1522677787743", id:"danceMusic"},
+		{src:"sounds/questionComplete.mp3?1522677787743", id:"questionComplete"}
 	],
 	preloads: []
 };

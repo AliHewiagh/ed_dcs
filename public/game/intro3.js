@@ -3047,7 +3047,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_5},{t:this.shape_4},{t:this.shape_3}]}).wait(2));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-287.3,-54,492,205.3);
+p.nominalBounds = new cjs.Rectangle(-287.3,-54,492,205.4);
 
 
 (lib.tEn3 = function(mode,startPosition,loop) {
@@ -3331,7 +3331,7 @@ p.nominalBounds = new cjs.Rectangle(-22.1,-27.4,445.7,162.2);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_5},{t:this.shape_4},{t:this.shape_3}]}).wait(2));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-287.3,-54,492,205.3);
+p.nominalBounds = new cjs.Rectangle(-287.3,-54,492,205.4);
 
 
 (lib.tBm3 = function(mode,startPosition,loop) {
@@ -3637,7 +3637,7 @@ p.nominalBounds = new cjs.Rectangle(-197.5,-369.7,395,770.6);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance}]}).to({state:[{t:this.instance_1}]},1).wait(1));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-367.4,-74,492,204.8);
+p.nominalBounds = new cjs.Rectangle(-367.4,-74,492,204.9);
 
 
 (lib.dialogue2 = function(mode,startPosition,loop) {
@@ -3843,9 +3843,9 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/intro3/Bitmap3.png?1524630108775", id:"Bitmap3"},
-		{src:"images/intro3/intro3_1.jpg?1524630108775", id:"intro3_1"},
-		{src:"sounds/intro.mp3?1524630108775", id:"intro"}
+		{src:"images/intro3/Bitmap3.png?1521263799936", id:"Bitmap3"},
+		{src:"images/intro3/intro3_1.jpg?1521263799936", id:"intro3_1"},
+		{src:"sounds/intro.mp3?1521263799936", id:"intro"}
 	],
 	preloads: []
 };

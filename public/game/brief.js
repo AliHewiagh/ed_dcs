@@ -2430,19 +2430,19 @@ lib.properties = {
 	color: "#545E73",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/brief/Bitmap1.png?1524629924345", id:"Bitmap1"},
-		{src:"images/brief/Bitmap10.png?1524629924345", id:"Bitmap10"},
-		{src:"images/brief/Bitmap3.png?1524629924345", id:"Bitmap3"},
-		{src:"images/brief/Bitmap4.png?1524629924345", id:"Bitmap4"},
-		{src:"images/brief/Bitmap5.png?1524629924345", id:"Bitmap5"},
-		{src:"images/brief/Bitmap6.png?1524629924345", id:"Bitmap6"},
-		{src:"images/brief/Bitmap7.png?1524629924345", id:"Bitmap7"},
-		{src:"images/brief/Bitmap8.png?1524629924345", id:"Bitmap8"},
-		{src:"images/brief/Bitmap9.png?1524629924345", id:"Bitmap9"},
-		{src:"images/brief/intro1bg.png?1524629924345", id:"intro1bg"},
-		{src:"sounds/intro.mp3?1524629924345", id:"intro"},
-		{src:"sounds/phone_Accept.mp3?1524629924345", id:"phone_Accept"},
-		{src:"sounds/phone_ringtone.mp3?1524629924345", id:"phone_ringtone"}
+		{src:"images/brief/Bitmap1.png", id:"Bitmap1"},
+		{src:"images/brief/Bitmap10.png", id:"Bitmap10"},
+		{src:"images/brief/Bitmap3.png", id:"Bitmap3"},
+		{src:"images/brief/Bitmap4.png", id:"Bitmap4"},
+		{src:"images/brief/Bitmap5.png", id:"Bitmap5"},
+		{src:"images/brief/Bitmap6.png", id:"Bitmap6"},
+		{src:"images/brief/Bitmap7.png", id:"Bitmap7"},
+		{src:"images/brief/Bitmap8.png", id:"Bitmap8"},
+		{src:"images/brief/Bitmap9.png", id:"Bitmap9"},
+		{src:"images/brief/intro1bg.png", id:"intro1bg"},
+		{src:"sounds/intro.mp3", id:"intro"},
+		{src:"sounds/phone_Accept.mp3", id:"phone_Accept"},
+		{src:"sounds/phone_ringtone.mp3", id:"phone_ringtone"}
 	],
 	preloads: []
 };

@@ -19,9 +19,11 @@ class CreateUsersTable extends Migration
             $table->integer('school_id')->unsigned()->nullable();
             $table->char('username', 100)->unique();
             $table->char('email', 100)->nullable();
-            $table->char('phone', 30)->nullable();
             $table->string('password');
+            $table->unsignedInteger('class_id')->nullable();
+            $table->char('phone', 30)->nullable();
             $table->char('ic_number', 20)->nullable();
+            $table->char('gender', 10)->nullable();
             $table->char("dob", 10)->nullable();
             $table->tinyInteger('type')->nullable();
             $table->tinyInteger('status')->default(1);

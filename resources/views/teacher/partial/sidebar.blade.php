@@ -21,7 +21,7 @@
         <ul class="sidebar-menu">
             <li class="header">DASHBOARD MENU</li>
             <li><a href="{{ route('teacher_dashboard_path') }}"><i class="fa fa-tachometer"></i> <span>Dashboard</span></a></li>
-            <li><a href="{{url('/teacher/student')}}"><i class="fa fa-users"></i> <span>Students</span></a></li>
+            <li><a href="{{url('/teacher/classes')}}"><i class="fa fa-users"></i> <span>Students</span></a></li>
             {{--<li><a href="#"><i class="fa fa-users"></i> <span>Customer</span></a></li>--}}
 
             {{--<li><a href="{{url('/admin/menu/merchants')}}"><i class="fa fa-cubes"></i> <span>Categories</span></a></li>--}}

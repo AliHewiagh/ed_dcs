@@ -12,6 +12,13 @@
                     <div class="box">
                         <div class="box-header">
                             <a href="{{url('/admin/school/create')}}" class="btn btn-primary">Create New School</a>
+                            <form method="post" action="{{url('/admin/schools/upload')}}" style="display: inline-block" id="uploadStudentForm" enctype="multipart/form-data">
+                                @csrf
+                                <label class="btn btn-warning">Import Schools Excel
+                                    <input type="file" accept="text/csv" name="excel" style="display: none" id="uploadFileStudent">
+                                </label>
+                            </form>
+                            <a href="{{asset('files/school-sample.csv')}}" class="label label-success" target="_blank">Excel Sample</a>
                             @include('partial.alert')
                         </div>
                         <div class="box-body">
@@ -62,6 +69,11 @@
                 "ordering": true,
                 "info": true,
                 "autoWidth": false
+            });
+        });
+        $(document).ready(function () {
+            $("#uploadFileStudent").on("change", function () {
+                $("#uploadStudentForm").submit();
             });
         });
     </script>

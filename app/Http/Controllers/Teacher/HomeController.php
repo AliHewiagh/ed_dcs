@@ -32,7 +32,7 @@ class HomeController extends Controller
     {
         $ic = $request->ic_number;
         $pass = substr($ic, -4, 4);
-        Auth::user()->update(["ic_number"=>$ic, "password"=>$pass]);
+        Auth::user()->update(["ic_number"=>$ic, "username"=>$ic, "password"=>$pass]);
         return redirect("/teacher/info/update");
     }
 

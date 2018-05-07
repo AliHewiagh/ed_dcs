@@ -48,7 +48,7 @@
     <div data-remodal-id="modalA" role="dialog" class="delete_model_c">
         <div>
             <h2>Password Changed</h2>
-            <p>Please note now your password is the last 4 digit of your Mykad/Mykid No.</p>
+            <p>Please note now your username is your Mykad/Mykid No. and your password is the last 4 digit of your Mykad/Mykid No.</p>
         </div>
         <br>
         <form method="post" action="{{url("/teacher/ic/update")}}">

@@ -4748,7 +4748,7 @@ p.nominalBounds = new cjs.Rectangle(-27.9,10.6,404.1,91.8);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).wait(1));
 
-}).prototype = getMCSymbolPrototype(lib.tBm8, new cjs.Rectangle(-157,-27.3,259.5,107.9), null);
+}).prototype = getMCSymbolPrototype(lib.tBm8, new cjs.Rectangle(-157,-26.8,259.5,107.4), null);
 
 
 (lib.tBm6 = function(mode,startPosition,loop) {
@@ -5222,7 +5222,7 @@ p.nominalBounds = new cjs.Rectangle(-32,-42.1,48,47);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance}]}).to({state:[{t:this.instance_1}]},1).wait(1));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-237.1,-47.8,259.5,107.9);
+p.nominalBounds = new cjs.Rectangle(-237.1,-46.8,259.5,106.9);
 
 
 (lib.dialogue6 = function(mode,startPosition,loop) {
@@ -5567,22 +5567,22 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/outro3/Bitmap1.png?1524647087008", id:"Bitmap1"},
-		{src:"images/outro3/Bitmap10.png?1524647087008", id:"Bitmap10"},
-		{src:"images/outro3/Bitmap11.png?1524647087008", id:"Bitmap11"},
-		{src:"images/outro3/Bitmap12.png?1524647087008", id:"Bitmap12"},
-		{src:"images/outro3/Bitmap13.png?1524647087008", id:"Bitmap13"},
-		{src:"images/outro3/Bitmap14.png?1524647087008", id:"Bitmap14"},
-		{src:"images/outro3/Bitmap2.png?1524647087008", id:"Bitmap2"},
-		{src:"images/outro3/Bitmap3.png?1524647087008", id:"Bitmap3"},
-		{src:"images/outro3/Bitmap7.png?1524647087008", id:"Bitmap7"},
-		{src:"images/outro3/Bitmap8.png?1524647087008", id:"Bitmap8"},
-		{src:"images/outro3/outro3bg1.png?1524647087008", id:"outro3bg1"},
-		{src:"images/outro3/outrobgdooropen.png?1524647087008", id:"outrobgdooropen"},
-		{src:"sounds/digitalUnlock.mp3?1524647087008", id:"digitalUnlock"},
-		{src:"sounds/doorOpen.mp3?1524647087008", id:"doorOpen"},
-		{src:"sounds/intro.mp3?1524647087008", id:"intro"},
-		{src:"sounds/questionComplete.mp3?1524647087008", id:"questionComplete"}
+		{src:"images/outro3/Bitmap1.png?1521356081031", id:"Bitmap1"},
+		{src:"images/outro3/Bitmap10.png?1521356081031", id:"Bitmap10"},
+		{src:"images/outro3/Bitmap11.png?1521356081032", id:"Bitmap11"},
+		{src:"images/outro3/Bitmap12.png?1521356081032", id:"Bitmap12"},
+		{src:"images/outro3/Bitmap13.png?1521356081032", id:"Bitmap13"},
+		{src:"images/outro3/Bitmap14.png?1521356081032", id:"Bitmap14"},
+		{src:"images/outro3/Bitmap2.png?1521356081032", id:"Bitmap2"},
+		{src:"images/outro3/Bitmap3.png?1521356081032", id:"Bitmap3"},
+		{src:"images/outro3/Bitmap7.png?1521356081032", id:"Bitmap7"},
+		{src:"images/outro3/Bitmap8.png?1521356081032", id:"Bitmap8"},
+		{src:"images/outro3/outro3bg1.png?1521356081032", id:"outro3bg1"},
+		{src:"images/outro3/outrobgdooropen.png?1521356081032", id:"outrobgdooropen"},
+		{src:"sounds/digitalUnlock.mp3?1521356081032", id:"digitalUnlock"},
+		{src:"sounds/doorOpen.mp3?1521356081032", id:"doorOpen"},
+		{src:"sounds/intro.mp3?1521356081032", id:"intro"},
+		{src:"sounds/questionComplete.mp3?1521356081032", id:"questionComplete"}
 	],
 	preloads: []
 };

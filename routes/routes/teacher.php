@@ -10,8 +10,10 @@ Route::post('/ic/update', ['as' => 'teacher_ic_update', 'uses' => 'Teacher\HomeC
 Route::get('/info/update', ['as' => 'teacher_info_update', 'uses' => 'Teacher\HomeController@infoUpdate']);
 Route::post('/info/update/store', ['as' => 'teacher_info_update_store', 'uses' => 'Teacher\HomeController@infoUpdateStore']);
 
+// Class
+Route::resource('/classes', 'Teacher\ClassController');
 
 // Students
-Route::resource('/student', 'Teacher\StudentController');
+Route::resource('/class/{classId}/student', 'Teacher\StudentController');
 // Upload
-Route::post('/students/upload', 'Teacher\StudentExcelController@uploadFile');
+Route::post('/class/{classId}/students/upload', 'Teacher\StudentExcelController@uploadFile');
