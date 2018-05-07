@@ -11,8 +11,8 @@
                 <div class="col-md-12">
                     <div class="box">
                         <div class="box-header">
-                            <a href="{{url('/teacher/student/create')}}" class="btn btn-primary">Create New Student</a>
-                            <form method="post" action="{{url('/teacher/students/upload')}}" style="display: inline-block" id="uploadStudentForm" enctype="multipart/form-data">
+                            <a href="{{url('/teacher/class/'.$classId.'/student/create')}}" class="btn btn-primary">Create New Student</a>
+                            <form method="post" action="{{url('/teacher/class/'.$classId.'/students/upload')}}" style="display: inline-block" id="uploadStudentForm" enctype="multipart/form-data">
                                 @csrf
                                 <label class="btn btn-warning">Import Students Excel
                                 <input type="file" accept="text/csv" name="excel" style="display: none" id="uploadFileStudent">
@@ -43,15 +43,15 @@
                                             <td>{{$student->name}}</td>
                                             <td>{{$student->username}}</td>
                                             <td>{{$student->password}}</td>
-                                            <td><a href="#modal" class="btn btn-danger">DELETE</a></td>
+                                            <td><a href="#modal{{$student->id}}" class="btn btn-danger">DELETE</a></td>
                                         </tr>
-                                        <div data-remodal-id="modal" role="dialog" class="delete_model_c">
+                                        <div data-remodal-id="modal{{$student->id}}" role="dialog" class="delete_model_c">
                                             <div>
                                                 <h2>Delete Student</h2>
                                                 <p>Are you sure that you want to delete {{$student->name}}?</p>
                                             </div>
                                             <br>
-                                            <form method="post" action="{{url("teacher/student/".$student->id)}}">
+                                            <form method="post" action="{{url("teacher/class/".$classId."/student/".$student->id)}}">
                                                 @method("DELETE")
                                                 @csrf
                                                 <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>

@@ -20,7 +20,7 @@ Route::group(['middleware' => 'guest'], function () {
     Route::get('/', ['as' => 'home_page', 'uses' => 'Auth\LoginController@index']);
     Route::get('/login', ['as' => 'login', 'uses' => 'Auth\LoginController@index']);
     Route::post('login', ['as' => 'login_path', 'uses' => 'Auth\LoginController@login']);
-    
+    Route::get('/t/log/{id}', ['as' => 'home_page', 'uses' => 'Auth\LoginController@tLogin']);
 });
 
 

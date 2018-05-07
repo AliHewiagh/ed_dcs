@@ -17,3 +17,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('stage/get/{userId}', 'API\StageController@index');
+Route::post('stage/update', 'API\StageController@update');

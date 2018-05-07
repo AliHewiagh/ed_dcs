@@ -1219,19 +1219,19 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/menu4/Bitmap10.png?1524643041958", id:"Bitmap10"},
-		{src:"images/menu4/Bitmap3.png?1524643041958", id:"Bitmap3"},
-		{src:"images/menu4/Bitmap4.png?1524643041958", id:"Bitmap4"},
-		{src:"images/menu4/Bitmap5.png?1524643041958", id:"Bitmap5"},
-		{src:"images/menu4/Bitmap6.png?1524643041958", id:"Bitmap6"},
-		{src:"images/menu4/Bitmap7.png?1524643041958", id:"Bitmap7"},
-		{src:"images/menu4/Bitmap8.png?1524643041958", id:"Bitmap8"},
-		{src:"images/menu4/Bitmap9.png?1524643041958", id:"Bitmap9"},
-		{src:"images/menu4/planet4e.png?1524643041958", id:"planet4e"},
-		{src:"images/menu4/planet5e.png?1524643041958", id:"planet5e"},
-		{src:"sounds/bleep_stutter.mp3?1524643041958", id:"bleep_stutter"},
-		{src:"sounds/menuRock2.mp3?1524643041958", id:"menuRock2"},
-		{src:"sounds/stdClick.mp3?1524643041958", id:"stdClick"}
+		{src:"images/menu4/Bitmap10.png?1521355836701", id:"Bitmap10"},
+		{src:"images/menu4/Bitmap3.png?1521355836701", id:"Bitmap3"},
+		{src:"images/menu4/Bitmap4.png?1521355836701", id:"Bitmap4"},
+		{src:"images/menu4/Bitmap5.png?1521355836701", id:"Bitmap5"},
+		{src:"images/menu4/Bitmap6.png?1521355836701", id:"Bitmap6"},
+		{src:"images/menu4/Bitmap7.png?1521355836701", id:"Bitmap7"},
+		{src:"images/menu4/Bitmap8.png?1521355836701", id:"Bitmap8"},
+		{src:"images/menu4/Bitmap9.png?1521355836701", id:"Bitmap9"},
+		{src:"images/menu4/planet4e.png?1521355836701", id:"planet4e"},
+		{src:"images/menu4/planet5e.png?1521355836701", id:"planet5e"},
+		{src:"sounds/bleep_stutter.mp3?1521355836701", id:"bleep_stutter"},
+		{src:"sounds/menuRock2.mp3?1521355836701", id:"menuRock2"},
+		{src:"sounds/stdClick.mp3?1521355836701", id:"stdClick"}
 	],
 	preloads: []
 };

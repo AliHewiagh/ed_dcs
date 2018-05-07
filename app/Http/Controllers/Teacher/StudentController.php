@@ -16,10 +16,10 @@ class StudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($classId)
     {
-        $students = User::where([["type", 4], ["school_id", Auth::user()->school_id]])->get();
-        return view("teacher.student.index", compact("students"));
+        $students = User::where([["type", 4], ["class_id", $classId]])->get();
+        return view("teacher.student.index", compact("students", "classId"));
     }
 
     /**
@@ -27,9 +27,9 @@ class StudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($classId)
     {
-        return view("teacher.student.create");
+        return view("teacher.student.create", compact('classId'));
     }
 
     /**
@@ -38,7 +38,7 @@ class StudentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $classId)
     {
         $data = $request->only("name", "ic_number");
         $validator = Validator::make($data, [
@@ -47,22 +47,29 @@ class StudentController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect('/teacher/student/create')
+            return redirect('/teacher/class/'.$classId.'/student/create')
                 ->withErrors($validator)
                 ->withInput();
         }
         $old = User::where("username", $data["ic_number"])->first();
         if(!empty($old)){
-            return redirect('/teacher/student')->with("error", "Student already exist!");
+            return redirect('/teacher/class/'.$classId.'/student')->with("error", "Student already exist!");
+        }
+        $gender = substr($data["ic_number"], -1, 1);
+        if ($gender % 2 == 0) {
+            $data["gender"] = "Female";
+        }else{
+            $data["gender"] = "Male";
         }
         $data["username"] = $data["ic_number"];
         $data["password"] = substr($data["ic_number"], -4, 4);
         $data["school_id"] = Auth::user()->school_id;
+        $data["class_id"] = $classId;
         $data["type"] = 4;
         $user = User::create($data);
         $role = Role::where("id", 4)->first();
         $user->attachRole($role);
-        return redirect('/teacher/student')->with("success", "Student created successfully!");
+        return redirect('/teacher/class/'.$classId.'/student')->with("success", "Student created successfully!");
     }
 
     /**
@@ -105,10 +112,10 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($classId, $id)
     {
         $user = User::findOrFail($id);
         $user->delete();
-        return redirect('/teacher/student')->with("success", "Student deleted successfully!");
+        return redirect('/teacher/class/'.$classId.'/student')->with("success", "Student deleted successfully!");
     }
 }

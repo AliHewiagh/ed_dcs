@@ -17,12 +17,13 @@ class StudentExcelController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function uploadFile(Request $request)
+    public function uploadFile(Request $request, $classId)
     {
 
         $file = $request->file('excel')->getRealPath();
         $cus = $this->csvToArray($file);
         $data["school_id"] = Auth::user()->school_id;
+        $data["class_id"] = $classId;
         $data["type"] = 4;
         $i = 0;
         foreach ($cus as $cu){

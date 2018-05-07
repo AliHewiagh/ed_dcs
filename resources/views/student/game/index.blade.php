@@ -13,6 +13,7 @@
     <meta name="authoring-tool" content="Adobe_Animate_CC">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tapir Hero</title>
+    <!-- write your code here -->
     <style>
         #animation_container, #_preload_div_ {
             position:absolute;
@@ -20,39 +21,14 @@
             left:0;right:0;
             top:0;bottom:0;
         }
-		body{
-		font-family: Quantico;
-		font-style: italic;
-	  }
-	  #stageList a:link{
-			color: #ffffff;
-		  }
-		#stageList a:visited{
-			color: #CCCCCC;
-		}
-		#stageList a:hover{
-			color: #0EE0E0;
-		}
-		#stageList a:active{
-			color: #0EE0E0;
-		}
-		#stageList {
-			display: none;
-		}
     </style>
     <link rel="stylesheet" type="text/css" href="{{asset('game/style.css')}}" />
     <link href="https://fonts.googleapis.com/css?family=Quantico" rel="stylesheet">
-	
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-	<script src="http://malsup.github.com/jquery.form.js"></script>
+
     <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
     <script src="{{asset('game/start.js')}}"></script>
     <script src="{{asset('game/gameControl.js')}}"></script>
     <script>
-		var cUserName = "{{Auth::user()->name}}";
-		var cUserId = {{Auth::user()->id}};
-		//var currentProgress = {{Auth::user()->currentProgress}};
-		var currentProgress = 1;
         var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
         function init() {
             canvas = document.getElementById("canvas");
@@ -141,34 +117,9 @@
     <!-- write your code here -->
 </head>
 <body onload="init();" style="margin:0px;">
-<div style="color: #CFCFCF">
-		<ul id="stageList">
-			<li><a href="javascript:directNavi(3);">Stage 1</a></li>
-			<li><a href="javascript:directNavi(7);">Stage 2</a></li>
-			<li><a href="javascript:directNavi(11);">Stage 3</a></li>
-			<li><a href="javascript:directNavi(15);">Stage 4</a></li>
-			<li><a href="javascript:directNavi(19);">Stage 5</a></li>
-			<li><a href="javascript:directNavi(23);">Stage 6</a></li>
-			<li><a href="javascript:directNavi(27);">Stage 7</a></li>
-			<li><a href="javascript:directNavi(31);">Stage 8</a></li>
-			<li><a href="javascript:directNavi(35);">Stage 9</a></li>
-			<li><a href="javascript:directNavi(39);">Stage 10</a></li>
-			<li><a href="javascript:directNavi(43);">Stage 11</a></li>
-			<li><a href="javascript:directNavi(47);">Stage 12</a></li>
-			<li><a href="javascript:directNavi(51);">Stage 13</a></li>
-			<li><a href="javascript:directNavi(55);">Stage 14</a></li>
-			<li><a href="javascript:directNavi(59);">Stage 15</a></li>
-			<li><a href="javascript:directNavi(63);">Stage 16</a></li>
-			<li><a href="javascript:directNavi(67);">Stage 17</a></li>
-			<li><a href="javascript:directNavi(71);">Stage 18</a></li>
-			<li><a href="javascript:directNavi(75);">Stage 19</a></li>
-			<li><a href="javascript:directNavi(79);">Stage 20</a></li>
-			<li><a href="javascript:directNavi(83);">Completion</a></li>
-		</ul>
-	</div>
 <div id="animation_container" style="background-color:rgba(0, 0, 0, 1.00); width:800px; height:600px">
     <canvas id="canvas" width="800" height="600" style="position: absolute; display: none; background-color:rgba(0, 0, 0, 1.00);"></canvas>
-    <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:800px; height:600px; position: absolute; left: 0px; top: 0px; display: block;">
+    <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:800px; height:600px; position: absolute; left: 0px; top: 0px; display: none;">
     </div>
 </div>
 <div id='_preload_div_' style='position:absolute; top:0; left:0; display: inline-block; height:600px; width: 800px; text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src='{{asset('game/images/_preloader.gif')}}' style='vertical-align: middle; max-height: 100%'/></div>

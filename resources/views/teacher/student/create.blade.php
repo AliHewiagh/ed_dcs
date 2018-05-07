@@ -14,7 +14,7 @@
         <section class="content">
             <div style="max-width: 600px">
                 <div id="regErrorArea"></div>
-                <form id="merchantForm" method="post" action="{{url("teacher/student")}}">
+                <form id="merchantForm" method="post" action="{{url("teacher/class/".$classId."/student")}}">
                     @csrf
                     @include('partial.alert')
                     <div class="form-group">
