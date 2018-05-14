@@ -27,6 +27,7 @@ class CreateSchoolsTable extends Migration
             $table->boolean("sekolahk")->nullable();
             $table->boolean("sbt")->nullable();
             $table->boolean("active")->default(1);
+            $table->boolean('done')->default(0);
             $table->timestamps();
         });
     }
