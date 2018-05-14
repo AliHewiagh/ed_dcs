@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class SchoolClass extends Model
+class Progress extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'school_classes';
+    protected $table = 'progresses';
 
     /**
      * The attributes that are mass assignable.
@@ -19,7 +19,8 @@ class SchoolClass extends Model
      * @var array
      */
     protected $fillable = [
-        "school_id", "teacher_id", "name", "type", "done",
+        "state", "location_id", "school_id", "teacher_id", "class_id", "student_id", "progress", "score", "complete"
     ];
+
     
 }
