@@ -4650,14 +4650,18 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 	this.shape.setTransform(-85.5,29.4);
 
 	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f().s("rgba(14,224,224,0.996)").ss(4,0,0,3).p("AD9kFIg8AAAD+kFIB/AAIkwHkIB0nkMgoLAAAAF9kFIfOAA");
+	this.shape_1.graphics.f().s("rgba(14,224,224,0.996)").ss(4,0,0,3).p("EAlLgEFI/OAAIkwHkIB0nkMgoLAAA");
 	this.shape_1.setTransform(-85.5,111.6);
 
 	this.shape_2 = new cjs.Shape();
-	this.shape_2.graphics.f("rgba(0,0,0,0.996)").s().p("AF+ItIiAAAIAAjdIAAAAIAADdIg9AAMgoLAAAIAAxZMBKVAAAIAARZg");
-	this.shape_2.setTransform(-85.5,29.7);
+	this.shape_2.graphics.f("#010101").s().p("AgjjyIA7AAIABAAIB/AAIkvHlg");
+	this.shape_2.setTransform(-62.6,109.7);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).wait(1));
+	this.shape_3 = new cjs.Shape();
+	this.shape_3.graphics.f("rgba(0,0,0,0.996)").s().p("AF+ItIiAAAIAAjdIAAAAIAADdIg9AAMgoLAAAIAAxZMBKVAAAIAARZg");
+	this.shape_3.setTransform(-85.5,29.7);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_3},{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).wait(1));
 
 }).prototype = getMCSymbolPrototype(lib.tBm6, new cjs.Rectangle(-325.4,-27,507.8,167), null);
 
@@ -4906,7 +4910,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 	this.shape.setTransform(175.3,30.2);
 
 	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f().s("rgba(14,224,224,0.996)").ss(1,0,0,3).p("AU3CrIFhAxIlhjDIAAmLMgvXAAAIAALqAU3F4IAAjNIgHgB");
+	this.shape_1.graphics.f().s("rgba(14,224,224,0.996)").ss(1,0,0,3).p("AU3CrIFhAxIlhjDIAAmLMgvXAAAIAALqAU3CrIgHgBAU3F4IAAjN");
 	this.shape_1.setTransform(193.4,-7.4);
 
 	this.shape_2 = new cjs.Shape();
@@ -5802,8 +5806,8 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/intro9/Bitmap5.png?1522609866187", id:"Bitmap5"},
-		{src:"sounds/danceMusic.mp3?1522609866187", id:"danceMusic"}
+		{src:"images/intro9/Bitmap5.png?1524630934886", id:"Bitmap5"},
+		{src:"sounds/danceMusic.mp3?1524630934886", id:"danceMusic"}
 	],
 	preloads: []
 };

@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitf267dbf74ffda2e1f3eb26fc532211ff
+class ComposerStaticInitad492e3c8d880837243c8f0a3a6b58cc
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -361,15 +361,20 @@ class ComposerStaticInitf267dbf74ffda2e1f3eb26fc532211ff
         'App\\Console\\Commands\\UpdateVersionCommand' => __DIR__ . '/../..' . '/app/Console/Commands/UpdateVersionCommand.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Game' => __DIR__ . '/../..' . '/app/Game.php',
         'App\\Http\\Controllers\\API\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/API/HomeController.php',
+        'App\\Http\\Controllers\\API\\StageController' => __DIR__ . '/../..' . '/app/Http/Controllers/API/StageController.php',
         'App\\Http\\Controllers\\Admin\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/DashboardController.php',
+        'App\\Http\\Controllers\\Admin\\ProgressController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ProgressController.php',
         'App\\Http\\Controllers\\Admin\\SchoolController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SchoolController.php',
+        'App\\Http\\Controllers\\Admin\\SchoolExcelController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SchoolExcelController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\Manager\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Manager/HomeController.php',
         'App\\Http\\Controllers\\Manager\\TeacherController' => __DIR__ . '/../..' . '/app/Http/Controllers/Manager/TeacherController.php',
         'App\\Http\\Controllers\\Student\\GameController' => __DIR__ . '/../..' . '/app/Http/Controllers/Student/GameController.php',
+        'App\\Http\\Controllers\\Teacher\\ClassController' => __DIR__ . '/../..' . '/app/Http/Controllers/Teacher/ClassController.php',
         'App\\Http\\Controllers\\Teacher\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Teacher/HomeController.php',
         'App\\Http\\Controllers\\Teacher\\StudentController' => __DIR__ . '/../..' . '/app/Http/Controllers/Teacher/StudentController.php',
         'App\\Http\\Controllers\\Teacher\\StudentExcelController' => __DIR__ . '/../..' . '/app/Http/Controllers/Teacher/StudentExcelController.php',
@@ -381,6 +386,7 @@ class ComposerStaticInitf267dbf74ffda2e1f3eb26fc532211ff
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Location' => __DIR__ . '/../..' . '/app/Location.php',
         'App\\Permission' => __DIR__ . '/../..' . '/app/Permission.php',
+        'App\\Progress' => __DIR__ . '/../..' . '/app/Progress.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -388,6 +394,7 @@ class ComposerStaticInitf267dbf74ffda2e1f3eb26fc532211ff
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\Role' => __DIR__ . '/../..' . '/app/Role.php',
         'App\\School' => __DIR__ . '/../..' . '/app/School.php',
+        'App\\SchoolClass' => __DIR__ . '/../..' . '/app/SchoolClass.php',
         'App\\SchoolType' => __DIR__ . '/../..' . '/app/SchoolType.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
@@ -4099,10 +4106,10 @@ class ComposerStaticInitf267dbf74ffda2e1f3eb26fc532211ff
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitf267dbf74ffda2e1f3eb26fc532211ff::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitf267dbf74ffda2e1f3eb26fc532211ff::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitf267dbf74ffda2e1f3eb26fc532211ff::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitf267dbf74ffda2e1f3eb26fc532211ff::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitad492e3c8d880837243c8f0a3a6b58cc::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitad492e3c8d880837243c8f0a3a6b58cc::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitad492e3c8d880837243c8f0a3a6b58cc::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitad492e3c8d880837243c8f0a3a6b58cc::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -7393,14 +7393,14 @@ lib.properties = {
 	color: "#CCCCCC",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/outro6/bgSeaSurf.png?1522429142329", id:"bgSeaSurf"},
-		{src:"images/outro6/Bitmap1.png?1522429142329", id:"Bitmap1"},
-		{src:"images/outro6/Bitmap4.png?1522429142329", id:"Bitmap4"},
-		{src:"images/outro6/Bitmap5.png?1522429142329", id:"Bitmap5"},
-		{src:"images/outro6/Bitmap6.png?1522429142329", id:"Bitmap6"},
-		{src:"sounds/digitalBleep.mp3?1522429142329", id:"digitalBleep"},
-		{src:"sounds/intro.mp3?1522429142329", id:"intro"},
-		{src:"sounds/metalDrop.mp3?1522429142329", id:"metalDrop"}
+		{src:"images/outro6/bgSeaSurf.png?1524647210781", id:"bgSeaSurf"},
+		{src:"images/outro6/Bitmap1.png?1524647210781", id:"Bitmap1"},
+		{src:"images/outro6/Bitmap4.png?1524647210781", id:"Bitmap4"},
+		{src:"images/outro6/Bitmap5.png?1524647210781", id:"Bitmap5"},
+		{src:"images/outro6/Bitmap6.png?1524647210781", id:"Bitmap6"},
+		{src:"sounds/digitalBleep.mp3?1524647210781", id:"digitalBleep"},
+		{src:"sounds/intro.mp3?1524647210781", id:"intro"},
+		{src:"sounds/metalDrop.mp3?1524647210781", id:"metalDrop"}
 	],
 	preloads: []
 };

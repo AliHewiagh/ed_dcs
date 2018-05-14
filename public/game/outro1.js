@@ -4535,16 +4535,16 @@ lib.properties = {
 	color: "#66FFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/outro1/Bitmap1.png?1521202824242", id:"Bitmap1"},
-		{src:"images/outro1/Bitmap10.png?1521202824242", id:"Bitmap10"},
-		{src:"images/outro1/Bitmap2.png?1521202824242", id:"Bitmap2"},
-		{src:"images/outro1/Bitmap3.png?1521202824242", id:"Bitmap3"},
-		{src:"images/outro1/Bitmap4.png?1521202824242", id:"Bitmap4"},
-		{src:"images/outro1/Bitmap5.png?1521202824242", id:"Bitmap5"},
-		{src:"images/outro1/Bitmap7.png?1521202824242", id:"Bitmap7"},
-		{src:"images/outro1/Bitmap8.png?1521202824242", id:"Bitmap8"},
-		{src:"sounds/intro.mp3?1521202824242", id:"intro"},
-		{src:"sounds/questionComplete.mp3?1521202824242", id:"questionComplete"}
+		{src:"images/outro1/Bitmap1.png?1524646988562", id:"Bitmap1"},
+		{src:"images/outro1/Bitmap10.png?1524646988562", id:"Bitmap10"},
+		{src:"images/outro1/Bitmap2.png?1524646988562", id:"Bitmap2"},
+		{src:"images/outro1/Bitmap3.png?1524646988562", id:"Bitmap3"},
+		{src:"images/outro1/Bitmap4.png?1524646988562", id:"Bitmap4"},
+		{src:"images/outro1/Bitmap5.png?1524646988562", id:"Bitmap5"},
+		{src:"images/outro1/Bitmap7.png?1524646988562", id:"Bitmap7"},
+		{src:"images/outro1/Bitmap8.png?1524646988562", id:"Bitmap8"},
+		{src:"sounds/intro.mp3?1524646988562", id:"intro"},
+		{src:"sounds/questionComplete.mp3?1524646988562", id:"questionComplete"}
 	],
 	preloads: []
 };

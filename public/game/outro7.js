@@ -3359,12 +3359,12 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/intro7/Bitmap1.png?1522467622172", id:"Bitmap1"},
-		{src:"images/intro7/Bitmap2.png?1522467622172", id:"Bitmap2"},
-		{src:"images/intro7/Bitmap4.png?1522467622172", id:"Bitmap4"},
-		{src:"images/intro7/Bitmap5.png?1522467622172", id:"Bitmap5"},
-		{src:"images/intro7/Bitmap6.png?1522467622172", id:"Bitmap6"},
-		{src:"sounds/intro.mp3?1522467622172", id:"intro"}
+		{src:"images/intro7/Bitmap1.png?1524647832144", id:"Bitmap1"},
+		{src:"images/intro7/Bitmap2.png?1524647832144", id:"Bitmap2"},
+		{src:"images/intro7/Bitmap4.png?1524647832144", id:"Bitmap4"},
+		{src:"images/intro7/Bitmap5.png?1524647832144", id:"Bitmap5"},
+		{src:"images/intro7/Bitmap6.png?1524647832144", id:"Bitmap6"},
+		{src:"sounds/intro.mp3?1524647832144", id:"intro"}
 	],
 	preloads: []
 };
