@@ -15,6 +15,12 @@ lib.ssMetadata = [];
 p.nominalBounds = new cjs.Rectangle(0,0,325,304);
 
 
+(lib.Bitmap10 = function() {
+	this.initialize(img.Bitmap10);
+}).prototype = p = new cjs.Bitmap();
+p.nominalBounds = new cjs.Rectangle(0,0,844,628);
+
+
 (lib.Bitmap2 = function() {
 	this.initialize(img.Bitmap2);
 }).prototype = p = new cjs.Bitmap();
@@ -30,7 +36,37 @@ p.nominalBounds = new cjs.Rectangle(0,0,1546,1160);
 (lib.Bitmap4 = function() {
 	this.initialize(img.Bitmap4);
 }).prototype = p = new cjs.Bitmap();
-p.nominalBounds = new cjs.Rectangle(0,0,480,231);// helper functions:
+p.nominalBounds = new cjs.Rectangle(0,0,480,231);
+
+
+(lib.Bitmap5 = function() {
+	this.initialize(img.Bitmap5);
+}).prototype = p = new cjs.Bitmap();
+p.nominalBounds = new cjs.Rectangle(0,0,840,648);
+
+
+(lib.Bitmap6 = function() {
+	this.initialize(img.Bitmap6);
+}).prototype = p = new cjs.Bitmap();
+p.nominalBounds = new cjs.Rectangle(0,0,844,648);
+
+
+(lib.Bitmap7 = function() {
+	this.initialize(img.Bitmap7);
+}).prototype = p = new cjs.Bitmap();
+p.nominalBounds = new cjs.Rectangle(0,0,832,640);
+
+
+(lib.Bitmap8 = function() {
+	this.initialize(img.Bitmap8);
+}).prototype = p = new cjs.Bitmap();
+p.nominalBounds = new cjs.Rectangle(0,0,852,644);
+
+
+(lib.Bitmap9 = function() {
+	this.initialize(img.Bitmap9);
+}).prototype = p = new cjs.Bitmap();
+p.nominalBounds = new cjs.Rectangle(0,0,852,640);// helper functions:
 
 function mc_symbol_clone() {
 	var clone = this._cloneProps(new this.constructor(this.mode, this.startPosition, this.loop));
@@ -4881,9 +4917,6 @@ p.nominalBounds = new cjs.Rectangle(-367.8,-30,268.3,89.9);
 	this.frame_20 = function() {
 		playSound("suspense",-1);
 	}
-	this.frame_69 = function() {
-		playSound("mdroid_talk");
-	}
 	this.frame_105 = function() {
 		this.stop();
 	}
@@ -4948,7 +4981,7 @@ p.nominalBounds = new cjs.Rectangle(-367.8,-30,268.3,89.9);
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(4).call(this.frame_4).wait(16).call(this.frame_20).wait(49).call(this.frame_69).wait(36).call(this.frame_105).wait(40).call(this.frame_145).wait(31).call(this.frame_176).wait(15).call(this.frame_191).wait(16).call(this.frame_207).wait(14).call(this.frame_221).wait(78).call(this.frame_299).wait(10).call(this.frame_309).wait(10).call(this.frame_319).wait(41).call(this.frame_360).wait(14).call(this.frame_374).wait(35).call(this.frame_409).wait(10).call(this.frame_419).wait(27).call(this.frame_446).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(4).call(this.frame_4).wait(16).call(this.frame_20).wait(85).call(this.frame_105).wait(40).call(this.frame_145).wait(31).call(this.frame_176).wait(15).call(this.frame_191).wait(16).call(this.frame_207).wait(14).call(this.frame_221).wait(78).call(this.frame_299).wait(10).call(this.frame_309).wait(10).call(this.frame_319).wait(41).call(this.frame_360).wait(14).call(this.frame_374).wait(35).call(this.frame_409).wait(10).call(this.frame_419).wait(27).call(this.frame_446).wait(1));
 
 	// t
 	this.instance = new lib.dialogue1();
@@ -5091,7 +5124,32 @@ p.nominalBounds = new cjs.Rectangle(-367.8,-30,268.3,89.9);
 	this.instance_14.parent = this;
 	this.instance_14.setTransform(646.8,57.8,1,1,0,0,0,798.6,693.1);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_14).to({x:736.8},68,cjs.Ease.get(1)).wait(1).to({startPosition:0},0).wait(16).to({scaleX:1.82,scaleY:1.82,x:898.9,y:-30},0).wait(60).to({regX:798.5,scaleX:8.92,scaleY:8.92,x:3669.1,y:-1420.9},0).wait(46).to({regX:798.6,scaleX:4.33,scaleY:4.33,x:1587.5,y:-159},0).wait(30).to({scaleX:7.15,scaleY:7.15,x:1591.6,y:-1114.5},0).wait(82).to({scaleX:7.5,scaleY:7.5,x:1451.6,y:-1106.5},0).wait(116).to({scaleX:3.91,scaleY:3.91,x:1243.8,y:-403.1},0).wait(28));
+	this.instance_15 = new lib.Bitmap5();
+	this.instance_15.parent = this;
+	this.instance_15.setTransform(-12,-24);
+
+	this.instance_16 = new lib.Bitmap6();
+	this.instance_16.parent = this;
+	this.instance_16.setTransform(-16,-20);
+
+	this.instance_17 = new lib.Bitmap7();
+	this.instance_17.parent = this;
+	this.instance_17.setTransform(-12,-16);
+
+	this.instance_18 = new lib.Bitmap8();
+	this.instance_18.parent = this;
+	this.instance_18.setTransform(-24,-20);
+
+	this.instance_19 = new lib.Bitmap9();
+	this.instance_19.parent = this;
+	this.instance_19.setTransform(-16,-12);
+
+	this.instance_20 = new lib.Bitmap10();
+	this.instance_20.parent = this;
+	this.instance_20.setTransform(-20,-12);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_14}]}).to({state:[{t:this.instance_14}]},68).to({state:[{t:this.instance_14}]},1).to({state:[{t:this.instance_15}]},16).to({state:[{t:this.instance_16}]},60).to({state:[{t:this.instance_17}]},46).to({state:[{t:this.instance_18}]},30).to({state:[{t:this.instance_19}]},82).to({state:[{t:this.instance_20}]},116).wait(28));
+	this.timeline.addTween(cjs.Tween.get(this.instance_14).to({x:736.8},68,cjs.Ease.get(1)).wait(1).to({startPosition:0},0).to({_off:true},16).wait(362));
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(244.2,-111.3,1546,1160);
@@ -5104,14 +5162,20 @@ lib.properties = {
 	color: "#E7CD91",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/intro1/Bitmap1.png", id:"Bitmap1"},
-		{src:"images/intro1/Bitmap2.png", id:"Bitmap2"},
-		{src:"images/intro1/Bitmap3.png", id:"Bitmap3"},
-		{src:"images/intro1/Bitmap4.png", id:"Bitmap4"},
-		{src:"sounds/alien_cry.mp3", id:"alien_cry"},
-		{src:"sounds/evil_laugh.mp3", id:"evil_laugh"},
-		{src:"sounds/mdroid_talk.mp3", id:"mdroid_talk"},
-		{src:"sounds/suspense.mp3", id:"suspense"}
+		{src:"images/intro1/Bitmap1.png?1524629770094", id:"Bitmap1"},
+		{src:"images/intro1/Bitmap10.png?1524629770094", id:"Bitmap10"},
+		{src:"images/intro1/Bitmap2.png?1524629770094", id:"Bitmap2"},
+		{src:"images/intro1/Bitmap3.png?1524629770094", id:"Bitmap3"},
+		{src:"images/intro1/Bitmap4.png?1524629770094", id:"Bitmap4"},
+		{src:"images/intro1/Bitmap5.png?1524629770094", id:"Bitmap5"},
+		{src:"images/intro1/Bitmap6.png?1524629770094", id:"Bitmap6"},
+		{src:"images/intro1/Bitmap7.png?1524629770094", id:"Bitmap7"},
+		{src:"images/intro1/Bitmap8.png?1524629770094", id:"Bitmap8"},
+		{src:"images/intro1/Bitmap9.png?1524629770094", id:"Bitmap9"},
+		{src:"sounds/alien_cry.mp3?1524629770094", id:"alien_cry"},
+		{src:"sounds/evil_laugh.mp3?1524629770094", id:"evil_laugh"},
+		{src:"sounds/mdroid_talk.mp3?1524629770094", id:"mdroid_talk"},
+		{src:"sounds/suspense.mp3?1524629770094", id:"suspense"}
 	],
 	preloads: []
 };

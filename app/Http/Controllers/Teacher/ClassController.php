@@ -59,7 +59,6 @@ class ClassController extends Controller
         }
 
         $data["school_id"] = Auth::user()->school_id;
-    
         $data["teacher_id"] = Auth::user()->id;
         SchoolClass::create($data);
         return redirect('/teacher/classes')->with("success", "Class created successfully!");

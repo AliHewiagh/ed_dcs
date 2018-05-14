@@ -4013,11 +4013,11 @@ p.nominalBounds = new cjs.Rectangle(-409,-31,471.1,104.7);
 	this.shape_3.setTransform(153.1,13.6);
 
 	this.shape_4 = new cjs.Shape();
-	this.shape_4.graphics.f().s("#0EE0E0").ss(4,0,0,3).p("AApkfIAXAAAApkfIAXAAIAAAAIhdIYIE6oYIftAAEgkIgEfMAkxAAA");
+	this.shape_4.graphics.f().s("#0EE0E0").ss(4,0,0,3).p("AApkfIAXAAIAAAAAApkfIAXAAIhdIYIE6oYIftAAEgkIgEfMAkxAAA");
 	this.shape_4.setTransform(153,81.3);
 
 	this.shape_5 = new cjs.Shape();
-	this.shape_5.graphics.f("rgba(0,0,0,0.996)").s().p("AA/B2IAAAAIgWAAMgkyAAAIAAsEMBISAAAIAAMEI/sAAIk6IZgAApB2IAWAAIAAAAg");
+	this.shape_5.graphics.f("rgba(0,0,0,0.996)").s().p("AA/B2IgWAAIAWAAIAAAAIAAAAIgWAAMgkyAAAIAAsEMBISAAAIAAMEI/sAAIk6IZg");
 	this.shape_5.setTransform(153.1,40.7);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_5},{t:this.shape_4},{t:this.shape_3}]}).wait(2));
@@ -4347,16 +4347,16 @@ lib.properties = {
 	color: "#CCCCCC",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/intro6/Bitmap1.png?1522412760891", id:"Bitmap1"},
-		{src:"images/intro6/Bitmap10.png?1522412760891", id:"Bitmap10"},
-		{src:"images/intro6/Bitmap11.png?1522412760891", id:"Bitmap11"},
-		{src:"images/intro6/Bitmap3.png?1522412760891", id:"Bitmap3"},
-		{src:"images/intro6/Bitmap7copy.png?1522412760891", id:"Bitmap7copy"},
-		{src:"images/intro6/Bitmap8copy.png?1522412760891", id:"Bitmap8copy"},
-		{src:"images/intro6/Bitmap9.png?1522412760891", id:"Bitmap9"},
-		{src:"sounds/intro.mp3?1522412760891", id:"intro"},
-		{src:"sounds/questionComplete.mp3?1522412760891", id:"questionComplete"},
-		{src:"sounds/stdClick.mp3?1522412760891", id:"stdClick"}
+		{src:"images/intro6/Bitmap1.png?1524630221618", id:"Bitmap1"},
+		{src:"images/intro6/Bitmap10.png?1524630221618", id:"Bitmap10"},
+		{src:"images/intro6/Bitmap11.png?1524630221618", id:"Bitmap11"},
+		{src:"images/intro6/Bitmap3.png?1524630221618", id:"Bitmap3"},
+		{src:"images/intro6/Bitmap7copy.png?1524630221618", id:"Bitmap7copy"},
+		{src:"images/intro6/Bitmap8copy.png?1524630221618", id:"Bitmap8copy"},
+		{src:"images/intro6/Bitmap9.png?1524630221618", id:"Bitmap9"},
+		{src:"sounds/intro.mp3?1524630221618", id:"intro"},
+		{src:"sounds/questionComplete.mp3?1524630221618", id:"questionComplete"},
+		{src:"sounds/stdClick.mp3?1524630221618", id:"stdClick"}
 	],
 	preloads: []
 };

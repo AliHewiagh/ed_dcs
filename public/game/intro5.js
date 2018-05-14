@@ -4089,10 +4089,10 @@ lib.properties = {
 	color: "#CCCCCC",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/intro5/Bitmap2.png?1522295083807", id:"Bitmap2"},
-		{src:"images/intro5/Bitmap3.png?1522295083807", id:"Bitmap3"},
-		{src:"images/intro5/Bitmap9.png?1522295083807", id:"Bitmap9"},
-		{src:"sounds/intro.mp3?1522295083807", id:"intro"}
+		{src:"images/intro5/Bitmap2.png?1524630192628", id:"Bitmap2"},
+		{src:"images/intro5/Bitmap3.png?1524630192628", id:"Bitmap3"},
+		{src:"images/intro5/Bitmap9.png?1524630192628", id:"Bitmap9"},
+		{src:"sounds/intro.mp3?1524630192628", id:"intro"}
 	],
 	preloads: []
 };
