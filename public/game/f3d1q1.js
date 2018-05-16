@@ -850,18 +850,14 @@ p.nominalBounds = new cjs.Rectangle(-5,-5,10,10);
 	this.frame_0 = function() {
 		var _this = this;
 		function initClock(myDuration) {
-			var secRemaining = myDuration;
+			_this.parent.secRemaining = myDuration;
 			
 			function updateClock() {
-				var myMin = Math.floor(secRemaining/60);
-				var mySec = secRemaining%60;
+				var myMin = Math.floor(_this.parent.secRemaining/60);
+				var mySec = _this.parent.secRemaining%60;
 				var txtMin;
 				var txtSec;
-				if (myMin>=10){
-					txtMin = myMin;
-				} else {
-					txtMin = "0"+myMin;
-				}
+				txtMin = myMin;
 				if (mySec>=10){
 					txtSec = mySec;
 				} else {
@@ -869,18 +865,19 @@ p.nominalBounds = new cjs.Rectangle(-5,-5,10,10);
 				}
 				_this.txtTime.text = txtMin + ":" + txtSec;
 		
-				if (secRemaining <= 0) {
+				if (_this.parent.secRemaining <= 0) {
 					clearInterval(timeInterval);
 					$( "#dom_overlay_container" ).empty();
+					_this.parent.onTimeEnd();
 					_this.parent.mcTimesUp.play();
 				} else {
-					secRemaining--;
+					_this.parent.secRemaining--;
 				}
 		  }
 		  updateClock();
 		  timeInterval = setInterval(updateClock, 1000);
 		}
-		initClock(120);//how many seconds
+		initClock(this.parent.timeGiven);
 	}
 
 	// actions tween:
@@ -1751,7 +1748,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,289.5,510.1,262);
 	// input
 	this.txtPos = new lib.an_TextInput({'id': 'txtPos', 'value':'', 'disabled':false, 'visible':true, 'class':'ui-textinput'});
 
-	this.txtPos.setTransform(609.5,372,2.671,1.591,0,0,0,50.2,11.3);
+	this.txtPos.setTransform(627.5,301.1,2.671,1.591,0,0,0,50.2,11.3);
 
 	this.txtAns = new lib.an_TextInput({'id': 'txtAns', 'value':'', 'disabled':false, 'visible':true, 'class':'ui-textinput'});
 
@@ -1760,7 +1757,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,289.5,510.1,262);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.txtAns},{t:this.txtPos}]}).wait(5));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(247.6,353.2,496.2,198.3);
+p.nominalBounds = new cjs.Rectangle(247.6,282.3,514.2,269.3);
 
 
 (lib.actMc13 = function(mode,startPosition,loop) {
@@ -2216,7 +2213,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,238.8,282.8,312.8);
 	// input
 	this.txtPos = new lib.an_TextInput({'id': 'txtPos', 'value':'', 'disabled':false, 'visible':true, 'class':'ui-textinput'});
 
-	this.txtPos.setTransform(609.5,372,2.671,1.591,0,0,0,50.2,11.3);
+	this.txtPos.setTransform(386.2,257.6,2.671,1.591,0,0,0,50.2,11.3);
 
 	this.txtAns = new lib.an_TextInput({'id': 'txtAns', 'value':'', 'disabled':false, 'visible':true, 'class':'ui-textinput'});
 
@@ -2225,7 +2222,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,238.8,282.8,312.8);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.txtAns},{t:this.txtPos}]}).wait(5));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(247.6,353.2,496.2,198.3);
+p.nominalBounds = new cjs.Rectangle(247.6,238.8,282.8,312.8);
 
 
 (lib.actMc8 = function(mode,startPosition,loop) {
@@ -2309,7 +2306,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,353.2,496.2,198.3);
 	// input
 	this.txtPos = new lib.an_TextInput({'id': 'txtPos', 'value':'', 'disabled':false, 'visible':true, 'class':'ui-textinput'});
 
-	this.txtPos.setTransform(609.5,372,2.671,1.591,0,0,0,50.2,11.3);
+	this.txtPos.setTransform(391.2,257.6,2.671,1.591,0,0,0,50.2,11.3);
 
 	this.txtAns = new lib.an_TextInput({'id': 'txtAns', 'value':'', 'disabled':false, 'visible':true, 'class':'ui-textinput'});
 
@@ -2318,7 +2315,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,353.2,496.2,198.3);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.txtAns},{t:this.txtPos}]}).wait(5));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(247.6,353.2,496.2,198.3);
+p.nominalBounds = new cjs.Rectangle(247.6,238.8,282.8,312.8);
 
 
 (lib.actMc7 = function(mode,startPosition,loop) {
@@ -3235,6 +3232,11 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 				console.log(_this.myData);
 			}
 		}
+		this.storeCorrect = function (){
+			_this.myData.qItem[_this.currentQ-1].qResult = 1;
+			_this.cScore++;
+			goNextQ();
+		};
 		function doPlay(e){
 			_this.removeEventListener("click", doPlay);
 			goNextQ();
@@ -3535,7 +3537,7 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 		maskedShapeInstanceList[shapedInstanceItr].mask = mask;
 	}
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_19).wait(109).to({_off:false},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,x:603.3,y:324.7},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.5,regY:0.5,scaleX:0.1,scaleY:0.1,x:584.3,y:322.2},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.5,regY:0.5,scaleX:0.1,scaleY:0.1},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75},20,cjs.Ease.elasticOut).to({_off:true},17).wait(9).to({_off:false,regX:0,regY:0,scaleX:0.1,scaleY:0.1,y:343.2},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,y:322.2},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.5,regY:0.5,scaleX:0.1,scaleY:0.1},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.5,regY:0,scaleX:0.1,scaleY:0.1,x:391.5,y:215.1},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,x:391.4,y:215},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.5,regY:0,scaleX:0.1,scaleY:0.1,x:391.5,y:215.1},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,x:389.6,y:214.1},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0,regY:0,scaleX:0.1,scaleY:0.1,x:390.3,y:230.2},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,y:209.2},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.5,regY:0.5,scaleX:0.1,scaleY:0.1,x:387.3,y:207.8},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,y:207.7},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0,regY:0.5,scaleX:0.1,scaleY:0.1,x:387.2,y:211.2},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0,regY:0,scaleX:0.1,scaleY:0.1,x:652,y:252.6},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,x:651.9,y:252.5},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.5,regY:0.5,scaleX:0.1,scaleY:0.1,x:652.2,y:250.2},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75},20,cjs.Ease.elasticOut).to({_off:true},17).wait(9).to({_off:false,regX:0.5,regY:0,scaleX:0.1,scaleY:0.1,x:645.1,y:253},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,x:645,y:252.9},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0,regY:0,scaleX:0.1,scaleY:0.1,x:390.3,y:230.2},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,y:209.2},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.5,regY:0.5,scaleX:0.1,scaleY:0.1,x:642.4,y:253.8},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,x:642.3},20,cjs.Ease.elasticOut).to({_off:true},25).wait(181));
+	this.timeline.addTween(cjs.Tween.get(this.instance_19).wait(109).to({_off:false},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,x:603.3,y:324.7},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.5,regY:0.5,scaleX:0.1,scaleY:0.1,x:584.3,y:322.2},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.5,regY:0.5,scaleX:0.1,scaleY:0.1},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75},20,cjs.Ease.elasticOut).to({_off:true},17).wait(9).to({_off:false,regX:0,regY:0,scaleX:0.1,scaleY:0.1,y:343.2},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,y:322.2},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.5,regY:0.5,scaleX:0.1,scaleY:0.1},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.5,regY:0,scaleX:0.1,scaleY:0.1,x:391.5,y:215.1},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,x:391.4,y:215},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.5,regY:0,scaleX:0.1,scaleY:0.1,x:391.5,y:215.1},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,x:389.6,y:214.1},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0,regY:0,scaleX:0.1,scaleY:0.1,x:390.3,y:230.2},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,y:209.2},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.5,regY:0.5,scaleX:0.1,scaleY:0.1,x:387.3,y:207.8},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,y:207.7},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0,regY:0.5,scaleX:0.1,scaleY:0.1,x:387.2,y:211.2},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0,regY:0,scaleX:0.1,scaleY:0.1,x:652,y:252.6},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,x:651.9,y:252.5},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.5,regY:0.5,scaleX:0.1,scaleY:0.1,x:652.2,y:250.2},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75},20,cjs.Ease.elasticOut).to({_off:true},17).wait(9).to({_off:false,regX:0.5,regY:0,scaleX:0.1,scaleY:0.1,x:645.1,y:253},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,x:645,y:252.9},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.5,regY:0.5,scaleX:0.1,scaleY:0.1,x:652.1,y:251.2},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,x:652},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.5,regY:0.5,scaleX:0.1,scaleY:0.1,x:642.4,y:253.8},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,x:642.3},20,cjs.Ease.elasticOut).to({_off:true},25).wait(181));
 
 	// flash
 	this.shape = new cjs.Shape();
@@ -3658,19 +3660,19 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/f3d1q1/Bitmap14.png?1525692921605", id:"Bitmap14"},
-		{src:"images/f3d1q1/Bitmap3.png?1525692921605", id:"Bitmap3"},
-		{src:"images/f3d1q1/Bitmap8.png?1525692921605", id:"Bitmap8"},
-		{src:"images/f3d1q1/Bitmap9.png?1525692921605", id:"Bitmap9"},
-		{src:"sounds/mdroid_talk.mp3?1525692921605", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1525692921605", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1525692921605", id:"questionComplete"},
-		{src:"sounds/submitAns.mp3?1525692921605", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1525692921605", id:"suspense"},
-		{src:"sounds/timeout.mp3?1525692921605", id:"timeout"},
-		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1525692921605", id:"lib/jquery-2.2.4.min.js"},
-		{src:"components/sdk/anwidget.js?1525692921605", id:"sdk/anwidget.js"},
-		{src:"components/ui/src/textinput.js?1525692921605", id:"an.TextInput"}
+		{src:"images/f3d1q1/Bitmap14.png?1526442886754", id:"Bitmap14"},
+		{src:"images/f3d1q1/Bitmap3.png?1526442886754", id:"Bitmap3"},
+		{src:"images/f3d1q1/Bitmap8.png?1526442886754", id:"Bitmap8"},
+		{src:"images/f3d1q1/Bitmap9.png?1526442886754", id:"Bitmap9"},
+		{src:"sounds/mdroid_talk.mp3?1526442886754", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1526442886754", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1526442886754", id:"questionComplete"},
+		{src:"sounds/submitAns.mp3?1526442886754", id:"submitAns"},
+		{src:"sounds/suspense.mp3?1526442886754", id:"suspense"},
+		{src:"sounds/timeout.mp3?1526442886754", id:"timeout"},
+		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1526442886754", id:"lib/jquery-2.2.4.min.js"},
+		{src:"components/sdk/anwidget.js?1526442886754", id:"sdk/anwidget.js"},
+		{src:"components/ui/src/textinput.js?1526442886754", id:"an.TextInput"}
 	],
 	preloads: []
 };
