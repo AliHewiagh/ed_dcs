@@ -1,13 +1,5 @@
 var debugMode = true;
 var schoolLevel = 2;
-var myData = $.get("/api/stage/get/"+userId, function (data) {
-	if(data.status == 100){
-		//success api call
-    }else{
-  		//failed
-	}
-});
-console.log(myData);
 
 //----turn this on for final to disable all console.log 
 //console.log = function() {};
@@ -177,6 +169,10 @@ var filesAdded=""; //list of files already added
 var exportSub, fnStartAnimationSub;
 var compSub;
 var libSub;
+var cStage;
+var cLastScreen;
+var cLastState;
+var cTimeLeft;
 checkCookie();
 
 
@@ -227,6 +223,18 @@ function initTapir(){
 		// nothing
 	} else {
 		exportRoot.txtPlayerName.text = cUserName;
+		//get the current stage
+		var cData = $.get("/api/stage/get/"+cUserId, function (data) {
+			if(data.status == 100){
+				//success api call
+				cStage = Number(data.stage);
+				cLastScreen = data.last_screen;
+				cLastState = data.last_state;
+				cTimeLeft = data.time_left;
+			}else{
+				//failed
+			}
+		});
 	}
 	
 	if (debugMode){
@@ -332,4 +340,21 @@ function doExit(){
 }
 function randRange(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+function saveStage(_stageNum){
+	var data = {
+		"userId": cUserId,
+		"stage": _stageNum,
+		"last_screen": "",
+		"last_state": "",
+    	"time_left": 50
+	};
+	var mySave = $.post("/api/stage/update/", function (data) {
+		if(data.status == 100){
+			//success api call
+			console.log("successss save");
+		}else{
+			//failed
+		}
+	});
 }
