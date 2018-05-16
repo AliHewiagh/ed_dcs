@@ -1,6 +1,9 @@
 var debugMode = true;
 var schoolLevel = 2;
 
+//----turn this on for final to disable all console.log 
+//console.log = function() {};
+
 var d2q2List = [["y6d2q2_1", "97C298EB0FE8B14591D54AA479C6ADCF"],
 				["y6d2q2_3", "97C298EB0FE8B14591D54AA479C6ADCF"],
 				["y6d2q2_5", "97C298EB0FE8B14591D54AA479C6ADCF"],
@@ -117,9 +120,9 @@ if (schoolLevel==1){//primary
 	scrList[4] = {constructorName: "f3d2q1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[8] = {constructorName: "f3d1q1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[12] = {constructorName: "f3d1q2", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[16] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
+	scrList[16] = {constructorName: "f3d3q1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[20] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
-	scrList[24] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
+	scrList[24] = {constructorName: "f3d2q2", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[28] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
 	scrList[32] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
 	scrList[36] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
