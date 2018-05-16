@@ -1,5 +1,13 @@
 var debugMode = true;
 var schoolLevel = 2;
+var myData = $.get("/api/stage/get/"+userId, function (data) {
+	if(data.status == 100){
+		//success api call
+    }else{
+  		//failed
+	}
+});
+console.log(myData);
 
 //----turn this on for final to disable all console.log 
 //console.log = function() {};
