@@ -1049,18 +1049,14 @@ p.nominalBounds = new cjs.Rectangle(-69.2,-22,138.5,44.1);
 	this.frame_0 = function() {
 		var _this = this;
 		function initClock(myDuration) {
-			var secRemaining = myDuration;
+			_this.parent.secRemaining = myDuration;
 			
 			function updateClock() {
-				var myMin = Math.floor(secRemaining/60);
-				var mySec = secRemaining%60;
+				var myMin = Math.floor(_this.parent.secRemaining/60);
+				var mySec = _this.parent.secRemaining%60;
 				var txtMin;
 				var txtSec;
-				if (myMin>=10){
-					txtMin = myMin;
-				} else {
-					txtMin = "0"+myMin;
-				}
+				txtMin = myMin;
 				if (mySec>=10){
 					txtSec = mySec;
 				} else {
@@ -1068,25 +1064,26 @@ p.nominalBounds = new cjs.Rectangle(-69.2,-22,138.5,44.1);
 				}
 				_this.txtTime.text = txtMin + ":" + txtSec;
 		
-				if (secRemaining <= 0) {
+				if (_this.parent.secRemaining <= 0) {
 					clearInterval(timeInterval);
-					$( "#dom_overlay_container" ).empty();
+					$("#dom_overlay_container").empty();
+					_this.parent.onTimeEnd();
 					_this.parent.mcTimesUp.play();
 				} else {
-					secRemaining--;
+					_this.parent.secRemaining--;
 				}
 		  }
 		  updateClock();
 		  timeInterval = setInterval(updateClock, 1000);
 		}
-		initClock(120);//how many seconds
+		initClock(this.parent.timeGiven);
 	}
 
 	// actions tween:
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 
 	// t
-	this.txtTime = new cjs.Text("2:00", "60px 'Quantico'", "#006666");
+	this.txtTime = new cjs.Text("4:00", "60px 'Quantico'", "#006666");
 	this.txtTime.name = "txtTime";
 	this.txtTime.textAlign = "center";
 	this.txtTime.lineHeight = 88;
@@ -1968,6 +1965,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 		var cAns = randRange(50, 462);//avoid extremes
 		var strAnsHistoryBm = "";
 		var strAnsHistoryEn = "";
+		var historyLength = 0;
 		console.log(cAns);
 		
 		var _this = this;
@@ -2032,10 +2030,17 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 			_this.btnSubmit.mouseEnabled = false;
 			_this.btnSubmit.alpha = .5;
 			if (Number(txtAns.value)==cAns){
-				strAnsHistoryBm += "Tahniah! Anda berjaya.";
-				strAnsHistoryEn += "Congratulations! You succeeded.";
+				//strAnsHistoryBm += "Tahniah! Anda berjaya.";
+				//strAnsHistoryEn += "Congratulations! You succeeded.";
 				_this.parent.storeCorrect();
 			} else {
+				historyLength++;
+				if (historyLength>11){
+					var toExtractBm = strAnsHistoryBm.indexOf("\n")+1;
+					strAnsHistoryBm = strAnsHistoryBm.substring(toExtractBm);
+					var toExtractEn = strAnsHistoryEn.indexOf("\n")+1;
+					strAnsHistoryEn = strAnsHistoryEn.substring(toExtractEn);
+				}
 				if (Number(txtAns.value)>cAns){
 					strAnsHistoryBm += txtAns.value + " adalah lebih besar daripada kod rahsia.\n";
 					strAnsHistoryEn += txtAns.value + " is greater than the secret code.\n";
@@ -2195,7 +2200,7 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 		if (typeof cUserId === "undefined") {
 			cUserId = "";
 		}
-		this.timeGiven = 120;//time in seconds
+		this.timeGiven = 240;//time in seconds
 		this.secRemaining = this.timeGiven;
 		this.timeTaken = 0;
 		this.cScore = 0;
@@ -2237,15 +2242,7 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 				} else {
 					_this.myData.score = 1;
 				}
-				if (cUserId == ""){//not online
-					_this.gotoAndPlay("finalFb");
-				} else {
-					/*
-					$.post('/game/save', _this.myData, function(respondData){
-						console.log(respondData);
-					});*/
-					_this.gotoAndPlay("finalFb");
-				}
+				saveData();
 				console.log(_this.myData);
 			}
 		}
@@ -2254,6 +2251,18 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 			goNextQ();
 		}
 		this.addEventListener("click", doPlay);
+		_this.onTimeEnd = function (){
+			_this.myData.time = _this.timeGiven;
+			saveData();
+		};
+		function saveData(){
+			if (cUserId == ""){//not online
+				_this.gotoAndPlay("finalFb");
+			} else {
+				//save data here
+				_this.gotoAndPlay("finalFb");
+			}
+		}
 		this.storeCorrect = function (){
 			_this.myData.qItem[_this.currentQ-1].qResult = 1;
 			_this.cScore++;
@@ -2499,20 +2508,20 @@ lib.properties = {
 	opacity: 1.00,
 	webfonts: {},
 	manifest: [
-		{src:"images/f3d2q1/Bitmap3.png?1526199674406", id:"Bitmap3"},
-		{src:"images/f3d2q1/Bitmap8.png?1526199674406", id:"Bitmap8"},
-		{src:"images/f3d2q1/Bitmap9.png?1526199674406", id:"Bitmap9"},
-		{src:"images/f3d2q1/Safe201.png?1526199674406", id:"Safe201"},
-		{src:"images/f3d2q1/safe3.png?1526199674406", id:"safe3"},
-		{src:"sounds/mdroid_talk.mp3?1526199674406", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1526199674406", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1526199674406", id:"questionComplete"},
-		{src:"sounds/submitAns.mp3?1526199674406", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1526199674406", id:"suspense"},
-		{src:"sounds/timeout.mp3?1526199674406", id:"timeout"},
-		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1526199674406", id:"lib/jquery-2.2.4.min.js"},
-		{src:"components/sdk/anwidget.js?1526199674406", id:"sdk/anwidget.js"},
-		{src:"components/ui/src/textinput.js?1526199674406", id:"an.TextInput"}
+		{src:"images/f3d2q1/Bitmap3.png?1526468315050", id:"Bitmap3"},
+		{src:"images/f3d2q1/Bitmap8.png?1526468315050", id:"Bitmap8"},
+		{src:"images/f3d2q1/Bitmap9.png?1526468315050", id:"Bitmap9"},
+		{src:"images/f3d2q1/Safe201.png?1526468315050", id:"Safe201"},
+		{src:"images/f3d2q1/safe3.png?1526468315050", id:"safe3"},
+		{src:"sounds/mdroid_talk.mp3?1526468315050", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1526468315050", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1526468315050", id:"questionComplete"},
+		{src:"sounds/submitAns.mp3?1526468315050", id:"submitAns"},
+		{src:"sounds/suspense.mp3?1526468315050", id:"suspense"},
+		{src:"sounds/timeout.mp3?1526468315050", id:"timeout"},
+		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1526468315050", id:"lib/jquery-2.2.4.min.js"},
+		{src:"components/sdk/anwidget.js?1526468315050", id:"sdk/anwidget.js"},
+		{src:"components/ui/src/textinput.js?1526468315050", id:"an.TextInput"}
 	],
 	preloads: []
 };

@@ -1,13 +1,5 @@
 var debugMode = true;
 var schoolLevel = 2;
-var myData = $.get("/api/stage/get/"+userId, function (data) {
-	if(data.status == 100){
-		//success api call
-    }else{
-  		//failed
-	}
-});
-console.log(myData);
 
 //----turn this on for final to disable all console.log 
 //console.log = function() {};
@@ -129,10 +121,10 @@ if (schoolLevel==1){//primary
 	scrList[8] = {constructorName: "f3d1q1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[12] = {constructorName: "f3d1q2", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[16] = {constructorName: "f3d3q1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[20] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
+	scrList[20] = {constructorName: "f3d1q3", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[24] = {constructorName: "f3d2q2", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[28] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
-	scrList[32] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
+	scrList[32] = {constructorName: "f3d2q3", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[36] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
 	scrList[40] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
 	scrList[44] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
@@ -141,8 +133,8 @@ if (schoolLevel==1){//primary
 	scrList[56] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
 	scrList[60] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
 	scrList[64] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
-	scrList[68] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
-	scrList[72] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
+	scrList[68] = {constructorName: "y6d3q1", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
+	scrList[72] = {constructorName: "f3d2q3", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[76] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
 	scrList[80] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
 } else {
@@ -177,6 +169,10 @@ var filesAdded=""; //list of files already added
 var exportSub, fnStartAnimationSub;
 var compSub;
 var libSub;
+var cStage;
+var cLastScreen;
+var cLastState;
+var cTimeLeft;
 checkCookie();
 
 
@@ -227,6 +223,18 @@ function initTapir(){
 		// nothing
 	} else {
 		exportRoot.txtPlayerName.text = cUserName;
+		//get the current stage
+		var cData = $.get("/api/stage/get/"+cUserId, function (data) {
+			if(data.status == 100){
+				//success api call
+				cStage = Number(data.stage);
+				cLastScreen = data.last_screen;
+				cLastState = data.last_state;
+				cTimeLeft = data.time_left;
+			}else{
+				//failed
+			}
+		});
 	}
 	
 	if (debugMode){
@@ -332,4 +340,21 @@ function doExit(){
 }
 function randRange(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+function saveStage(_stageNum){
+	var data = {
+		"userId": cUserId,
+		"stage": _stageNum,
+		"last_screen": "",
+		"last_state": "",
+    	"time_left": 50
+	};
+	var mySave = $.post("/api/stage/update/", function (data) {
+		if(data.status == "100"){
+			//success api call
+			console.log("successss save");
+		}else{
+			//failed
+		}
+	});
 }

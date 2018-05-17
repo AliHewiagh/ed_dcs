@@ -867,7 +867,7 @@ p.nominalBounds = new cjs.Rectangle(-5,-5,10,10);
 		
 				if (_this.parent.secRemaining <= 0) {
 					clearInterval(timeInterval);
-					$( "#dom_overlay_container" ).empty();
+					$("#dom_overlay_container").empty();
 					_this.parent.onTimeEnd();
 					_this.parent.mcTimesUp.play();
 				} else {
@@ -884,7 +884,7 @@ p.nominalBounds = new cjs.Rectangle(-5,-5,10,10);
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 
 	// t
-	this.txtTime = new cjs.Text("2:00", "60px 'Quantico'", "#006666");
+	this.txtTime = new cjs.Text("5:00", "60px 'Quantico'", "#006666");
 	this.txtTime.name = "txtTime";
 	this.txtTime.textAlign = "center";
 	this.txtTime.lineHeight = 88;
@@ -3042,7 +3042,7 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 		if (typeof cUserId === "undefined") {
 			cUserId = "";
 		}
-		this.timeGiven = 120;//time in seconds
+		this.timeGiven = 300;//time in seconds
 		this.secRemaining = this.timeGiven;
 		this.timeTaken = 0;
 		this.cScore = 0;
@@ -3220,23 +3220,22 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 				//console.log(_this.myData.time);
 				//scale the score
 				_this.myData.score = (Math.round(_this.cScore/_this.myData.qItem.length*40))/10 + 1;
-				if (cUserId == ""){//not online
-					_this.gotoAndPlay("finalFb");
-				} else {
-					/*
-					$.post('/game/save', _this.myData, function(respondData){
-						console.log(respondData);
-					});*/
-					_this.gotoAndPlay("finalFb");
-				}
+				saveData();
 				console.log(_this.myData);
 			}
 		}
-		this.storeCorrect = function (){
-			_this.myData.qItem[_this.currentQ-1].qResult = 1;
-			_this.cScore++;
-			goNextQ();
+		_this.onTimeEnd = function (){
+			_this.myData.time = _this.timeGiven;
+			saveData();
 		};
+		function saveData(){
+			if (cUserId == ""){//not online
+				_this.gotoAndPlay("finalFb");
+			} else {
+				//call save data here
+				_this.gotoAndPlay("finalFb");
+			}
+		}
 		function doPlay(e){
 			_this.removeEventListener("click", doPlay);
 			goNextQ();
@@ -3660,19 +3659,19 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/f3d1q1/Bitmap14.png?1526442886754", id:"Bitmap14"},
-		{src:"images/f3d1q1/Bitmap3.png?1526442886754", id:"Bitmap3"},
-		{src:"images/f3d1q1/Bitmap8.png?1526442886754", id:"Bitmap8"},
-		{src:"images/f3d1q1/Bitmap9.png?1526442886754", id:"Bitmap9"},
-		{src:"sounds/mdroid_talk.mp3?1526442886754", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1526442886754", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1526442886754", id:"questionComplete"},
-		{src:"sounds/submitAns.mp3?1526442886754", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1526442886754", id:"suspense"},
-		{src:"sounds/timeout.mp3?1526442886754", id:"timeout"},
-		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1526442886754", id:"lib/jquery-2.2.4.min.js"},
-		{src:"components/sdk/anwidget.js?1526442886754", id:"sdk/anwidget.js"},
-		{src:"components/ui/src/textinput.js?1526442886754", id:"an.TextInput"}
+		{src:"images/f3d1q1/Bitmap14.png?1526468676403", id:"Bitmap14"},
+		{src:"images/f3d1q1/Bitmap3.png?1526468676403", id:"Bitmap3"},
+		{src:"images/f3d1q1/Bitmap8.png?1526468676403", id:"Bitmap8"},
+		{src:"images/f3d1q1/Bitmap9.png?1526468676403", id:"Bitmap9"},
+		{src:"sounds/mdroid_talk.mp3?1526468676403", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1526468676403", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1526468676403", id:"questionComplete"},
+		{src:"sounds/submitAns.mp3?1526468676403", id:"submitAns"},
+		{src:"sounds/suspense.mp3?1526468676403", id:"suspense"},
+		{src:"sounds/timeout.mp3?1526468676403", id:"timeout"},
+		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1526468676403", id:"lib/jquery-2.2.4.min.js"},
+		{src:"components/sdk/anwidget.js?1526468676403", id:"sdk/anwidget.js"},
+		{src:"components/ui/src/textinput.js?1526468676403", id:"an.TextInput"}
 	],
 	preloads: []
 };
