@@ -1091,6 +1091,10 @@ p.nominalBounds = new cjs.Rectangle(-52,-15.7,104,31.5);
 	this.instance_7.parent = this;
 	this.instance_7.setTransform(-78,-102);
 
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("#FFBC00").s().p("AjtEQIAAofIHaAAIAAIfg");
+	this.shape.setTransform(1.2,19.2);
+
 	this.instance_8 = new lib.Bitmap14();
 	this.instance_8.parent = this;
 	this.instance_8.setTransform(-78,-102);
@@ -1107,7 +1111,7 @@ p.nominalBounds = new cjs.Rectangle(-52,-15.7,104,31.5);
 	this.instance_11.parent = this;
 	this.instance_11.setTransform(-78,-102);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance}]}).to({state:[{t:this.instance_1}]},1).to({state:[{t:this.instance_2}]},1).to({state:[{t:this.instance_3}]},1).to({state:[{t:this.instance_4}]},1).to({state:[{t:this.instance_5}]},1).to({state:[{t:this.instance_6}]},1).to({state:[{t:this.instance_7}]},1).to({state:[{t:this.instance_8}]},1).to({state:[{t:this.instance_9}]},1).to({state:[{t:this.instance_10}]},1).to({state:[{t:this.instance_11}]},1).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance}]}).to({state:[{t:this.instance_1}]},1).to({state:[{t:this.instance_2}]},1).to({state:[{t:this.instance_3}]},1).to({state:[{t:this.instance_4}]},1).to({state:[{t:this.instance_5}]},1).to({state:[{t:this.instance_6}]},1).to({state:[{t:this.instance_7}]},1).to({state:[{t:this.instance_8},{t:this.shape}]},1).to({state:[{t:this.instance_9}]},1).to({state:[{t:this.instance_10}]},1).to({state:[{t:this.instance_11}]},1).wait(1));
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(-78,-102,155,204);
@@ -5775,19 +5779,12 @@ p.nominalBounds = new cjs.Rectangle(-97.4,-49,181.6,133.7);
 (lib.Symbol22copy8 = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
-	// Layer_2
-	this.instance = new lib.btnD();
+	// Layer_1
+	this.instance = new lib.Symbol15("single",8);
 	this.instance.parent = this;
-	new cjs.ButtonHelper(this.instance, 0, 1, 2, false, new lib.btnD(), 3);
+	this.instance.setTransform(0.5,0);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
-
-	// Layer_1
-	this.instance_1 = new lib.Symbol15("single",8);
-	this.instance_1.parent = this;
-	this.instance_1.setTransform(0.5,0);
-
-	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(1));
 
 }).prototype = getMCSymbolPrototype(lib.Symbol22copy8, new cjs.Rectangle(-77.5,-102,155,204), null);
 
@@ -8025,7 +8022,7 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 		if (typeof debugMode === "undefined") {
 			debugMode = false;
 		}
-		debugMode = false;
+		debugMode = true;
 		if (debugMode) {
 			//no need shuffle, show all
 			this.myData.qItem.push(qItem1[0]);
@@ -8579,28 +8576,28 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/y6d3q1/Bitmap11.png?1524922894099", id:"Bitmap11"},
-		{src:"images/y6d3q1/Bitmap12.png?1524922894099", id:"Bitmap12"},
-		{src:"images/y6d3q1/Bitmap13.png?1524922894099", id:"Bitmap13"},
-		{src:"images/y6d3q1/Bitmap14.png?1524922894099", id:"Bitmap14"},
-		{src:"images/y6d3q1/Bitmap15.png?1524922894099", id:"Bitmap15"},
-		{src:"images/y6d3q1/Bitmap16.png?1524922894099", id:"Bitmap16"},
-		{src:"images/y6d3q1/Bitmap17.png?1524922894099", id:"Bitmap17"},
-		{src:"images/y6d3q1/Bitmap19.png?1524922894099", id:"Bitmap19"},
-		{src:"images/y6d3q1/Bitmap21.png?1524922894099", id:"Bitmap21"},
-		{src:"images/y6d3q1/Bitmap22.png?1524922894099", id:"Bitmap22"},
-		{src:"images/y6d3q1/Bitmap3.png?1524922894099", id:"Bitmap3"},
-		{src:"images/y6d3q1/Bitmap4.png?1524922894099", id:"Bitmap4"},
-		{src:"images/y6d3q1/Bitmap6.png?1524922894099", id:"Bitmap6"},
-		{src:"images/y6d3q1/Bitmap7.png?1524922894099", id:"Bitmap7"},
-		{src:"images/y6d3q1/Bitmap8.png?1524922894099", id:"Bitmap8"},
-		{src:"images/y6d3q1/Bitmap9.png?1524922894099", id:"Bitmap9"},
-		{src:"sounds/mdroid_talk.mp3?1524922894099", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1524922894099", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1524922894099", id:"questionComplete"},
-		{src:"sounds/submitAns.mp3?1524922894099", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1524922894099", id:"suspense"},
-		{src:"sounds/timeout.mp3?1524922894099", id:"timeout"}
+		{src:"images/y6d3q1/Bitmap11.png?1526485421292", id:"Bitmap11"},
+		{src:"images/y6d3q1/Bitmap12.png?1526485421292", id:"Bitmap12"},
+		{src:"images/y6d3q1/Bitmap13.png?1526485421292", id:"Bitmap13"},
+		{src:"images/y6d3q1/Bitmap14.png?1526485421292", id:"Bitmap14"},
+		{src:"images/y6d3q1/Bitmap15.png?1526485421292", id:"Bitmap15"},
+		{src:"images/y6d3q1/Bitmap16.png?1526485421292", id:"Bitmap16"},
+		{src:"images/y6d3q1/Bitmap17.png?1526485421292", id:"Bitmap17"},
+		{src:"images/y6d3q1/Bitmap19.png?1526485421292", id:"Bitmap19"},
+		{src:"images/y6d3q1/Bitmap21.png?1526485421292", id:"Bitmap21"},
+		{src:"images/y6d3q1/Bitmap22.png?1526485421292", id:"Bitmap22"},
+		{src:"images/y6d3q1/Bitmap3.png?1526485421292", id:"Bitmap3"},
+		{src:"images/y6d3q1/Bitmap4.png?1526485421292", id:"Bitmap4"},
+		{src:"images/y6d3q1/Bitmap6.png?1526485421292", id:"Bitmap6"},
+		{src:"images/y6d3q1/Bitmap7.png?1526485421292", id:"Bitmap7"},
+		{src:"images/y6d3q1/Bitmap8.png?1526485421292", id:"Bitmap8"},
+		{src:"images/y6d3q1/Bitmap9.png?1526485421292", id:"Bitmap9"},
+		{src:"sounds/mdroid_talk.mp3?1526485421292", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1526485421292", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1526485421292", id:"questionComplete"},
+		{src:"sounds/submitAns.mp3?1526485421292", id:"submitAns"},
+		{src:"sounds/suspense.mp3?1526485421292", id:"suspense"},
+		{src:"sounds/timeout.mp3?1526485421292", id:"timeout"}
 	],
 	preloads: []
 };
