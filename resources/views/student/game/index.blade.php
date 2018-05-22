@@ -41,11 +41,24 @@
 		}
     </style>
     <link rel="stylesheet" type="text/css" href="{{asset('game/style.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset('game/codemirror/codemirror.css')}}" />
     <link href="https://fonts.googleapis.com/css?family=Quantico" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
 	
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="http://malsup.github.com/jquery.form.js"></script>
     <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+	<script src="{{asset('game/blockly/blockly_compressed.js')}}"></script>
+	<script src="{{asset('game/blockly/blocks_compressed.js')}}"></script>
+    <script src="{{asset('game/blockly/javascript_compressed.js')}}"></script>
+    <script src="{{asset('game/blockly/msg/js/en.js')}}"></script>
+	<script src="{{asset('game/blockly/blocks/custom.js')}}"></script>
+    <script src="{{asset('game/blockly/blockly_function.js')}}"></script>   
+	<script src="{{asset('game/codemirror/codemirror.js')}}"></script>
+	<script src="{{asset('game/codemirror/mode/xml/xml.js')}}"></script>
+	<script src="{{asset('game/codemirror/mode/javascript/javascript.js')}}"></script>
+	<script src="{{asset('game/codemirror/addon/selection/active-line.js')}}"></script>
+    <script src="{{asset('game/codemirror/addon/display/autorefresh.js')}}"></script>
     <script src="{{asset('game/start.js')}}"></script>
     <script src="{{asset('game/gameControl.js')}}"></script>
     <script>
