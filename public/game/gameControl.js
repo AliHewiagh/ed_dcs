@@ -136,7 +136,7 @@ if (schoolLevel==1){//primary
 	scrList[68] = {constructorName: "f3d2q6", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[72] = {constructorName: "f3d1q9", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[76] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
-	scrList[80] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
+	scrList[80] = {constructorName: "f3d1q10", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 } else {
 	//f5
 	scrList[4] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
