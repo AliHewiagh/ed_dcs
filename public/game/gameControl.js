@@ -1,6 +1,5 @@
 var debugMode = true;
 var schoolLevel = 2;
-
 //----turn this on for final to disable all console.log 
 //console.log = function() {};
 
@@ -95,6 +94,7 @@ var scrList = [{constructorName: "splash", compId: "B80CE73EAFE3CF40BDB98EF8906F
 				{constructorName: "outro20", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 1},
 				{constructorName: "end", compId: "134DC6FF3421C64FBDE34F1D4B89988D", preloader: 1}
 				];
+function doOnce(){
 if (schoolLevel==1){//primary
 	scrList[4] = {constructorName: "y6d1q1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[8] = {constructorName: "y6d3q1", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
@@ -139,17 +139,17 @@ if (schoolLevel==1){//primary
 	scrList[80] = {constructorName: "f3d1q10", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 } else {
 	//f5
-	scrList[4] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
-	scrList[8] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
-	scrList[12] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
-	scrList[16] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
-	scrList[20] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
+	scrList[4] = {constructorName: "f5d1q1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[8] = {constructorName: "f3d1q5", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[12] = {constructorName: "f5d2q1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[16] = {constructorName: "f5d3q1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[20] = {constructorName: "f3d2q1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[24] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
 	scrList[28] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
 	scrList[32] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
-	scrList[36] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
-	scrList[40] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
-	scrList[44] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
+	scrList[36] = {constructorName: "f3d1q1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[40] = {constructorName: "f3d3q3", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[44] = {constructorName: "f3d2q3", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[48] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
 	scrList[52] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
 	scrList[56] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
@@ -160,8 +160,9 @@ if (schoolLevel==1){//primary
 	scrList[76] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
 	scrList[80] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
 }
+}
 if (currentProgress==undefined){
-	var currentProgress = 1;
+	var currentProgress = 0;
 }
 console.log(currentProgress);
 var myLanguage; //1 for BM, 2 for English
@@ -173,8 +174,8 @@ var cStage;
 var cLastScreen;
 var cLastState;
 var cTimeLeft;
+var didOnce = false;
 checkCookie();
-
 
 function setLevel(cLevel){
 	exportRoot.mcLevel.gotoAndStop(cLevel);
@@ -203,6 +204,34 @@ function initTapir(){
 	createjs.Sound.stop();
 	exportRoot.loaderMc.removeAllEventListeners();
 	exportRoot.loaderMc.removeAllChildren();
+	if (!didOnce){
+		if (typeof cUserName === 'undefined') {
+			// nothing
+		} else {
+			exportRoot.txtPlayerName.text = cUserName;
+			//get the current stage
+			var cData = $.get("/api/stage/get/"+cUserId, function (data) {
+			if(data.status == 100){
+				//success api call
+				cStage = Number(data.stage);
+				cLastScreen = data.last_screen;
+				cLastState = data.last_state;
+				cTimeLeft = data.time_left;
+			}else{
+				//failed
+			}
+			});
+		}
+		//hard-code temporarily
+		if (cUserName.indexOf("Hitam")!=-1){
+			schoolLevel=3;
+		}
+		if (debugMode){
+			$("#stageList").css("display","block");
+		}
+		doOnce();
+		didOnce = true;
+	}
 	console.log(scrList[currentProgress-1].constructorName + ".js");
 	var fileUrl = scrList[currentProgress-1].constructorName + ".js";
 	loadScript(fileUrl, function(){
@@ -218,28 +247,7 @@ function initTapir(){
 		loader.addEventListener("complete", function(evt){handleCompleteSub(evt,compSub)});
 		libSub=compSub.getLibrary();
 		loader.loadManifest(libSub.properties.manifest);
-	});
-	if (typeof cUserName === 'undefined') {
-		// nothing
-	} else {
-		exportRoot.txtPlayerName.text = cUserName;
-		//get the current stage
-		var cData = $.get("/api/stage/get/"+cUserId, function (data) {
-			if(data.status == 100){
-				//success api call
-				cStage = Number(data.stage);
-				cLastScreen = data.last_screen;
-				cLastState = data.last_state;
-				cTimeLeft = data.time_left;
-			}else{
-				//failed
-			}
-		});
-	}
-	
-	if (debugMode){
-		$("#stageList").css("display","block");
-	}
+	});	
 }
 function directNavi(_currentLevel){
 	currentProgress = _currentLevel;

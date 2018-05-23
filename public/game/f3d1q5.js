@@ -39,6 +39,12 @@ p.nominalBounds = new cjs.Rectangle(0,0,221,221);
 p.nominalBounds = new cjs.Rectangle(0,0,177,236);
 
 
+(lib.Bitmap8 = function() {
+	this.initialize(img.Bitmap8);
+}).prototype = p = new cjs.Bitmap();
+p.nominalBounds = new cjs.Rectangle(0,0,97,97);
+
+
 (lib.Bitmap9 = function() {
 	this.initialize(img.Bitmap9);
 }).prototype = p = new cjs.Bitmap();
@@ -534,7 +540,7 @@ p._updateVisibility = _updateVisibility;
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 
 	// Layer_1
-	this.myTxt = new cjs.Text("Your friend has sent you an image \nof via email. Let’s download the \nimage to view it.", "italic bold 16px 'Quantico'", "#0EE0E0");
+	this.myTxt = new cjs.Text("Your friend has sent you an image\nvia email. Let’s download the \nimage to view it.", "italic bold 16px 'Quantico'", "#0EE0E0");
 	this.myTxt.name = "myTxt";
 	this.myTxt.lineHeight = 25;
 	this.myTxt.lineWidth = 288;
@@ -1722,7 +1728,7 @@ p.nominalBounds = new cjs.Rectangle(-146.7,-24.9,293.4,49.8);
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 
 	// t
-	this.txtTime = new cjs.Text("3:00", "60px 'Quantico'", "#006666");
+	this.txtTime = new cjs.Text("4:00", "60px 'Quantico'", "#006666");
 	this.txtTime.name = "txtTime";
 	this.txtTime.textAlign = "center";
 	this.txtTime.lineHeight = 88;
@@ -1899,12 +1905,15 @@ p.nominalBounds = new cjs.Rectangle(-486.1,-360.9,972,722);
 	this.initialize(mode,startPosition,loop,{});
 
 	// Layer_2
-	this.instance = new lib.Bitmap19();
+	this.instance = new lib.Bitmap8();
 	this.instance.parent = this;
-	this.instance.setTransform(-48.6,-48.6);
-	this.instance._off = true;
+	this.instance.setTransform(-49,-49);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1).to({_off:false},0).wait(1));
+	this.instance_1 = new lib.Bitmap19();
+	this.instance_1.parent = this;
+	this.instance_1.setTransform(-48.6,-48.6);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance}]}).to({state:[{t:this.instance_1}]},1).wait(1));
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(-49,-49,97,97);
@@ -2495,6 +2504,31 @@ p.nominalBounds = new cjs.Rectangle(-79.1,-21.4,161.7,48.6);
 p.nominalBounds = new cjs.Rectangle(-79.1,-21.4,161.7,48.6);
 
 
+(lib.avatarMc = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// timeline functions:
+	this.frame_0 = function() {
+		this.stop();
+		if (schoolLevel==3){
+			this.gotoAndStop(1);
+		}
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(2));
+
+	// Layer_1
+	this.instance = new lib.avatarBotsX("single",1);
+	this.instance.parent = this;
+	this.instance.setTransform(0.2,0.2);
+
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1).to({startPosition:0},0).wait(1));
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(-48.5,-48.5,97,97);
+
+
 (lib.timesUpAnim = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
@@ -2752,23 +2786,23 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 	// Layer_1
 	this.instance = new lib.mcTxtInstrcopy();
 	this.instance.parent = this;
-	this.instance.setTransform(568.3,314.6);
+	this.instance.setTransform(568.3,294.6);
 
 	this.txtAns = new lib.an_TextInput({'id': 'txtAns', 'value':'', 'disabled':false, 'visible':true, 'class':'ui-textinput'});
 
-	this.txtAns.setTransform(553.9,379.9,2.8,1.591,0,0,0,50.1,11.3);
+	this.txtAns.setTransform(553.9,383,2.8,4.015,0,0,0,50.1,11.5);
 
 	this.btnSubmit = new lib.mcBtnCont();
 	this.btnSubmit.name = "btnSubmit";
 	this.btnSubmit.parent = this;
-	this.btnSubmit.setTransform(481,431.5,0.85,0.85,0,0,0,0.2,0.6);
+	this.btnSubmit.setTransform(481,461.5,0.85,0.85,0,0,0,0.2,0.6);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.btnSubmit},{t:this.txtAns},{t:this.instance}]}).wait(5));
 
 	// Layer_3
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f("#FFFFFF").s().p("A2pDhIAAnBMAtTAAAIAAHBg");
-	this.shape.setTransform(554,379.5);
+	this.shape.graphics.f("#FFFFFF").s().p("A2pHvIAAvdMAtTAAAIAAPdg");
+	this.shape.setTransform(554,380.7);
 
 	this.timeline.addTween(cjs.Tween.get(this.shape).wait(5));
 
@@ -2780,7 +2814,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(5));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(148,233.2,576.7,236);
+p.nominalBounds = new cjs.Rectangle(148,233.2,576.7,250.9);
 
 
 (lib.actMC02c = function(mode,startPosition,loop) {
@@ -2940,23 +2974,23 @@ p.nominalBounds = new cjs.Rectangle(145.5,241,561.5,221);
 	// Layer_1
 	this.instance = new lib.mcTxtInstrcopy();
 	this.instance.parent = this;
-	this.instance.setTransform(568.3,314.6);
+	this.instance.setTransform(568.3,294.6);
 
 	this.txtAns = new lib.an_TextInput({'id': 'txtAns', 'value':'', 'disabled':false, 'visible':true, 'class':'ui-textinput'});
 
-	this.txtAns.setTransform(553.9,379.9,2.8,1.591,0,0,0,50.1,11.3);
+	this.txtAns.setTransform(553.9,383,2.8,4.015,0,0,0,50.1,11.5);
 
 	this.btnSubmit = new lib.mcBtnCont();
 	this.btnSubmit.name = "btnSubmit";
 	this.btnSubmit.parent = this;
-	this.btnSubmit.setTransform(481,431.5,0.85,0.85,0,0,0,0.2,0.6);
+	this.btnSubmit.setTransform(481,461.5,0.85,0.85,0,0,0,0.2,0.6);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.btnSubmit},{t:this.txtAns},{t:this.instance}]}).wait(5));
 
 	// Layer_3
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f("#FFFFFF").s().p("A2pDhIAAnBMAtTAAAIAAHBg");
-	this.shape.setTransform(554,379.5);
+	this.shape.graphics.f("#FFFFFF").s().p("A2pHvIAAvdMAtTAAAIAAPdg");
+	this.shape.setTransform(554,380.7);
 
 	this.timeline.addTween(cjs.Tween.get(this.shape).wait(5));
 
@@ -2968,7 +3002,7 @@ p.nominalBounds = new cjs.Rectangle(145.5,241,561.5,221);
 	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(5));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(148,233.2,576.7,236);
+p.nominalBounds = new cjs.Rectangle(148,233.2,576.7,250.9);
 
 
 (lib.actMC02b = function(mode,startPosition,loop) {
@@ -3128,23 +3162,23 @@ p.nominalBounds = new cjs.Rectangle(145.5,241,561.5,221);
 	// Layer_1
 	this.instance = new lib.mcTxtInstrcopy();
 	this.instance.parent = this;
-	this.instance.setTransform(568.3,314.6);
+	this.instance.setTransform(568.3,294.6);
 
 	this.txtAns = new lib.an_TextInput({'id': 'txtAns', 'value':'', 'disabled':false, 'visible':true, 'class':'ui-textinput'});
 
-	this.txtAns.setTransform(553.9,379.9,2.8,1.591,0,0,0,50.1,11.3);
+	this.txtAns.setTransform(553.9,383,2.8,4.015,0,0,0,50.1,11.5);
 
 	this.btnSubmit = new lib.mcBtnCont();
 	this.btnSubmit.name = "btnSubmit";
 	this.btnSubmit.parent = this;
-	this.btnSubmit.setTransform(481,431.5,0.85,0.85,0,0,0,0.2,0.6);
+	this.btnSubmit.setTransform(481,461.5,0.85,0.85,0,0,0,0.2,0.6);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.btnSubmit},{t:this.txtAns},{t:this.instance}]}).wait(5));
 
 	// Layer_3
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f("#FFFFFF").s().p("A2pDhIAAnBMAtTAAAIAAHBg");
-	this.shape.setTransform(554,379.5);
+	this.shape.graphics.f("#FFFFFF").s().p("A2pHvIAAvdMAtTAAAIAAPdg");
+	this.shape.setTransform(554,380.7);
 
 	this.timeline.addTween(cjs.Tween.get(this.shape).wait(5));
 
@@ -3156,7 +3190,7 @@ p.nominalBounds = new cjs.Rectangle(145.5,241,561.5,221);
 	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(5));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(148,233.2,576.7,236);
+p.nominalBounds = new cjs.Rectangle(148,233.2,576.7,250.9);
 
 
 (lib.actMC02 = function(mode,startPosition,loop) {
@@ -3440,8 +3474,8 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 		if (typeof cUserId === "undefined") {
 			cUserId = "";
 		}
-		//var maxQ = 2;
-		this.timeGiven = 180;//time in seconds
+		var maxQ = 2;
+		this.timeGiven = 240;//time in seconds
 		this.secRemaining = this.timeGiven;
 		this.timeTaken = 0;
 		this.cScore = 0;
@@ -3518,7 +3552,10 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 			_this.currentQ++;
 			if (_this.currentQ<=_this.myData.qItem.length){
 				console.log(_this.myData.qItem[_this.currentQ-1].qId.substring(7));
-				_this.gotoAndPlay("q"+_this.currentQ);
+				_this.gotoAndPlay("q"+_this.myData.qItem[_this.currentQ-1].qId.substring(7));
+				if (_this.currentQ<=maxQ){
+					_this["prog"+_this.currentQ].gotoAndStop("on");
+				}
 			} else {
 				//all questions done
 				clearInterval(timeInterval);//stop time
@@ -3675,12 +3712,12 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_2}]},43).to({state:[{t:this.instance_3}]},83).to({state:[{t:this.instance_4}]},65).to({state:[{t:this.instance_2}]},64).to({state:[{t:this.instance_3}]},22).to({state:[{t:this.instance_4}]},65).to({state:[{t:this.instance_2}]},64).to({state:[{t:this.instance_3}]},22).to({state:[{t:this.instance_4}]},65).to({state:[]},75).wait(173));
 
 	// avatar
-	this.instance_5 = new lib.avatarBotsX("single",1);
+	this.instance_5 = new lib.avatarMc("single",1);
 	this.instance_5.parent = this;
 	this.instance_5.setTransform(154.4,121.6,0.052,0.052);
 	this.instance_5._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_5).wait(26).to({_off:false},0).to({scaleX:1,scaleY:1,x:144.5,y:121.7},17,cjs.Ease.elasticOut).to({_off:true},525).wait(173));
+	this.timeline.addTween(cjs.Tween.get(this.instance_5).wait(26).to({_off:false},0).to({scaleX:1,scaleY:1,x:144.3,y:121.5,mode:"independent"},17,cjs.Ease.elasticOut).to({_off:true},525).wait(173));
 
 	// mask (mask)
 	var mask = new cjs.Shape();
@@ -3752,33 +3789,23 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 	this.timeline.addTween(cjs.Tween.get(this.instance_14).wait(537).to({_off:false},0).to({y:-0.4},15,cjs.Ease.cubicOut).to({_off:true},16).wait(173));
 
 	// progress
-	this.prog6 = new lib.progress();
-	this.prog6.name = "prog6";
-	this.prog6.parent = this;
-	this.prog6.setTransform(597.6,72.5);
+	this.prog1 = new lib.progress();
+	this.prog1.name = "prog1";
+	this.prog1.parent = this;
+	this.prog1.setTransform(620.6,72.5);
 
-	this.prog6_1 = new lib.progress();
-	this.prog6_1.name = "prog6_1";
-	this.prog6_1.parent = this;
-	this.prog6_1.setTransform(608.3,72.5);
+	this.prog2 = new lib.progress();
+	this.prog2.name = "prog2";
+	this.prog2.parent = this;
+	this.prog2.setTransform(632.9,72.5);
 
-	this.prog7 = new lib.progress();
-	this.prog7.name = "prog7";
-	this.prog7.parent = this;
-	this.prog7.setTransform(620.6,72.5);
-
-	this.prog8 = new lib.progress();
-	this.prog8.name = "prog8";
-	this.prog8.parent = this;
-	this.prog8.setTransform(632.9,72.5);
-
-	var maskedShapeInstanceList = [this.prog6,this.prog6_1,this.prog7,this.prog8];
+	var maskedShapeInstanceList = [this.prog1,this.prog2];
 
 	for(var shapedInstanceItr = 0; shapedInstanceItr < maskedShapeInstanceList.length; shapedInstanceItr++) {
 		maskedShapeInstanceList[shapedInstanceItr].mask = mask;
 	}
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.prog8},{t:this.prog7},{t:this.prog6_1},{t:this.prog6}]},104).to({state:[]},464).wait(173));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.prog2},{t:this.prog1}]},99).to({state:[]},469).wait(173));
 
 	// Layer_1
 	this.shape = new cjs.Shape();
@@ -3901,21 +3928,22 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/f3d1q5/Bitmap19.png?1526894948681", id:"Bitmap19"},
-		{src:"images/f3d1q5/Bitmap28.png?1526894948681", id:"Bitmap28"},
-		{src:"images/f3d1q5/Bitmap3.png?1526894948681", id:"Bitmap3"},
-		{src:"images/f3d1q5/Bitmap30.png?1526894948681", id:"Bitmap30"},
-		{src:"images/f3d1q5/Bitmap31.png?1526894948681", id:"Bitmap31"},
-		{src:"images/f3d1q5/Bitmap9.png?1526894948681", id:"Bitmap9"},
-		{src:"sounds/mdroid_talk.mp3?1526894948681", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1526894948681", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1526894948681", id:"questionComplete"},
-		{src:"sounds/submitAns.mp3?1526894948681", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1526894948681", id:"suspense"},
-		{src:"sounds/timeout.mp3?1526894948681", id:"timeout"},
-		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1526894948681", id:"lib/jquery-2.2.4.min.js"},
-		{src:"components/sdk/anwidget.js?1526894948681", id:"sdk/anwidget.js"},
-		{src:"components/ui/src/textinput.js?1526894948681", id:"an.TextInput"}
+		{src:"images/f3d1q5/Bitmap19.png?1527062647291", id:"Bitmap19"},
+		{src:"images/f3d1q5/Bitmap28.png?1527062647291", id:"Bitmap28"},
+		{src:"images/f3d1q5/Bitmap3.png?1527062647291", id:"Bitmap3"},
+		{src:"images/f3d1q5/Bitmap30.png?1527062647291", id:"Bitmap30"},
+		{src:"images/f3d1q5/Bitmap31.png?1527062647291", id:"Bitmap31"},
+		{src:"images/f3d1q5/Bitmap8.png?1527062647291", id:"Bitmap8"},
+		{src:"images/f3d1q5/Bitmap9.png?1527062647291", id:"Bitmap9"},
+		{src:"sounds/mdroid_talk.mp3?1527062647291", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1527062647291", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1527062647291", id:"questionComplete"},
+		{src:"sounds/submitAns.mp3?1527062647291", id:"submitAns"},
+		{src:"sounds/suspense.mp3?1527062647291", id:"suspense"},
+		{src:"sounds/timeout.mp3?1527062647291", id:"timeout"},
+		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1527062647291", id:"lib/jquery-2.2.4.min.js"},
+		{src:"components/sdk/anwidget.js?1527062647291", id:"sdk/anwidget.js"},
+		{src:"components/ui/src/textinput.js?1527062647291", id:"an.TextInput"}
 	],
 	preloads: []
 };

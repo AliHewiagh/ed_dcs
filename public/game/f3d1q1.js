@@ -15,6 +15,12 @@ lib.ssMetadata = [];
 p.nominalBounds = new cjs.Rectangle(0,0,879,656);
 
 
+(lib.Bitmap19 = function() {
+	this.initialize(img.Bitmap19);
+}).prototype = p = new cjs.Bitmap();
+p.nominalBounds = new cjs.Rectangle(0,0,97,97);
+
+
 (lib.Bitmap3 = function() {
 	this.initialize(img.Bitmap3);
 }).prototype = p = new cjs.Bitmap();
@@ -1429,6 +1435,35 @@ p.nominalBounds = new cjs.Rectangle(-79.1,-21.4,161.7,48.6);
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(-79.1,-21.4,161.7,48.6);
+
+
+(lib.avatarMc = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// timeline functions:
+	this.frame_0 = function() {
+		this.stop();
+		if (schoolLevel==3){
+			this.gotoAndStop(1);
+		}
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(2));
+
+	// Layer_1
+	this.instance = new lib.avatarBotsX("synched",0);
+	this.instance.parent = this;
+	this.instance.setTransform(0.5,0.5);
+
+	this.instance_1 = new lib.Bitmap19();
+	this.instance_1.parent = this;
+	this.instance_1.setTransform(-49,-49);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance}]}).to({state:[{t:this.instance_1}]},1).wait(1));
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(-48.5,-48.5,97,97);
 
 
 (lib.timesUpAnim = function(mode,startPosition,loop) {
@@ -3408,12 +3443,12 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 	this.timeline.addTween(cjs.Tween.get(this.instance_2).wait(43).to({_off:false},0).to({_off:true},743).wait(181));
 
 	// avatar
-	this.instance_3 = new lib.avatarBotsX("synched",0);
+	this.instance_3 = new lib.avatarMc();
 	this.instance_3.parent = this;
 	this.instance_3.setTransform(146,124.6,0.052,0.052);
 	this.instance_3._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_3).wait(26).to({_off:false},0).to({scaleX:1,scaleY:1,x:138,y:124.7},17,cjs.Ease.elasticOut).to({_off:true},743).wait(181));
+	this.timeline.addTween(cjs.Tween.get(this.instance_3).wait(26).to({_off:false},0).to({scaleX:1,scaleY:1,x:137.5,y:124.2},17,cjs.Ease.elasticOut).to({_off:true},743).wait(181));
 
 	// progress
 	this.prog1 = new lib.progress();
@@ -3659,19 +3694,20 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/f3d1q1/Bitmap14.png?1526468676403", id:"Bitmap14"},
-		{src:"images/f3d1q1/Bitmap3.png?1526468676403", id:"Bitmap3"},
-		{src:"images/f3d1q1/Bitmap8.png?1526468676403", id:"Bitmap8"},
-		{src:"images/f3d1q1/Bitmap9.png?1526468676403", id:"Bitmap9"},
-		{src:"sounds/mdroid_talk.mp3?1526468676403", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1526468676403", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1526468676403", id:"questionComplete"},
-		{src:"sounds/submitAns.mp3?1526468676403", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1526468676403", id:"suspense"},
-		{src:"sounds/timeout.mp3?1526468676403", id:"timeout"},
-		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1526468676403", id:"lib/jquery-2.2.4.min.js"},
-		{src:"components/sdk/anwidget.js?1526468676403", id:"sdk/anwidget.js"},
-		{src:"components/ui/src/textinput.js?1526468676403", id:"an.TextInput"}
+		{src:"images/f3d1q1/Bitmap14.png?1527072663496", id:"Bitmap14"},
+		{src:"images/f3d1q1/Bitmap19.png?1527072663496", id:"Bitmap19"},
+		{src:"images/f3d1q1/Bitmap3.png?1527072663496", id:"Bitmap3"},
+		{src:"images/f3d1q1/Bitmap8.png?1527072663496", id:"Bitmap8"},
+		{src:"images/f3d1q1/Bitmap9.png?1527072663496", id:"Bitmap9"},
+		{src:"sounds/mdroid_talk.mp3?1527072663496", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1527072663496", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1527072663496", id:"questionComplete"},
+		{src:"sounds/submitAns.mp3?1527072663496", id:"submitAns"},
+		{src:"sounds/suspense.mp3?1527072663496", id:"suspense"},
+		{src:"sounds/timeout.mp3?1527072663496", id:"timeout"},
+		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1527072663496", id:"lib/jquery-2.2.4.min.js"},
+		{src:"components/sdk/anwidget.js?1527072663496", id:"sdk/anwidget.js"},
+		{src:"components/ui/src/textinput.js?1527072663496", id:"an.TextInput"}
 	],
 	preloads: []
 };
