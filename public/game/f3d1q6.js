@@ -2797,15 +2797,15 @@ p.nominalBounds = new cjs.Rectangle(-37.9,-21.1,75.8,42.3);
 
 	this.shape_5 = new cjs.Shape();
 	this.shape_5.graphics.f("#000000").s().p("AAKAzIgDgFIgJAFIgTAAIgPgJIAGg0IARgJIARAAIAJAGIAEglIAUAAIgLBlgAgQAjIAYAAIAEgmIgYAAg");
-	this.shape_5.setTransform(8.7,-0.2);
+	this.shape_5.setTransform(8.6,-0.2);
 
 	this.shape_6 = new cjs.Shape();
 	this.shape_6.graphics.f("#000000").s().p("AAJAjIAFg1IgWAAIgGA1IgTAAIAHhFIAQAAIADAFIAJgFIARAAIAPAJIgGA8g");
-	this.shape_6.setTransform(0,1.3);
+	this.shape_6.setTransform(-0.1,1.3);
 
 	this.shape_7 = new cjs.Shape();
-	this.shape_7.graphics.f("#000000").s().p("AgQAjIgPgJIAGgzIARgJIAZAAIAPAJIgEAgIgmAAIgBAMIAmAAIgCAQgAgIgGIASAAIACgMIgTAAg");
-	this.shape_7.setTransform(-8,1.3);
+	this.shape_7.graphics.f("#000000").s().p("AgiAxIAKhhIA7AAIgCARIgnAAIgCAWIAeAAIgCAQIgdAAIgDAZIAmAAIgCARg");
+	this.shape_7.setTransform(-7.6,0);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_4},{t:this.shape_3},{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).to({state:[]},1).to({state:[{t:this.shape_7},{t:this.shape_6},{t:this.shape_5}]},3).wait(1));
 
@@ -2863,7 +2863,7 @@ p.nominalBounds = new cjs.Rectangle(-28.8,-15.3,57.6,30.6);
 
 	// Layer 1
 	this.shape_9 = new cjs.Shape();
-	this.shape_9.graphics.lf(["#FF8C00","#FFD510"],[0,1],0,15.9,0,-15.9).s().p("AjKBsQhVgsAAhAQAAg+BVguQBTgsB3AAQB4AABTAsQBVAuAAA+QAABAhVAsQhTAth4AAQh3AAhTgtg");
+	this.shape_9.graphics.lf(["#099292","#10FFFF"],[0,1],0,15.9,0,-15.9).s().p("AjKBsQhVgsAAhAQAAg+BVguQBTgsB3AAQB4AABTAsQBVAuAAA+QAABAhVAsQhTAth4AAQh3AAhTgtg");
 
 	this.timeline.addTween(cjs.Tween.get(this.shape_9).to({_off:true},1).wait(3).to({_off:false},0).wait(1));
 
@@ -3156,12 +3156,15 @@ p._updateVisibility = _updateVisibility;
 
 	// Layer 1
 	this.shape_26 = new cjs.Shape();
-	this.shape_26.graphics.lf(["#FF8C00","#FFD510"],[0,1],0,16.6,0,-16.5).s().p("AjTBxQhYguAAhDQAAhBBYgvQBYguB7AAQB9AABXAuQBYAvAABBQAABDhYAuQhXAuh9AAQh7AAhYgug");
+	this.shape_26.graphics.lf(["#099292","#10FFFF"],[0,1],0,15.9,0,-15.9).s().p("AjKBsQhVgsAAhAQAAg+BVguQBTgsB3AAQB4AABTAsQBVAuAAA+QAABAhVAsQhTAth4AAQh3AAhTgtg");
 
-	this.timeline.addTween(cjs.Tween.get(this.shape_26).wait(4));
+	this.shape_27 = new cjs.Shape();
+	this.shape_27.graphics.lf(["#FF8C00","#FFD510"],[0,1],0,16.6,0,-16.5).s().p("AjTBxQhYguAAhDQAAhBBYgvQBYguB7AAQB9AABXAuQBYAvAABBQAABDhYAuQhXAuh9AAQh7AAhYgug");
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_26}]}).to({state:[{t:this.shape_27}]},1).wait(3));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-30,-15.9,60,31.9);
+p.nominalBounds = new cjs.Rectangle(-28.8,-15.3,57.6,30.6);
 
 
 (lib.bujur_1 = function(mode,startPosition,loop) {
@@ -3240,12 +3243,15 @@ p.nominalBounds = new cjs.Rectangle(-30,-15.9,60,31.9);
 
 	// Layer 1
 	this.shape_27 = new cjs.Shape();
-	this.shape_27.graphics.lf(["#FF8C00","#FFD510"],[0,1],0,16.6,0,-16.5).s().p("AjTBxQhYguAAhDQAAhBBYgvQBYguB7AAQB9AABXAuQBYAvAABBQAABDhYAuQhXAuh9AAQh7AAhYgug");
+	this.shape_27.graphics.lf(["#099292","#10FFFF"],[0,1],0,15.9,0,-15.9).s().p("AjKBsQhVgsAAhAQAAg+BVguQBTgsB3AAQB4AABTAsQBVAuAAA+QAABAhVAsQhTAth4AAQh3AAhTgtg");
 
-	this.timeline.addTween(cjs.Tween.get(this.shape_27).wait(4));
+	this.shape_28 = new cjs.Shape();
+	this.shape_28.graphics.lf(["#FF8C00","#FFD510"],[0,1],0,16.6,0,-16.5).s().p("AjTBxQhYguAAhDQAAhBBYgvQBYguB7AAQB9AABXAuQBYAvAABBQAABDhYAuQhXAuh9AAQh7AAhYgug");
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_27}]}).to({state:[{t:this.shape_28}]},1).wait(3));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-30,-15.9,60,31.9);
+p.nominalBounds = new cjs.Rectangle(-28.8,-15.3,57.6,30.6);
 
 
 (lib.btnWideBg_1 = function(mode,startPosition,loop) {
@@ -3606,7 +3612,7 @@ p.nominalBounds = new cjs.Rectangle(-49,-49,97,97);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_22},{t:this.shape_21},{t:this.instance_11},{t:this.instance_10},{t:this.instance_9},{t:this.instance_8},{t:this.instance_7},{t:this.instance_6},{t:this.instance_5},{t:this.instance_4},{t:this.instance_3},{t:this.instance_2},{t:this.instance_1},{t:this.instance},{t:this.shape_20},{t:this.shape_19},{t:this.shape_18},{t:this.shape_17},{t:this.shape_16},{t:this.shape_15},{t:this.shape_14},{t:this.shape_13},{t:this.shape_12},{t:this.shape_11},{t:this.shape_10},{t:this.shape_9},{t:this.shape_8},{t:this.shape_7},{t:this.shape_6},{t:this.shape_5},{t:this.shape_4},{t:this.shape_3},{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).to({state:[{t:this.shape_22},{t:this.shape_21},{t:this.instance_23},{t:this.instance_22},{t:this.instance_21},{t:this.instance_20},{t:this.instance_19},{t:this.instance_18},{t:this.instance_17},{t:this.instance_16},{t:this.instance_15},{t:this.instance_14},{t:this.instance_13},{t:this.instance_12},{t:this.shape_37},{t:this.shape_36},{t:this.shape_35},{t:this.shape_34},{t:this.shape_33},{t:this.shape_32},{t:this.shape_31},{t:this.shape_30},{t:this.shape_29},{t:this.shape_28},{t:this.shape_27},{t:this.shape_26},{t:this.shape_25},{t:this.shape_24},{t:this.shape_23}]},1).wait(1));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-221.3,-172.9,431.6,337.7);
+p.nominalBounds = new cjs.Rectangle(-221.3,-172.2,431.6,337);
 
 
 (lib.flowchart_1 = function(mode,startPosition,loop) {
@@ -5881,20 +5887,20 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/f3d1q6/Bitmap21.png?1526616589802", id:"Bitmap21"},
-		{src:"images/f3d1q6/Bitmap22.png?1526616589802", id:"Bitmap22"},
-		{src:"images/f3d1q6/Bitmap3.png?1526616589802", id:"Bitmap3"},
-		{src:"images/f3d1q6/Bitmap9.png?1526616589802", id:"Bitmap9"},
-		{src:"sounds/mdroid_talk.mp3?1526616589802", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1526616589802", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1526616589802", id:"questionComplete"},
-		{src:"sounds/submitAns.mp3?1526616589802", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1526616589802", id:"suspense"},
-		{src:"sounds/timeout.mp3?1526616589802", id:"timeout"},
-		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1526616589802", id:"lib/jquery-2.2.4.min.js"},
-		{src:"components/sdk/anwidget.js?1526616589802", id:"sdk/anwidget.js"},
-		{src:"components/ui/src/textinput.js?1526616589802", id:"an.TextInput"},
-		{src:"components/ui/src/combobox.js?1526616589802", id:"an.ComboBox"}
+		{src:"images/f3d1q6/Bitmap21.png?1527345419608", id:"Bitmap21"},
+		{src:"images/f3d1q6/Bitmap22.png?1527345419608", id:"Bitmap22"},
+		{src:"images/f3d1q6/Bitmap3.png?1527345419608", id:"Bitmap3"},
+		{src:"images/f3d1q6/Bitmap9.png?1527345419608", id:"Bitmap9"},
+		{src:"sounds/mdroid_talk.mp3?1527345419608", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1527345419608", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1527345419608", id:"questionComplete"},
+		{src:"sounds/submitAns.mp3?1527345419608", id:"submitAns"},
+		{src:"sounds/suspense.mp3?1527345419608", id:"suspense"},
+		{src:"sounds/timeout.mp3?1527345419608", id:"timeout"},
+		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1527345419608", id:"lib/jquery-2.2.4.min.js"},
+		{src:"components/sdk/anwidget.js?1527345419608", id:"sdk/anwidget.js"},
+		{src:"components/ui/src/textinput.js?1527345419608", id:"an.TextInput"},
+		{src:"components/ui/src/combobox.js?1527345419608", id:"an.ComboBox"}
 	],
 	preloads: []
 };
