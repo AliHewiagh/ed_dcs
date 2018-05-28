@@ -1065,7 +1065,6 @@ p.nominalBounds = new cjs.Rectangle(-25.1,-26,54,56);
 	}
 	this.frame_142 = function() {
 		function doPlay(e){
-			setLevel(7);
 			nextScreen();
 		}
 		this.btnCont.addEventListener("click", doPlay);
@@ -1276,20 +1275,20 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/menu7/Bitmap10.png?1524643943666", id:"Bitmap10"},
-		{src:"images/menu7/Bitmap14.png?1524643943666", id:"Bitmap14"},
-		{src:"images/menu7/Bitmap16.png?1524643943666", id:"Bitmap16"},
-		{src:"images/menu7/Bitmap3.png?1524643943666", id:"Bitmap3"},
-		{src:"images/menu7/Bitmap4.png?1524643943666", id:"Bitmap4"},
-		{src:"images/menu7/Bitmap5.png?1524643943666", id:"Bitmap5"},
-		{src:"images/menu7/Bitmap6.png?1524643943666", id:"Bitmap6"},
-		{src:"images/menu7/Bitmap7.png?1524643943666", id:"Bitmap7"},
-		{src:"images/menu7/Bitmap8.png?1524643943666", id:"Bitmap8"},
-		{src:"images/menu7/Bitmap9.png?1524643943666", id:"Bitmap9"},
-		{src:"images/menu7/blobPlanet.png?1524643943666", id:"blobPlanet"},
-		{src:"sounds/bleep_stutter.mp3?1524643943666", id:"bleep_stutter"},
-		{src:"sounds/menuRock2.mp3?1524643943666", id:"menuRock2"},
-		{src:"sounds/stdClick.mp3?1524643943666", id:"stdClick"}
+		{src:"images/menu7/Bitmap10.png?1527432761466", id:"Bitmap10"},
+		{src:"images/menu7/Bitmap14.png?1527432761466", id:"Bitmap14"},
+		{src:"images/menu7/Bitmap16.png?1527432761466", id:"Bitmap16"},
+		{src:"images/menu7/Bitmap3.png?1527432761466", id:"Bitmap3"},
+		{src:"images/menu7/Bitmap4.png?1527432761466", id:"Bitmap4"},
+		{src:"images/menu7/Bitmap5.png?1527432761466", id:"Bitmap5"},
+		{src:"images/menu7/Bitmap6.png?1527432761466", id:"Bitmap6"},
+		{src:"images/menu7/Bitmap7.png?1527432761466", id:"Bitmap7"},
+		{src:"images/menu7/Bitmap8.png?1527432761466", id:"Bitmap8"},
+		{src:"images/menu7/Bitmap9.png?1527432761466", id:"Bitmap9"},
+		{src:"images/menu7/blobPlanet.png?1527432761466", id:"blobPlanet"},
+		{src:"sounds/bleep_stutter.mp3?1527432761466", id:"bleep_stutter"},
+		{src:"sounds/menuRock2.mp3?1527432761466", id:"menuRock2"},
+		{src:"sounds/stdClick.mp3?1527432761466", id:"stdClick"}
 	],
 	preloads: []
 };

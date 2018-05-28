@@ -1031,7 +1031,6 @@ p.nominalBounds = new cjs.Rectangle(-25.1,-26,54,56);
 	}
 	this.frame_154 = function() {
 		function doPlay(e){
-			setLevel(19);
 			nextScreen();
 		}
 		this.btnCont.addEventListener("click", doPlay);
@@ -1264,19 +1263,19 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/menu19/Bitmap3.png?1524645582303", id:"Bitmap3"},
-		{src:"images/menu19/Bitmap4.png?1524645582303", id:"Bitmap4"},
-		{src:"images/menu19/Bitmap5.png?1524645582303", id:"Bitmap5"},
-		{src:"images/menu19/Bitmap6.png?1524645582303", id:"Bitmap6"},
-		{src:"images/menu19/Bitmap7.png?1524645582303", id:"Bitmap7"},
-		{src:"images/menu19/Bitmap8.png?1524645582303", id:"Bitmap8"},
-		{src:"images/menu19/eggyplanet.png?1524645582303", id:"eggyplanet"},
-		{src:"images/menu19/foggyplanet.png?1524645582303", id:"foggyplanet"},
-		{src:"images/menu19/gloomplanet.png?1524645582303", id:"gloomplanet"},
-		{src:"images/menu19/pinkplanet.png?1524645582303", id:"pinkplanet"},
-		{src:"sounds/bleep_stutter.mp3?1524645582303", id:"bleep_stutter"},
-		{src:"sounds/menuRock2.mp3?1524645582303", id:"menuRock2"},
-		{src:"sounds/stdClick.mp3?1524645582303", id:"stdClick"}
+		{src:"images/menu19/Bitmap3.png?1527433812046", id:"Bitmap3"},
+		{src:"images/menu19/Bitmap4.png?1527433812046", id:"Bitmap4"},
+		{src:"images/menu19/Bitmap5.png?1527433812046", id:"Bitmap5"},
+		{src:"images/menu19/Bitmap6.png?1527433812046", id:"Bitmap6"},
+		{src:"images/menu19/Bitmap7.png?1527433812046", id:"Bitmap7"},
+		{src:"images/menu19/Bitmap8.png?1527433812046", id:"Bitmap8"},
+		{src:"images/menu19/eggyplanet.png?1527433812046", id:"eggyplanet"},
+		{src:"images/menu19/foggyplanet.png?1527433812046", id:"foggyplanet"},
+		{src:"images/menu19/gloomplanet.png?1527433812046", id:"gloomplanet"},
+		{src:"images/menu19/pinkplanet.png?1527433812046", id:"pinkplanet"},
+		{src:"sounds/bleep_stutter.mp3?1527433812046", id:"bleep_stutter"},
+		{src:"sounds/menuRock2.mp3?1527433812046", id:"menuRock2"},
+		{src:"sounds/stdClick.mp3?1527433812046", id:"stdClick"}
 	],
 	preloads: []
 };

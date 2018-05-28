@@ -83,7 +83,8 @@ class ClassController extends Controller
      */
     public function edit($id)
     {
-        //
+        $class = SchoolClass::find($id);
+        return view("teacher.class.edit", compact('class'));
     }
 
     /**
@@ -95,7 +96,19 @@ class ClassController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->only("name");
+        $validator = Validator::make($data, [
+            'name' => 'required|max:200',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('/teacher/classes/'.$id.'/edit')
+                ->withErrors($validator)
+                ->withInput();
+        }
+        $class = SchoolClass::where([['id', $id], ['teacher_id', Auth::user()->id]])->firstOrFail();
+        $class->update(['name'=>$data['name']]);
+        return redirect('/teacher/classes')->with("success", "Class updated successfully!");
     }
 
     /**

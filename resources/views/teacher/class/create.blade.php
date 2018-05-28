@@ -9,7 +9,7 @@
     @include('teacher.partial.sidebar')
     <div class="content-wrapper">
         <section class="content-header">
-            <h1>Create New Student</h1>
+            <h1>Create New Class</h1>
         </section>
         <section class="content">
             <div style="max-width: 600px">

@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Location;
+use App\Pkg;
 use App\Role;
 use App\School;
 use App\SchoolType;
+use App\State;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -31,10 +33,7 @@ class SchoolController extends Controller
      */
     public function create()
     {
-        $priTypes = SchoolType::where("group", 1)->get();
-        $secTypes = SchoolType::where("group", 2)->get();
-        $states = Location::where('active', 1)->get()->groupBy("group");
-        return view("admin.school.create", compact("priTypes", "secTypes", "states"));
+        return view("admin.school.create");
     }
 
     /**
@@ -45,10 +44,11 @@ class SchoolController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->only("name");
+        $data = $request->only("name", "source");
         //$data = $request->only("school_code", "name", "type", "school_type_id", "location_id", "area", "mypib", "sekolahi", "sekolahk", "sbt");
         $validator = Validator::make($data, [
             'name' => 'required|max:200',
+            'source' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -65,7 +65,7 @@ class SchoolController extends Controller
 //        }
         $username = "m".time();
         $pass = str_random(8);
-        $user = User::create(["name"=>$data["name"], "username"=>$username, "password"=>$pass, "type"=>2]);
+        $user = User::create(["name"=>null, "username"=>$username, "password"=>$pass, "type"=>2]);
         $role = Role::where("id", 2)->first();
         $user->attachRole($role);
         $data["user_id"] = $user->id;
@@ -94,7 +94,14 @@ class SchoolController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        $school = School::where('user_id', $id)->first();
+        $priTypes = SchoolType::where("group", 1)->get();
+        $secTypes = SchoolType::where("group", 2)->get();
+        $pps = Location::all();
+        $states = State::all();
+        $pkgs = Pkg::all();
+        return view("admin.school.edit", compact("user", "school", "priTypes", "secTypes", "states", "pps", "pkgs"));
     }
 
     /**
@@ -106,7 +113,29 @@ class SchoolController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->only("school_code", "name", "state_id", "pkg", "type", "school_type_id", "location_id", "area", "mypib", "sekolahi", "sekolahk", "sbt");
+        $validator = Validator::make($data, [
+            'name' => 'required|max:200',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('/admin/school/'.$id.'/edit')
+                ->withErrors($validator)
+                ->withInput();
+        }
+        if($data["school_type_id"] == "other"){
+            if(empty($request->other_type)){
+                return redirect('/admin/school/create')->withInput()->with("error", "Please specify type of school!");
+            }
+            $newType = SchoolType::create(["group"=>$request->type, "name"=>$request->other_type]);
+            $data["school_type_id"] = $newType->id;
+        }
+
+        $user = User::findOrFail($id);
+        $user->update(["name"=>$request->manager_name]);
+        $school = School::where('user_id', $id)->first();
+        $school->update($data);
+        return redirect('/admin/school')->with("success", "School updated successfully!");
     }
 
     /**

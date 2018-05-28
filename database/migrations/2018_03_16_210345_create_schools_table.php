@@ -18,6 +18,8 @@ class CreateSchoolsTable extends Migration
             $table->char("name", 200);
             $table->char("school_code", 200)->nullable();
             $table->integer('user_id')->unsigned()->nullable();
+            $table->unsignedInteger('state_id')->nullable();
+            $table->char('pkg', 100)->nullable();
             $table->char("type", 2)->nullable();
             $table->integer('school_type_id')->unsigned()->nullable();
             $table->integer('location_id')->unsigned()->nullable();
@@ -26,6 +28,7 @@ class CreateSchoolsTable extends Migration
             $table->boolean("sekolahi")->nullable();
             $table->boolean("sekolahk")->nullable();
             $table->boolean("sbt")->nullable();
+            $table->char("source", 50)->nullable();
             $table->boolean("active")->default(1);
             $table->boolean('done')->default(0);
             $table->timestamps();

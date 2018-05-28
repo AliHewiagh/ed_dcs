@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Location;
 use App\School;
 use App\SchoolClass;
+use App\StudentRecord;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -84,4 +85,16 @@ class ProgressController extends Controller
         return view("admin.progress.individual", compact("student", "state", "schoolId", "teacherId", "classId"));
     }
 
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function progressDetail($state, $schoolId, $teacherId, $classId, $studentId)
+    {
+        $student = User::find($studentId);
+        $records = StudentRecord::where('user_id', $studentId)->get();
+        return view("admin.progress.detail", compact("student", "state", "schoolId", "teacherId", "classId", "records"));
+    }
 }

@@ -1031,7 +1031,6 @@ p.nominalBounds = new cjs.Rectangle(-25.1,-26,54,56);
 	}
 	this.frame_143 = function() {
 		function doPlay(e){
-			setLevel(8);
 			nextScreen();
 		}
 		this.btnCont.addEventListener("click", doPlay);
@@ -1239,19 +1238,19 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/menu8/Bitmap16.png?1524644045506", id:"Bitmap16"},
-		{src:"images/menu8/Bitmap17.png?1524644045506", id:"Bitmap17"},
-		{src:"images/menu8/Bitmap3.png?1524644045506", id:"Bitmap3"},
-		{src:"images/menu8/Bitmap4.png?1524644045506", id:"Bitmap4"},
-		{src:"images/menu8/Bitmap5.png?1524644045506", id:"Bitmap5"},
-		{src:"images/menu8/Bitmap6.png?1524644045506", id:"Bitmap6"},
-		{src:"images/menu8/Bitmap7.png?1524644045506", id:"Bitmap7"},
-		{src:"images/menu8/Bitmap8.png?1524644045506", id:"Bitmap8"},
-		{src:"images/menu8/Bitmap9.png?1524644045506", id:"Bitmap9"},
-		{src:"images/menu8/blobPlanet.png?1524644045506", id:"blobPlanet"},
-		{src:"sounds/bleep_stutter.mp3?1524644045506", id:"bleep_stutter"},
-		{src:"sounds/menuRock2.mp3?1524644045506", id:"menuRock2"},
-		{src:"sounds/stdClick.mp3?1524644045506", id:"stdClick"}
+		{src:"images/menu8/Bitmap16.png?1527432843541", id:"Bitmap16"},
+		{src:"images/menu8/Bitmap17.png?1527432843541", id:"Bitmap17"},
+		{src:"images/menu8/Bitmap3.png?1527432843541", id:"Bitmap3"},
+		{src:"images/menu8/Bitmap4.png?1527432843541", id:"Bitmap4"},
+		{src:"images/menu8/Bitmap5.png?1527432843541", id:"Bitmap5"},
+		{src:"images/menu8/Bitmap6.png?1527432843541", id:"Bitmap6"},
+		{src:"images/menu8/Bitmap7.png?1527432843541", id:"Bitmap7"},
+		{src:"images/menu8/Bitmap8.png?1527432843541", id:"Bitmap8"},
+		{src:"images/menu8/Bitmap9.png?1527432843541", id:"Bitmap9"},
+		{src:"images/menu8/blobPlanet.png?1527432843541", id:"blobPlanet"},
+		{src:"sounds/bleep_stutter.mp3?1527432843541", id:"bleep_stutter"},
+		{src:"sounds/menuRock2.mp3?1527432843541", id:"menuRock2"},
+		{src:"sounds/stdClick.mp3?1527432843541", id:"stdClick"}
 	],
 	preloads: []
 };

@@ -5,6 +5,9 @@
 // Dashboard Page
 Route::get('/dashboard', ['as' => 'admin_dashboard_path', 'uses' => 'Admin\DashboardController@index']);
 
+Route::get('/setting', 'Admin\DashboardController@setting');
+Route::patch('/setting', 'Admin\DashboardController@settingUpdate');
+
 // School
 Route::resource('/school', 'Admin\SchoolController');
 
@@ -18,3 +21,4 @@ Route::get('/progress/{state}/{schoolId}', 'Admin\ProgressController@schoolProgr
 Route::get('/progress/{state}/{schoolId}/{teacherId}', 'Admin\ProgressController@teacherProgress');
 Route::get('/progress/{state}/{schoolId}/{teacherId}/{classId}', 'Admin\ProgressController@classProgress');
 Route::get('/progress/{state}/{schoolId}/{teacherId}/{classId}/{studentId}', 'Admin\ProgressController@studentProgress');
+Route::get('/progress/{state}/{schoolId}/{teacherId}/{classId}/{studentId}/detail', 'Admin\ProgressController@progressDetail');

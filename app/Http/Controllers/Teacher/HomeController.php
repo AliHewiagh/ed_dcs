@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Teacher;
 
 use App\SchoolType;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -30,7 +31,20 @@ class HomeController extends Controller
      */
     public function icUpdate(Request $request)
     {
-        $ic = $request->ic_number;
+        $data = $request->only("ic_number");
+        $validator = Validator::make($data, [
+            'ic_number' => 'required|numeric',
+        ]);
+
+        if ($validator->fails()) {
+            return back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+        $ic = $data['ic_number'];
+        if(strlen($ic)>12 || strlen($ic)<12){
+            return back()->with('error', 'Please insert correct IC number!');
+        }
         $pass = substr($ic, -4, 4);
         Auth::user()->update(["ic_number"=>$ic, "username"=>$ic, "password"=>$pass]);
         return redirect("/teacher/info/update");
@@ -65,4 +79,41 @@ class HomeController extends Controller
         Auth::user()->update(["email"=>$request->email, "phone"=>$request->phone]);
         return redirect('/teacher/dashboard');
     }
+
+
+    /**
+     * @return resource
+     */
+    public function setting()
+    {
+        return view("teacher.home.setting");
+    }
+
+
+    /**
+     * @return resource
+     */
+    public function settingUpdate(Request $request)
+    {
+        $data = $request->only('name', 'username', 'email', 'phone');
+        $validator = Validator::make($data, [
+            'email' => 'required|max:100',
+            'phone' => 'required|max:30',
+            'username' => 'required|max:30',
+            'name' => 'required|max:100',
+        ]);
+
+        if ($validator->fails()) {
+            return back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+        $usernameExist = User::where('username', $data['username'])->first();
+        if(!empty($usernameExist) && $usernameExist->id != Auth::user()->id){
+            return back()->withInput()->with('success', 'This username is taken!');
+        }
+        Auth::user()->update($data);
+        return back()->with('success', 'Profile updated successfully!');
+    }
+    
 }

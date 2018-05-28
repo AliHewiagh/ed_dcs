@@ -1,21 +1,18 @@
 @extends('partial.layout')
 @section('content')
     <style>
-        body {
-			background-image: url("{{asset("images/layout/login_bg.jpg")}}");
-			height: 100%; 
-			background-position: bottom right;
-			background-repeat: no-repeat;
-			background-size: cover;
+        body{
+            background: url('{{asset('images/layout/login_bg.jpg')}}') center center no-repeat;
+            background-size: cover;
         }
-		.wrapper {
-			background-color: transparent !important;
-		}
+        .skin-blue .wrapper{
+            background-color: transparent;
+        }
     </style>
     <div class="container">
         <div class="login-logo">
             <img src="{{asset("images/layout/title_tapir.png")}}">
-			<h1 class="login-title">DIGITAL COMPETENCY SCORE</h1>
+            <div class="login-title">DIGITAL COMPETENCY SCORE</div>
         </div>
         <div class="row justify-content-center">
             <div class="col-md-12">

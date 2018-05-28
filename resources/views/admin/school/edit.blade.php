@@ -1,11 +1,4 @@
-<?php
-$postalAddress = $user->postalAddress;
-$storeAddress = $user->storeAddress;
-$mer = $user->merchant;
-$merDetail = $user->merchantDetail;
-$working = $user->workingHour;;
-?>
-@extends('admin.partial.layouts')
+@extends('partial.layout')
 @section('content')
     <style>
         label{
@@ -16,314 +9,138 @@ $working = $user->workingHour;;
     @include('admin.partial.sidebar')
     <div class="content-wrapper">
         <section class="content-header">
-            <h1>Edit Merchant</h1>
+            <h1>Edit School Details</h1>
         </section>
         <section class="content">
             <div style="max-width: 600px">
                 <div id="regErrorArea"></div>
-                <form id="merchantForm" method="post" action="{{url("admin/merchant/".$user->id)}}" enctype="multipart/form-data">
-                    @method('PUT')
+                <form id="merchantForm" method="post" action="{{url('/admin/school/'.$user->id)}}">
                     @csrf
-
-                    <input type="hidden" name="shopAccuracy" id="shop_street_number" @if(!empty($storeAddress))value="{{$storeAddress->accuracy}}"@endif>
-                    <input type="hidden" name="shopCity" id="shop_locality"  @if(!empty($storeAddress))value="{{$storeAddress->city}}"@endif>
-                    <input type="hidden" name="shopProvince" id="shop_administrative_area_level_1" @if(!empty($storeAddress))value="{{$storeAddress->province}}"@endif>
-                    <input type="hidden" name="shopCountry" id="shop_country" @if(!empty($storeAddress))value="{{$storeAddress->country}}"@endif>
-                    <input type="hidden" name="shopPostCode" id="shop_postal_code" @if(!empty($storeAddress))value="{{$storeAddress->postCode}}"@endif>
-                    <input type="hidden" name="shopLng" id="shop_lngInput" @if(!empty($storeAddress))value="{{$storeAddress->lng}}"@endif>
-                    <input type="hidden" name="shopLat" id="shop_latInput" @if(!empty($storeAddress))value="{{$storeAddress->lat}}"@endif>
-                    @include("admin.partial.alert")
-                    <h4>Merchant Profile</h4>
+                    @method('PUT')
+                    @include('partial.alert')
                     <div class="form-group">
-                        <label for="nameInput">Merchant Name</label>
-                        <input type="text" name="name" class="form-control required" id="nameInput" value="{{$user->name}}">
-                        <div id="nameError" style="color:red; font-weight: bold;"></div>
+                        <label for="school_codeInput">School Code</label>
+                        <input type="text" name="school_code" class="form-control" id="school_codeInput" value="{{$school->school_code}}">
                     </div>
                     <div class="form-group">
-                        <label for="companyNameInput">Company Name</label>
-                        <input type="text" name="companyName" class="form-control" id="companyNameInput" value="{{$mer->companyName}}">
+                        <label for="nameInput">School Name</label>
+                        <input type="text" name="name" class="form-control required" id="nameInput" value="{{$school->name}}" required>
                     </div>
-                    <div class="form-group">
-                        <label for="businessNameInput">Business Name</label>
-                        <input type="text" name="businessName" class="form-control" id="businessNameInput" value="{{$mer->businessName}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="businessAbnInput">Business ABN/ACN</label>
-                        <input type="text" name="businessAbn" class="form-control" id="businessAbnInput" value="{{$merDetail->businessAbn}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="drivingLicenseInput">Driving License No</label>
-                        <input type="text" name="drivingLicense" class="form-control" id="drivingLicenseInput" value="{{$merDetail->drivingLicense}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="dobInput">Date of Birth</label>
-                        <input type="text" name="dob" class="form-control dPicker" id="dobInput" value="{{$user->dob}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="restaurantLicenseNoInput">Restaurant License No</label>
-                        <input type="text" name="restaurantLicenseNo" class="form-control" id="restaurantLicenseNoInput" value="{{$merDetail->restaurantLicenseNo}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="restaurantLicenseValidityInput">Restaurant License Validity Date</label>
-                        <input type="text" name="restaurantLicenseValidity" class="form-control dPicker" id="restaurantLicenseValidityInput" value="{{$merDetail->restaurantLicenseValidity}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="postalBuildingInput">Business Postal Address 1</label>
-                        <input type="text" name="postalBuilding" class="form-control" id="postalBuildingInput" value="{{$postalAddress->building}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="postalAddressInput">Business Postal Address 2</label>
-                        <input type="text" name="postalAddress" class="form-control" id="postalAddressInput" value="{{$postalAddress->address}}">
-                    </div>
+                    {{--<div class="form-group">--}}
+                    {{--<label for="sourceInput">Source</label>--}}
+                    {{--<select class="form-control" id="sourceInput" name="source">--}}
+                    {{--<option value="">Please select source</option>--}}
+                    {{--<option value="IKIM" @if($school->source == "IKIM") selected="selected" @endif>IKIM</option>--}}
+                    {{--<option value="SPSS" @if($school->source == "SPSS") selected="selected" @endif>SPSS</option>--}}
+                    {{--<option value="Others" @if($school->source == "Others") selected="selected" @endif>Others</option>--}}
+                    {{--</select>--}}
+                    {{--</div>--}}
 
                     <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label for="postalAddressInput">Business Postal Suburb</label>
-                                <input type="text" name="postalCity" class="form-control" id="postal_locality" @if(!empty($postalAddress))value="{{$postalAddress->city}}"@endif>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="postalAddressInput">Business Postal Postcode</label>
-                                <input type="text" name="postalPostCode" class="form-control" id="postal_postal_code" @if(!empty($postalAddress))value="{{$postalAddress->postCode}}"@endif>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label for="postalAddressInput">Business Postal State</label>
-                                <input type="text" name="postalProvince" class="form-control" id="postal_administrative_area_level_1" @if(!empty($postalAddress))value="{{$postalAddress->province}}"@endif>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="postalAddressInput">Business Postal Country</label>
-                                <input type="text" name="postalCountry" class="form-control" id="postal_country" @if(!empty($postalAddress))value="{{$postalAddress->country}}"@endif>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="businessWebsiteInput">Business Website</label>
-                        <input type="text" name="businessWebsite" class="form-control" id="businessWebsiteInput" value="{{$mer->businessWebsite}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="briefDescriptionInput">Brief Description of Business</label>
-                        <textarea id="briefDescriptionInput" name="briefDescription" class="form-control" rows="5">{{$mer->briefDescription}}</textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="bestWordInput">Best word to describe your restaurant/products</label>
-                        <input id="bestWordInput" type="text" name="bestWord" class="form-control" value="{{$mer->bestWord}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="imageInput">Merchant Image</label>
-                        <input type="file" name="image" class="form-control" id="imageInput" accept="image/*">
-                        <span class="input-helper">Please leave it empty if do not want to change image.</span>
-                    </div>
-
-                    <h4>Merchant Operation</h4>
-                    <div class="form-group">
-                        <label for="emailInput">Email Address for Login</label>
-                        <input id="emailInput" type="email" name="email" class="form-control" value="{{$user->email}}" required>
-                    </div>
-
-                    <h5>Operating Hours</h5>
-                    @include("admin.school.operationHourPartial")
-                    <label for="SpecificOffInput">Specific Off Date</label>
-                    @foreach($user->holidays as $holiday)
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <input id="SpecificOffInput" type="text" name="offDateStart[]" class="form-control off-date" value="{{$holiday->startDate}}">
-                                </div>
-                                <div class="col-md-1">
-                                    To
-                                </div>
-                                <div class="col-md-5">
-                                    <input id="SpecificOffInput" type="text" name="offDateEnd[]" class="form-control off-date" value="{{$holiday->endDate}}">
-                                </div>
-                                <div class="col-md-1 offDelete">
-                                    <i class="fa fa-minus-circle" style="font-size:25px;color:red; vertical-align: middle; margin-top: 5px"></i>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                    <div class="off-clone">
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <input id="SpecificOffInput" type="text" name="offDateStart[]" class="form-control off-date" value="">
-                                </div>
-                                <div class="col-md-1">
-                                    To
-                                </div>
-                                <div class="col-md-5">
-                                    <input id="SpecificOffInput" type="text" name="offDateEnd[]" class="form-control off-date" value="">
-                                </div>
-                                <div class="col-md-1 offDelete">
-                                    <i class="fa fa-minus-circle" style="font-size:25px;color:red; vertical-align: middle; margin-top: 5px"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="moreOffArea"></div>
-                    <div id="addMoreOff" class="label label-success" style="cursor: pointer"><i class="fa fa-plus"></i> Add More</div>
-                    <br /><br />
-                    <div class="form-group">
-                        <label for="timeZoneInput">Time Zones</label>
-                        <select id="timeZoneInput" name="timeZone" class="form-control">
-                                @foreach($tzList as $tz)
-                                    <option value="{{$tz}}" @if($user->timeZone == $tz) selected="selected" @endif>{{$tz}}</option>
-                                @endforeach
-                            {{--<option value="{{$user->timeZone}}">{{$user->timeZone}}</option>--}}
+                        <label for="schoolTypeInput">School Level</label>
+                        <select name="type" class="form-control required" id="schoolTypeInput">
+                            <option value="1">Primary School</option>
+                            <option value="2" @if($school->type == 2) selected="selected" @endif>Secondary School</option>
                         </select>
                     </div>
+
                     <div class="form-group">
-                        <label for="minOrderInput">Min Order Value</label>
-                        <input id="minOrderInput" type="number" name="minOrder" class="form-control" value="{{$mer->minOrder}}">
+                        <label for="schoolTypeInput2">School Type</label>
+                        <select name="school_type_id" class="form-control required" id="schoolTypeInput2">
+                            <option value="">Please select type</option>
+                            @foreach($priTypes as $priType)
+                                <option value="{{$priType->id}}" class="priTypes" @if($school->school_type_id == $priType->id) selected="selected" @endif>{{$priType->name}}</option>
+                            @endforeach
+                            @foreach($secTypes as $secType)
+                                <option value="{{$secType->id}}" class="secTypes" @if($school->school_type_id == $secType->id) selected="selected" @endif>{{$secType->name}}</option>
+                            @endforeach
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="otherType3" style="display: none">
+                        <label for="schoolTypeInput3">Please specify the school type</label>
+                        <input type="text" name="other_type" class="form-control" id="schoolTypeInput3" value="{{old('other_type')}}">
                     </div>
                     <div class="form-group">
-                        <label for="readyTimeFactorInput">Ready Time Factor</label>
-                        <input id="readyTimeFactorInput" type="text" name="readyTimeFactor" class="form-control" value="{{$mer->readyTimeFactor}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="readyTimeDisplayInput">Ready Time Display</label>
-                        <input id="readyTimeDisplayInput" type="text" name="readyTimeDisplay" class="form-control" value="{{$mer->readyTimeDisplay}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="shopBuildingInput">Shop Building</label>
-                        <input type="text" name="shopBuilding" class="form-control" id="shopBuildingInput" value="{{$storeAddress->building}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="shopAddressInput">Shop Address</label>
-                        <input type="text" name="shopAddress" class="form-control" id="shopAddressInput" value="{{$storeAddress->address}}">
-                    </div>
-                    <h4>Contact Details</h4>
-                    <div class="form-group">
-                        <label for="shopContactInput">Shop Contact No</label>
-                        <input type="text" name="shopContact" class="form-control" id="shopContactInput" value="{{$merDetail->shopContact}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="mainContactPersonInput">Main Contact Person</label>
-                        <input type="text" name="mainContactPerson" class="form-control" id="mainContactPersonInput" value="{{$merDetail->mainContactPerson}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="mainContactNoInput">Main Contact Number</label>
-                        <input type="text" name="mainContactNo" class="form-control" id="mainContactNoInput" value="{{$merDetail->mainContactNo}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="mainContactEmailInput">Main Contact Email Address</label>
-                        <input type="email" name="mainContactEmail" class="form-control" id="mainContactEmailInput" value="{{$merDetail->mainContactEmail}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="EmergencyPersonInput">Emergency Contact Person</label>
-                        <input type="text" name="EmergencyPerson" class="form-control" id="EmergencyPersonInput" value="{{$merDetail->EmergencyPerson}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="EmergencyNumberInput">Emergency Contact Number</label>
-                        <input type="text" name="EmergencyNumber" class="form-control" id="EmergencyNumberInput" value="{{$merDetail->EmergencyNumber}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="EmergencyEmailInput">Emergency Contact Email Address</label>
-                        <input type="email" name="EmergencyEmail" class="form-control" id="EmergencyEmailInput" value="{{$merDetail->EmergencyEmail}}">
-                    </div>
-                    <h4>Merchant Type</h4>
-                    <div class="form-group">
-                        <label for="cuisineInput">Cuisine Main</label>
-                        <select id="cuisineInput" name="cuisineId" class="form-control">
-                            @foreach($cuisines as $cuisine)
-                                <option value="{{$cuisine->id}}" @if($mer->cuisineId == $cuisine->id) selected="selected" @endif>{{$cuisine->name}}</option>
+                        <label for="stateInput">State</label>
+                        <select name="state_id" class="form-control required" id="stateInput" required>
+                            <option value="">Please select state</option>
+                            @foreach($states as $state)
+                                <option value="{{$state->id}}" data-name="{{$state->name}}" @if($school->state_id == $state->id) selected="selected" @endif>{{$state->name}}</option>
                             @endforeach
                         </select>
                     </div>
+
                     <div class="form-group">
-                        <label for="cuisine2Input">Cuisine2</label>
-                        <input id="cuisine2Input" type="text" name="cuisine2" class="form-control" value="{{$mer->cuisine2}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="cuisine3Input">Cuisine3</label>
-                        <input id="cuisine3Input" type="text" name="cuisine3" class="form-control" value="{{$mer->cuisine3}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="cuisine4Input">Cuisine4</label>
-                        <input id="cuisine4Input" type="text" name="cuisine4" class="form-control" value="{{$mer->cuisine4}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="cuisine5Input">Cuisine5</label>
-                        <input id="cuisine5Input" type="text" name="cuisine5" class="form-control" value="{{$mer->cuisine5}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="budgetInput">Budget</label>
-                        <select id="budgetInput" name="budget" class="form-control">
-                            <option value="$" @if($mer->budget == "$") selected="selected" @endif>$</option>
-                            <option value="$$" @if($mer->budget == "$$") selected="selected" @endif>$$</option>
-                            <option value="$$$" @if($mer->budget == "$$$") selected="selected" @endif>$$$</option>
-                            <option value="$$$$" @if($mer->budget == "$$$$") selected="selected" @endif>$$$$</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="merchantCategoryInput">Merchant Category</label>
-                        <select id="merchantCategoryInput" name="merchantCategoryId" class="form-control">
-                            @foreach($merchantCategories as $mCat)
-                                <option value="{{$mCat->id}}" @if($mer->merchantCategoryId == $mCat->id) selected="selected" @endif>{{$mCat->name}}</option>
+                        <label for="PKGInput">PKG</label>
+                        <select name="pkg" class="form-control required" id="PKGInput">
+                            @if(!empty($school->pkg)) <option value="{{$school->pkg}}">{{$school->pkg}}</option> @endif
+                            <option value="">Please select PKG</option>
+                            @foreach($pkgs as $pkg)
+                                <option value="{{$pkg->pkg}}" class="PKGOptions {{$pkg->state_id}}" @if($pkg->pkg == $school->pkg) selected="selected" @endif>{{$pkg->pkg}}</option>
                             @endforeach
                         </select>
                     </div>
+
                     <div class="form-group">
-                        <label for="pickUpDeliveryInput">Pick Up or Delivery</label>
-                        <select id="pickUpDeliveryInput" name="pickUpDelivery" class="form-control">
-                            <option value="Pick Up" @if($mer->pickUpDelivery == "Pick Up") selected="selected" @endif>Pick Up</option>
-                            <option value="Delivery" @if($mer->pickUpDelivery == "Delivery") selected="selected" @endif>Delivery</option>
+                        <label for="statePPInput">PPD/PPW</label>
+                        <select name="location_id" class="form-control required" id="statePPInput" required>
+                            <option value="">Please select PPD/PPW</option>
+                            @foreach($pps as $pp)
+                                <option value="{{$pp->id}}" id="{{$pp->state}}" class="ppTypes" @if($school->location_id == $pp->id) selected="selected" @endif>{{$pp->pp}}</option>
+                            @endforeach
                         </select>
                     </div>
-                    <h4>Bank Detail</h4>
+
                     <div class="form-group">
-                        <label for="bankNameInput">Bank Name</label>
-                        <input type="text" name="bankName" class="form-control" id="bankNameInput" value="{{$merDetail->bankName}}">
+                        <label for="areaInput">Urban/Rural School</label>
+                        <select name="area" class="form-control required" id="areaInput">
+                            <option value="">Please Select</option>
+                            <option value="Urban School" @if($school->area == "Urban School") selected="selected" @endif>Urban School</option>
+                            <option value="Rural School" @if($school->area == "Rural School") selected="selected" @endif>Rural School</option>
+                        </select>
                     </div>
+
                     <div class="form-group">
-                        <label for="bankAccountNameInput">Bank Account Name</label>
-                        <input type="text" name="bankAccountName" class="form-control" id="bankAccountNameInput" value="{{$merDetail->bankAccountName}}">
+                        <label for="mypibInput">MYPIB</label>
+                        <select name="mypib" class="form-control" id="mypibInput" required>
+                            <option value="">Please Select</option>
+                            <option value="1" @if($school->mypib == 1) selected="selected" @endif>Yes</option>
+                            <option value="0" @if($school->mypib === 0) selected="selected" @endif>No</option>
+                        </select>
                     </div>
+
                     <div class="form-group">
-                        <label for="bsbNoInput">BSB No</label>
-                        <input type="text" name="bsbNo" class="form-control" id="bsbNoInput" value="{{$merDetail->bsbNo}}">
+                        <label for="sekolahiInput">Sekolah i-THINK</label>
+                        <select name="sekolahi" class="form-control" id="sekolahiInput" required>
+                            <option value="">Please Select</option>
+                            <option value="1" @if($school->sekolahi == 1) selected="selected" @endif>Yes</option>
+                            <option value="0" @if($school->sekolahi === 0) selected="selected" @endif>No</option>
+                        </select>
                     </div>
+
                     <div class="form-group">
-                        <label for="bankAccountNoInput">Bank Account No</label>
-                        <input type="text" name="bankAccountNo" class="form-control" id="bankAccountNoInput" value="{{$merDetail->bankAccountNo}}">
+                        <label for="sekolahkInput">Sekolah Kluster Kecemerlangan</label>
+                        <select name="sekolahk" class="form-control" id="sekolahkInput" required>
+                            <option value="">Please Select</option>
+                            <option value="1" @if($school->sekolahk == 1) selected="selected" @endif>Yes</option>
+                            <option value="0" @if($school->sekolahk === 0) selected="selected" @endif>No</option>
+                        </select>
                     </div>
-                    <h4>Others</h4>
+
                     <div class="form-group">
-                        <label>Password</label>
-                        <input type="text" name="password" class="form-control" value="" placeholder="Please leave it empty if you do not want to change the password">
+                        <label for="sbtInput">Sekolah Berprestasi Tinggi (SBT)</label>
+                        <select name="sbt" class="form-control" id="sbtInput" required>
+                            <option value="">Please Select</option>
+                            <option value="1" @if($school->sbt == 1) selected="selected" @endif>Yes</option>
+                            <option value="0" @if($school->sbt === 0) selected="selected" @endif>No</option>
+                        </select>
                     </div>
+
                     <div class="form-group">
-                        <label>Joining Date</label>
-                        <input type="text" name="joiningDate" class="form-control dPicker" value="{{$mer->joiningDate}}">
+                        <label for="manager_nameInput">School Manager Name</label>
+                        <input type="text" name="manager_name" class="form-control required" id="manager_nameInput" value="{{$user->name}}" required>
                     </div>
-                    <div class="form-group">
-                        <label>Cessation Date</label>
-                        <input type="text" name="cessationDate" class="form-control dPicker" value="{{$mer->cessationDate}}">
-                    </div>
-                    <div class="form-group">
-                        <label>Other Info 1</label>
-                        <input type="text" name="otherInfo1" class="form-control" value="{{$merDetail->otherInfo1}}">
-                    </div>
-                    <div class="form-group">
-                        <label>Other Info 2</label>
-                        <input type="text" name="otherInfo2" class="form-control" value="{{$merDetail->otherInfo2}}">
-                    </div>
-                    <div class="form-group">
-                        <label>Other Info 3</label>
-                        <input type="text" name="otherInfo3" class="form-control" value="{{$merDetail->otherInfo3}}">
-                    </div>
-                    <div class="form-group">
-                        <label>Other Info 4</label>
-                        <input type="text" name="otherInfo4" class="form-control" value="{{$merDetail->otherInfo4}}">
-                    </div>
-                    <div class="form-group">
-                        <label>Other Info 5</label>
-                        <input type="text" name="otherInfo5" class="form-control" value="{{$merDetail->otherInfo5}}">
-                    </div>
-                    <br />
                     <button id="submitBtn" type="submit" class="btn btn-primary btn-block">Update</button>
                 </form>
                 <br />
@@ -331,26 +148,50 @@ $working = $user->workingHour;;
         </section>
     </div>
     @include('admin.partial.footer')
- @include('partial.scripts')
+    @include('partial.scripts')
     <script>
         $(document).ready(function () {
-//            var timeZones = moment.tz.names();
-//            $.each(timeZones, function (index, value) {
-//                $('#timeZoneInput').append($('<option/>', {
-//                    value: value,
-//                    text : value
-//                }));
-//            });
+            @if($school->type == 2)
+            $(".priTypes").css("display", "none");
+            @else
+                      $(".secTypes").css("display", "none");
+            @endif
 
-            $("#nameInput").on("change", function () {
-                var nameInput = $("#nameInput").val();
-                $.post("{{route('admin_merchant_name')}}",  'name='+nameInput + '&_token={{csrf_token()}}', function (data) {
-                    if(data.exist == true){
-                        $("#nameError").html("This merchant name exist!");
-                    }else{
-                        $("#nameError").html("");
-                    }
-                });
+            $(".ppTypes").css("display", "none");
+            $(".PKGOptions").css("display", "none");
+            $("#schoolTypeInput").on("change", function () {
+                var sType = $("#schoolTypeInput").val();
+                if(sType == 1){
+                    $(".secTypes").css("display", "none");
+                    $(".priTypes").css("display", "block");
+                }else{
+                    $(".secTypes").css("display", "block");
+                    $(".priTypes").css("display", "none");
+                }
+            });
+            $("#schoolTypeInput2").on("change", function () {
+                var sType = $("#schoolTypeInput2").val();
+                if(sType == "other"){
+                    $("#otherType3").css("display", "block");
+                }else{
+                    $("#otherType3").css("display", "none");
+                }
+            });
+            $("#stateInput").on("change", function () {
+                var groupId = $(this).find(':selected').data('name');
+                var val = $(this).val();
+                console.log(val);
+                $(".ppTypes").css("display", "none");
+                $("#statePPInput").children("#"+groupId).css("display", "block");
+                $(".PKGOptions").css("display", "none");
+                $(".PKGOptions."+val).css("display", "block");
+            });
+
+
+
+
+            $(".dPicker").flatpickr({
+//                dateFormat: "H:i",
             });
 //            $(".flat34").flatpickr({
 //                enableTime: true,
@@ -358,8 +199,7 @@ $working = $user->workingHour;;
 //                dateFormat: "H:i",
 //                time_24hr: true
 //            });
-            $(".dPicker").flatpickr({
-            });
+
             const fpConf = {
             };
             var clone = $(".off-clone").clone();
@@ -373,51 +213,10 @@ $working = $user->workingHour;;
                 $(newClone).find(".off-date").flatpickr(fpConf);
             });
 
-            $("#merchantForm").on("click", ".offDelete", function () {
+            $("#merchantForm").on("click", "#offDelete", function () {
                 $(this).closest('.form-group')[0].remove();
             });
         });
     </script>
-    <script>
-        var placeSearch, autoComplete, autoComplete2;
-        var componentForm = {
-            street_number: 'short_name',
-            locality: 'long_name',
-            administrative_area_level_1: 'short_name',
-            country: 'long_name',
-            postal_code: 'short_name'
-        };
-        function initMap() {
-            initDeliveryMap();
-        }
 
-        //delivery address
-        function initDeliveryMap() {
-            autoComplete2 = new google.maps.places.Autocomplete(
-                    (document.getElementById('shopAddressInput')),
-                    {componentRestrictions: {country: "au"}});
-            autoComplete2.addListener('place_changed', fillInDeliveryAddress);
-        }
-        function fillInDeliveryAddress() {
-            var place = autoComplete2.getPlace();
-            var lat = place.geometry.location.lat(),
-                    lng = place.geometry.location.lng();
-            document.getElementById("shop_latInput").value = lat;
-            document.getElementById("shop_lngInput").value = lng;
-            for (var component in componentForm) {
-                document.getElementById('shop_'+component).value = '';
-                document.getElementById('shop_'+component).disabled = false;
-            }
-            for (var i = 0; i < place.address_components.length; i++) {
-                var addressType = place.address_components[i].types[0];
-                if (componentForm[addressType]) {
-                    var val = place.address_components[i][componentForm[addressType]];
-                    document.getElementById('shop_'+addressType).value = val;
-                }
-            }
-        }
-    </script>
-    <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key={{env("GOOGLE_MAP_KEY")}}&libraries=places&callback=initMap">
-    </script>
 @endsection

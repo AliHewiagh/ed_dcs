@@ -19,7 +19,8 @@ class School extends Model
      * @var array
      */
     protected $fillable = [
-        "school_code", "name", "user_id", "type", "school_type_id", "location_id", "area", "mypib", "sekolahi", "sekolahk", "sbt", "active", "done",
+        "school_code", "name", "user_id", "state_id", "pkg", "type", "school_type_id", "location_id", "area",
+        "mypib", "sekolahi", "sekolahk", "sbt", "source", "active", "done",
     ];
 
 

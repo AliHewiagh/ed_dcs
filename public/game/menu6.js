@@ -1031,7 +1031,6 @@ p.nominalBounds = new cjs.Rectangle(-25.1,-26,54,56);
 	}
 	this.frame_141 = function() {
 		function doPlay(e){
-			setLevel(6);
 			nextScreen();
 		}
 		this.btnCont.addEventListener("click", doPlay);
@@ -1227,19 +1226,19 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/menu6/Bitmap10.png?1524643859191", id:"Bitmap10"},
-		{src:"images/menu6/Bitmap13.png?1524643859191", id:"Bitmap13"},
-		{src:"images/menu6/Bitmap14.png?1524643859191", id:"Bitmap14"},
-		{src:"images/menu6/Bitmap3.png?1524643859191", id:"Bitmap3"},
-		{src:"images/menu6/Bitmap4.png?1524643859191", id:"Bitmap4"},
-		{src:"images/menu6/Bitmap5.png?1524643859191", id:"Bitmap5"},
-		{src:"images/menu6/Bitmap6.png?1524643859191", id:"Bitmap6"},
-		{src:"images/menu6/Bitmap7.png?1524643859191", id:"Bitmap7"},
-		{src:"images/menu6/Bitmap8.png?1524643859191", id:"Bitmap8"},
-		{src:"images/menu6/Bitmap9.png?1524643859191", id:"Bitmap9"},
-		{src:"sounds/bleep_stutter.mp3?1524643859194", id:"bleep_stutter"},
-		{src:"sounds/menuRock2.mp3?1524643859194", id:"menuRock2"},
-		{src:"sounds/stdClick.mp3?1524643859194", id:"stdClick"}
+		{src:"images/menu6/Bitmap10.png?1527432696313", id:"Bitmap10"},
+		{src:"images/menu6/Bitmap13.png?1527432696313", id:"Bitmap13"},
+		{src:"images/menu6/Bitmap14.png?1527432696313", id:"Bitmap14"},
+		{src:"images/menu6/Bitmap3.png?1527432696313", id:"Bitmap3"},
+		{src:"images/menu6/Bitmap4.png?1527432696313", id:"Bitmap4"},
+		{src:"images/menu6/Bitmap5.png?1527432696313", id:"Bitmap5"},
+		{src:"images/menu6/Bitmap6.png?1527432696313", id:"Bitmap6"},
+		{src:"images/menu6/Bitmap7.png?1527432696313", id:"Bitmap7"},
+		{src:"images/menu6/Bitmap8.png?1527432696313", id:"Bitmap8"},
+		{src:"images/menu6/Bitmap9.png?1527432696313", id:"Bitmap9"},
+		{src:"sounds/bleep_stutter.mp3?1527432696313", id:"bleep_stutter"},
+		{src:"sounds/menuRock2.mp3?1527432696313", id:"menuRock2"},
+		{src:"sounds/stdClick.mp3?1527432696313", id:"stdClick"}
 	],
 	preloads: []
 };

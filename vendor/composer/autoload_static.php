@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitad492e3c8d880837243c8f0a3a6b58cc
+class ComposerStaticInit90bf4cc74c6a230efc5b1eb3a3fa6bf7
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -363,6 +363,7 @@ class ComposerStaticInitad492e3c8d880837243c8f0a3a6b58cc
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Game' => __DIR__ . '/../..' . '/app/Game.php',
         'App\\Http\\Controllers\\API\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/API/HomeController.php',
+        'App\\Http\\Controllers\\API\\RecordController' => __DIR__ . '/../..' . '/app/Http/Controllers/API/RecordController.php',
         'App\\Http\\Controllers\\API\\StageController' => __DIR__ . '/../..' . '/app/Http/Controllers/API/StageController.php',
         'App\\Http\\Controllers\\Admin\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/DashboardController.php',
         'App\\Http\\Controllers\\Admin\\ProgressController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ProgressController.php',
@@ -376,6 +377,7 @@ class ComposerStaticInitad492e3c8d880837243c8f0a3a6b58cc
         'App\\Http\\Controllers\\Student\\GameController' => __DIR__ . '/../..' . '/app/Http/Controllers/Student/GameController.php',
         'App\\Http\\Controllers\\Teacher\\ClassController' => __DIR__ . '/../..' . '/app/Http/Controllers/Teacher/ClassController.php',
         'App\\Http\\Controllers\\Teacher\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Teacher/HomeController.php',
+        'App\\Http\\Controllers\\Teacher\\ProgressController' => __DIR__ . '/../..' . '/app/Http/Controllers/Teacher/ProgressController.php',
         'App\\Http\\Controllers\\Teacher\\StudentController' => __DIR__ . '/../..' . '/app/Http/Controllers/Teacher/StudentController.php',
         'App\\Http\\Controllers\\Teacher\\StudentExcelController' => __DIR__ . '/../..' . '/app/Http/Controllers/Teacher/StudentExcelController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
@@ -386,6 +388,7 @@ class ComposerStaticInitad492e3c8d880837243c8f0a3a6b58cc
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Location' => __DIR__ . '/../..' . '/app/Location.php',
         'App\\Permission' => __DIR__ . '/../..' . '/app/Permission.php',
+        'App\\Pkg' => __DIR__ . '/../..' . '/app/Pkg.php',
         'App\\Progress' => __DIR__ . '/../..' . '/app/Progress.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -396,6 +399,9 @@ class ComposerStaticInitad492e3c8d880837243c8f0a3a6b58cc
         'App\\School' => __DIR__ . '/../..' . '/app/School.php',
         'App\\SchoolClass' => __DIR__ . '/../..' . '/app/SchoolClass.php',
         'App\\SchoolType' => __DIR__ . '/../..' . '/app/SchoolType.php',
+        'App\\Skill' => __DIR__ . '/../..' . '/app/Skill.php',
+        'App\\State' => __DIR__ . '/../..' . '/app/State.php',
+        'App\\StudentRecord' => __DIR__ . '/../..' . '/app/StudentRecord.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
@@ -3063,6 +3069,7 @@ class ComposerStaticInitad492e3c8d880837243c8f0a3a6b58cc
         'PhpParser\\Serializer\\XML' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Serializer/XML.php',
         'PhpParser\\Unserializer' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Unserializer.php',
         'PhpParser\\Unserializer\\XML' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Unserializer/XML.php',
+        'PkgTableSeeder' => __DIR__ . '/../..' . '/database/seeds/PkgTableSeeder.php',
         'Prophecy\\Argument' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Argument.php',
         'Prophecy\\Argument\\ArgumentsWildcard' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Argument/ArgumentsWildcard.php',
         'Prophecy\\Argument\\Token\\AnyValueToken' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Argument/Token/AnyValueToken.php',
@@ -3446,6 +3453,8 @@ class ComposerStaticInitad492e3c8d880837243c8f0a3a6b58cc
         'SebastianBergmann\\Timer\\RuntimeException' => __DIR__ . '/..' . '/phpunit/php-timer/src/RuntimeException.php',
         'SebastianBergmann\\Timer\\Timer' => __DIR__ . '/..' . '/phpunit/php-timer/src/Timer.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
+        'SkillTableSeeder' => __DIR__ . '/../..' . '/database/seeds/SkillTableSeeder.php',
+        'StateTableSeeder' => __DIR__ . '/../..' . '/database/seeds/StateTableSeeder.php',
         'Symfony\\Component\\Console\\Application' => __DIR__ . '/..' . '/symfony/console/Application.php',
         'Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface' => __DIR__ . '/..' . '/symfony/console/CommandLoader/CommandLoaderInterface.php',
         'Symfony\\Component\\Console\\CommandLoader\\ContainerCommandLoader' => __DIR__ . '/..' . '/symfony/console/CommandLoader/ContainerCommandLoader.php',
@@ -4106,10 +4115,10 @@ class ComposerStaticInitad492e3c8d880837243c8f0a3a6b58cc
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitad492e3c8d880837243c8f0a3a6b58cc::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitad492e3c8d880837243c8f0a3a6b58cc::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitad492e3c8d880837243c8f0a3a6b58cc::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitad492e3c8d880837243c8f0a3a6b58cc::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit90bf4cc74c6a230efc5b1eb3a3fa6bf7::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit90bf4cc74c6a230efc5b1eb3a3fa6bf7::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit90bf4cc74c6a230efc5b1eb3a3fa6bf7::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit90bf4cc74c6a230efc5b1eb3a3fa6bf7::$classMap;
 
         }, null, ClassLoader::class);
     }
