@@ -21,6 +21,15 @@
                         <label for="nameInput">School Name</label>
                         <input type="text" name="name" class="form-control required" id="nameInput" value="{{old('name')}}" required>
                     </div>
+                    <div class="form-group">
+                        <label for="sourceInput">Source</label>
+                        <select class="form-control" id="sourceInput" name="source">
+                            <option value="">Please select source</option>
+                            <option value="IKIM">IKIM</option>
+                            <option value="SPSS">SPSS</option>
+                            <option value="Others">Others</option>
+                        </select>
+                    </div>
 
                     {{--<div class="form-group">--}}
                         {{--<label for="school_codeInput">School Code</label>--}}

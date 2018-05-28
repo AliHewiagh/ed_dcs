@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Manager;
 
 use App\Location;
+use App\Pkg;
 use App\School;
 use App\SchoolType;
+use App\State;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -32,7 +34,20 @@ class HomeController extends Controller
      */
     public function icUpdate(Request $request)
     {
-        $ic = $request->ic_number;
+        $data = $request->only("ic_number");
+        $validator = Validator::make($data, [
+            'ic_number' => 'required|numeric',
+        ]);
+
+        if ($validator->fails()) {
+            return back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+        $ic = $data['ic_number'];
+        if(strlen($ic)>12 || strlen($ic)<12){
+            return back()->with('error', 'Please insert correct IC number!');
+        }
         $pass = substr($ic, -4, 4);
         Auth::user()->update(["ic_number"=>$ic, "username"=>$ic, "password"=>$pass]);
         return redirect("/manager/info/update");
@@ -44,10 +59,14 @@ class HomeController extends Controller
      */
     public function infoUpdate()
     {
+        $authId = Auth::user()->id;
         $priTypes = SchoolType::where("group", 1)->get();
         $secTypes = SchoolType::where("group", 2)->get();
-        $states = Location::where('active', 1)->get()->groupBy("group");
-        return view("manager.home.insertInfo", compact("priTypes", "secTypes", "states"));
+        $pps = Location::all();
+        $states = State::all();
+        $pkgs = Pkg::all();
+        $school = School::where('user_id', $authId)->first();
+        return view("manager.home.insertInfo", compact("priTypes", "secTypes", "pps", "pkgs", "states", "school"));
     }
 
 
@@ -66,7 +85,7 @@ class HomeController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         }
-        $data = $request->only("school_code", "type", "school_type_id", "location_id", "area", "mypib", "sekolahi", "sekolahk", "sbt");
+        $data = $request->only("school_code", "name", "state_id", "pkg", "type", "school_type_id", "location_id", "area", "mypib", "sekolahi", "sekolahk", "sbt");
         if($data["school_type_id"] == "other"){
             if(empty($request->other_type)){
                 return back()->withInput()->with("error", "Please specify type of school!");
@@ -80,7 +99,23 @@ class HomeController extends Controller
         }
         Auth::user()->update(["email"=>$request->email, "phone"=>$request->phone]);
         $school->update($data);
-        return redirect('/manager/dashboard');
+        return redirect('/manager/dashboard')->with('success', 'Profile updated successfully!');
     }
 
+
+    /**
+     * @return resource
+     */
+    public function editProfile()
+    {
+        $authId = Auth::user()->id;
+        $priTypes = SchoolType::where("group", 1)->get();
+        $secTypes = SchoolType::where("group", 2)->get();
+        $pps = Location::all();
+        $states = State::all();
+        $pkgs = Pkg::all();
+        $school = School::where('user_id', $authId)->first();
+        return view("manager.home.profileEdit", compact("priTypes", "secTypes", "pps", "pkgs", "states", "school"));
+    }
+    
 }

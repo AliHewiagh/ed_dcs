@@ -1,5 +1,5 @@
 var debugMode = true;
-var schoolLevel = 2;
+var schoolLevel;
 //----turn this on for final to disable all console.log 
 //console.log = function() {};
 
@@ -162,7 +162,7 @@ if (schoolLevel==1){//primary
 }
 }
 if (currentProgress==undefined){
-	var currentProgress = 0;
+	var currentProgress = 1;
 }
 console.log(currentProgress);
 var myLanguage; //1 for BM, 2 for English
@@ -176,10 +176,10 @@ var cLastState;
 var cTimeLeft;
 var didOnce = false;
 checkCookie();
-
-function setLevel(cLevel){
-	exportRoot.mcLevel.gotoAndStop(cLevel);
-}
+/*
+function setLevel(){
+	exportRoot.mcLevel.gotoAndStop(cStage);
+}*/
 function loadScript(url, callback){
     var script = document.createElement("script")
     script.type = "text/javascript";
@@ -213,23 +213,29 @@ function initTapir(){
 			var cData = $.get("/api/stage/get/"+cUserId, function (data) {
 			if(data.status == 100){
 				//success api call
-				cStage = Number(data.stage);
+				cStage = data.stage;
+				exportRoot.mcLevel.gotoAndStop(cStage);
+				cLevel = data.level;
 				cLastScreen = data.last_screen;
 				cLastState = data.last_state;
 				cTimeLeft = data.time_left;
+				if (cLevel=="Year 6"){
+					schoolLevel = 1;
+				} else if (cLevel=="Form 3"){
+					schoolLevel = 2;
+				} else {
+					schoolLevel = 3;
+				}
+				var setList = doOnce();
 			}else{
 				//failed
 			}
 			});
 		}
-		//hard-code temporarily
-		if (cUserName.indexOf("Hitam")!=-1){
-			schoolLevel=3;
-		}
 		if (debugMode){
 			$("#stageList").css("display","block");
 		}
-		doOnce();
+		currentProgress = 1;//to always load the splash screen
 		didOnce = true;
 	}
 	console.log(scrList[currentProgress-1].constructorName + ".js");
@@ -293,12 +299,41 @@ function handleCompleteSub(evt,comp) {
 	}	
 	AdobeAn.compositionLoaded(libSub.properties.id);
 	fnStartAnimationSub();
+	if (scrList[currentProgress-1].constructorName.indexOf("menu")!=-1){
+		cStage = Number(scrList[currentProgress-1].constructorName.substring(4));
+		exportRoot.mcLevel.gotoAndStop(cStage);
+	}
+	if (cStage>0){
+		var cData = $.post("/api/stage/update/", 
+						{	userId: cUserId, 
+							stage: cStage,
+							last_screen: scrList[currentProgress-1].constructorName,
+							last_state: "",
+							time_left: 0},
+							function(data){
+								console.log(data.message);
+							});
+	}
 }
 function nextScreen(){
 	currentProgress++;
 	initTapir();
 }
-
+function startScreen(){
+	console.log(cStage);
+	if (cStage==0){
+		currentProgress = 2;
+	} else {
+		var scrLength = scrList.length;
+		for (var i=0; i<scrLength; i++){
+			if (scrList[i].constructorName==cLastScreen){
+				currentProgress = i+1;
+				break;
+			}
+		}
+	}
+	initTapir();
+}
 var myAudio;
 function playSound(id, loop) {
 	myAudio = createjs.Sound.play(id, createjs.Sound.INTERRUPT_EARLY, 0, 0, loop);

@@ -21,10 +21,11 @@
         <ul class="sidebar-menu">
             <li class="header">DASHBOARD MENU</li>
             <li><a href="{{ route('teacher_dashboard_path') }}"><i class="fa fa-tachometer"></i> <span>Dashboard</span></a></li>
-            <li><a href="{{url('/teacher/classes')}}"><i class="fa fa-users"></i> <span>Students</span></a></li>
-            {{--<li><a href="#"><i class="fa fa-users"></i> <span>Customer</span></a></li>--}}
+            <li><a href="{{url('/teacher/progress')}}"><i class="fa fa-cubes"></i> <span>Progress</span></a></li>
+            <li><a href="{{url('/teacher/classes')}}"><i class="fa fa-users"></i> <span>Student Management</span></a></li>
+            <li><a href="{{url('/teacher/setting')}}"><i class="fa fa-gear"></i> <span>Setting</span></a></li>
+            <li><a href="#"><i class="fa fa-question-circle"></i> <span>Help</span></a></li>
 
-            {{--<li><a href="{{url('/admin/menu/merchants')}}"><i class="fa fa-cubes"></i> <span>Categories</span></a></li>--}}
             {{--<li><a href="{{url('/admin/product/merchants')}}"><i class="fa fa-cutlery"></i> <span>Product Item</span></a></li>--}}
             {{--<li><a href="#"><i class="fa fa-percent"></i> <span>Deals</span></a></li>--}}
             {{--<li><a href="#"><i class="fa fa-list" aria-hidden="true"></i> <span>Orders</span></a></li>--}}

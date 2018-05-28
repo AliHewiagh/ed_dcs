@@ -10,5 +10,7 @@ Route::post('/ic/update', ['as' => 'manager_ic_update', 'uses' => 'Manager\HomeC
 Route::get('/info/update', ['as' => 'manager_info_update', 'uses' => 'Manager\HomeController@infoUpdate']);
 Route::post('/info/update/store', ['as' => 'manager_info_update_store', 'uses' => 'Manager\HomeController@infoUpdateStore']);
 
+Route::get('/profile/edit', ['as' => 'manager_profile_edit', 'uses' => 'Manager\HomeController@editProfile']);
+
 // Teachers
 Route::resource('/teacher', 'Manager\TeacherController');

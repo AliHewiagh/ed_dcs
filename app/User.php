@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'school_id', 'class_id', 'ic_number', 'username', 'email', 'phone', 'password', "gender", "dob", "status", "image", "type"
+        'name', 'school_id', 'class_id', 'ic_number', 'username', 'email', 'phone', 'password', "gender", "dob", "status", "image", "type", "done"
     ];
     //status 1->active
     // 2->suspend

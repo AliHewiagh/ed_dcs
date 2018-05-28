@@ -38,16 +38,23 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <?php $school = \App\School::find($schoolId); ?>
+                                    <?php $school = \App\School::find($schoolId);
+                                    $techs = \App\StudentRecord::where([['user_id', $student->id], ['qDomain', 1]])->get();
+                                    $cognitive = \App\StudentRecord::where([['user_id', $student->id], ['qDomain', 2]])->get();
+                                    $ethics = \App\StudentRecord::where([['user_id', $student->id], ['qDomain', 3]])->get();
+                                    $techScore = $techs->sum('score') / count($techs);
+                                    $cognitiveScore = $cognitive->sum('score') / count($cognitive);
+                                    $ethicsScore = $ethics->sum('score') / count($ethics);
+                                    ?>
                                     <tr>
-                                        <td>{{$student->name}}</td>
+                                        <td><a href="{{url('/admin/progress/'.$state.'/'.$schoolId.'/'.$teacherId.'/'.$classId.'/'.$student->id.'/detail')}}">{{$student->name}}</a></td>
                                         <td>{{$state}}</td>
                                         <td>{{$school->name}}</td>
                                         <td>{{$student->gender}}</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
+                                        <td>{{$techScore}}</td>
+                                        <td>{{$ethicsScore}}</td>
+                                        <td>{{$cognitiveScore}}</td>
+                                        <td>{{($techScore+$ethicsScore+$cognitiveScore)/3}}</td>
                                     </tr>
                                     </tbody>
                                 </table>

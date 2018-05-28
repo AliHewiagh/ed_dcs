@@ -43,13 +43,16 @@ class StudentController extends Controller
         $data = $request->only("name", "ic_number");
         $validator = Validator::make($data, [
             'name' => 'required|max:200',
-            'ic_number' => 'required|max:20',
+            'ic_number' => 'required|numeric',
         ]);
 
         if ($validator->fails()) {
             return redirect('/teacher/class/'.$classId.'/student/create')
                 ->withErrors($validator)
                 ->withInput();
+        }
+        if(strlen($data['ic_number']) != 12){
+            return back()->withInput()->with("error", "Please insert correct IC number!");
         }
         $old = User::where("username", $data["ic_number"])->first();
         if(!empty($old)){
@@ -89,9 +92,10 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($classId, $id)
     {
-        //
+        $student = User::findOrFail($id);
+        return view('teacher.student.edit', compact('student','classId'));
     }
 
     /**
@@ -101,9 +105,24 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $classId, $id)
     {
-        //
+        $data = $request->only("name", "ic_number");
+        $validator = Validator::make($data, [
+            'name' => 'required|max:200',
+            'ic_number' => 'required|numeric',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('/teacher/class/'.$classId.'/student/'.$id.'/edit')
+                ->withErrors($validator)
+                ->withInput();
+        }
+        $student = User::findOrFail($id);
+        $data["username"] = $data["ic_number"];
+        $data["password"] = substr($data["ic_number"], -4, 4);
+        $student->update($data);
+        return redirect('/teacher/class/'.$classId.'/student')->with("success", "Student updated successfully!");
     }
 
     /**

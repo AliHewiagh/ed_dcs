@@ -1030,7 +1030,6 @@ p.nominalBounds = new cjs.Rectangle(-25.1,-26,54,56);
 	}
 	this.frame_137 = function() {
 		function doPlay(e){
-			setLevel(2);
 			nextScreen();
 		}
 		this.btnCont.addEventListener("click", doPlay);
@@ -1206,19 +1205,19 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/menu2/Bitmap10.png?1524642805372", id:"Bitmap10"},
-		{src:"images/menu2/Bitmap3.png?1524642805372", id:"Bitmap3"},
-		{src:"images/menu2/Bitmap4.png?1524642805372", id:"Bitmap4"},
-		{src:"images/menu2/Bitmap5.png?1524642805372", id:"Bitmap5"},
-		{src:"images/menu2/Bitmap6.png?1524642805372", id:"Bitmap6"},
-		{src:"images/menu2/Bitmap7.png?1524642805372", id:"Bitmap7"},
-		{src:"images/menu2/Bitmap8.png?1524642805372", id:"Bitmap8"},
-		{src:"images/menu2/Bitmap9.png?1524642805372", id:"Bitmap9"},
-		{src:"images/menu2/PlanetKekunyah.png?1524642805372", id:"PlanetKekunyah"},
-		{src:"images/menu2/PlanetMenu2.png?1524642805372", id:"PlanetMenu2"},
-		{src:"sounds/bleep_stutter.mp3?1524642805372", id:"bleep_stutter"},
-		{src:"sounds/menuRock2.mp3?1524642805372", id:"menuRock2"},
-		{src:"sounds/stdClick.mp3?1524642805372", id:"stdClick"}
+		{src:"images/menu2/Bitmap10.png?1527431972500", id:"Bitmap10"},
+		{src:"images/menu2/Bitmap3.png?1527431972500", id:"Bitmap3"},
+		{src:"images/menu2/Bitmap4.png?1527431972500", id:"Bitmap4"},
+		{src:"images/menu2/Bitmap5.png?1527431972500", id:"Bitmap5"},
+		{src:"images/menu2/Bitmap6.png?1527431972500", id:"Bitmap6"},
+		{src:"images/menu2/Bitmap7.png?1527431972500", id:"Bitmap7"},
+		{src:"images/menu2/Bitmap8.png?1527431972500", id:"Bitmap8"},
+		{src:"images/menu2/Bitmap9.png?1527431972500", id:"Bitmap9"},
+		{src:"images/menu2/PlanetKekunyah.png?1527431972500", id:"PlanetKekunyah"},
+		{src:"images/menu2/PlanetMenu2.png?1527431972500", id:"PlanetMenu2"},
+		{src:"sounds/bleep_stutter.mp3?1527431972500", id:"bleep_stutter"},
+		{src:"sounds/menuRock2.mp3?1527431972500", id:"menuRock2"},
+		{src:"sounds/stdClick.mp3?1527431972500", id:"stdClick"}
 	],
 	preloads: []
 };

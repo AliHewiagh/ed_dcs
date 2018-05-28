@@ -27,6 +27,7 @@ class CreateUsersTable extends Migration
             $table->char("dob", 10)->nullable();
             $table->tinyInteger('type')->nullable();
             $table->tinyInteger('status')->default(1);
+            $table->boolean('done')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

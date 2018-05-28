@@ -1031,7 +1031,6 @@ p.nominalBounds = new cjs.Rectangle(-25.1,-26,54,56);
 	}
 	this.frame_152 = function() {
 		function doPlay(e){
-			setLevel(17);
 			nextScreen();
 		}
 		this.btnCont.addEventListener("click", doPlay);
@@ -1265,19 +1264,19 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/menu17/Bitmap26.png?1524644887771", id:"Bitmap26"},
-		{src:"images/menu17/Bitmap27.png?1524644887771", id:"Bitmap27"},
-		{src:"images/menu17/Bitmap3.png?1524644887771", id:"Bitmap3"},
-		{src:"images/menu17/Bitmap4.png?1524644887771", id:"Bitmap4"},
-		{src:"images/menu17/Bitmap5.png?1524644887771", id:"Bitmap5"},
-		{src:"images/menu17/Bitmap6.png?1524644887771", id:"Bitmap6"},
-		{src:"images/menu17/Bitmap7.png?1524644887771", id:"Bitmap7"},
-		{src:"images/menu17/Bitmap8.png?1524644887771", id:"Bitmap8"},
-		{src:"images/menu17/eggyplanet.png?1524644887771", id:"eggyplanet"},
-		{src:"images/menu17/pinkplanet.png?1524644887771", id:"pinkplanet"},
-		{src:"sounds/bleep_stutter.mp3?1524644887771", id:"bleep_stutter"},
-		{src:"sounds/menuRock2.mp3?1524644887771", id:"menuRock2"},
-		{src:"sounds/stdClick.mp3?1524644887771", id:"stdClick"}
+		{src:"images/menu17/Bitmap26.png?1527433662502", id:"Bitmap26"},
+		{src:"images/menu17/Bitmap27.png?1527433662502", id:"Bitmap27"},
+		{src:"images/menu17/Bitmap3.png?1527433662502", id:"Bitmap3"},
+		{src:"images/menu17/Bitmap4.png?1527433662502", id:"Bitmap4"},
+		{src:"images/menu17/Bitmap5.png?1527433662502", id:"Bitmap5"},
+		{src:"images/menu17/Bitmap6.png?1527433662502", id:"Bitmap6"},
+		{src:"images/menu17/Bitmap7.png?1527433662502", id:"Bitmap7"},
+		{src:"images/menu17/Bitmap8.png?1527433662502", id:"Bitmap8"},
+		{src:"images/menu17/eggyplanet.png?1527433662502", id:"eggyplanet"},
+		{src:"images/menu17/pinkplanet.png?1527433662502", id:"pinkplanet"},
+		{src:"sounds/bleep_stutter.mp3?1527433662502", id:"bleep_stutter"},
+		{src:"sounds/menuRock2.mp3?1527433662502", id:"menuRock2"},
+		{src:"sounds/stdClick.mp3?1527433662502", id:"stdClick"}
 	],
 	preloads: []
 };

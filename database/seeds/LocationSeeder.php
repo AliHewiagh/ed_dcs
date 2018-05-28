@@ -149,11 +149,11 @@ class LocationSeeder extends Seeder
         \App\Location::create(["group"=>13, "state"=>"Terengganu", "pp"=>"PPD Kuala Terengganu"]);
         \App\Location::create(["group"=>13, "state"=>"Terengganu", "pp"=>"PPD Marang"]);
         \App\Location::create(["group"=>13, "state"=>"Terengganu", "pp"=>"PPD Setiu"]);
-        \App\Location::create(["group"=>14, "state"=>"Wilayah Persekutuan Kuala Lumpur", "pp"=>"PPW Bangsar Pudu"]);
-        \App\Location::create(["group"=>14, "state"=>"Wilayah Persekutuan Kuala Lumpur", "pp"=>"PPW Keramat"]);
-        \App\Location::create(["group"=>14, "state"=>"Wilayah Persekutuan Kuala Lumpur", "pp"=>"PPW Sentul"]);
-        \App\Location::create(["group"=>15, "state"=>"Wilayah Persekutuan Labuan", "pp"=>"Jpwp Labuan"]);
-        \App\Location::create(["group"=>16, "state"=>"Wilayah Persekutuan Putrajaya", "pp"=>"Jpwp Putrajaya"]);
+        \App\Location::create(["group"=>14, "state"=>"WP Kuala Lumpur", "pp"=>"PPW Bangsar Pudu"]);
+        \App\Location::create(["group"=>14, "state"=>"WP Kuala Lumpur", "pp"=>"PPW Keramat"]);
+        \App\Location::create(["group"=>14, "state"=>"WP Kuala Lumpur", "pp"=>"PPW Sentul"]);
+        \App\Location::create(["group"=>15, "state"=>"WP Labuan", "pp"=>"Jpwp Labuan"]);
+        \App\Location::create(["group"=>16, "state"=>"WP Putrajaya", "pp"=>"Jpwp Putrajaya"]);
         
 
     }

@@ -28,6 +28,7 @@
                                     <tr>
                                         <th>Created at</th>
                                         <th>Name</th>
+                                        <th>Gender</th>
                                         <th>Username</th>
                                         <th>Password</th>
                                         <th>Action</th>
@@ -41,9 +42,11 @@
                                         <tr>
                                             <td>{{$student->created_at}}</td>
                                             <td>{{$student->name}}</td>
+                                            <td>{{$student->gender}}</td>
                                             <td>{{$student->username}}</td>
                                             <td>{{$student->password}}</td>
-                                            <td><a href="#modal{{$student->id}}" class="btn btn-danger">DELETE</a></td>
+                                            <td><a href="#modal{{$student->id}}" class="btn btn-danger">DELETE</a>
+                                                <a href="{{url("teacher/class/".$classId."/student/".$student->id."/edit")}}" class="btn btn-warning">Edit</a></td>
                                         </tr>
                                         <div data-remodal-id="modal{{$student->id}}" role="dialog" class="delete_model_c">
                                             <div>

@@ -1045,7 +1045,6 @@ p.nominalBounds = new cjs.Rectangle(-25.1,-26,54,56);
 	}
 	this.frame_145 = function() {
 		function doPlay(e){
-			setLevel(10);
 			nextScreen();
 		}
 		this.btnCont.addEventListener("click", doPlay);
@@ -1266,19 +1265,19 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/menu10/Bitmap19.png?1524644289887", id:"Bitmap19"},
-		{src:"images/menu10/Bitmap20.png?1524644289887", id:"Bitmap20"},
-		{src:"images/menu10/Bitmap3.png?1524644289887", id:"Bitmap3"},
-		{src:"images/menu10/Bitmap4.png?1524644289887", id:"Bitmap4"},
-		{src:"images/menu10/Bitmap5.png?1524644289887", id:"Bitmap5"},
-		{src:"images/menu10/Bitmap6.png?1524644289887", id:"Bitmap6"},
-		{src:"images/menu10/Bitmap7.png?1524644289887", id:"Bitmap7"},
-		{src:"images/menu10/Bitmap8.png?1524644289887", id:"Bitmap8"},
-		{src:"images/menu10/blobPlanet.png?1524644289887", id:"blobPlanet"},
-		{src:"images/menu10/greenplanet2.png?1524644289887", id:"greenplanet2"},
-		{src:"sounds/bleep_stutter.mp3?1524644289887", id:"bleep_stutter"},
-		{src:"sounds/menuRock2.mp3?1524644289887", id:"menuRock2"},
-		{src:"sounds/stdClick.mp3?1524644289887", id:"stdClick"}
+		{src:"images/menu10/Bitmap19.png?1527432940702", id:"Bitmap19"},
+		{src:"images/menu10/Bitmap20.png?1527432940702", id:"Bitmap20"},
+		{src:"images/menu10/Bitmap3.png?1527432940702", id:"Bitmap3"},
+		{src:"images/menu10/Bitmap4.png?1527432940702", id:"Bitmap4"},
+		{src:"images/menu10/Bitmap5.png?1527432940702", id:"Bitmap5"},
+		{src:"images/menu10/Bitmap6.png?1527432940702", id:"Bitmap6"},
+		{src:"images/menu10/Bitmap7.png?1527432940702", id:"Bitmap7"},
+		{src:"images/menu10/Bitmap8.png?1527432940702", id:"Bitmap8"},
+		{src:"images/menu10/blobPlanet.png?1527432940702", id:"blobPlanet"},
+		{src:"images/menu10/greenplanet2.png?1527432940702", id:"greenplanet2"},
+		{src:"sounds/bleep_stutter.mp3?1527432940702", id:"bleep_stutter"},
+		{src:"sounds/menuRock2.mp3?1527432940702", id:"menuRock2"},
+		{src:"sounds/stdClick.mp3?1527432940702", id:"stdClick"}
 	],
 	preloads: []
 };

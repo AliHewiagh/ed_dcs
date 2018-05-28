@@ -1824,7 +1824,7 @@ p.nominalBounds = new cjs.Rectangle(-222,-170,442,341.1);
 	this.frame_59 = function() {
 		this.stop();
 		function doPlay (e){
-			nextScreen();
+			startScreen();
 		}
 		this.btnPlay.addEventListener("click", doPlay);
 	}
@@ -1960,15 +1960,15 @@ lib.properties = {
 	color: "#000000",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/splash/Bitmap1.png?1524629566012", id:"Bitmap1"},
-		{src:"images/splash/Bitmap2.png?1524629566012", id:"Bitmap2"},
-		{src:"images/splash/Bitmap3.png?1524629566012", id:"Bitmap3"},
-		{src:"images/splash/Bitmap4.png?1524629566012", id:"Bitmap4"},
-		{src:"images/splash/Bitmap5.png?1524629566012", id:"Bitmap5"},
-		{src:"images/splash/Bitmap6.png?1524629566012", id:"Bitmap6"},
-		{src:"images/splash/redplanet.png?1524629566012", id:"redplanet"},
-		{src:"images/splash/starfieldbg.jpg?1524629566012", id:"starfieldbg"},
-		{src:"sounds/stdClick.mp3?1524629566012", id:"stdClick"}
+		{src:"images/splash/Bitmap1.png?1527426934270", id:"Bitmap1"},
+		{src:"images/splash/Bitmap2.png?1527426934270", id:"Bitmap2"},
+		{src:"images/splash/Bitmap3.png?1527426934270", id:"Bitmap3"},
+		{src:"images/splash/Bitmap4.png?1527426934270", id:"Bitmap4"},
+		{src:"images/splash/Bitmap5.png?1527426934270", id:"Bitmap5"},
+		{src:"images/splash/Bitmap6.png?1527426934270", id:"Bitmap6"},
+		{src:"images/splash/redplanet.png?1527426934270", id:"redplanet"},
+		{src:"images/splash/starfieldbg.jpg?1527426934270", id:"starfieldbg"},
+		{src:"sounds/stdClick.mp3?1527426934270", id:"stdClick"}
 	],
 	preloads: []
 };

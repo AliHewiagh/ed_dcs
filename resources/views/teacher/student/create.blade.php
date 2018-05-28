@@ -22,7 +22,7 @@
                         <input type="text" name="name" class="form-control required" id="nameInput" value="{{old('name')}}" required>
                     </div>
                     <div class="form-group">
-                        <label for="emailInput">IC Number</label>
+                        <label for="emailInput">MyKad/MyKid Number</label>
                         <input type="number" name="ic_number" class="form-control" id="emailInput" value="{{old('ic_number')}}">
                     </div>
                     <br />

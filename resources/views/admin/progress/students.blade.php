@@ -33,10 +33,12 @@
                                     </thead>
                                     <tbody>
                                     @foreach ($students as $student)
+                                        <?php $stages = \App\StudentRecord::where('user_id', $student->id)->pluck('stage')->toArray();
+                                        $stages = array_unique($stages); ?>
                                     <tr>
                                         <td><a href="{{url('/admin/progress/'.$state.'/'.$schoolId.'/'.$teacherId.'/'.$classId.'/'.$student->id)}}">{{$student->name}}</a></td>
                                         <td>{{$student->ic_number}}</td>
-                                        <td>0/{{$student->name}}</td>
+                                        <td>{{count($stages)}}/20</td>
                                     </tr>
                                     @endforeach
                                     </tbody>

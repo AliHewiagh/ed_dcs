@@ -36,6 +36,7 @@
                                             <td>{{$cl->name}}</td>
                                             <td>{{$cl->type}}</td>
                                             <td><a href="#modal{{$cl->id}}" class="btn btn-danger">DELETE</a>
+                                                <a href="{{url("teacher/classes/".$cl->id."/edit")}}" class="btn btn-warning">Edit</a>
                                                 <a href="{{url("teacher/class/".$cl->id."/student")}}" class="btn btn-primary">Students ({{$totalS}})</a></td>
                                         </tr>
                                         <div data-remodal-id="modal{{$cl->id}}" role="dialog" class="delete_model_c">
