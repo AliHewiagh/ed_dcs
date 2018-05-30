@@ -222,6 +222,9 @@ function initTapir(){
 		}
 	$("#dom_overlay_container").empty();
 	$("#blocklyDiv").empty();
+	if ($('#blocklyDiv') != null ) {
+        $("#blocklyDiv").hide();
+    }
 	if (!didOnce){
 		if (typeof cUserName === 'undefined') {
 			// nothing
