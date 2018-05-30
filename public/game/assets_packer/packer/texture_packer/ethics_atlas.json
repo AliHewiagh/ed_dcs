@@ -1,0 +1,180 @@
+{"frames": [
+
+{
+	"filename": "ethics_yesno_01.png",
+	"frame": {"x":1,"y":1,"w":200,"h":260},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":260},
+	"sourceSize": {"w":200,"h":260}
+},
+{
+	"filename": "ethics_yesno_02.png",
+	"frame": {"x":1,"y":263,"w":200,"h":260},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":260},
+	"sourceSize": {"w":200,"h":260}
+},
+{
+	"filename": "ethics_yesno_03.png",
+	"frame": {"x":1,"y":525,"w":200,"h":260},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":260},
+	"sourceSize": {"w":200,"h":260}
+},
+{
+	"filename": "ethics_yesno_04.png",
+	"frame": {"x":1,"y":787,"w":200,"h":260},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":260},
+	"sourceSize": {"w":200,"h":260}
+},
+{
+	"filename": "ethics_yesno_05.png",
+	"frame": {"x":203,"y":1,"w":200,"h":260},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":260},
+	"sourceSize": {"w":200,"h":260}
+},
+{
+	"filename": "ethics_yesno_06.png",
+	"frame": {"x":405,"y":1,"w":200,"h":260},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":260},
+	"sourceSize": {"w":200,"h":260}
+},
+{
+	"filename": "ethics_yesno_07.png",
+	"frame": {"x":607,"y":1,"w":200,"h":260},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":260},
+	"sourceSize": {"w":200,"h":260}
+},
+{
+	"filename": "ethics_yesno_08.png",
+	"frame": {"x":809,"y":1,"w":200,"h":260},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":260},
+	"sourceSize": {"w":200,"h":260}
+},
+{
+	"filename": "ethics_yesno_09.png",
+	"frame": {"x":1011,"y":1,"w":200,"h":260},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":260},
+	"sourceSize": {"w":200,"h":260}
+},
+{
+	"filename": "ethics_yesno_10.png",
+	"frame": {"x":203,"y":263,"w":200,"h":260},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":260},
+	"sourceSize": {"w":200,"h":260}
+},
+{
+	"filename": "ethics_yesno_11.png",
+	"frame": {"x":203,"y":525,"w":200,"h":260},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":260},
+	"sourceSize": {"w":200,"h":260}
+},
+{
+	"filename": "ethics_yesno_12.png",
+	"frame": {"x":203,"y":787,"w":200,"h":260},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":260},
+	"sourceSize": {"w":200,"h":260}
+},
+{
+	"filename": "ethics_yesno_13.png",
+	"frame": {"x":405,"y":263,"w":200,"h":260},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":260},
+	"sourceSize": {"w":200,"h":260}
+},
+{
+	"filename": "ethics_yesno_14.png",
+	"frame": {"x":607,"y":263,"w":200,"h":260},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":260},
+	"sourceSize": {"w":200,"h":260}
+},
+{
+	"filename": "ethics_yesno_15.png",
+	"frame": {"x":809,"y":263,"w":200,"h":260},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":260},
+	"sourceSize": {"w":200,"h":260}
+},
+{
+	"filename": "ethics_yesno_16.png",
+	"frame": {"x":1011,"y":263,"w":200,"h":260},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":260},
+	"sourceSize": {"w":200,"h":260}
+},
+{
+	"filename": "ethics_yesno_17.png",
+	"frame": {"x":405,"y":525,"w":200,"h":260},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":260},
+	"sourceSize": {"w":200,"h":260}
+},
+{
+	"filename": "ethics_yesno_18.png",
+	"frame": {"x":405,"y":787,"w":200,"h":260},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":260},
+	"sourceSize": {"w":200,"h":260}
+},
+{
+	"filename": "ethics_yesno_19.png",
+	"frame": {"x":607,"y":525,"w":200,"h":260},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":260},
+	"sourceSize": {"w":200,"h":260}
+},
+{
+	"filename": "ethics_yesno_20.png",
+	"frame": {"x":607,"y":787,"w":200,"h":260},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":260},
+	"sourceSize": {"w":200,"h":260}
+},
+{
+	"filename": "ethics_yesno_21.png",
+	"frame": {"x":809,"y":525,"w":200,"h":260},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":260},
+	"sourceSize": {"w":200,"h":260}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "ethics_atlas.png",
+	"format": "RGBA8888",
+	"size": {"w":1212,"h":1212},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:5312c85f8772d2ef4f3811e68423bab7:ca7200d3c20b69333d1a4b5b3ff4ffb1:a6d619f328cea4214ba91550c981c187$"
+}
+}

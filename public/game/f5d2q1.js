@@ -1168,18 +1168,14 @@ p.nominalBounds = new cjs.Rectangle(-331.5,-12.9,663.2,25.9);
 	this.frame_0 = function() {
 		var _this = this;
 		function initClock(myDuration) {
-			var secRemaining = myDuration;
+			_this.parent.secRemaining = myDuration;
 			
 			function updateClock() {
-				var myMin = Math.floor(secRemaining/60);
-				var mySec = secRemaining%60;
+				var myMin = Math.floor(_this.parent.secRemaining/60);
+				var mySec = _this.parent.secRemaining%60;
 				var txtMin;
 				var txtSec;
-				if (myMin>=10){
-					txtMin = myMin;
-				} else {
-					txtMin = "0"+myMin;
-				}
+				txtMin = myMin;
 				if (mySec>=10){
 					txtSec = mySec;
 				} else {
@@ -1187,17 +1183,19 @@ p.nominalBounds = new cjs.Rectangle(-331.5,-12.9,663.2,25.9);
 				}
 				_this.txtTime.text = txtMin + ":" + txtSec;
 		
-				if (secRemaining <= 0) {
+				if (_this.parent.secRemaining <= 0) {
 					clearInterval(timeInterval);
+					//$("#dom_overlay_container").empty();
+					_this.parent.onTimeEnd();
 					_this.parent.mcTimesUp.play();
 				} else {
-					secRemaining--;
+					_this.parent.secRemaining--;
 				}
 		  }
 		  updateClock();
 		  timeInterval = setInterval(updateClock, 1000);
 		}
-		initClock(120);//how many seconds
+		initClock(this.parent.timeGiven);
 	}
 
 	// actions tween:
@@ -6063,21 +6061,21 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/f5d2q1/Bitmap10.png?1527070674453", id:"Bitmap10"},
-		{src:"images/f5d2q1/Bitmap11.png?1527070674453", id:"Bitmap11"},
-		{src:"images/f5d2q1/Bitmap22.png?1527070674453", id:"Bitmap22"},
-		{src:"images/f5d2q1/Bitmap3.png?1527070674453", id:"Bitmap3"},
-		{src:"images/f5d2q1/Bitmap6.png?1527070674453", id:"Bitmap6"},
-		{src:"images/f5d2q1/Bitmap7.png?1527070674453", id:"Bitmap7"},
-		{src:"images/f5d2q1/Bitmap8.png?1527070674453", id:"Bitmap8"},
-		{src:"images/f5d2q1/Bitmap9.png?1527070674453", id:"Bitmap9"},
-		{src:"sounds/mdroid_talk.mp3?1527070674453", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1527070674453", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1527070674453", id:"questionComplete"},
-		{src:"sounds/stdClick.mp3?1527070674453", id:"stdClick"},
-		{src:"sounds/submitAns.mp3?1527070674453", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1527070674453", id:"suspense"},
-		{src:"sounds/timeout.mp3?1527070674453", id:"timeout"}
+		{src:"images/f5d2q1/Bitmap10.png?1527497685633", id:"Bitmap10"},
+		{src:"images/f5d2q1/Bitmap11.png?1527497685633", id:"Bitmap11"},
+		{src:"images/f5d2q1/Bitmap22.png?1527497685633", id:"Bitmap22"},
+		{src:"images/f5d2q1/Bitmap3.png?1527497685633", id:"Bitmap3"},
+		{src:"images/f5d2q1/Bitmap6.png?1527497685633", id:"Bitmap6"},
+		{src:"images/f5d2q1/Bitmap7.png?1527497685633", id:"Bitmap7"},
+		{src:"images/f5d2q1/Bitmap8.png?1527497685633", id:"Bitmap8"},
+		{src:"images/f5d2q1/Bitmap9.png?1527497685633", id:"Bitmap9"},
+		{src:"sounds/mdroid_talk.mp3?1527497685633", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1527497685633", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1527497685633", id:"questionComplete"},
+		{src:"sounds/stdClick.mp3?1527497685633", id:"stdClick"},
+		{src:"sounds/submitAns.mp3?1527497685633", id:"submitAns"},
+		{src:"sounds/suspense.mp3?1527497685633", id:"suspense"},
+		{src:"sounds/timeout.mp3?1527497685633", id:"timeout"}
 	],
 	preloads: []
 };

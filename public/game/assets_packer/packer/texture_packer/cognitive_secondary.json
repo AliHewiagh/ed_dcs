@@ -1,0 +1,332 @@
+{"frames": [
+
+{
+	"filename": "a_1.png",
+	"frame": {"x":201,"y":53,"w":50,"h":53},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":53},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "a_2.png",
+	"frame": {"x":65,"y":157,"w":50,"h":53},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":53},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "a_3.png",
+	"frame": {"x":265,"y":1,"w":50,"h":53},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":53},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "a_4.png",
+	"frame": {"x":201,"y":108,"w":50,"h":53},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":53},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "a_5.png",
+	"frame": {"x":65,"y":212,"w":50,"h":53},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":53},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "a_6.png",
+	"frame": {"x":253,"y":56,"w":50,"h":53},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":53},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "a_7.png",
+	"frame": {"x":253,"y":111,"w":50,"h":53},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":53},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "a_8.png",
+	"frame": {"x":53,"y":267,"w":50,"h":53},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":53},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "a_9.png",
+	"frame": {"x":105,"y":267,"w":50,"h":53},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":53},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "a_10.png",
+	"frame": {"x":1,"y":258,"w":50,"h":53},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":53},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "block_01_block.png",
+	"frame": {"x":310,"y":240,"w":32,"h":29},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":13,"y":22,"w":32,"h":29},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "block_01_qube.png",
+	"frame": {"x":117,"y":157,"w":50,"h":53},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":53},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "block_02_block.png",
+	"frame": {"x":310,"y":206,"w":37,"h":32},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":20,"w":37,"h":32},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "block_02_qube.png",
+	"frame": {"x":117,"y":212,"w":50,"h":53},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":53},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "block_03_qube.png",
+	"frame": {"x":169,"y":163,"w":50,"h":53},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":53},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "btn_clear.png",
+	"frame": {"x":1,"y":1,"w":130,"h":50},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":130,"h":50},
+	"sourceSize": {"w":130,"h":50}
+},
+{
+	"filename": "btn_clear_after.png",
+	"frame": {"x":1,"y":53,"w":130,"h":50},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":130,"h":50},
+	"sourceSize": {"w":130,"h":50}
+},
+{
+	"filename": "btn_execute.png",
+	"frame": {"x":133,"y":1,"w":130,"h":50},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":130,"h":50},
+	"sourceSize": {"w":130,"h":50}
+},
+{
+	"filename": "btn_execute_after.png",
+	"frame": {"x":1,"y":105,"w":130,"h":50},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":130,"h":50},
+	"sourceSize": {"w":130,"h":50}
+},
+{
+	"filename": "crystal_01_crystal.png",
+	"frame": {"x":1,"y":313,"w":47,"h":33},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":18,"w":47,"h":33},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "crystal_02_crystal.png",
+	"frame": {"x":245,"y":276,"w":40,"h":36},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":16,"w":40,"h":36},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "crystal_03_crystal.png",
+	"frame": {"x":273,"y":166,"w":34,"h":52},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":8,"y":1,"w":34,"h":52},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "crystal_04_crystal.png",
+	"frame": {"x":305,"y":56,"w":42,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":4,"y":5,"w":42,"h":45},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "crystal_05_crystal.png",
+	"frame": {"x":273,"y":220,"w":35,"h":51},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":0,"w":35,"h":51},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "crystal_qube.png",
+	"frame": {"x":169,"y":218,"w":50,"h":53},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":53},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "cube_end.png",
+	"frame": {"x":157,"y":273,"w":50,"h":53},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":53},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "cube_start.png",
+	"frame": {"x":221,"y":166,"w":50,"h":53},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":53},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "end_light_down_01.png",
+	"frame": {"x":309,"y":156,"w":34,"h":48},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":8,"y":0,"w":34,"h":48},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "end_light_down_02.png",
+	"frame": {"x":209,"y":276,"w":34,"h":48},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":8,"y":0,"w":34,"h":48},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "end_light_up_01.png",
+	"frame": {"x":50,"y":322,"w":34,"h":25},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":8,"y":4,"w":34,"h":25},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "end_light_up_02.png",
+	"frame": {"x":86,"y":322,"w":34,"h":25},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":8,"y":4,"w":34,"h":25},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "qube_lava_01.png",
+	"frame": {"x":305,"y":103,"w":39,"h":51},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":2,"w":39,"h":51},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "qube_lava_02.png",
+	"frame": {"x":317,"y":1,"w":29,"h":26},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":13,"y":25,"w":29,"h":26},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "qube_lava_03.png",
+	"frame": {"x":287,"y":273,"w":43,"h":35},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":15,"w":43,"h":35},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "qube_lava_04.png",
+	"frame": {"x":209,"y":326,"w":32,"h":21},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":8,"y":27,"w":32,"h":21},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "qube_lava_05.png",
+	"frame": {"x":245,"y":314,"w":35,"h":17},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":8,"y":31,"w":35,"h":17},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "qube_lava_06.png",
+	"frame": {"x":287,"y":310,"w":31,"h":28},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":10,"y":22,"w":31,"h":28},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "qube_lava_base.png",
+	"frame": {"x":221,"y":221,"w":50,"h":53},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":53},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "spaceship.png",
+	"frame": {"x":133,"y":53,"w":66,"h":100},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":2,"w":66,"h":100},
+	"sourceSize": {"w":66,"h":105}
+},
+{
+	"filename": "spaceship_smokes.png",
+	"frame": {"x":1,"y":157,"w":62,"h":99},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":4,"w":62,"h":99},
+	"sourceSize": {"w":66,"h":105}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "cognitive_secondary.png",
+	"format": "RGBA8888",
+	"size": {"w":348,"h":348},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:e0afa862dad7db3abe84502d212dd0f8:95a4823d2c274501e3b2de7fc7b00fa7:638b811a66e1d372d80d8df9585c6ca5$"
+}
+}

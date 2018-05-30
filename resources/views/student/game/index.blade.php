@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tapir Hero</title>
     <style>
-        #animation_container, #_preload_div_ {
+        #animation_container, #blocklyDiv, #_preload_div_ {
             position:absolute;
             margin:auto;
             left:0;right:0;
@@ -39,6 +39,17 @@
 		#stageList {
 			display: none;
 		}
+		.blocklySvg {
+          background-color: #fff !important;
+          border-radius: 10px !important;
+        }
+
+        .blocklyFlyoutBackground {
+          fill: #F7D39C !important;
+          opacity: 1 !important;
+        }
+
+        .CodeMirror {border-right: 1px solid black; height: 280px;}
     </style>
     <link rel="stylesheet" type="text/css" href="{{asset('game/style.css')}}" />
 	<link rel="stylesheet" type="text/css" href="{{asset('game/codemirror/codemirror.css')}}" />
@@ -48,6 +59,11 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="http://malsup.github.com/jquery.form.js"></script>
     <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+	<script src="{{asset('game/phaser.min.js')}}"></script>
+	<script src="{{asset('game/nine-patch-phaser-plugin.min.js')}}"></script>
+	<script src="{{asset('game/phaser-plugin-isometric.min.js')}}"></script>
+	<script src="{{asset('game/code_compiler.js')}}"></script>
+	        
 	<script src="{{asset('game/blockly/blockly_compressed.js')}}"></script>
 	<script src="{{asset('game/blockly/blocks_compressed.js')}}"></script>
     <script src="{{asset('game/blockly/javascript_compressed.js')}}"></script>
@@ -183,7 +199,17 @@
     <canvas id="canvas" width="800" height="600" style="position: absolute; display: none; background-color:rgba(0, 0, 0, 1.00);"></canvas>
     <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:800px; height:600px; position: absolute; left: 0px; top: 0px; display: block;">
     </div>
+	<div id="blocklyDiv" style="display:none; position:absolute; "></div>
+    </div>
 </div>
 <div id='_preload_div_' style='position:absolute; top:0; left:0; display: inline-block; height:600px; width: 800px; text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src='{{asset('game/images/_preloader.gif')}}' style='vertical-align: middle; max-height: 100%'/></div>
+
+<xml id="toolbox" style="display: none">
+	<block type="move_function"></block>
+	<block type="jump_function"></block>
+	<block type="turn_function"></block>
+	<block type="repeat_function"></block>
+</xml>
+
 </body>
 </html>
