@@ -1,0 +1,204 @@
+{"frames": [
+
+{
+	"filename": "character_ingames_0_01.png",
+	"frame": {"x":1,"y":1,"w":26,"h":62},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":0,"w":26,"h":62},
+	"sourceSize": {"w":50,"h":68}
+},
+{
+	"filename": "character_ingames_0_02.png",
+	"frame": {"x":57,"y":97,"w":26,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":17,"w":26,"h":45},
+	"sourceSize": {"w":50,"h":68}
+},
+{
+	"filename": "character_ingames_0_03.png",
+	"frame": {"x":29,"y":65,"w":26,"h":46},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":17,"w":26,"h":46},
+	"sourceSize": {"w":50,"h":68}
+},
+{
+	"filename": "character_ingames_90_01.png",
+	"frame": {"x":1,"y":129,"w":26,"h":62},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":0,"w":26,"h":62},
+	"sourceSize": {"w":50,"h":68}
+},
+{
+	"filename": "character_ingames_90_02.png",
+	"frame": {"x":113,"y":96,"w":26,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":17,"w":26,"h":45},
+	"sourceSize": {"w":50,"h":68}
+},
+{
+	"filename": "character_ingames_90_03.png",
+	"frame": {"x":141,"y":48,"w":26,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":17,"w":26,"h":45},
+	"sourceSize": {"w":50,"h":68}
+},
+{
+	"filename": "character_ingames_180_01.png",
+	"frame": {"x":1,"y":65,"w":26,"h":62},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":0,"w":26,"h":62},
+	"sourceSize": {"w":50,"h":68}
+},
+{
+	"filename": "character_ingames_180_02.png",
+	"frame": {"x":85,"y":49,"w":26,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":17,"w":26,"h":45},
+	"sourceSize": {"w":50,"h":68}
+},
+{
+	"filename": "character_ingames_180_03.png",
+	"frame": {"x":144,"y":1,"w":26,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":17,"w":26,"h":45},
+	"sourceSize": {"w":50,"h":68}
+},
+{
+	"filename": "character_ingames_270_01.png",
+	"frame": {"x":29,"y":1,"w":26,"h":62},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":0,"w":26,"h":62},
+	"sourceSize": {"w":50,"h":68}
+},
+{
+	"filename": "character_ingames_270_02.png",
+	"frame": {"x":85,"y":96,"w":26,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":17,"w":26,"h":45},
+	"sourceSize": {"w":50,"h":68}
+},
+{
+	"filename": "character_ingames_270_03.png",
+	"frame": {"x":113,"y":49,"w":26,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":17,"w":26,"h":45},
+	"sourceSize": {"w":50,"h":68}
+},
+{
+	"filename": "character_ingames_jump_0_01.png",
+	"frame": {"x":169,"y":48,"w":26,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":17,"w":26,"h":45},
+	"sourceSize": {"w":50,"h":68}
+},
+{
+	"filename": "character_ingames_jump_0_02.png",
+	"frame": {"x":141,"y":95,"w":26,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":12,"y":17,"w":26,"h":45},
+	"sourceSize": {"w":50,"h":68}
+},
+{
+	"filename": "character_ingames_jump_0_03.png",
+	"frame": {"x":57,"y":49,"w":26,"h":46},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":10,"y":17,"w":26,"h":46},
+	"sourceSize": {"w":50,"h":68}
+},
+{
+	"filename": "character_ingames_jump_90_01.png",
+	"frame": {"x":113,"y":143,"w":26,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":17,"w":26,"h":45},
+	"sourceSize": {"w":50,"h":68}
+},
+{
+	"filename": "character_ingames_jump_90_02.png",
+	"frame": {"x":141,"y":142,"w":26,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":12,"y":17,"w":26,"h":45},
+	"sourceSize": {"w":50,"h":68}
+},
+{
+	"filename": "character_ingames_jump_90_03.png",
+	"frame": {"x":86,"y":1,"w":27,"h":46},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":9,"y":17,"w":27,"h":46},
+	"sourceSize": {"w":50,"h":68}
+},
+{
+	"filename": "character_ingames_jump_180_01.png",
+	"frame": {"x":169,"y":95,"w":26,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":17,"w":26,"h":45},
+	"sourceSize": {"w":50,"h":68}
+},
+{
+	"filename": "character_ingames_jump_180_02.png",
+	"frame": {"x":115,"y":1,"w":27,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":9,"y":17,"w":27,"h":45},
+	"sourceSize": {"w":50,"h":68}
+},
+{
+	"filename": "character_ingames_jump_180_03.png",
+	"frame": {"x":57,"y":1,"w":27,"h":46},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":17,"w":27,"h":46},
+	"sourceSize": {"w":50,"h":68}
+},
+{
+	"filename": "character_ingames_jump_270_01.png",
+	"frame": {"x":57,"y":144,"w":26,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":17,"w":26,"h":45},
+	"sourceSize": {"w":50,"h":68}
+},
+{
+	"filename": "character_ingames_jump_270_02.png",
+	"frame": {"x":85,"y":143,"w":26,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":10,"y":17,"w":26,"h":45},
+	"sourceSize": {"w":50,"h":68}
+},
+{
+	"filename": "character_ingames_jump_270_03.png",
+	"frame": {"x":29,"y":113,"w":26,"h":46},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":12,"y":17,"w":26,"h":46},
+	"sourceSize": {"w":50,"h":68}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "character_facing_direction.png",
+	"format": "RGBA8888",
+	"size": {"w":196,"h":196},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:86f45fb42ea21bef77fc8b789faab98b:ff1b335bd12d536f1a11f167f24c243a:b45e98da96546b5de49e910e3ae8f905$"
+}
+}

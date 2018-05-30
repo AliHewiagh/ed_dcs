@@ -1,0 +1,164 @@
+{"frames": [
+
+{
+	"filename": "cube_walk_01.png",
+	"frame": {"x":145,"y":1,"w":70,"h":86},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":74,"w":70,"h":86},
+	"sourceSize": {"w":70,"h":160}
+},
+{
+	"filename": "cube_walk_02.png",
+	"frame": {"x":217,"y":1,"w":70,"h":86},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":74,"w":70,"h":86},
+	"sourceSize": {"w":70,"h":160}
+},
+{
+	"filename": "cube_walk_03.png",
+	"frame": {"x":289,"y":1,"w":70,"h":86},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":74,"w":70,"h":86},
+	"sourceSize": {"w":70,"h":160}
+},
+{
+	"filename": "cube_walk_04.png",
+	"frame": {"x":145,"y":89,"w":70,"h":86},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":74,"w":70,"h":86},
+	"sourceSize": {"w":70,"h":160}
+},
+{
+	"filename": "cube_walk_05.png",
+	"frame": {"x":73,"y":269,"w":70,"h":85},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":75,"w":70,"h":85},
+	"sourceSize": {"w":70,"h":160}
+},
+{
+	"filename": "cube_walk_06.png",
+	"frame": {"x":73,"y":93,"w":70,"h":86},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":74,"w":70,"h":86},
+	"sourceSize": {"w":70,"h":160}
+},
+{
+	"filename": "cube_walk_07.png",
+	"frame": {"x":217,"y":89,"w":70,"h":86},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":74,"w":70,"h":86},
+	"sourceSize": {"w":70,"h":160}
+},
+{
+	"filename": "cube_walk_08.png",
+	"frame": {"x":289,"y":89,"w":70,"h":86},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":74,"w":70,"h":86},
+	"sourceSize": {"w":70,"h":160}
+},
+{
+	"filename": "cube_walk_09.png",
+	"frame": {"x":145,"y":177,"w":70,"h":85},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":75,"w":70,"h":85},
+	"sourceSize": {"w":70,"h":160}
+},
+{
+	"filename": "cube_walk_10.png",
+	"frame": {"x":145,"y":264,"w":70,"h":85},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":75,"w":70,"h":85},
+	"sourceSize": {"w":70,"h":160}
+},
+{
+	"filename": "cube_walk_11.png",
+	"frame": {"x":217,"y":177,"w":70,"h":85},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":75,"w":70,"h":85},
+	"sourceSize": {"w":70,"h":160}
+},
+{
+	"filename": "cubes_crystal_01.png",
+	"frame": {"x":289,"y":177,"w":33,"h":52},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":18,"w":33,"h":52},
+	"sourceSize": {"w":33,"h":70}
+},
+{
+	"filename": "cubes_crystal_02.png",
+	"frame": {"x":217,"y":264,"w":33,"h":70},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":33,"h":70},
+	"sourceSize": {"w":33,"h":70}
+},
+{
+	"filename": "cubes_crystal_03.png",
+	"frame": {"x":252,"y":264,"w":33,"h":67},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":3,"w":33,"h":67},
+	"sourceSize": {"w":33,"h":70}
+},
+{
+	"filename": "lava_01.png",
+	"frame": {"x":1,"y":1,"w":70,"h":139},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":21,"w":70,"h":139},
+	"sourceSize": {"w":70,"h":160}
+},
+{
+	"filename": "lava_02.png",
+	"frame": {"x":1,"y":245,"w":70,"h":92},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":68,"w":70,"h":92},
+	"sourceSize": {"w":70,"h":160}
+},
+{
+	"filename": "lava_03.png",
+	"frame": {"x":1,"y":142,"w":70,"h":101},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":59,"w":70,"h":101},
+	"sourceSize": {"w":70,"h":160}
+},
+{
+	"filename": "lava_04.png",
+	"frame": {"x":73,"y":181,"w":70,"h":86},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":74,"w":70,"h":86},
+	"sourceSize": {"w":70,"h":160}
+},
+{
+	"filename": "lava_06.png",
+	"frame": {"x":73,"y":1,"w":70,"h":90},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":70,"w":70,"h":90},
+	"sourceSize": {"w":70,"h":160}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "cognitive_tiles.png",
+	"format": "RGBA8888",
+	"size": {"w":360,"h":360},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:8b3d8e09c566cf77d969dad4eb13c6be:1acc65968c8355f38e18e575b91d9623:be645cf73b251e0ed71b6dfa32e63789$"
+}
+}

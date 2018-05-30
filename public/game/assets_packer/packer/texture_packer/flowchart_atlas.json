@@ -1,0 +1,44 @@
+{"frames": [
+
+{
+	"filename": "flowchart_02.png",
+	"frame": {"x":305,"y":1,"w":320,"h":277},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":29,"y":15,"w":320,"h":277},
+	"sourceSize": {"w":380,"h":320}
+},
+{
+	"filename": "flowchart_02_bm.png",
+	"frame": {"x":1,"y":312,"w":320,"h":285},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":29,"y":15,"w":320,"h":285},
+	"sourceSize": {"w":380,"h":320}
+},
+{
+	"filename": "flowchart_03.png",
+	"frame": {"x":1,"y":1,"w":302,"h":309},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":49,"y":5,"w":302,"h":309},
+	"sourceSize": {"w":380,"h":320}
+},
+{
+	"filename": "flowchart_03_bm.png",
+	"frame": {"x":323,"y":280,"w":302,"h":309},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":49,"y":5,"w":302,"h":309},
+	"sourceSize": {"w":380,"h":320}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "flowchart_atlas.png",
+	"format": "RGBA8888",
+	"size": {"w":626,"h":626},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:59ff27af870105fb3a1c84b3e8b6f2a7:1ed18ba945a8eb9828822ce66c4e6a21:ea31cbdfe977c67e122612f98d929d74$"
+}
+}

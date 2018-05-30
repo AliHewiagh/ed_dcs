@@ -1,0 +1,172 @@
+{"frames": [
+
+{
+	"filename": "btn_bm_off.png",
+	"frame": {"x":394,"y":467,"w":72,"h":43},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":1,"w":72,"h":43},
+	"sourceSize": {"w":75,"h":45}
+},
+{
+	"filename": "btn_bm_on.png",
+	"frame": {"x":447,"y":363,"w":75,"h":45},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":75,"h":45},
+	"sourceSize": {"w":75,"h":45}
+},
+{
+	"filename": "btn_close.png",
+	"frame": {"x":455,"y":311,"w":50,"h":50},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":50},
+	"sourceSize": {"w":50,"h":50}
+},
+{
+	"filename": "btn_downloadcards_sec.png",
+	"frame": {"x":1,"y":349,"w":250,"h":70},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":250,"h":70},
+	"sourceSize": {"w":250,"h":70}
+},
+{
+	"filename": "btn_eng_off.png",
+	"frame": {"x":468,"y":457,"w":72,"h":43},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":1,"w":72,"h":43},
+	"sourceSize": {"w":75,"h":45}
+},
+{
+	"filename": "btn_eng_on.png",
+	"frame": {"x":447,"y":410,"w":75,"h":45},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":75,"h":45},
+	"sourceSize": {"w":75,"h":45}
+},
+{
+	"filename": "btn_gamestart_sec.png",
+	"frame": {"x":1,"y":249,"w":300,"h":98},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":98},
+	"sourceSize": {"w":300,"h":98}
+},
+{
+	"filename": "btn_getreward_sec.png",
+	"frame": {"x":1,"y":421,"w":250,"h":60},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":250,"h":60},
+	"sourceSize": {"w":250,"h":60}
+},
+{
+	"filename": "btn_monster_continue_sec.png",
+	"frame": {"x":303,"y":249,"w":200,"h":60},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":60},
+	"sourceSize": {"w":200,"h":60}
+},
+{
+	"filename": "btn_more_sec_after.png",
+	"frame": {"x":253,"y":425,"w":100,"h":40},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":40},
+	"sourceSize": {"w":100,"h":40}
+},
+{
+	"filename": "btn_more_sec_before.png",
+	"frame": {"x":292,"y":467,"w":100,"h":40},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":40},
+	"sourceSize": {"w":100,"h":40}
+},
+{
+	"filename": "btn_send_sec_after.png",
+	"frame": {"x":355,"y":363,"w":90,"h":50},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":90,"h":50},
+	"sourceSize": {"w":90,"h":50}
+},
+{
+	"filename": "btn_send_sec_before.png",
+	"frame": {"x":355,"y":415,"w":90,"h":50},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":90,"h":50},
+	"sourceSize": {"w":90,"h":50}
+},
+{
+	"filename": "btn_start_sec.png",
+	"frame": {"x":253,"y":363,"w":100,"h":60},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":60},
+	"sourceSize": {"w":100,"h":60}
+},
+{
+	"filename": "btn_submit_2.png",
+	"frame": {"x":303,"y":311,"w":150,"h":50},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":50},
+	"sourceSize": {"w":150,"h":50}
+},
+{
+	"filename": "panel_alienNumber.png",
+	"frame": {"x":158,"y":483,"w":132,"h":54},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":132,"h":54},
+	"sourceSize": {"w":132,"h":54}
+},
+{
+	"filename": "panel_stages.png",
+	"frame": {"x":1,"y":483,"w":155,"h":54},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":155,"h":54},
+	"sourceSize": {"w":155,"h":54}
+},
+{
+	"filename": "ribbon_bm_sec.png",
+	"frame": {"x":1,"y":1,"w":490,"h":122},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":2,"w":490,"h":122},
+	"sourceSize": {"w":490,"h":124}
+},
+{
+	"filename": "ribbon_eng_sec.png",
+	"frame": {"x":1,"y":125,"w":490,"h":122},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":2,"w":490,"h":122},
+	"sourceSize": {"w":490,"h":124}
+},
+{
+	"filename": "transparent_button.png",
+	"frame": {"x":493,"y":1,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":145,"h":33}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "secondary_atlas.png",
+	"format": "RGBA8888",
+	"size": {"w":541,"h":541},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:34c0df43708daebef1d2c5085da19439:dc117bcf4543c400ae69ae4bf575ab34:bcebea7885cc5cc32b9d499bb28c0e2b$"
+}
+}

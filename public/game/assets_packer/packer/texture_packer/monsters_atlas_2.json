@@ -1,0 +1,444 @@
+{"frames": [
+
+{
+	"filename": "alien_001_shadow_small.png",
+	"frame": {"x":855,"y":486,"w":94,"h":108},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":8,"y":1,"w":94,"h":108},
+	"sourceSize": {"w":110,"h":110}
+},
+{
+	"filename": "alien_01_shadow_small.png",
+	"frame": {"x":971,"y":279,"w":48,"h":50},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":5,"w":48,"h":50},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "alien_002_shadow_small.png",
+	"frame": {"x":855,"y":596,"w":68,"h":64},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":3,"w":68,"h":64},
+	"sourceSize": {"w":70,"h":70}
+},
+{
+	"filename": "alien_02_shadow_small.png",
+	"frame": {"x":824,"y":720,"w":54,"h":54},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":3,"w":54,"h":54},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "alien_003_shadow_small.png",
+	"frame": {"x":472,"y":926,"w":50,"h":70},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":10,"y":0,"w":50,"h":70},
+	"sourceSize": {"w":70,"h":70}
+},
+{
+	"filename": "alien_03_shadow_small.png",
+	"frame": {"x":855,"y":662,"w":60,"h":56},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":2,"w":60,"h":56},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "alien_004_shadow_small.png",
+	"frame": {"x":411,"y":926,"w":59,"h":70},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":0,"w":59,"h":70},
+	"sourceSize": {"w":70,"h":70}
+},
+{
+	"filename": "alien_04_shadow_small.png",
+	"frame": {"x":963,"y":63,"w":56,"h":52},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":4,"w":56,"h":52},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "alien_05_shadow_small.png",
+	"frame": {"x":925,"y":596,"w":44,"h":56},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":8,"y":2,"w":44,"h":56},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "alien_06_shadow_small.png",
+	"frame": {"x":824,"y":776,"w":52,"h":56},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":4,"y":2,"w":52,"h":56},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "alien_07_shadow_small.png",
+	"frame": {"x":878,"y":778,"w":50,"h":52},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":4,"w":50,"h":52},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "alien_08_shadow_small.png",
+	"frame": {"x":1,"y":976,"w":60,"h":42},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":9,"w":60,"h":42},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "alien_09_shadow_small.png",
+	"frame": {"x":824,"y":834,"w":52,"h":52},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":4,"y":4,"w":52,"h":52},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "alien_10_shadow_small.png",
+	"frame": {"x":963,"y":171,"w":56,"h":50},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":5,"w":56,"h":50},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "alien_11_shadow_small.png",
+	"frame": {"x":927,"y":383,"w":56,"h":48},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":6,"w":56,"h":48},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "alien_12_shadow_small.png",
+	"frame": {"x":927,"y":331,"w":56,"h":50},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":5,"w":56,"h":50},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "alien_13_shadow_small.png",
+	"frame": {"x":634,"y":948,"w":58,"h":48},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":6,"w":58,"h":48},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "alien_14.png",
+	"frame": {"x":239,"y":421,"w":216,"h":182},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":22,"y":39,"w":216,"h":182},
+	"sourceSize": {"w":260,"h":260}
+},
+{
+	"filename": "alien_14_shadow_small.png",
+	"frame": {"x":884,"y":942,"w":52,"h":44},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":4,"y":8,"w":52,"h":44},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "alien_15.png",
+	"frame": {"x":723,"y":1,"w":238,"h":194},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":33,"w":238,"h":194},
+	"sourceSize": {"w":260,"h":260}
+},
+{
+	"filename": "alien_15_shadow_small.png",
+	"frame": {"x":694,"y":948,"w":58,"h":48},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":6,"w":58,"h":48},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "alien_16.png",
+	"frame": {"x":634,"y":716,"w":188,"h":230},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":36,"y":15,"w":188,"h":230},
+	"sourceSize": {"w":260,"h":260}
+},
+{
+	"filename": "alien_16_shadow_small.png",
+	"frame": {"x":880,"y":720,"w":46,"h":56},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":2,"w":46,"h":56},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "alien_17.png",
+	"frame": {"x":1,"y":253,"w":236,"h":212},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":12,"y":24,"w":236,"h":212},
+	"sourceSize": {"w":260,"h":260}
+},
+{
+	"filename": "alien_17_shadow_small.png",
+	"frame": {"x":963,"y":117,"w":56,"h":52},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":4,"w":56,"h":52},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "alien_18.png",
+	"frame": {"x":227,"y":605,"w":213,"h":202},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":23,"y":29,"w":213,"h":202},
+	"sourceSize": {"w":260,"h":260}
+},
+{
+	"filename": "alien_18_shadow_small.png",
+	"frame": {"x":951,"y":537,"w":52,"h":50},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":4,"y":5,"w":52,"h":50},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "alien_19.png",
+	"frame": {"x":487,"y":213,"w":230,"h":196},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":15,"y":32,"w":230,"h":196},
+	"sourceSize": {"w":260,"h":260}
+},
+{
+	"filename": "alien_19_shadow_small.png",
+	"frame": {"x":927,"y":433,"w":56,"h":48},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":6,"w":56,"h":48},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "alien_20.png",
+	"frame": {"x":241,"y":1,"w":240,"h":228},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":10,"y":16,"w":240,"h":228},
+	"sourceSize": {"w":260,"h":260}
+},
+{
+	"filename": "alien_20_shadow_small.png",
+	"frame": {"x":524,"y":926,"w":58,"h":56},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":2,"w":58,"h":56},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "alien_21.png",
+	"frame": {"x":1,"y":467,"w":224,"h":216},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":18,"y":22,"w":224,"h":216},
+	"sourceSize": {"w":260,"h":260}
+},
+{
+	"filename": "alien_21_shadow_small.png",
+	"frame": {"x":824,"y":888,"w":54,"h":52},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":4,"w":54,"h":52},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "alien_22.png",
+	"frame": {"x":241,"y":231,"w":244,"h":188},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":8,"y":36,"w":244,"h":188},
+	"sourceSize": {"w":260,"h":260}
+},
+{
+	"filename": "alien_22_shadow_small.png",
+	"frame": {"x":824,"y":942,"w":58,"h":46},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":7,"w":58,"h":46},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "alien_23.png",
+	"frame": {"x":442,"y":704,"w":190,"h":220},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":35,"y":20,"w":190,"h":220},
+	"sourceSize": {"w":260,"h":260}
+},
+{
+	"filename": "alien_23_shadow_small.png",
+	"frame": {"x":878,"y":832,"w":46,"h":54},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":3,"w":46,"h":54},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "alien_24.png",
+	"frame": {"x":483,"y":1,"w":238,"h":210},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":25,"w":238,"h":210},
+	"sourceSize": {"w":260,"h":260}
+},
+{
+	"filename": "alien_24_shadow_small.png",
+	"frame": {"x":754,"y":948,"w":58,"h":50},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":5,"w":58,"h":50},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "alien_25.png",
+	"frame": {"x":657,"y":486,"w":196,"h":228},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":32,"y":16,"w":196,"h":228},
+	"sourceSize": {"w":260,"h":260}
+},
+{
+	"filename": "alien_25_shadow_small.png",
+	"frame": {"x":584,"y":926,"w":48,"h":56},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":2,"w":48,"h":56},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "alien_26.png",
+	"frame": {"x":719,"y":268,"w":206,"h":216},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":27,"y":22,"w":206,"h":216},
+	"sourceSize": {"w":260,"h":260}
+},
+{
+	"filename": "alien_26_shadow_small.png",
+	"frame": {"x":880,"y":888,"w":50,"h":52},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":4,"w":50,"h":52},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "alien_27.png",
+	"frame": {"x":1,"y":685,"w":218,"h":218},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":21,"y":21,"w":218,"h":218},
+	"sourceSize": {"w":260,"h":260}
+},
+{
+	"filename": "alien_27_shadow_small.png",
+	"frame": {"x":951,"y":483,"w":52,"h":52},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":4,"y":4,"w":52,"h":52},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "alien_28.png",
+	"frame": {"x":457,"y":482,"w":198,"h":220},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":31,"y":20,"w":198,"h":220},
+	"sourceSize": {"w":260,"h":260}
+},
+{
+	"filename": "alien_28_shadow_small.png",
+	"frame": {"x":971,"y":223,"w":48,"h":54},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":3,"w":48,"h":54},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "alien_29.png",
+	"frame": {"x":221,"y":809,"w":188,"h":210},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":36,"y":25,"w":188,"h":210},
+	"sourceSize": {"w":260,"h":260}
+},
+{
+	"filename": "alien_29_shadow_small.png",
+	"frame": {"x":971,"y":589,"w":46,"h":50},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":5,"w":46,"h":50},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "alien_30.png",
+	"frame": {"x":1,"y":1,"w":238,"h":250},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":5,"w":238,"h":250},
+	"sourceSize": {"w":260,"h":260}
+},
+{
+	"filename": "alien_30_shadow_small.png",
+	"frame": {"x":963,"y":1,"w":56,"h":60},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":0,"w":56,"h":60},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "icon_common.png",
+	"frame": {"x":1,"y":905,"w":208,"h":69},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":0,"w":208,"h":69},
+	"sourceSize": {"w":210,"h":70}
+},
+{
+	"filename": "icon_rare.png",
+	"frame": {"x":723,"y":197,"w":208,"h":69},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":0,"w":208,"h":69},
+	"sourceSize": {"w":210,"h":70}
+},
+{
+	"filename": "icon_ultraRare.png",
+	"frame": {"x":487,"y":411,"w":208,"h":69},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":0,"w":208,"h":69},
+	"sourceSize": {"w":210,"h":70}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "monsters_atlas_2.png",
+	"format": "RGBA8888",
+	"size": {"w":1020,"h":1020},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:07de98f227383a1ae9efd434f1e0b086:46be365292e9878f062f4d02026017b1:f81cf0a1d91e423016dec8032b026bf4$"
+}
+}

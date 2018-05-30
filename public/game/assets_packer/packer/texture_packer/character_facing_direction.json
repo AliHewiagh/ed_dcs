@@ -1,0 +1,236 @@
+{"frames": [
+
+{
+	"filename": "arrow_0.png",
+	"frame": {"x":1,"y":145,"w":22,"h":18},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":13,"y":11,"w":22,"h":18},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "arrow_90.png",
+	"frame": {"x":25,"y":165,"w":22,"h":18},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":13,"y":11,"w":22,"h":18},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "arrow_180.png",
+	"frame": {"x":1,"y":165,"w":22,"h":18},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":14,"y":11,"w":22,"h":18},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "arrow_270.png",
+	"frame": {"x":25,"y":145,"w":22,"h":18},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":14,"y":11,"w":22,"h":18},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "character_ingames_0_01.png",
+	"frame": {"x":58,"y":1,"w":26,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":2,"w":26,"h":45},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "character_ingames_0_02.png",
+	"frame": {"x":57,"y":96,"w":26,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":2,"w":26,"h":45},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "character_ingames_0_03.png",
+	"frame": {"x":1,"y":97,"w":26,"h":46},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":2,"w":26,"h":46},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "character_ingames_90_01.png",
+	"frame": {"x":142,"y":1,"w":26,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":2,"w":26,"h":45},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "character_ingames_90_02.png",
+	"frame": {"x":115,"y":48,"w":26,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":2,"w":26,"h":45},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "character_ingames_90_03.png",
+	"frame": {"x":143,"y":48,"w":26,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":2,"w":26,"h":45},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "character_ingames_180_01.png",
+	"frame": {"x":59,"y":48,"w":26,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":2,"w":26,"h":45},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "character_ingames_180_02.png",
+	"frame": {"x":86,"y":1,"w":26,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":2,"w":26,"h":45},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "character_ingames_180_03.png",
+	"frame": {"x":85,"y":95,"w":26,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":2,"w":26,"h":45},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "character_ingames_270_01.png",
+	"frame": {"x":87,"y":48,"w":26,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":2,"w":26,"h":45},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "character_ingames_270_02.png",
+	"frame": {"x":114,"y":1,"w":26,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":2,"w":26,"h":45},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "character_ingames_270_03.png",
+	"frame": {"x":85,"y":142,"w":26,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":2,"w":26,"h":45},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "character_ingames_jump_01_01.png",
+	"frame": {"x":59,"y":48,"w":26,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":2,"w":26,"h":45},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "character_ingames_jump_01_02.png",
+	"frame": {"x":30,"y":49,"w":27,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":9,"y":2,"w":27,"h":45},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "character_ingames_jump_01_03.png",
+	"frame": {"x":1,"y":1,"w":27,"h":46},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":2,"w":27,"h":46},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "character_ingames_jump_02_01.png",
+	"frame": {"x":58,"y":1,"w":26,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":2,"w":26,"h":45},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "character_ingames_jump_02_02.png",
+	"frame": {"x":113,"y":95,"w":26,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":12,"y":2,"w":26,"h":45},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "character_ingames_jump_02_03.png",
+	"frame": {"x":29,"y":97,"w":26,"h":46},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":10,"y":2,"w":26,"h":46},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "character_ingames_jump_03_01.png",
+	"frame": {"x":142,"y":1,"w":26,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":2,"w":26,"h":45},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "character_ingames_jump_03_02.png",
+	"frame": {"x":113,"y":142,"w":26,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":12,"y":2,"w":26,"h":45},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "character_ingames_jump_03_03.png",
+	"frame": {"x":1,"y":49,"w":27,"h":46},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":9,"y":2,"w":27,"h":46},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "character_ingames_jump_04_01.png",
+	"frame": {"x":87,"y":48,"w":26,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":2,"w":26,"h":45},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "character_ingames_jump_04_02.png",
+	"frame": {"x":141,"y":95,"w":26,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":10,"y":2,"w":26,"h":45},
+	"sourceSize": {"w":50,"h":53}
+},
+{
+	"filename": "character_ingames_jump_04_03.png",
+	"frame": {"x":30,"y":1,"w":26,"h":46},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":12,"y":2,"w":26,"h":46},
+	"sourceSize": {"w":50,"h":53}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "character_facing_direction.png",
+	"format": "RGBA8888",
+	"size": {"w":188,"h":188},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:9447b543e6fdbac7f3089fd36ebc34fe:4d61e80c6ead407d8319d7c95501512c:b45e98da96546b5de49e910e3ae8f905$"
+}
+}

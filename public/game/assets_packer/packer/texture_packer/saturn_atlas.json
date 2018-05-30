@@ -1,0 +1,44 @@
+{"frames": [
+
+{
+	"filename": "saturn_01.png",
+	"frame": {"x":1,"y":1,"w":240,"h":165},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":240,"h":165},
+	"sourceSize": {"w":240,"h":165}
+},
+{
+	"filename": "saturn_02.png",
+	"frame": {"x":243,"y":1,"w":240,"h":165},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":240,"h":165},
+	"sourceSize": {"w":240,"h":165}
+},
+{
+	"filename": "saturn_03.png",
+	"frame": {"x":1,"y":168,"w":240,"h":165},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":240,"h":165},
+	"sourceSize": {"w":240,"h":165}
+},
+{
+	"filename": "saturn_04.png",
+	"frame": {"x":243,"y":168,"w":240,"h":165},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":240,"h":165},
+	"sourceSize": {"w":240,"h":165}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "saturn_atlas.png",
+	"format": "RGBA8888",
+	"size": {"w":484,"h":484},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:fe4b6d6fa5d1dd5b9333c2d82fd7dc95:d7d69f913fbc45ff90970a0be55e84e3:034c78abe0744cb2245fe3d13c7aff6e$"
+}
+}

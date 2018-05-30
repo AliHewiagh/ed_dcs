@@ -1,0 +1,76 @@
+{"frames": [
+
+{
+	"filename": "icon_ins_astronaut.png",
+	"frame": {"x":61,"y":1,"w":45,"h":60},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":8,"y":0,"w":45,"h":60},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "icon_ins_mars.png",
+	"frame": {"x":1,"y":61,"w":52,"h":52},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":4,"y":4,"w":52,"h":52},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "icon_ins_meteor.png",
+	"frame": {"x":1,"y":1,"w":58,"h":58},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":1,"w":58,"h":58},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "icon_ins_move.png",
+	"frame": {"x":108,"y":1,"w":46,"h":52},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":4,"w":46,"h":52},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "icon_ins_rocket.png",
+	"frame": {"x":55,"y":114,"w":60,"h":41},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":9,"w":60,"h":41},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "icon_ins_satelite.png",
+	"frame": {"x":55,"y":63,"w":54,"h":49},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":6,"w":54,"h":49},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "icon_ins_turnleft.png",
+	"frame": {"x":111,"y":55,"w":46,"h":52},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":4,"w":46,"h":52},
+	"sourceSize": {"w":60,"h":60}
+},
+{
+	"filename": "icon_ins_turnright.png",
+	"frame": {"x":117,"y":109,"w":46,"h":52},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":4,"w":46,"h":52},
+	"sourceSize": {"w":60,"h":60}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "cognitive_instruction.png",
+	"format": "RGBA8888",
+	"size": {"w":164,"h":164},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:972b271996d3bf4717db9a6f38768c68:03fd5827c4edd31d2dcd23278fc55460:2b9b2867674cf36fbe2c087ce7178eac$"
+}
+}
