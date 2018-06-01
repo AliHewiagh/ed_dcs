@@ -4437,38 +4437,38 @@ p.nominalBounds = new cjs.Rectangle(190.4,-16.2,258.2,52.4);
 	this.mcCont = new lib.cursor();
 	this.mcCont.name = "mcCont";
 	this.mcCont.parent = this;
-	this.mcCont.setTransform(336.9,92,0.35,0.35,0,0,0,0.5,0.5);
+	this.mcCont.setTransform(386.4,71.5,0.35,0.35,0,0,0,0.5,0.5);
 
 	this.timeline.addTween(cjs.Tween.get(this.mcCont).wait(1));
 
 	// Layer_1
-	this.myTxt = new cjs.Text("But oh, the inhabitants of a green planet will soon\nfind their planet no longer green if you don’t get\nthere soon enough. Bye!", "italic bold 20px 'Quantico'", "#0DDFDF");
+	this.myTxt = new cjs.Text("But oh, the inhabitants of the green planet will soon find their \nplanet no longer green if you don’t get there soon enough. Bye!", "italic bold 20px 'Quantico'", "#0DDFDF");
 	this.myTxt.name = "myTxt";
 	this.myTxt.textAlign = "center";
 	this.myTxt.lineHeight = 31;
-	this.myTxt.lineWidth = 549;
+	this.myTxt.lineWidth = 683;
 	this.myTxt.alpha = 0.99607843;
 	this.myTxt.parent = this;
-	this.myTxt.setTransform(63,-7.6);
+	this.myTxt.setTransform(51.6,-4.6);
 
 	this.timeline.addTween(cjs.Tween.get(this.myTxt).wait(1));
 
 	// Layer_2
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("rgba(13,223,223,0.996)").ss(4,0,0,3).p("EgqxAAAMBVjAAA");
-	this.shape.setTransform(63.1,92);
+	this.shape.graphics.f().s("rgba(13,223,223,0.996)").ss(4,0,0,3).p("Eg0bAAAMBo3AAA");
+	this.shape.setTransform(50.8,71.5);
 
 	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f().s("rgba(13,223,223,0.996)").ss(1,0,0,3).p("EAqyAMgIAAw6Mg6cAAAICyn3InJH3I2wAAIAAQ6");
-	this.shape_1.setTransform(63.1,12);
+	this.shape_1.graphics.f().s("rgba(13,223,223,0.996)").ss(1,0,0,3).p("EA0cAK5IAAttMhCLAAAICzn2InJH2MgiWAAAIAANt");
+	this.shape_1.setTransform(50.8,1.8);
 
 	this.shape_2 = new cjs.Shape();
-	this.shape_2.graphics.f("#000000").s().p("EgqxAMZIAAw6IWwAAIHJn3IiyH3MA6cAAAIAAQ6g");
-	this.shape_2.setTransform(63.1,12.7);
+	this.shape_2.graphics.f("#000000").s().p("Eg0bAKyIAAttMAiWAAAIHJn2IizH2MBCLAAAIAANtg");
+	this.shape_2.setTransform(50.8,2.5);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).wait(1));
 
-}).prototype = getMCSymbolPrototype(lib.tEn2, new cjs.Rectangle(-213.5,-67.9,575.3,183.4), null);
+}).prototype = getMCSymbolPrototype(lib.tEn2, new cjs.Rectangle(-291.9,-67.9,703.2,162.9), null);
 
 
 (lib.tEn1 = function(mode,startPosition,loop) {
@@ -4681,14 +4681,14 @@ p.nominalBounds = new cjs.Rectangle(190.4,-16.2,258.2,52.4);
 	this.timeline.addTween(cjs.Tween.get(this.mcCont).wait(1));
 
 	// Layer_1
-	this.myTxt = new cjs.Text("Akan tetapi, warga sebuah planet hijau akan\nmendapati planet mereka tidak lagi hijau sekiranya\nawak tidak ke situ dengan cepat. Jumpa lagi!", "italic bold 20px 'Quantico'", "#0DDFDF");
+	this.myTxt = new cjs.Text("Akan tetapi, warga planet hijau akan mendapati \nplanet mereka tidak lagi hijau sekiranya kamu \ntidak ke sana dengan cepat. Jumpa lagi!", "italic bold 20px 'Quantico'", "#0DDFDF");
 	this.myTxt.name = "myTxt";
 	this.myTxt.textAlign = "center";
 	this.myTxt.lineHeight = 31;
-	this.myTxt.lineWidth = 553;
+	this.myTxt.lineWidth = 558;
 	this.myTxt.alpha = 0.99607843;
 	this.myTxt.parent = this;
-	this.myTxt.setTransform(63.6,-7.6);
+	this.myTxt.setTransform(64.8,-8.4);
 
 	this.timeline.addTween(cjs.Tween.get(this.myTxt).wait(1));
 
@@ -4707,7 +4707,7 @@ p.nominalBounds = new cjs.Rectangle(190.4,-16.2,258.2,52.4);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).wait(1));
 
-}).prototype = getMCSymbolPrototype(lib.tBm2, new cjs.Rectangle(-215,-67.9,566.8,183.4), null);
+}).prototype = getMCSymbolPrototype(lib.tBm2, new cjs.Rectangle(-216.4,-67.9,568.2,183.4), null);
 
 
 (lib.tBm1 = function(mode,startPosition,loop) {
@@ -4863,7 +4863,7 @@ p.nominalBounds = new cjs.Rectangle(239.4,-36.2,258.2,51.9);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance}]}).to({state:[{t:this.instance_1}]},1).wait(1));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-176,-88.4,566.8,183.4);
+p.nominalBounds = new cjs.Rectangle(-177.4,-88.4,568.2,183.4);
 
 
 (lib.dialogue1 = function(mode,startPosition,loop) {
@@ -5036,11 +5036,11 @@ lib.properties = {
 	color: "#CCCCCC",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/outro10/Bitmap10.png?1524743002512", id:"Bitmap10"},
-		{src:"images/outro10/Bitmap5.png?1524743002512", id:"Bitmap5"},
-		{src:"images/outro10/Bitmap7.png?1524743002512", id:"Bitmap7"},
-		{src:"images/outro10/Bitmap9.png?1524743002512", id:"Bitmap9"},
-		{src:"sounds/intro.mp3?1524743002512", id:"intro"}
+		{src:"images/outro10/Bitmap10.png?1527779245884", id:"Bitmap10"},
+		{src:"images/outro10/Bitmap5.png?1527779245884", id:"Bitmap5"},
+		{src:"images/outro10/Bitmap7.png?1527779245884", id:"Bitmap7"},
+		{src:"images/outro10/Bitmap9.png?1527779245884", id:"Bitmap9"},
+		{src:"sounds/intro.mp3?1527779245884", id:"intro"}
 	],
 	preloads: []
 };

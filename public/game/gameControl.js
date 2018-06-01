@@ -157,7 +157,7 @@ if (schoolLevel==1){//primary
 	scrList[64] = {constructorName: "y6d3q1", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
 	scrList[68] = {constructorName: "f3d1q8", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[72] = {constructorName: "f5d2q6", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[76] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
+	scrList[76] = {constructorName: "f5d2q7", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[80] = {constructorName: "f5d2q8", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 }
 }
@@ -411,7 +411,7 @@ function saveStage(_stageNum){
 		"stage": _stageNum,
 		"last_screen": "",
 		"last_state": "",
-    	"time_left": 50
+    	"time_left": 0
 	};
 	var mySave = $.post("/api/stage/update/", function (data) {
 		if(data.status == "100"){
