@@ -2197,8 +2197,13 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 	this.frame_100 = function() {
 		this.stop();
 		var _this = this;
+		var stageNum = 1;
 		if (typeof cUserId === "undefined") {
 			cUserId = "";
+		} else {
+			if (schoolLevel==3){
+				stageNum = 5;
+			}
 		}
 		this.timeGiven = 240;//time in seconds
 		this.secRemaining = this.timeGiven;
@@ -2207,16 +2212,16 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 		this.currentQ = 0;
 		this.attempt = 0;
 		this.myData = {
-			"qNum": 1,
+			"stage": stageNum,
 			"userId": cUserId,
-			"time": _this.timeTaken,
-			"score": _this.cScore,
 			"qItem": [
 				{"qId": "f3d2q1",
 				"qDomain": 2,
-				"qParam": 1,
-				"qSkill": 1,
-				"qResult": 9}
+				"qParam": 4,
+				"qSkill": 34,
+				"qResult": 9,
+				"time": 0,
+				"score": 0}
 				]
 		};
 		function goNextQ (){
@@ -2227,20 +2232,20 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 			} else {
 				//all questions done
 				clearInterval(timeInterval);//stop time
-				_this.myData.time = _this.timeGiven - _this.secRemaining;
+				_this.myData.qItem[0].time = _this.timeGiven - _this.secRemaining;
 				//console.log(_this.myData.time);
 				//scale the score according to number of steps taken
 				if (_this.attempt<=11){
 					//fastest is 9 attempts for 512
-					_this.myData.score = 5;
+					_this.myData.qItem[0].score = 5;
 				} else if (_this.attempt<=15){
-					_this.myData.score = 4;
+					_this.myData.qItem[0].score = 4;
 				} else if (_this.attempt<=18){
-					_this.myData.score = 3;
+					_this.myData.qItem[0].score = 3;
 				} else if (_this.attempt<=21){
-					_this.myData.score = 2;
+					_this.myData.qItem[0].score = 2;
 				} else {
-					_this.myData.score = 1;
+					_this.myData.qItem[0].score = 1;
 				}
 				saveData();
 				console.log(_this.myData);
@@ -2252,7 +2257,7 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 		}
 		this.addEventListener("click", doPlay);
 		_this.onTimeEnd = function (){
-			_this.myData.time = _this.timeGiven;
+			_this.myData.qItem[0].time = _this.timeGiven;
 			saveData();
 		};
 		function saveData(){
@@ -2260,7 +2265,16 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 				_this.gotoAndPlay("finalFb");
 			} else {
 				//save data here
-				_this.gotoAndPlay("finalFb");
+				var cData = $.post("/api/record/update/", 
+								_this.myData,
+									function(data){
+										console.log("set score"+data.message);
+										if (data.message=="success"){
+											_this.gotoAndPlay("finalFb");
+										} else {
+											console.log("error");
+										}
+									});
 			}
 		}
 		this.storeCorrect = function (){
@@ -2508,20 +2522,20 @@ lib.properties = {
 	opacity: 1.00,
 	webfonts: {},
 	manifest: [
-		{src:"images/f3d2q1/Bitmap3.png?1526468315050", id:"Bitmap3"},
-		{src:"images/f3d2q1/Bitmap8.png?1526468315050", id:"Bitmap8"},
-		{src:"images/f3d2q1/Bitmap9.png?1526468315050", id:"Bitmap9"},
-		{src:"images/f3d2q1/Safe201.png?1526468315050", id:"Safe201"},
-		{src:"images/f3d2q1/safe3.png?1526468315050", id:"safe3"},
-		{src:"sounds/mdroid_talk.mp3?1526468315050", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1526468315050", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1526468315050", id:"questionComplete"},
-		{src:"sounds/submitAns.mp3?1526468315050", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1526468315050", id:"suspense"},
-		{src:"sounds/timeout.mp3?1526468315050", id:"timeout"},
-		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1526468315050", id:"lib/jquery-2.2.4.min.js"},
-		{src:"components/sdk/anwidget.js?1526468315050", id:"sdk/anwidget.js"},
-		{src:"components/ui/src/textinput.js?1526468315050", id:"an.TextInput"}
+		{src:"images/f3d2q1/Bitmap3.png?1527756400637", id:"Bitmap3"},
+		{src:"images/f3d2q1/Bitmap8.png?1527756400637", id:"Bitmap8"},
+		{src:"images/f3d2q1/Bitmap9.png?1527756400637", id:"Bitmap9"},
+		{src:"images/f3d2q1/Safe201.png?1527756400637", id:"Safe201"},
+		{src:"images/f3d2q1/safe3.png?1527756400637", id:"safe3"},
+		{src:"sounds/mdroid_talk.mp3?1527756400637", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1527756400637", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1527756400637", id:"questionComplete"},
+		{src:"sounds/submitAns.mp3?1527756400637", id:"submitAns"},
+		{src:"sounds/suspense.mp3?1527756400637", id:"suspense"},
+		{src:"sounds/timeout.mp3?1527756400637", id:"timeout"},
+		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1527756400637", id:"lib/jquery-2.2.4.min.js"},
+		{src:"components/sdk/anwidget.js?1527756400637", id:"sdk/anwidget.js"},
+		{src:"components/ui/src/textinput.js?1527756400637", id:"an.TextInput"}
 	],
 	preloads: []
 };

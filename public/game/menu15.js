@@ -1044,7 +1044,6 @@ p.nominalBounds = new cjs.Rectangle(-25.1,-26,54,56);
 
 	// click
 	this.mcCont = new lib.cursor();
-	this.mcCont.name = "mcCont";
 	this.mcCont.parent = this;
 	this.mcCont.setTransform(546.4,443,0.35,0.35,0,0,0,0.5,0.5);
 	this.mcCont._off = true;
@@ -1060,7 +1059,6 @@ p.nominalBounds = new cjs.Rectangle(-25.1,-26,54,56);
 
 	// btn
 	this.btnCont = new lib.btnPlanet();
-	this.btnCont.name = "btnCont";
 	this.btnCont.parent = this;
 	this.btnCont.setTransform(400.5,318.8);
 	this.btnCont._off = true;
@@ -1258,19 +1256,19 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/menu15/Bitmap24.png?1527433587937", id:"Bitmap24"},
-		{src:"images/menu15/Bitmap25.png?1527433587937", id:"Bitmap25"},
-		{src:"images/menu15/Bitmap3.png?1527433587937", id:"Bitmap3"},
-		{src:"images/menu15/Bitmap4.png?1527433587937", id:"Bitmap4"},
-		{src:"images/menu15/Bitmap5.png?1527433587937", id:"Bitmap5"},
-		{src:"images/menu15/Bitmap6.png?1527433587937", id:"Bitmap6"},
-		{src:"images/menu15/Bitmap7.png?1527433587937", id:"Bitmap7"},
-		{src:"images/menu15/Bitmap8.png?1527433587937", id:"Bitmap8"},
-		{src:"images/menu15/greenplanet2.png?1527433587937", id:"greenplanet2"},
-		{src:"images/menu15/pinkplanet.png?1527433587937", id:"pinkplanet"},
-		{src:"sounds/bleep_stutter.mp3?1527433587937", id:"bleep_stutter"},
-		{src:"sounds/menuRock2.mp3?1527433587937", id:"menuRock2"},
-		{src:"sounds/stdClick.mp3?1527433587937", id:"stdClick"}
+		{src:"images/menu15/Bitmap24.png?1527741575986", id:"Bitmap24"},
+		{src:"images/menu15/Bitmap25.png?1527741575986", id:"Bitmap25"},
+		{src:"images/menu15/Bitmap3.png?1527741575986", id:"Bitmap3"},
+		{src:"images/menu15/Bitmap4.png?1527741575986", id:"Bitmap4"},
+		{src:"images/menu15/Bitmap5.png?1527741575986", id:"Bitmap5"},
+		{src:"images/menu15/Bitmap6.png?1527741575986", id:"Bitmap6"},
+		{src:"images/menu15/Bitmap7.png?1527741575986", id:"Bitmap7"},
+		{src:"images/menu15/Bitmap8.png?1527741575986", id:"Bitmap8"},
+		{src:"images/menu15/greenplanet2.png?1527741575986", id:"greenplanet2"},
+		{src:"images/menu15/pinkplanet.png?1527741575986", id:"pinkplanet"},
+		{src:"sounds/bleep_stutter.mp3?1527741575986", id:"bleep_stutter"},
+		{src:"sounds/menuRock2.mp3?1527741575986", id:"menuRock2"},
+		{src:"sounds/stdClick.mp3?1527741575986", id:"stdClick"}
 	],
 	preloads: []
 };

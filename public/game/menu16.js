@@ -250,7 +250,7 @@ p.nominalBounds = new cjs.Rectangle(-179,-163,343.3,321);
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 
 	// Layer_1
-	this.myTxt = new cjs.Text("PLANET BATURITI", "italic bold 28px 'Quantico'", "#0EE0E0");
+	this.myTxt = new cjs.Text("PLANET STONERITY", "italic bold 28px 'Quantico'", "#0EE0E0");
 	this.myTxt.name = "myTxt";
 	this.myTxt.lineHeight = 42;
 	this.myTxt.lineWidth = 362;
@@ -1044,7 +1044,6 @@ p.nominalBounds = new cjs.Rectangle(-25.1,-26,54,56);
 
 	// click
 	this.mcCont = new lib.cursor();
-	this.mcCont.name = "mcCont";
 	this.mcCont.parent = this;
 	this.mcCont.setTransform(546.4,443,0.35,0.35,0,0,0,0.5,0.5);
 	this.mcCont._off = true;
@@ -1060,7 +1059,6 @@ p.nominalBounds = new cjs.Rectangle(-25.1,-26,54,56);
 
 	// btn
 	this.btnCont = new lib.btnPlanet();
-	this.btnCont.name = "btnCont";
 	this.btnCont.parent = this;
 	this.btnCont.setTransform(400.5,318.8);
 	this.btnCont._off = true;
@@ -1263,19 +1261,19 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/menu16/Bitmap25.png?1527433518894", id:"Bitmap25"},
-		{src:"images/menu16/Bitmap26.png?1527433518894", id:"Bitmap26"},
-		{src:"images/menu16/Bitmap3.png?1527433518894", id:"Bitmap3"},
-		{src:"images/menu16/Bitmap4.png?1527433518894", id:"Bitmap4"},
-		{src:"images/menu16/Bitmap5.png?1527433518894", id:"Bitmap5"},
-		{src:"images/menu16/Bitmap6.png?1527433518894", id:"Bitmap6"},
-		{src:"images/menu16/Bitmap7.png?1527433518894", id:"Bitmap7"},
-		{src:"images/menu16/Bitmap8.png?1527433518894", id:"Bitmap8"},
-		{src:"images/menu16/greenplanet2.png?1527433518894", id:"greenplanet2"},
-		{src:"images/menu16/pinkplanet.png?1527433518894", id:"pinkplanet"},
-		{src:"sounds/bleep_stutter.mp3?1527433518894", id:"bleep_stutter"},
-		{src:"sounds/menuRock2.mp3?1527433518894", id:"menuRock2"},
-		{src:"sounds/stdClick.mp3?1527433518894", id:"stdClick"}
+		{src:"images/menu16/Bitmap25.png?1527741505300", id:"Bitmap25"},
+		{src:"images/menu16/Bitmap26.png?1527741505300", id:"Bitmap26"},
+		{src:"images/menu16/Bitmap3.png?1527741505300", id:"Bitmap3"},
+		{src:"images/menu16/Bitmap4.png?1527741505300", id:"Bitmap4"},
+		{src:"images/menu16/Bitmap5.png?1527741505300", id:"Bitmap5"},
+		{src:"images/menu16/Bitmap6.png?1527741505300", id:"Bitmap6"},
+		{src:"images/menu16/Bitmap7.png?1527741505300", id:"Bitmap7"},
+		{src:"images/menu16/Bitmap8.png?1527741505300", id:"Bitmap8"},
+		{src:"images/menu16/greenplanet2.png?1527741505300", id:"greenplanet2"},
+		{src:"images/menu16/pinkplanet.png?1527741505300", id:"pinkplanet"},
+		{src:"sounds/bleep_stutter.mp3?1527741505300", id:"bleep_stutter"},
+		{src:"sounds/menuRock2.mp3?1527741505300", id:"menuRock2"},
+		{src:"sounds/stdClick.mp3?1527741505300", id:"stdClick"}
 	],
 	preloads: []
 };

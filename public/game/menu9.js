@@ -250,7 +250,7 @@ p.nominalBounds = new cjs.Rectangle(-161,-167,318.6,322.6);
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 
 	// Layer_1
-	this.myTxt = new cjs.Text("PLANET ZISKOTEK", "italic bold 28px 'Quantico'", "#0EE0E0");
+	this.myTxt = new cjs.Text("PLANET ZISCOTECH", "italic bold 28px 'Quantico'", "#0EE0E0");
 	this.myTxt.name = "myTxt";
 	this.myTxt.lineHeight = 42;
 	this.myTxt.lineWidth = 402;
@@ -1044,7 +1044,6 @@ p.nominalBounds = new cjs.Rectangle(-25.1,-26,54,56);
 
 	// click
 	this.mcCont = new lib.cursor();
-	this.mcCont.name = "mcCont";
 	this.mcCont.parent = this;
 	this.mcCont.setTransform(546.4,443,0.35,0.35,0,0,0,0.5,0.5);
 	this.mcCont._off = true;
@@ -1060,7 +1059,6 @@ p.nominalBounds = new cjs.Rectangle(-25.1,-26,54,56);
 
 	// btn
 	this.btnCont = new lib.btnPlanet();
-	this.btnCont.name = "btnCont";
 	this.btnCont.parent = this;
 	this.btnCont.setTransform(400.5,318.8);
 	this.btnCont._off = true;
@@ -1242,19 +1240,19 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/menu9/Bitmap17.png?1527433017373", id:"Bitmap17"},
-		{src:"images/menu9/Bitmap19.png?1527433017373", id:"Bitmap19"},
-		{src:"images/menu9/Bitmap3.png?1527433017373", id:"Bitmap3"},
-		{src:"images/menu9/Bitmap4.png?1527433017373", id:"Bitmap4"},
-		{src:"images/menu9/Bitmap5.png?1527433017373", id:"Bitmap5"},
-		{src:"images/menu9/Bitmap6.png?1527433017373", id:"Bitmap6"},
-		{src:"images/menu9/Bitmap7.png?1527433017373", id:"Bitmap7"},
-		{src:"images/menu9/Bitmap8.png?1527433017373", id:"Bitmap8"},
-		{src:"images/menu9/blobPlanet.png?1527433017373", id:"blobPlanet"},
-		{src:"images/menu9/greenplanet2.png?1527433017373", id:"greenplanet2"},
-		{src:"sounds/bleep_stutter.mp3?1527433017373", id:"bleep_stutter"},
-		{src:"sounds/menuRock2.mp3?1527433017373", id:"menuRock2"},
-		{src:"sounds/stdClick.mp3?1527433017373", id:"stdClick"}
+		{src:"images/menu9/Bitmap17.png?1527740645803", id:"Bitmap17"},
+		{src:"images/menu9/Bitmap19.png?1527740645803", id:"Bitmap19"},
+		{src:"images/menu9/Bitmap3.png?1527740645803", id:"Bitmap3"},
+		{src:"images/menu9/Bitmap4.png?1527740645803", id:"Bitmap4"},
+		{src:"images/menu9/Bitmap5.png?1527740645803", id:"Bitmap5"},
+		{src:"images/menu9/Bitmap6.png?1527740645803", id:"Bitmap6"},
+		{src:"images/menu9/Bitmap7.png?1527740645803", id:"Bitmap7"},
+		{src:"images/menu9/Bitmap8.png?1527740645803", id:"Bitmap8"},
+		{src:"images/menu9/blobPlanet.png?1527740645803", id:"blobPlanet"},
+		{src:"images/menu9/greenplanet2.png?1527740645803", id:"greenplanet2"},
+		{src:"sounds/bleep_stutter.mp3?1527740645803", id:"bleep_stutter"},
+		{src:"sounds/menuRock2.mp3?1527740645803", id:"menuRock2"},
+		{src:"sounds/stdClick.mp3?1527740645803", id:"stdClick"}
 	],
 	preloads: []
 };
