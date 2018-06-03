@@ -119,8 +119,12 @@ class ClassController extends Controller
      */
     public function destroy($id)
     {
-        $user = SchoolClass::findOrFail($id);
-        $user->delete();
+        $class = SchoolClass::findOrFail($id);
+        $schoolNotDone =  SchoolClass::where([['school_id', $class->school_id], ['done', 0]])->first();
+        if(empty($schoolNotDone)){
+            School::where('id', $class->school_id)->update(['done'=>1]);
+        }
+        $class->delete();
         return redirect('/teacher/classes')->with("success", "Class deleted successfully!");
     }
 }

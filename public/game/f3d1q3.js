@@ -403,31 +403,31 @@ p.nominalBounds = new cjs.Rectangle(-70,-39,140,79);
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 
 	// Layer_1
-	this.myTxt = new cjs.Text("Can you identify the symbols of a flow chart?", "italic bold 16px 'Quantico'", "#0EE0E0");
+	this.myTxt = new cjs.Text("Can you identify the symbols of a flowchart?", "italic bold 16px 'Quantico'", "#0EE0E0");
 	this.myTxt.name = "myTxt";
 	this.myTxt.lineHeight = 25;
-	this.myTxt.lineWidth = 363;
+	this.myTxt.lineWidth = 385;
 	this.myTxt.parent = this;
-	this.myTxt.setTransform(-238,-10.3);
+	this.myTxt.setTransform(-236,-10.3);
 
 	this.timeline.addTween(cjs.Tween.get(this.myTxt).wait(1));
 
 	// Layer_2
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("#0EE0E0").ss(4,0,0,3).p("A99AAMA77AAA");
-	this.shape.setTransform(-59.8,21.7);
+	this.shape.graphics.f().s("#0EE0E0").ss(4,0,0,3).p("A+5AAMA9zAAA");
+	this.shape.setTransform(-53.8,21.7);
 
 	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f().s("#0EE0E0").ss(1,0,0,3).p("A8mDGIAAihIilADIClh7IAAhtMA77AAAIAAGG");
-	this.shape_1.setTransform(-68.5,1.9);
+	this.shape_1.graphics.f().s("#0EE0E0").ss(1,0,0,3).p("A9iDGIAAihIilADIClh7IAAhtMA9zAAAIAAGG");
+	this.shape_1.setTransform(-62.5,1.9);
 
 	this.shape_2 = new cjs.Shape();
-	this.shape_2.graphics.f("#000000").s().p("A8rDEIAAihIikACICkh6IAAhuMA77AAAIAAGHg");
-	this.shape_2.setTransform(-68.1,2.1);
+	this.shape_2.graphics.f("#000000").s().p("A9nDEIAAihIilACIClh6IAAhuMA90AAAIAAGHg");
+	this.shape_2.setTransform(-62,2.1);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).wait(1));
 
-}).prototype = getMCSymbolPrototype(lib.tEn4, new cjs.Rectangle(-269.5,-18.4,403.5,42.1), null);
+}).prototype = getMCSymbolPrototype(lib.tEn4, new cjs.Rectangle(-269.5,-18.4,420.5,42.1), null);
 
 
 (lib.tEn3 = function(mode,startPosition,loop) {
@@ -454,12 +454,12 @@ p.nominalBounds = new cjs.Rectangle(-70,-39,140,79);
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 
 	// Layer_1
-	this.myTxt = new cjs.Text("You are feeling hungry. Arrange the flow chart\nto make yourself a nice butter cake.", "italic bold 16px 'Quantico'", "#0EE0E0");
+	this.myTxt = new cjs.Text("You are feeling hungry. Arrange the flowchart \nto make a butter cake.", "italic bold 16px 'Quantico'", "#0EE0E0");
 	this.myTxt.name = "myTxt";
 	this.myTxt.lineHeight = 25;
 	this.myTxt.lineWidth = 394;
 	this.myTxt.parent = this;
-	this.myTxt.setTransform(-239,-22.3);
+	this.myTxt.setTransform(-237,-22.3);
 
 	this.timeline.addTween(cjs.Tween.get(this.myTxt).wait(1));
 
@@ -478,7 +478,7 @@ p.nominalBounds = new cjs.Rectangle(-70,-39,140,79);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).wait(1));
 
-}).prototype = getMCSymbolPrototype(lib.tEn3, new cjs.Rectangle(-269.5,-28.4,426.5,62.1), null);
+}).prototype = getMCSymbolPrototype(lib.tEn3, new cjs.Rectangle(-269.5,-28.4,428.5,62.1), null);
 
 
 (lib.tEn2 = function(mode,startPosition,loop) {
@@ -505,7 +505,7 @@ p.nominalBounds = new cjs.Rectangle(-70,-39,140,79);
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 
 	// Layer_1
-	this.myTxt = new cjs.Text("You are feeling hungry. Arrange the flow chart\nto make yourself some omelette.", "italic bold 16px 'Quantico'", "#0EE0E0");
+	this.myTxt = new cjs.Text("You are feeling hungry. Arrange the flowchart\nto make some omelette.", "italic bold 16px 'Quantico'", "#0EE0E0");
 	this.myTxt.name = "myTxt";
 	this.myTxt.lineHeight = 25;
 	this.myTxt.lineWidth = 390;
@@ -556,12 +556,12 @@ p.nominalBounds = new cjs.Rectangle(-70,-39,140,79);
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 
 	// Layer_1
-	this.myTxt = new cjs.Text("It is raining outside and is a perfect time for a\ncup of hot chocolate. Arrange the flow chart to\nmake yourself a cup of hot chocolate.", "italic bold 16px 'Quantico'", "#0EE0E0");
+	this.myTxt = new cjs.Text("It’s raining and this is a perfect time for a \ncup of hot chocolate. Arrange the flowchart \nto make a cup of hot chocolate.", "italic bold 16px 'Quantico'", "#0EE0E0");
 	this.myTxt.name = "myTxt";
 	this.myTxt.lineHeight = 25;
-	this.myTxt.lineWidth = 399;
+	this.myTxt.lineWidth = 387;
 	this.myTxt.parent = this;
-	this.myTxt.setTransform(-231.3,-20.2);
+	this.myTxt.setTransform(-225.3,-20.2);
 
 	this.timeline.addTween(cjs.Tween.get(this.myTxt).wait(1));
 
@@ -580,7 +580,7 @@ p.nominalBounds = new cjs.Rectangle(-70,-39,140,79);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).wait(1));
 
-}).prototype = getMCSymbolPrototype(lib.tEn1, new cjs.Rectangle(-269.5,-28.4,439.5,93.4), null);
+}).prototype = getMCSymbolPrototype(lib.tEn1, new cjs.Rectangle(-269.5,-28.4,436.7,93.4), null);
 
 
 (lib.tEn0 = function(mode,startPosition,loop) {
@@ -965,7 +965,7 @@ p.nominalBounds = new cjs.Rectangle(-69.2,-22,138.5,44.1);
 	this.myTxt = new cjs.Text("Bolehkah anda kenal pasti simbol-simbol \ndalam carta alir?", "italic bold 16px 'Quantico'", "#0EE0E0");
 	this.myTxt.name = "myTxt";
 	this.myTxt.lineHeight = 25;
-	this.myTxt.lineWidth = 336;
+	this.myTxt.lineWidth = 356;
 	this.myTxt.parent = this;
 	this.myTxt.setTransform(-238.7,-22.5);
 
@@ -986,7 +986,7 @@ p.nominalBounds = new cjs.Rectangle(-69.2,-22,138.5,44.1);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).wait(1));
 
-}).prototype = getMCSymbolPrototype(lib.tBm4, new cjs.Rectangle(-269.5,-28.4,378.5,62.1), null);
+}).prototype = getMCSymbolPrototype(lib.tBm4, new cjs.Rectangle(-269.5,-28.4,388.5,62.1), null);
 
 
 (lib.tBm3 = function(mode,startPosition,loop) {
@@ -1013,12 +1013,12 @@ p.nominalBounds = new cjs.Rectangle(-69.2,-22,138.5,44.1);
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 
 	// Layer_1
-	this.myTxt = new cjs.Text("Anda lapar. Susun carta alir untuk membuat kek mentega.", "italic bold 16px 'Quantico'", "#0EE0E0");
+	this.myTxt = new cjs.Text("Anda berasa lapar. Susun carta \nalir untuk membuat kek mentega.", "italic bold 16px 'Quantico'", "#0EE0E0");
 	this.myTxt.name = "myTxt";
 	this.myTxt.lineHeight = 25;
-	this.myTxt.lineWidth = 287;
+	this.myTxt.lineWidth = 293;
 	this.myTxt.parent = this;
-	this.myTxt.setTransform(-236.7,-22.5);
+	this.myTxt.setTransform(-234.7,-22.5);
 
 	this.timeline.addTween(cjs.Tween.get(this.myTxt).wait(1));
 
@@ -1037,7 +1037,7 @@ p.nominalBounds = new cjs.Rectangle(-69.2,-22,138.5,44.1);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).wait(1));
 
-}).prototype = getMCSymbolPrototype(lib.tBm3, new cjs.Rectangle(-269.5,-28.4,326.5,62.1), null);
+}).prototype = getMCSymbolPrototype(lib.tBm3, new cjs.Rectangle(-269.5,-28.4,329.5,62.1), null);
 
 
 (lib.tBm2 = function(mode,startPosition,loop) {
@@ -1064,12 +1064,12 @@ p.nominalBounds = new cjs.Rectangle(-69.2,-22,138.5,44.1);
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 
 	// Layer_1
-	this.myTxt = new cjs.Text("Anda lapar. Susun carta alir untuk\nmembuat telur dadar", "italic bold 16px 'Quantico'", "#0EE0E0");
+	this.myTxt = new cjs.Text("Anda berasa lapar. Susun carta \nalir untuk membuat telur dadar.", "italic bold 16px 'Quantico'", "#0EE0E0");
 	this.myTxt.name = "myTxt";
 	this.myTxt.lineHeight = 25;
-	this.myTxt.lineWidth = 287;
+	this.myTxt.lineWidth = 298;
 	this.myTxt.parent = this;
-	this.myTxt.setTransform(-237.3,-22.2);
+	this.myTxt.setTransform(-231.3,-22.2);
 
 	this.timeline.addTween(cjs.Tween.get(this.myTxt).wait(1));
 
@@ -1088,7 +1088,7 @@ p.nominalBounds = new cjs.Rectangle(-69.2,-22,138.5,44.1);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).wait(1));
 
-}).prototype = getMCSymbolPrototype(lib.tBm2, new cjs.Rectangle(-269.5,-28.4,327.5,63.7), null);
+}).prototype = getMCSymbolPrototype(lib.tBm2, new cjs.Rectangle(-269.5,-28.4,338.5,63.7), null);
 
 
 (lib.tBm1 = function(mode,startPosition,loop) {
@@ -1115,31 +1115,31 @@ p.nominalBounds = new cjs.Rectangle(-69.2,-22,138.5,44.1);
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 
 	// Layer_1
-	this.myTxt = new cjs.Text("Di luar sedang hujan dan sangat sesuai untuk secawan \ncoklat panas. Susun carta alir untuk membuat secawan \ncoklat panas.", "italic bold 16px 'Quantico'", "#0EE0E0");
+	this.myTxt = new cjs.Text("Hari sedang hujan dan masa ini sangat sesuai\nuntuk secawan coklat panas. Susun carta alir\nuntuk membuat secawan coklat panas.", "italic bold 16px 'Quantico'", "#0EE0E0");
 	this.myTxt.name = "myTxt";
 	this.myTxt.lineHeight = 25;
-	this.myTxt.lineWidth = 455;
+	this.myTxt.lineWidth = 390;
 	this.myTxt.parent = this;
-	this.myTxt.setTransform(-241.7,-20.4);
+	this.myTxt.setTransform(-231.7,-20.4);
 
 	this.timeline.addTween(cjs.Tween.get(this.myTxt).wait(1));
 
 	// Layer_2
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("#0EE0E0").ss(4,0,0,3).p("Egi9AAAMBF7AAA");
-	this.shape.setTransform(-27.8,63);
+	this.shape.graphics.f().s("#0EE0E0").ss(4,0,0,3).p("A/1AAMA/rAAA");
+	this.shape.setTransform(-47.8,63);
 
 	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f().s("#0EE0E0").ss(1,0,0,3).p("EghmAHHIAAo+IilADIClh7IAAjSMBF7AAAIAAOI");
-	this.shape_1.setTransform(-36.5,17.5);
+	this.shape_1.graphics.f().s("#0EE0E0").ss(1,0,0,3).p("A+eHHIAAo+IilADIClh7IAAjSMA/rAAAIAAOI");
+	this.shape_1.setTransform(-56.5,17.5);
 
 	this.shape_2 = new cjs.Shape();
-	this.shape_2.graphics.f("#000000").s().p("EghrAHEIAAo9IilACIClh7IAAjRMBF8AAAIAAOHg");
-	this.shape_2.setTransform(-36,17.8);
+	this.shape_2.graphics.f("#000000").s().p("A+jHEIAAo9IilACIClh7IAAjRMA/rAAAIAAOHg");
+	this.shape_2.setTransform(-56,17.8);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).wait(1));
 
-}).prototype = getMCSymbolPrototype(lib.tBm1, new cjs.Rectangle(-269.5,-28.4,484.5,93.4), null);
+}).prototype = getMCSymbolPrototype(lib.tBm1, new cjs.Rectangle(-269.5,-28.4,429.5,93.4), null);
 
 
 (lib.tBm0 = function(mode,startPosition,loop) {
@@ -4024,7 +4024,7 @@ p.nominalBounds = new cjs.Rectangle(-5,-5,10,10);
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 
 	// t
-	this.txtTime = new cjs.Text("2:00", "60px 'Quantico'", "#006666");
+	this.txtTime = new cjs.Text("4:00", "60px 'Quantico'", "#006666");
 	this.txtTime.name = "txtTime";
 	this.txtTime.textAlign = "center";
 	this.txtTime.lineHeight = 88;
@@ -5782,6 +5782,30 @@ p.nominalBounds = new cjs.Rectangle(-7.5,-1.5,15,3);
 p.nominalBounds = new cjs.Rectangle(-49,-49,97,97);
 
 
+(lib.arrowcopy = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// Layer 1
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("#FFFFFF").s().p("AggADIBBhLIAACRg");
+	this.shape.setTransform(-34.9,-11);
+
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f().s("#FFFFFF").ss(2,1,1).p("AEjDSIAAmjIpFAA");
+	this.shape_1.setTransform(-30.6,10.4);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape}]}).wait(1));
+
+	// Layer_2
+	this.shape_2 = new cjs.Shape();
+	this.shape_2.graphics.f("rgba(0,0,0,0.498)").s().p("ApmFAIAAp/ITNAAIAAJ/g");
+
+	this.timeline.addTween(cjs.Tween.get(this.shape_2).wait(1));
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(-61.5,-32,123,64.4);
+
+
 (lib.arrow = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
@@ -5791,8 +5815,8 @@ p.nominalBounds = new cjs.Rectangle(-49,-49,97,97);
 	this.shape.setTransform(-34.9,-1);
 
 	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f().s("#FFFFFF").ss(2,1,1).p("AE/CgIAAk/Ip9AA");
-	this.shape_1.setTransform(-27.8,15.4);
+	this.shape_1.graphics.f().s("#FFFFFF").ss(2,1,1).p("AE1CgIAAk/IppAA");
+	this.shape_1.setTransform(-28.8,15.4);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape}]}).wait(1));
 
@@ -5974,7 +5998,7 @@ p.nominalBounds = null;
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance}]}).to({state:[{t:this.instance_1}]},1).wait(1));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-257.9,-34.7,378.5,61.6);
+p.nominalBounds = new cjs.Rectangle(-257.9,-34.7,388.5,61.6);
 
 
 (lib.dialogue3 = function(mode,startPosition,loop) {
@@ -6020,7 +6044,7 @@ p.nominalBounds = new cjs.Rectangle(-257.9,-34.7,378.5,61.6);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance}]}).to({state:[{t:this.instance_1}]},1).wait(1));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-257.9,-34.7,326.5,61.6);
+p.nominalBounds = new cjs.Rectangle(-257.9,-34.7,329.5,61.6);
 
 
 (lib.dialogue2 = function(mode,startPosition,loop) {
@@ -6066,7 +6090,7 @@ p.nominalBounds = new cjs.Rectangle(-257.9,-34.7,326.5,61.6);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance}]}).to({state:[{t:this.instance_1}]},1).wait(1));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-257.9,-34.7,327.5,63.2);
+p.nominalBounds = new cjs.Rectangle(-257.9,-34.7,338.5,63.2);
 
 
 (lib.dialogue1 = function(mode,startPosition,loop) {
@@ -6112,7 +6136,7 @@ p.nominalBounds = new cjs.Rectangle(-257.9,-34.7,327.5,63.2);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance}]}).to({state:[{t:this.instance_1}]},1).wait(1));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-257.9,-34.7,484.5,92.9);
+p.nominalBounds = new cjs.Rectangle(-257.9,-34.7,429.5,92.9);
 
 
 (lib.dialogue0 = function(mode,startPosition,loop) {
@@ -6650,6 +6674,51 @@ p.nominalBounds = new cjs.Rectangle(-79.1,-21.4,161.7,48.6);
 p.nominalBounds = new cjs.Rectangle(-136.7,302.4,274,237.4);
 
 
+(lib.mcTimesUp = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// timeline functions:
+	this.frame_0 = function() {
+		this.stop();
+	}
+	this.frame_1 = function() {
+		function onClick(){
+			return;
+		}
+		this.addEventListener("click", onClick);
+		playSound("timeout");
+	}
+	this.frame_150 = function() {
+		this.stop();
+		nextScreen();
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(149).call(this.frame_150).wait(1));
+
+	// anim
+	this.instance = new lib.timesUpAnim("synched",0,false);
+	this.instance.parent = this;
+	this.instance.setTransform(400,300);
+	this.instance._off = true;
+
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1).to({_off:false},0).wait(150));
+
+	// black
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("rgba(255,0,0,0.996)").s().p("AhyCMQAAAAgBAAQAAAAgBAAQAAgBgBAAQAAAAgBgBQAAAAAAAAQAAgBgBAAQAAgBAAAAQAAgBAAAAIAAgKQAAgBAAAAQAAAAAAgBQABAAAAgBQAAAAAAgBQABAAAAAAQABAAAAgBQABAAAAAAQABAAAAAAIAPAAQAAgpAQgfQARggAagQQgagQgRgfQgQgfAAgpIgPAAQAAAAgBAAQAAAAgBAAQAAgBgBAAQAAAAgBgBQAAAAAAAAQAAgBgBAAQAAgBAAAAQAAAAAAgBIAAgKQAAgBAAAAQAAAAAAgBQABAAAAgBQAAAAAAAAQABgBAAAAQABAAAAgBQABAAAAAAQABAAAAAAIDlAAQABAAAAAAQAAAAABAAQAAABABAAQAAAAAAABQABAAAAAAQAAABABAAQAAABAAAAQAAAAAAABIAAAKQAAABAAAAQAAAAAAABQgBAAAAABQAAAAgBAAQAAABAAAAQgBAAAAABQgBAAAAAAQAAAAgBAAIgPAAQAAApgQAfQgRAfgZAQQAZAQARAgQAQAfAAApIAPAAQABAAAAAAQAAAAABAAQAAABABAAQAAAAAAAAQABABAAAAQAAABABAAQAAABAAAAQAAAAAAABIAAAKQAAAAAAABQAAAAAAABQgBAAAAABQAAAAgBAAQAAABAAAAQgBAAAAABQgBAAAAAAQAAAAgBAAgAhKhQQAGATAJAPQAJAOALAJQAMAKALAFQAEAAABADQACADAAACQAAADgCADQgBADgEAAQgVAJgRAWIBsAAQgQgWgWgJQgDAAgBgDQgCgDAAgDQAAgCACgDQABgDADAAQAMgFAMgKQALgJAJgOQAJgPAGgTQAFgSAAgVIifAAQAAAVAFASg");
+	this.shape.setTransform(-73.5,92.7);
+
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f("rgba(0,0,0,0.698)").s().p("EhBvAyxMAAAhlhMCDgAAAMAAABlhg");
+	this.shape_1.setTransform(402.9,308.9);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape}]}).to({state:[{t:this.shape_1}]},1).wait(150));
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
+
+
 (lib.mcBtnCont = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
@@ -6852,7 +6921,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 			//scale the score
 			var scaledScore = Math.round(cScore/maxBlanks*40)/10+1;
 			console.log(scaledScore);
-			_this.parent.sendScore(cScore);
+			_this.parent.sendScore(scaledScore);
 		}
 		this.btnSubmit.addEventListener("click", submitAns);
 		//language
@@ -7103,7 +7172,7 @@ p.nominalBounds = new cjs.Rectangle(101.3,184.1,625.8,371.6);
 	this.timeline.addTween(cjs.Tween.get(this.btnSubmit).wait(1));
 
 	// item
-	this.item4 = new lib.arrow();
+	this.item4 = new lib.arrowcopy();
 	this.item4.name = "item4";
 	this.item4.parent = this;
 	this.item4.setTransform(170.5,458.6,1,1,0,0,0,0,0.5);
@@ -7134,7 +7203,7 @@ p.nominalBounds = new cjs.Rectangle(101.3,184.1,625.8,371.6);
 	this.dArea2 = new lib.dArea();
 	this.dArea2.name = "dArea2";
 	this.dArea2.parent = this;
-	this.dArea2.setTransform(576.3,330.1);
+	this.dArea2.setTransform(578.3,330.1);
 
 	this.dArea3 = new lib.dArea();
 	this.dArea3.name = "dArea3";
@@ -7577,7 +7646,7 @@ p.nominalBounds = new cjs.Rectangle(101.3,184.1,625.8,371.6);
 	this.dArea2 = new lib.dArea();
 	this.dArea2.name = "dArea2";
 	this.dArea2.parent = this;
-	this.dArea2.setTransform(571.7,332.1);
+	this.dArea2.setTransform(573.7,332.1);
 
 	this.dArea4 = new lib.dArea();
 	this.dArea4.name = "dArea4";
@@ -7606,59 +7675,6 @@ p.nominalBounds = new cjs.Rectangle(101.3,184.1,625.8,371.6);
 }).prototype = getMCSymbolPrototype(lib.AMC01, new cjs.Rectangle(112.8,184.7,638.4,369.5), null);
 
 
-(lib.mcTimesUp = function(mode,startPosition,loop) {
-	this.initialize(mode,startPosition,loop,{});
-
-	// timeline functions:
-	this.frame_0 = function() {
-		this.stop();
-	}
-	this.frame_1 = function() {
-		playSound("timeout");
-	}
-	this.frame_86 = function() {
-		this.stop();
-		function doNext(e){
-			nextScreen();
-		}
-		this.addEventListener("click", doNext);
-	}
-
-	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(85).call(this.frame_86).wait(1));
-
-	// Layer_5
-	this.mcCont = new lib.cursor();
-	this.mcCont.name = "mcCont";
-	this.mcCont.parent = this;
-	this.mcCont.setTransform(497.4,447.9,0.35,0.35,0,0,0,0.5,0.5);
-	this.mcCont._off = true;
-
-	this.timeline.addTween(cjs.Tween.get(this.mcCont).wait(86).to({_off:false},0).wait(1));
-
-	// anim
-	this.instance = new lib.timesUpAnim("synched",0,false);
-	this.instance.parent = this;
-	this.instance.setTransform(400,300);
-	this.instance._off = true;
-
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1).to({_off:false},0).wait(86));
-
-	// black
-	this.shape = new cjs.Shape();
-	this.shape.graphics.f("rgba(255,0,0,0.996)").s().p("AhyCMQAAAAgBAAQAAAAgBAAQAAgBgBAAQAAAAgBgBQAAAAAAAAQAAgBgBAAQAAgBAAAAQAAgBAAAAIAAgKQAAgBAAAAQAAAAAAgBQABAAAAgBQAAAAAAgBQABAAAAAAQABAAAAgBQABAAAAAAQABAAAAAAIAPAAQAAgpAQgfQARggAagQQgagQgRgfQgQgfAAgpIgPAAQAAAAgBAAQAAAAgBAAQAAgBgBAAQAAAAgBgBQAAAAAAAAQAAgBgBAAQAAgBAAAAQAAAAAAgBIAAgKQAAgBAAAAQAAAAAAgBQABAAAAgBQAAAAAAAAQABgBAAAAQABAAAAgBQABAAAAAAQABAAAAAAIDlAAQABAAAAAAQAAAAABAAQAAABABAAQAAAAAAABQABAAAAAAQAAABABAAQAAABAAAAQAAAAAAABIAAAKQAAABAAAAQAAAAAAABQgBAAAAABQAAAAgBAAQAAABAAAAQgBAAAAABQgBAAAAAAQAAAAgBAAIgPAAQAAApgQAfQgRAfgZAQQAZAQARAgQAQAfAAApIAPAAQABAAAAAAQAAAAABAAQAAABABAAQAAAAAAAAQABABAAAAQAAABABAAQAAABAAAAQAAAAAAABIAAAKQAAAAAAABQAAAAAAABQgBAAAAABQAAAAgBAAQAAABAAAAQgBAAAAABQgBAAAAAAQAAAAgBAAgAhKhQQAGATAJAPQAJAOALAJQAMAKALAFQAEAAABADQACADAAACQAAADgCADQgBADgEAAQgVAJgRAWIBsAAQgQgWgWgJQgDAAgBgDQgCgDAAgDQAAgCACgDQABgDADAAQAMgFAMgKQALgJAJgOQAJgPAGgTQAFgSAAgVIifAAQAAAVAFASg");
-	this.shape.setTransform(-73.5,92.7);
-
-	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f("rgba(0,0,0,0.698)").s().p("EhBvAyxMAAAhlhMCDgAAAMAAABlhg");
-	this.shape_1.setTransform(402.9,308.9);
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape}]}).to({state:[{t:this.shape_1}]},1).wait(86));
-
-}).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
-
-
 // stage content:
 (lib.f3d1q3 = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{q2:104,q3:154,q4:200,q1:247,finalFb:299});
@@ -7676,106 +7692,126 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 	this.frame_99 = function() {
 		this.stop();
 		var _this = this;
+		var stageNum = 5;
 		if (typeof cUserId === "undefined") {
 			cUserId = "";
 		}
 		var maxQ = 2;
-		this.timeGiven = 120;//time in seconds
+		this.timeGiven = 240;//time in seconds
 		this.secRemaining = this.timeGiven;
 		this.timeTaken = 0;
 		this.cScore = 0;
 		this.currentQ = 0;
 		this.myData = {
-			"qNum": 5,
+			"stage": stageNum,
 			"userId": cUserId,
-			"time": _this.timeTaken,
-			"score": _this.cScore,
-			"qItem": [
-				{"qId": "f3d1q3_1",
+			"qItem": [{
+				"qId": "f3d1q3_1",
 				"qDomain": 1,
 				"qParam": 3,
-				"qSkill": 3,
-				"qResult": 9}
-				]
+				"qSkill": 31,
+				"qResult": 9,
+				"time": 0,
+				"score": 1
+			}]
 		};
 		var qItem1 = [{
 				"qId": "f3d1q3_2",
 				"qDomain": 1,
 				"qParam": 3,
-				"qSkill": 3,
-				"qResult": 9
+				"qSkill": 31,
+				"qResult": 9,
+				"time": 0,
+				"score": 1
 			},
 			{
-				"qId": "y6d2q1_3",
+				"qId": "f3d1q3_3",
 				"qDomain": 1,
 				"qParam": 3,
-				"qSkill": 3,
-				"qResult": 9
+				"qSkill": 31,
+				"qResult": 9,
+				"time": 0,
+				"score": 1
 			},
 			{
-				"qId": "y6d2q1_4",
+				"qId": "f3d1q3_4",
 				"qDomain": 1,
 				"qParam": 3,
-				"qSkill": 3,
-				"qResult": 9
+				"qSkill": 31,
+				"qResult": 9,
+				"time": 0,
+				"score": 1
 			}
 		];
 		if (typeof debugMode === "undefined") {
-			debugMode = true;
+			debugMode = false;
 		}
-		debugMode = true;
+		//debugMode = true;
 		if (debugMode) {
 			//no need shuffle, show all
 			this.myData.qItem.push(qItem1[0]);
 			this.myData.qItem.push(qItem1[1]);
 			this.myData.qItem.push(qItem1[2]);
 		} else {
-			this.myData.qItem.push(qItem1[this.qList1[randRange(0,2)]]);
+			this.myData.qItem.push(qItem1[randRange(0,2)]);
 		}
 		function goNextQ (){
 			_this.currentQ++;
 			if (_this.currentQ<=_this.myData.qItem.length){
 				console.log(_this.myData.qItem[_this.currentQ-1].qId.substring(7));
-				_this.gotoAndPlay("q"+_this.currentQ);
+				_this.gotoAndPlay("q"+_this.myData.qItem[_this.currentQ-1].qId.substring(7));
 				if (_this.currentQ<=maxQ){
 					_this["prog"+_this.currentQ].gotoAndStop("on");
 				}
 			} else {
-				//all questions done
+				//all done
 				clearInterval(timeInterval);//stop time
-				_this.myData.time = _this.timeGiven - _this.secRemaining;
-				//console.log(_this.myData.time);
-				_this.myData.score = Math.round(_this.cScore/_this.myData.qItem.length*10)/10;//average
 				saveData();
-				console.log(_this.myData);
 			}
+			console.log(_this.myData);
 		}
+		var isTimeOut = false;
 		_this.onTimeEnd = function (){
-			_this.myData.time = _this.timeGiven;
+			_this.myData.qItem[_this.currentQ-1].time = _this.timeGiven;
+			isTimeOut = true;
 			saveData();
 		};
 		function saveData(){
 			if (cUserId == ""){//not online
 				_this.gotoAndPlay("finalFb");
 			} else {
-				//call save data here
-				_this.gotoAndPlay("finalFb");
+				//save data here
+				var cData = $.post("/api/record/update/", 
+								_this.myData,
+									function(data){
+										console.log("set score"+data.message);
+										if (data.message=="success" && !isTimeOut){
+											_this.gotoAndPlay("finalFb");
+										} else if (data.message=="success"){
+											//nothing
+										} else {
+											console.log("error");
+										}
+									});
 			}
 		}
-		function doPlay(e){
-			_this.removeEventListener("click", doPlay);
-			goNextQ();
-		}
-		this.addEventListener("click", doPlay);
 		this.sendScore = function (_cScore){
 			if (_cScore==5){//all correct
 				_this.myData.qItem[_this.currentQ-1].qResult = 1;
 			} else {
 				_this.myData.qItem[_this.currentQ-1].qResult = 0;
 			}
-			_this.cScore += _cScore;
+			_this.myData.qItem[_this.currentQ-1].score = _cScore;
+			_this.myData.qItem[_this.currentQ-1].time = _this.timeGiven-_this.secRemaining;
+			_this.timeGiven = _this.secRemaining;
 			goNextQ();
 		};
+		
+		function doPlay(e){
+			_this.removeEventListener("click", doPlay);
+			goNextQ();
+		}
+		this.addEventListener("click", doPlay);
 		function randRange(min, max) {
 		    return Math.floor(Math.random() * (max - min + 1)) + min;
 		}
@@ -8068,19 +8104,19 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/f3d1q3/Bitmap22.png?1526482859176", id:"Bitmap22"},
-		{src:"images/f3d1q3/Bitmap3.png?1526482859176", id:"Bitmap3"},
-		{src:"images/f3d1q3/Bitmap8.png?1526482859176", id:"Bitmap8"},
-		{src:"images/f3d1q3/Bitmap9.png?1526482859176", id:"Bitmap9"},
-		{src:"sounds/mdroid_talk.mp3?1526482859176", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1526482859176", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1526482859176", id:"questionComplete"},
-		{src:"sounds/submitAns.mp3?1526482859176", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1526482859176", id:"suspense"},
-		{src:"sounds/timeout.mp3?1526482859176", id:"timeout"},
-		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1526482859176", id:"lib/jquery-2.2.4.min.js"},
-		{src:"components/sdk/anwidget.js?1526482859176", id:"sdk/anwidget.js"},
-		{src:"components/ui/src/combobox.js?1526482859176", id:"an.ComboBox"}
+		{src:"images/f3d1q3/Bitmap22.png?1527924154512", id:"Bitmap22"},
+		{src:"images/f3d1q3/Bitmap3.png?1527924154512", id:"Bitmap3"},
+		{src:"images/f3d1q3/Bitmap8.png?1527924154512", id:"Bitmap8"},
+		{src:"images/f3d1q3/Bitmap9.png?1527924154512", id:"Bitmap9"},
+		{src:"sounds/mdroid_talk.mp3?1527924154512", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1527924154512", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1527924154512", id:"questionComplete"},
+		{src:"sounds/submitAns.mp3?1527924154512", id:"submitAns"},
+		{src:"sounds/suspense.mp3?1527924154512", id:"suspense"},
+		{src:"sounds/timeout.mp3?1527924154512", id:"timeout"},
+		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1527924154512", id:"lib/jquery-2.2.4.min.js"},
+		{src:"components/sdk/anwidget.js?1527924154512", id:"sdk/anwidget.js"},
+		{src:"components/ui/src/combobox.js?1527924154512", id:"an.ComboBox"}
 	],
 	preloads: []
 };

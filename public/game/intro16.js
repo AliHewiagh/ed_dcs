@@ -4670,7 +4670,7 @@ p.nominalBounds = new cjs.Rectangle(-96.4,-34.2,376.3,134.3);
 		txtAnimSpeed = 18;
 	}
 	this.frame_1 = function() {
-		_this = this;
+		var _this = this;
 		function doPlay(e){
 			_this.removeEventListener("click", doPlay);
 			_this.gotoAndPlay("a2");
@@ -4684,7 +4684,7 @@ p.nominalBounds = new cjs.Rectangle(-96.4,-34.2,376.3,134.3);
 		this.stop();
 	}
 	this.frame_124 = function() {
-		_this = this;
+		var _this = this;
 		function doPlay(e){
 			_this.removeEventListener("click", doPlay);
 			_this.gotoAndPlay("a3");
@@ -4695,7 +4695,7 @@ p.nominalBounds = new cjs.Rectangle(-96.4,-34.2,376.3,134.3);
 		this.stop();
 	}
 	this.frame_214 = function() {
-		_this = this;
+		var _this = this;
 		function doPlay(e){
 			_this.removeEventListener("click", doPlay);
 			nextScreen();
@@ -4824,13 +4824,13 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/intro16/Bitmap1.png?1527795397972", id:"Bitmap1"},
-		{src:"images/intro16/Bitmap2.png?1527795397972", id:"Bitmap2"},
-		{src:"images/intro16/Bitmap3.png?1527795397972", id:"Bitmap3"},
-		{src:"images/intro16/Bitmap4.png?1527795397972", id:"Bitmap4"},
-		{src:"images/intro16/Bitmap5.png?1527795397972", id:"Bitmap5"},
-		{src:"images/intro16/Bitmap6.png?1527795397972", id:"Bitmap6"},
-		{src:"sounds/intro.mp3?1527795397972", id:"intro"}
+		{src:"images/intro16/Bitmap1.png?1527922393786", id:"Bitmap1"},
+		{src:"images/intro16/Bitmap2.png?1527922393786", id:"Bitmap2"},
+		{src:"images/intro16/Bitmap3.png?1527922393786", id:"Bitmap3"},
+		{src:"images/intro16/Bitmap4.png?1527922393786", id:"Bitmap4"},
+		{src:"images/intro16/Bitmap5.png?1527922393786", id:"Bitmap5"},
+		{src:"images/intro16/Bitmap6.png?1527922393786", id:"Bitmap6"},
+		{src:"sounds/intro.mp3?1527922393786", id:"intro"}
 	],
 	preloads: []
 };

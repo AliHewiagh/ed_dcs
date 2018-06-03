@@ -1,4 +1,4 @@
-var debugMode = true;
+var debugMode = false;
 var schoolLevel;
 //----turn this on for final to disable all console.log 
 //console.log = function() {};
@@ -404,21 +404,4 @@ function doExit(){
 }
 function randRange(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-function saveStage(_stageNum){
-	var data = {
-		"userId": cUserId,
-		"stage": _stageNum,
-		"last_screen": "",
-		"last_state": "",
-    	"time_left": 0
-	};
-	var mySave = $.post("/api/stage/update/", function (data) {
-		if(data.status == "100"){
-			//success api call
-			console.log("successss save");
-		}else{
-			//failed
-		}
-	});
 }

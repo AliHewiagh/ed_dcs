@@ -1851,6 +1851,51 @@ p.nominalBounds = new cjs.Rectangle(-79.1,-21.4,161.7,48.6);
 p.nominalBounds = new cjs.Rectangle(-136.7,302.4,274,237.4);
 
 
+(lib.mcTimesUp = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// timeline functions:
+	this.frame_0 = function() {
+		this.stop();
+	}
+	this.frame_1 = function() {
+		function onClick(){
+			return;
+		}
+		this.addEventListener("click", onClick);
+		playSound("timeout");
+	}
+	this.frame_150 = function() {
+		this.stop();
+		nextScreen();
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(149).call(this.frame_150).wait(1));
+
+	// anim
+	this.instance = new lib.timesUpAnim("synched",0,false);
+	this.instance.parent = this;
+	this.instance.setTransform(400,300);
+	this.instance._off = true;
+
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1).to({_off:false},0).wait(150));
+
+	// black
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("rgba(255,0,0,0.996)").s().p("AhyCMQAAAAgBAAQAAAAgBAAQAAgBgBAAQAAAAgBgBQAAAAAAAAQAAgBgBAAQAAgBAAAAQAAgBAAAAIAAgKQAAgBAAAAQAAAAAAgBQABAAAAgBQAAAAAAgBQABAAAAAAQABAAAAgBQABAAAAAAQABAAAAAAIAPAAQAAgpAQgfQARggAagQQgagQgRgfQgQgfAAgpIgPAAQAAAAgBAAQAAAAgBAAQAAgBgBAAQAAAAgBgBQAAAAAAAAQAAgBgBAAQAAgBAAAAQAAAAAAgBIAAgKQAAgBAAAAQAAAAAAgBQABAAAAgBQAAAAAAAAQABgBAAAAQABAAAAgBQABAAAAAAQABAAAAAAIDlAAQABAAAAAAQAAAAABAAQAAABABAAQAAAAAAABQABAAAAAAQAAABABAAQAAABAAAAQAAAAAAABIAAAKQAAABAAAAQAAAAAAABQgBAAAAABQAAAAgBAAQAAABAAAAQgBAAAAABQgBAAAAAAQAAAAgBAAIgPAAQAAApgQAfQgRAfgZAQQAZAQARAgQAQAfAAApIAPAAQABAAAAAAQAAAAABAAQAAABABAAQAAAAAAAAQABABAAAAQAAABABAAQAAABAAAAQAAAAAAABIAAAKQAAAAAAABQAAAAAAABQgBAAAAABQAAAAgBAAQAAABAAAAQgBAAAAABQgBAAAAAAQAAAAgBAAgAhKhQQAGATAJAPQAJAOALAJQAMAKALAFQAEAAABADQACADAAACQAAADgCADQgBADgEAAQgVAJgRAWIBsAAQgQgWgWgJQgDAAgBgDQgCgDAAgDQAAgCACgDQABgDADAAQAMgFAMgKQALgJAJgOQAJgPAGgTQAFgSAAgVIifAAQAAAVAFASg");
+	this.shape.setTransform(-73.5,92.7);
+
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f("rgba(0,0,0,0.698)").s().p("EhBvAyxMAAAhlhMCDgAAAMAAABlhg");
+	this.shape_1.setTransform(402.9,308.9);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape}]}).to({state:[{t:this.shape_1}]},1).wait(150));
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
+
+
 (lib.mcBtnCont = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
@@ -2127,59 +2172,6 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 p.nominalBounds = new cjs.Rectangle(70.5,212.9,666.5,336.7);
 
 
-(lib.mcTimesUp = function(mode,startPosition,loop) {
-	this.initialize(mode,startPosition,loop,{});
-
-	// timeline functions:
-	this.frame_0 = function() {
-		this.stop();
-	}
-	this.frame_1 = function() {
-		playSound("timeout");
-	}
-	this.frame_86 = function() {
-		this.stop();
-		function doNext(e){
-			nextScreen();
-		}
-		this.addEventListener("click", doNext);
-	}
-
-	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(85).call(this.frame_86).wait(1));
-
-	// Layer_5
-	this.mcCont = new lib.cursor();
-	this.mcCont.name = "mcCont";
-	this.mcCont.parent = this;
-	this.mcCont.setTransform(497.4,447.9,0.35,0.35,0,0,0,0.5,0.5);
-	this.mcCont._off = true;
-
-	this.timeline.addTween(cjs.Tween.get(this.mcCont).wait(86).to({_off:false},0).wait(1));
-
-	// anim
-	this.instance = new lib.timesUpAnim("synched",0,false);
-	this.instance.parent = this;
-	this.instance.setTransform(400,300);
-	this.instance._off = true;
-
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1).to({_off:false},0).wait(86));
-
-	// black
-	this.shape = new cjs.Shape();
-	this.shape.graphics.f("rgba(255,0,0,0.996)").s().p("AhyCMQAAAAgBAAQAAAAgBAAQAAgBgBAAQAAAAgBgBQAAAAAAAAQAAgBgBAAQAAgBAAAAQAAgBAAAAIAAgKQAAgBAAAAQAAAAAAgBQABAAAAgBQAAAAAAgBQABAAAAAAQABAAAAgBQABAAAAAAQABAAAAAAIAPAAQAAgpAQgfQARggAagQQgagQgRgfQgQgfAAgpIgPAAQAAAAgBAAQAAAAgBAAQAAgBgBAAQAAAAgBgBQAAAAAAAAQAAgBgBAAQAAgBAAAAQAAAAAAgBIAAgKQAAgBAAAAQAAAAAAgBQABAAAAgBQAAAAAAAAQABgBAAAAQABAAAAgBQABAAAAAAQABAAAAAAIDlAAQABAAAAAAQAAAAABAAQAAABABAAQAAAAAAABQABAAAAAAQAAABABAAQAAABAAAAQAAAAAAABIAAAKQAAABAAAAQAAAAAAABQgBAAAAABQAAAAgBAAQAAABAAAAQgBAAAAABQgBAAAAAAQAAAAgBAAIgPAAQAAApgQAfQgRAfgZAQQAZAQARAgQAQAfAAApIAPAAQABAAAAAAQAAAAABAAQAAABABAAQAAAAAAAAQABABAAAAQAAABABAAQAAABAAAAQAAAAAAABIAAAKQAAAAAAABQAAAAAAABQgBAAAAABQAAAAgBAAQAAABAAAAQgBAAAAABQgBAAAAAAQAAAAgBAAgAhKhQQAGATAJAPQAJAOALAJQAMAKALAFQAEAAABADQACADAAACQAAADgCADQgBADgEAAQgVAJgRAWIBsAAQgQgWgWgJQgDAAgBgDQgCgDAAgDQAAgCACgDQABgDADAAQAMgFAMgKQALgJAJgOQAJgPAGgTQAFgSAAgVIifAAQAAAVAFASg");
-	this.shape.setTransform(-73.5,92.7);
-
-	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f("rgba(0,0,0,0.698)").s().p("EhBvAyxMAAAhlhMCDgAAAMAAABlhg");
-	this.shape_1.setTransform(402.9,308.9);
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape}]}).to({state:[{t:this.shape_1}]},1).wait(86));
-
-}).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
-
-
 // stage content:
 (lib.f3d2q1 = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{q1:104,finalFb:175});
@@ -2221,7 +2213,7 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 				"qSkill": 34,
 				"qResult": 9,
 				"time": 0,
-				"score": 0}
+				"score": 1}
 				]
 		};
 		function goNextQ (){
@@ -2256,8 +2248,10 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 			goNextQ();
 		}
 		this.addEventListener("click", doPlay);
+		var isTimeOut = false;
 		_this.onTimeEnd = function (){
-			_this.myData.qItem[0].time = _this.timeGiven;
+			_this.myData.qItem[_this.currentQ-1].time = _this.timeGiven;
+			isTimeOut = true;
 			saveData();
 		};
 		function saveData(){
@@ -2269,8 +2263,10 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 								_this.myData,
 									function(data){
 										console.log("set score"+data.message);
-										if (data.message=="success"){
+										if (data.message=="success" && !isTimeOut){
 											_this.gotoAndPlay("finalFb");
+										} else if (data.message=="success"){
+											//nothing
 										} else {
 											console.log("error");
 										}
@@ -2522,20 +2518,20 @@ lib.properties = {
 	opacity: 1.00,
 	webfonts: {},
 	manifest: [
-		{src:"images/f3d2q1/Bitmap3.png?1527756400637", id:"Bitmap3"},
-		{src:"images/f3d2q1/Bitmap8.png?1527756400637", id:"Bitmap8"},
-		{src:"images/f3d2q1/Bitmap9.png?1527756400637", id:"Bitmap9"},
-		{src:"images/f3d2q1/Safe201.png?1527756400637", id:"Safe201"},
-		{src:"images/f3d2q1/safe3.png?1527756400637", id:"safe3"},
-		{src:"sounds/mdroid_talk.mp3?1527756400637", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1527756400637", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1527756400637", id:"questionComplete"},
-		{src:"sounds/submitAns.mp3?1527756400637", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1527756400637", id:"suspense"},
-		{src:"sounds/timeout.mp3?1527756400637", id:"timeout"},
-		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1527756400637", id:"lib/jquery-2.2.4.min.js"},
-		{src:"components/sdk/anwidget.js?1527756400637", id:"sdk/anwidget.js"},
-		{src:"components/ui/src/textinput.js?1527756400637", id:"an.TextInput"}
+		{src:"images/f3d2q1/Bitmap3.png?1527924605491", id:"Bitmap3"},
+		{src:"images/f3d2q1/Bitmap8.png?1527924605491", id:"Bitmap8"},
+		{src:"images/f3d2q1/Bitmap9.png?1527924605491", id:"Bitmap9"},
+		{src:"images/f3d2q1/Safe201.png?1527924605491", id:"Safe201"},
+		{src:"images/f3d2q1/safe3.png?1527924605491", id:"safe3"},
+		{src:"sounds/mdroid_talk.mp3?1527924605491", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1527924605491", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1527924605491", id:"questionComplete"},
+		{src:"sounds/submitAns.mp3?1527924605491", id:"submitAns"},
+		{src:"sounds/suspense.mp3?1527924605491", id:"suspense"},
+		{src:"sounds/timeout.mp3?1527924605491", id:"timeout"},
+		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1527924605491", id:"lib/jquery-2.2.4.min.js"},
+		{src:"components/sdk/anwidget.js?1527924605491", id:"sdk/anwidget.js"},
+		{src:"components/ui/src/textinput.js?1527924605491", id:"an.TextInput"}
 	],
 	preloads: []
 };

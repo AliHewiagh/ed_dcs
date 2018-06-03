@@ -23,6 +23,21 @@
             <li><a href="{{ route('admin_dashboard_path') }}"><i class="fa fa-tachometer"></i> <span>Dashboard</span></a></li>
             <li><a href="{{url('/admin/progress')}}"><i class="fa fa-cubes"></i> <span>Progress</span></a></li>
             <li><a href="{{url('/admin/school')}}"><i class="fa fa-building"></i> <span>School Management</span></a></li>
+            <li class="treeview">
+                <a href="#"><i class="fa fa-cubes"></i> <span>Leader Board</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ url('/admin/top/school/year6') }}">Top Year 6 Schools</a></li>
+                    <li><a href="{{ url('/admin/top/school/form3') }}">Top Form 3 Schools</a></li>
+                    <li><a href="{{ url('/admin/top/school/form5') }}">Top Form 5 Schools</a></li>
+                    <li><a href="{{ url('/admin/top/student/year6') }}">Top Year 6 Students</a></li>
+                    <li><a href="{{ url('/admin/top/student/form3') }}">Top Form 3 Students</a></li>
+                    <li><a href="{{ url('/admin/top/student/form5') }}">Top Form 5 Students</a></li>
+                </ul>
+            </li>
             <li><a href="{{url('/admin/setting')}}"><i class="fa fa-gear"></i> <span>Setting</span></a></li>
             <li><a href="{{url('/admin/school')}}"><i class="fa fa-question-circle"></i> <span>Help</span></a></li>
             {{--<li><a href="#"><i class="fa fa-users"></i> <span>Customer</span></a></li>--}}
@@ -31,17 +46,7 @@
             {{--<li><a href="{{url('/admin/product/merchants')}}"><i class="fa fa-cutlery"></i> <span>Product Item</span></a></li>--}}
             {{--<li><a href="#"><i class="fa fa-percent"></i> <span>Deals</span></a></li>--}}
             {{--<li><a href="#"><i class="fa fa-list" aria-hidden="true"></i> <span>Orders</span></a></li>--}}
-            {{--<li class="treeview">--}}
-                {{--<a href="#"><i class="fa fa-cubes"></i> <span>Manage Products</span>--}}
-            {{--<span class="pull-right-container">--}}
-              {{--<i class="fa fa-angle-left pull-right"></i>--}}
-            {{--</span>--}}
-                {{--</a>--}}
-                {{--<ul class="treeview-menu">--}}
-                    {{--<li><a href="{{ url('/shop/manage/product/create') }}">Add New Product</a></li>--}}
-                    {{--<li><a href="{{ url('/shop/manage/product') }}">List of Products</a></li>--}}
-                {{--</ul>--}}
-            {{--</li>--}}
+
 
             <li><a href="{{ route('user_logout_path') }}"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
         </ul>

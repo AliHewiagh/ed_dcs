@@ -5395,7 +5395,7 @@ p.nominalBounds = new cjs.Rectangle(-148.8,1.1,224.4,110.7);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.shape_3},{t:this.shape_2},{t:this.shape_1},{t:this.shape}]},1).wait(1));
 
 	// Layer_5
-	this.myTxt1 = new cjs.Text("Saya rasa enjin kita dah membeku. Bagaimana keadaan awak?", "italic bold 20px 'Quantico'", "#0EE0E0");
+	this.myTxt1 = new cjs.Text("Saya rasa enjin kita dah membeku.\nBagaimana keadaan awak?", "italic bold 20px 'Quantico'", "#0EE0E0");
 	this.myTxt1.name = "myTxt1";
 	this.myTxt1.textAlign = "center";
 	this.myTxt1.lineHeight = 31;
@@ -5818,14 +5818,14 @@ lib.properties = {
 	color: "#666666",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/intro14/beamExhaust.png?1527792598317", id:"beamExhaust"},
-		{src:"images/intro14/Bitmap1.png?1527792598317", id:"Bitmap1"},
-		{src:"images/intro14/Bitmap2.png?1527792598317", id:"Bitmap2"},
-		{src:"images/intro14/Bitmap3.png?1527792598317", id:"Bitmap3"},
-		{src:"images/intro14/Bitmap4.png?1527792598317", id:"Bitmap4"},
-		{src:"images/intro14/Bitmap5.png?1527792598317", id:"Bitmap5"},
-		{src:"images/intro14/Bitmap6.png?1527792598317", id:"Bitmap6"},
-		{src:"sounds/intro.mp3?1527792598317", id:"intro"}
+		{src:"images/intro14/beamExhaust.png?1527950238587", id:"beamExhaust"},
+		{src:"images/intro14/Bitmap1.png?1527950238587", id:"Bitmap1"},
+		{src:"images/intro14/Bitmap2.png?1527950238587", id:"Bitmap2"},
+		{src:"images/intro14/Bitmap3.png?1527950238587", id:"Bitmap3"},
+		{src:"images/intro14/Bitmap4.png?1527950238587", id:"Bitmap4"},
+		{src:"images/intro14/Bitmap5.png?1527950238587", id:"Bitmap5"},
+		{src:"images/intro14/Bitmap6.png?1527950238587", id:"Bitmap6"},
+		{src:"sounds/intro.mp3?1527950238587", id:"intro"}
 	],
 	preloads: []
 };

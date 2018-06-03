@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Game;
 use App\School;
 use App\SchoolClass;
+use App\StudentRecord;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -58,7 +59,8 @@ class StageController extends Controller
             $game->update(['stage'=>$stage, "last_screen"=>$request->last_screen, "last_state"=>$request->last_state, "time_left"=>$request->time_left]);
         }
         if($stage == 20){
-            $user->update(['done'=>1]);
+            $score = StudentRecord::where('user_id', $userId)->avg('score');
+            $user->update(['done'=>1, 'score'=>$score]);
             $classNotDone = User::where([['class_id', $user->class_id], ['done', 0]])->first();
             if(empty($classNotDone)){
                 $class = SchoolClass::where('id', $user->class_id)->first();
