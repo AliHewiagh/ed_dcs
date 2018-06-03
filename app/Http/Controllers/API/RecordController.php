@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\API;
 
 use App\RecordItem;
+use App\School;
+use App\SchoolClass;
 use App\StudentRecord;
 use App\User;
 use Illuminate\Http\Request;
@@ -26,6 +28,20 @@ class RecordController extends Controller
         foreach($items as $item){
             StudentRecord::create(['user_id'=>$userId, 'stage'=>$stage, "qId"=>$item["qId"], "qDomain"=>$item["qDomain"],
                 "qParam"=>$item["qParam"], "qSkill"=>$item["qSkill"], "qResult"=>$item["qResult"], "time"=>$item["time"], "score"=>$item["score"]]);
+        }
+        $user = User::find($userId);
+        if($stage == 20){
+            $score = StudentRecord::where('user_id', $userId)->avg('score');
+            $user->update(['done'=>1, 'score'=>$score]);
+            $classNotDone = User::where([['class_id', $user->class_id], ['done', 0]])->first();
+            if(empty($classNotDone)){
+                $class = SchoolClass::where('id', $user->class_id)->first();
+                $class->update(['done'=>1]);
+                $schoolNotDone =  SchoolClass::where([['school_id', $class->school_id], ['done', 0]])->first();
+                if(empty($schoolNotDone)){
+                    School::where('id', $class->school_id)->update(['done'=>1]);
+                }
+            }
         }
         $data = ['status'=>100, 'message'=>'success'];
         return $data;

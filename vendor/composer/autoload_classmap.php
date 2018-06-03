@@ -14,6 +14,7 @@ return array(
     'App\\Http\\Controllers\\API\\RecordController' => $baseDir . '/app/Http/Controllers/API/RecordController.php',
     'App\\Http\\Controllers\\API\\StageController' => $baseDir . '/app/Http/Controllers/API/StageController.php',
     'App\\Http\\Controllers\\Admin\\DashboardController' => $baseDir . '/app/Http/Controllers/Admin/DashboardController.php',
+    'App\\Http\\Controllers\\Admin\\LeaderBoardController' => $baseDir . '/app/Http/Controllers/Admin/LeaderBoardController.php',
     'App\\Http\\Controllers\\Admin\\ProgressController' => $baseDir . '/app/Http/Controllers/Admin/ProgressController.php',
     'App\\Http\\Controllers\\Admin\\SchoolController' => $baseDir . '/app/Http/Controllers/Admin/SchoolController.php',
     'App\\Http\\Controllers\\Admin\\SchoolExcelController' => $baseDir . '/app/Http/Controllers/Admin/SchoolExcelController.php',

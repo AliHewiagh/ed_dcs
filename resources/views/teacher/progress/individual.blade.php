@@ -37,9 +37,21 @@
                                     $techs = \App\StudentRecord::where([['user_id', $student->id], ['qDomain', 1]])->get();
                                     $cognitive = \App\StudentRecord::where([['user_id', $student->id], ['qDomain', 2]])->get();
                                     $ethics = \App\StudentRecord::where([['user_id', $student->id], ['qDomain', 3]])->get();
-                                    $techScore = $techs->sum('score') / count($techs);
-                                    $cognitiveScore = $cognitive->sum('score') / count($cognitive);
-                                    $ethicsScore = $ethics->sum('score') / count($ethics);?>
+                                    if(count($techs) > 0){
+                                        $techScore = $techs->sum('score') / count($techs);
+                                    }else{
+                                        $techScore = 0;
+                                    }
+                                    if(count($cognitive) > 0){
+                                        $cognitiveScore = $cognitive->sum('score') / count($cognitive);
+                                    }else{
+                                        $cognitiveScore = 0;
+                                    }
+                                    if(count($ethics) > 0){
+                                        $ethicsScore = $ethics->sum('score') / count($ethics);
+                                    }else{
+                                        $ethicsScore = 0;
+                                    }?>
                                     <tr>
                                         <td><a href="{{url('/teacher/progress/'.$classId.'/'.$student->id.'/detail')}}">{{$student->name}}</a></td>
                                         <td>{{$school->name}}</td>

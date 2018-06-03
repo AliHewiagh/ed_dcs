@@ -77,6 +77,7 @@
     <script src="{{asset('game/codemirror/addon/display/autorefresh.js')}}"></script>
     <script src="{{asset('game/start.js')}}"></script>
     <script src="{{asset('game/gameControl.js')}}"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
     <script>
 		var cUserName = "{{Auth::user()->name}}";
 		var cUserId = {{Auth::user()->id}};

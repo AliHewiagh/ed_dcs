@@ -21,6 +21,18 @@ p.nominalBounds = new cjs.Rectangle(0,0,266,118);
 p.nominalBounds = new cjs.Rectangle(0,0,266,118);
 
 
+(lib.Bitmap12 = function() {
+	this.initialize(img.Bitmap12);
+}).prototype = p = new cjs.Bitmap();
+p.nominalBounds = new cjs.Rectangle(0,0,266,118);
+
+
+(lib.Bitmap13 = function() {
+	this.initialize(img.Bitmap13);
+}).prototype = p = new cjs.Bitmap();
+p.nominalBounds = new cjs.Rectangle(0,0,266,118);
+
+
 (lib.Bitmap22 = function() {
 	this.initialize(img.Bitmap22);
 }).prototype = p = new cjs.Bitmap();
@@ -1202,7 +1214,7 @@ p.nominalBounds = new cjs.Rectangle(-331.5,-12.9,663.2,25.9);
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 
 	// t
-	this.txtTime = new cjs.Text("2:00", "60px 'Quantico'", "#006666");
+	this.txtTime = new cjs.Text("4:00", "60px 'Quantico'", "#006666");
 	this.txtTime.name = "txtTime";
 	this.txtTime.textAlign = "center";
 	this.txtTime.lineHeight = 88;
@@ -2072,12 +2084,12 @@ p.nominalBounds = new cjs.Rectangle(-331.5,-12.9,663.2,25.9);
 	this.shape_205.setTransform(-226.2,-16.2);
 
 	this.shape_206 = new cjs.Shape();
-	this.shape_206.graphics.f("#000066").s().p("AgNBIQAIgUADgSQADgRAAgRQAAgQgDgSQgDgRgIgUIAKAAQAJASAFASQADASAAARQAAATgDARQgFASgJASg");
-	this.shape_206.setTransform(-236.7,54);
+	this.shape_206.graphics.f("#000066").s().p("AgNBHQAIgTADgSQADgRAAgRQAAgQgDgRQgDgSgIgTIAKAAQAJASAFARQADASAAARQAAASgDASQgFARgJASg");
+	this.shape_206.setTransform(-236.7,31.1);
 
 	this.shape_207 = new cjs.Shape();
-	this.shape_207.graphics.f("#000066").s().p("AgUA3QgKgEgHgHIAFgKQAQANAQAAQAMAAAHgGQAGgFAAgKQAAgWgZAAIgOAAIAAgKIALAAQALAAAIgFQAGgFAAgLQAAgJgFgFQgGgFgKAAQgPAAgRANIgEgKQAGgGALgEQAJgEAKAAQAQAAAJAHQAKAJAAANQAAAJgGAIQgEAHgJAEQALABAEAIQAGAGAAALQAAAPgKAIQgLAJgQAAQgKAAgLgDg");
-	this.shape_207.setTransform(-243.6,52.5);
+	this.shape_207.graphics.f("#000066").s().p("AgUA2QgKgDgHgHIAFgKQAQANAQAAQAMAAAHgGQAGgFAAgLQAAgUgZAAIgOAAIAAgKIALAAQALAAAIgGQAGgFAAgLQAAgJgFgFQgGgFgKAAQgPAAgRANIgEgKQAGgGALgFQAJgDAKAAQAQAAAJAIQAKAHAAAOQAAAJgGAIQgEAHgJADQALACAEAHQAGAIAAAKQAAAPgKAJQgLAIgQAAQgKAAgLgEg");
+	this.shape_207.setTransform(-243.6,29.6);
 
 	this.shape_208 = new cjs.Shape();
 	this.shape_208.graphics.f("#000066").s().p("AgNBIQAIgUADgSQADgRAAgRQAAgQgDgSQgDgQgIgVIAKAAQAJASAFASQADARAAASQAAASgDASQgFASgJASg");
@@ -5230,6 +5242,51 @@ p.nominalBounds = new cjs.Rectangle(-79.1,-21.4,161.7,48.6);
 p.nominalBounds = new cjs.Rectangle(-136.7,302.4,274,237.4);
 
 
+(lib.mcTimesUp = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// timeline functions:
+	this.frame_0 = function() {
+		this.stop();
+	}
+	this.frame_1 = function() {
+		function onClick(){
+			return;
+		}
+		this.addEventListener("click", onClick);
+		playSound("timeout");
+	}
+	this.frame_150 = function() {
+		this.stop();
+		nextScreen();
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(149).call(this.frame_150).wait(1));
+
+	// anim
+	this.instance = new lib.timesUpAnim("synched",0,false);
+	this.instance.parent = this;
+	this.instance.setTransform(400,300);
+	this.instance._off = true;
+
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1).to({_off:false},0).wait(150));
+
+	// black
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("rgba(255,0,0,0.996)").s().p("AhyCMQAAAAgBAAQAAAAgBAAQAAgBgBAAQAAAAgBgBQAAAAAAAAQAAgBgBAAQAAgBAAAAQAAgBAAAAIAAgKQAAgBAAAAQAAAAAAgBQABAAAAgBQAAAAAAgBQABAAAAAAQABAAAAgBQABAAAAAAQABAAAAAAIAPAAQAAgpAQgfQARggAagQQgagQgRgfQgQgfAAgpIgPAAQAAAAgBAAQAAAAgBAAQAAgBgBAAQAAAAgBgBQAAAAAAAAQAAgBgBAAQAAgBAAAAQAAAAAAgBIAAgKQAAgBAAAAQAAAAAAgBQABAAAAgBQAAAAAAAAQABgBAAAAQABAAAAgBQABAAAAAAQABAAAAAAIDlAAQABAAAAAAQAAAAABAAQAAABABAAQAAAAAAABQABAAAAAAQAAABABAAQAAABAAAAQAAAAAAABIAAAKQAAABAAAAQAAAAAAABQgBAAAAABQAAAAgBAAQAAABAAAAQgBAAAAABQgBAAAAAAQAAAAgBAAIgPAAQAAApgQAfQgRAfgZAQQAZAQARAgQAQAfAAApIAPAAQABAAAAAAQAAAAABAAQAAABABAAQAAAAAAAAQABABAAAAQAAABABAAQAAABAAAAQAAAAAAABIAAAKQAAAAAAABQAAAAAAABQgBAAAAABQAAAAgBAAQAAABAAAAQgBAAAAABQgBAAAAAAQAAAAgBAAgAhKhQQAGATAJAPQAJAOALAJQAMAKALAFQAEAAABADQACADAAACQAAADgCADQgBADgEAAQgVAJgRAWIBsAAQgQgWgWgJQgDAAgBgDQgCgDAAgDQAAgCACgDQABgDADAAQAMgFAMgKQALgJAJgOQAJgPAGgTQAFgSAAgVIifAAQAAAVAFASg");
+	this.shape.setTransform(-73.5,92.7);
+
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f("rgba(0,0,0,0.698)").s().p("EhBvAyxMAAAhlhMCDgAAAMAAABlhg");
+	this.shape_1.setTransform(402.9,308.9);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape}]}).to({state:[{t:this.shape_1}]},1).wait(150));
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
+
+
 (lib.mcBtnCont = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
@@ -5340,12 +5397,12 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 
 	// timeline functions:
 	this.frame_0 = function() {
-		cAns = 4;
-		maxItem = 4;
+		var cAns = 2;
+		var maxItem = 4;
 		var _this = this;
 		this.btnSubmit.mouseEnabled = false;
 		this.btnSubmit.alpha = .5;
-		userAns = 0;
+		var userAns = 0;
 		selectAns = function (itemNum) {
 			for (i=1; i<=maxItem; i++){
 				this["item"+i].gotoAndStop("on");
@@ -5365,7 +5422,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 				_this.parent.sendScore(5);
 			} else {
 				//wrong
-				_this.parent.sendScore(0);
+				_this.parent.sendScore(1);
 			}
 		}
 		this.btnSubmit.addEventListener("click", submitAns);
@@ -5398,13 +5455,13 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.item1},{t:this.item2},{t:this.item3},{t:this.item4}]}).wait(1));
 
 	// answers
-	this.instance = new lib.Bitmap11();
+	this.instance = new lib.Bitmap13();
 	this.instance.parent = this;
-	this.instance.setTransform(433.1,411.3);
+	this.instance.setTransform(118.6,411.3);
 
-	this.instance_1 = new lib.Bitmap10();
+	this.instance_1 = new lib.Bitmap11();
 	this.instance_1.parent = this;
-	this.instance_1.setTransform(118.6,411.3);
+	this.instance_1.setTransform(433.1,411.3);
 
 	this.instance_2 = new lib.Bitmap7();
 	this.instance_2.parent = this;
@@ -5439,12 +5496,12 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 
 	// timeline functions:
 	this.frame_0 = function() {
-		cAns = 3;
-		maxItem = 4;
+		var cAns = 3;
+		var maxItem = 4;
 		var _this = this;
 		this.btnSubmit.mouseEnabled = false;
 		this.btnSubmit.alpha = .5;
-		userAns = 0;
+		var userAns = 0;
 		selectAns = function (itemNum) {
 			for (i=1; i<=maxItem; i++){
 				this["item"+i].gotoAndStop("on");
@@ -5464,7 +5521,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 				_this.parent.sendScore(5);
 			} else {
 				//wrong
-				_this.parent.sendScore(0);
+				_this.parent.sendScore(1);
 			}
 		}
 		this.btnSubmit.addEventListener("click", submitAns);
@@ -5497,13 +5554,13 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.item1},{t:this.item2},{t:this.item3},{t:this.item4}]}).wait(1));
 
 	// answers
-	this.instance = new lib.Bitmap11();
+	this.instance = new lib.Bitmap12();
 	this.instance.parent = this;
-	this.instance.setTransform(433.1,411.3);
+	this.instance.setTransform(118.6,411.3);
 
-	this.instance_1 = new lib.Bitmap10();
+	this.instance_1 = new lib.Bitmap11();
 	this.instance_1.parent = this;
-	this.instance_1.setTransform(118.6,411.3);
+	this.instance_1.setTransform(433.1,411.3);
 
 	this.instance_2 = new lib.Bitmap7();
 	this.instance_2.parent = this;
@@ -5538,12 +5595,12 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 
 	// timeline functions:
 	this.frame_0 = function() {
-		cAns = 4;
-		maxItem = 4;
+		var cAns = 2;
+		var maxItem = 4;
 		var _this = this;
 		this.btnSubmit.mouseEnabled = false;
 		this.btnSubmit.alpha = .5;
-		userAns = 0;
+		var userAns = 0;
 		selectAns = function (itemNum) {
 			for (i=1; i<=maxItem; i++){
 				this["item"+i].gotoAndStop("on");
@@ -5563,7 +5620,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 				_this.parent.sendScore(5);
 			} else {
 				//wrong
-				_this.parent.sendScore(0);
+				_this.parent.sendScore(1);
 			}
 		}
 		this.btnSubmit.addEventListener("click", submitAns);
@@ -5632,59 +5689,6 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 }).prototype = getMCSymbolPrototype(lib.actMc1_1, new cjs.Rectangle(80,265.5,663.2,300.1), null);
 
 
-(lib.mcTimesUp = function(mode,startPosition,loop) {
-	this.initialize(mode,startPosition,loop,{});
-
-	// timeline functions:
-	this.frame_0 = function() {
-		this.stop();
-	}
-	this.frame_1 = function() {
-		playSound("timeout");
-	}
-	this.frame_86 = function() {
-		this.stop();
-		function doNext(e){
-			nextScreen();
-		}
-		this.addEventListener("click", doNext);
-	}
-
-	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(85).call(this.frame_86).wait(1));
-
-	// Layer_5
-	this.mcCont = new lib.cursor();
-	this.mcCont.name = "mcCont";
-	this.mcCont.parent = this;
-	this.mcCont.setTransform(497.4,447.9,0.35,0.35,0,0,0,0.5,0.5);
-	this.mcCont._off = true;
-
-	this.timeline.addTween(cjs.Tween.get(this.mcCont).wait(86).to({_off:false},0).wait(1));
-
-	// anim
-	this.instance = new lib.timesUpAnim("synched",0,false);
-	this.instance.parent = this;
-	this.instance.setTransform(400,300);
-	this.instance._off = true;
-
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1).to({_off:false},0).wait(86));
-
-	// black
-	this.shape = new cjs.Shape();
-	this.shape.graphics.f("rgba(255,0,0,0.996)").s().p("AhyCMQAAAAgBAAQAAAAgBAAQAAgBgBAAQAAAAgBgBQAAAAAAAAQAAgBgBAAQAAgBAAAAQAAgBAAAAIAAgKQAAgBAAAAQAAAAAAgBQABAAAAgBQAAAAAAgBQABAAAAAAQABAAAAgBQABAAAAAAQABAAAAAAIAPAAQAAgpAQgfQARggAagQQgagQgRgfQgQgfAAgpIgPAAQAAAAgBAAQAAAAgBAAQAAgBgBAAQAAAAgBgBQAAAAAAAAQAAgBgBAAQAAgBAAAAQAAAAAAgBIAAgKQAAgBAAAAQAAAAAAgBQABAAAAgBQAAAAAAAAQABgBAAAAQABAAAAgBQABAAAAAAQABAAAAAAIDlAAQABAAAAAAQAAAAABAAQAAABABAAQAAAAAAABQABAAAAAAQAAABABAAQAAABAAAAQAAAAAAABIAAAKQAAABAAAAQAAAAAAABQgBAAAAABQAAAAgBAAQAAABAAAAQgBAAAAABQgBAAAAAAQAAAAgBAAIgPAAQAAApgQAfQgRAfgZAQQAZAQARAgQAQAfAAApIAPAAQABAAAAAAQAAAAABAAQAAABABAAQAAAAAAAAQABABAAAAQAAABABAAQAAABAAAAQAAAAAAABIAAAKQAAAAAAABQAAAAAAABQgBAAAAABQAAAAgBAAQAAABAAAAQgBAAAAABQgBAAAAAAQAAAAgBAAgAhKhQQAGATAJAPQAJAOALAJQAMAKALAFQAEAAABADQACADAAACQAAADgCADQgBADgEAAQgVAJgRAWIBsAAQgQgWgWgJQgDAAgBgDQgCgDAAgDQAAgCACgDQABgDADAAQAMgFAMgKQALgJAJgOQAJgPAGgTQAFgSAAgVIifAAQAAAVAFASg");
-	this.shape.setTransform(-73.5,92.7);
-
-	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f("rgba(0,0,0,0.698)").s().p("EhBvAyxMAAAhlhMCDgAAAMAAABlhg");
-	this.shape_1.setTransform(402.9,308.9);
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape}]}).to({state:[{t:this.shape_1}]},1).wait(86));
-
-}).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
-
-
 // stage content:
 (lib.f5d2q1 = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{q1:104,q2:154,q3:200,finalFb:257});
@@ -5702,48 +5706,53 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 	this.frame_99 = function() {
 		this.stop();
 		var _this = this;
+		var stageNum = 3;
 		if (typeof cUserId === "undefined") {
 			cUserId = "";
 		}
-		this.timeGiven = 120;//time in seconds
+		this.timeGiven = 240;//time in seconds
 		this.secRemaining = this.timeGiven;
 		this.timeTaken = 0;
 		this.cScore = 0;
 		//var maxQ = 3;
 		this.currentQ = 0;
 		this.myData = {
-			"qNum": 19,
+			"stage": stageNum,
 			"userId": cUserId,
-			"time": _this.timeTaken,
-			"score": _this.cScore,
 			"qItem": []
 		};
 		this.qItem1 = [{
-				"qId": "f3d2q6_1",
+				"qId": "f5d2q1_1",
 				"qDomain": 2,
-				"qParam": 1,
-				"qSkill": 1,
-				"qResult": 9
+				"qParam": 4,
+				"qSkill": 33,
+				"qResult": 9,
+				"time": 0,
+				"score": 1
 			},
 			{
-				"qId": "f3d2q6_2",
+				"qId": "f5d2q1_2",
 				"qDomain": 2,
-				"qParam": 1,
-				"qSkill": 1,
-				"qResult": 9
+				"qParam": 4,
+				"qSkill": 33,
+				"qResult": 9,
+				"time": 0,
+				"score": 1
 			},
 			{
-				"qId": "f3d2q6_3",
+				"qId": "f5d2q1_3",
 				"qDomain": 2,
-				"qParam": 1,
-				"qSkill": 1,
-				"qResult": 9
+				"qParam": 4,
+				"qSkill": 33,
+				"qResult": 9,
+				"time": 0,
+				"score": 1
 			}
 		];
 		if (typeof debugMode === "undefined") {
 			debugMode = false;
 		}
-		debugMode = true;
+		//debugMode = true;
 		if (debugMode) {
 			//no need shuffle, show all
 			this.myData.qItem.push(_this.qItem1[0]);
@@ -5755,25 +5764,42 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 		function goNextQ (){
 			_this.currentQ++;
 			if (_this.currentQ<=_this.myData.qItem.length){
-				console.log("q"+_this.myData.qItem[_this.currentQ-1].qId.substring(7));
 				_this.gotoAndPlay("q"+_this.myData.qItem[_this.currentQ-1].qId.substring(7));
-				console.log(_this.myData);
 			} else {
 				//all questions done
 				clearInterval(timeInterval);//stop time
-				_this.myData.time = _this.timeGiven - _this.secRemaining;
-				//console.log(_this.myData.time);
-				_this.myData.score = Math.round(_this.cScore/_this.myData.qItem.length*10)/10;//average
 				saveData();
-				console.log(_this.myData);
 			}
+			console.log(_this.myData);
 		}
+		function doPlay(e){
+			_this.removeEventListener("click", doPlay);
+			goNextQ();
+		}
+		this.addEventListener("click", doPlay);
+		var isTimeOut = false;
+		_this.onTimeEnd = function (){
+			_this.myData.qItem[_this.currentQ-1].time = _this.timeGiven;
+			isTimeOut = true;
+			saveData();
+		};
 		function saveData(){
 			if (cUserId == ""){//not online
 				_this.gotoAndPlay("finalFb");
 			} else {
-				//call save data here
-				_this.gotoAndPlay("finalFb");
+				//save data here
+				var cData = $.post("/api/record/update/", 
+								_this.myData,
+									function(data){
+										console.log("set score"+data.message);
+										if (data.message=="success" && !isTimeOut){
+											_this.gotoAndPlay("finalFb");
+										} else if (data.message=="success"){
+											//nothing
+										} else {
+											console.log("error");
+										}
+									});
 			}
 		}
 		function doPlay(e){
@@ -5781,17 +5807,15 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 			goNextQ();
 		}
 		this.addEventListener("click", doPlay);
-		_this.onTimeEnd = function (){
-			_this.myData.time = _this.timeGiven;
-			saveData();
-		};
 		this.sendScore = function (_cScore){
 			if (_cScore==5){//all correct
 				_this.myData.qItem[_this.currentQ-1].qResult = 1;
 			} else {
 				_this.myData.qItem[_this.currentQ-1].qResult = 0;
 			}
-			_this.cScore += _cScore;
+			_this.myData.qItem[_this.currentQ-1].score = _cScore;
+			_this.myData.qItem[_this.currentQ-1].time = _this.timeGiven-_this.secRemaining;
+			_this.timeGiven = _this.secRemaining;
 			goNextQ();
 		};
 		function randRange(min, max) {
@@ -6061,21 +6085,23 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/f5d2q1/Bitmap10.png?1527497685633", id:"Bitmap10"},
-		{src:"images/f5d2q1/Bitmap11.png?1527497685633", id:"Bitmap11"},
-		{src:"images/f5d2q1/Bitmap22.png?1527497685633", id:"Bitmap22"},
-		{src:"images/f5d2q1/Bitmap3.png?1527497685633", id:"Bitmap3"},
-		{src:"images/f5d2q1/Bitmap6.png?1527497685633", id:"Bitmap6"},
-		{src:"images/f5d2q1/Bitmap7.png?1527497685633", id:"Bitmap7"},
-		{src:"images/f5d2q1/Bitmap8.png?1527497685633", id:"Bitmap8"},
-		{src:"images/f5d2q1/Bitmap9.png?1527497685633", id:"Bitmap9"},
-		{src:"sounds/mdroid_talk.mp3?1527497685633", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1527497685633", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1527497685633", id:"questionComplete"},
-		{src:"sounds/stdClick.mp3?1527497685633", id:"stdClick"},
-		{src:"sounds/submitAns.mp3?1527497685633", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1527497685633", id:"suspense"},
-		{src:"sounds/timeout.mp3?1527497685633", id:"timeout"}
+		{src:"images/f5d2q1/Bitmap10.png?1527927448765", id:"Bitmap10"},
+		{src:"images/f5d2q1/Bitmap11.png?1527927448765", id:"Bitmap11"},
+		{src:"images/f5d2q1/Bitmap12.png?1527927448765", id:"Bitmap12"},
+		{src:"images/f5d2q1/Bitmap13.png?1527927448765", id:"Bitmap13"},
+		{src:"images/f5d2q1/Bitmap22.png?1527927448765", id:"Bitmap22"},
+		{src:"images/f5d2q1/Bitmap3.png?1527927448765", id:"Bitmap3"},
+		{src:"images/f5d2q1/Bitmap6.png?1527927448765", id:"Bitmap6"},
+		{src:"images/f5d2q1/Bitmap7.png?1527927448765", id:"Bitmap7"},
+		{src:"images/f5d2q1/Bitmap8.png?1527927448765", id:"Bitmap8"},
+		{src:"images/f5d2q1/Bitmap9.png?1527927448765", id:"Bitmap9"},
+		{src:"sounds/mdroid_talk.mp3?1527927448765", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1527927448765", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1527927448765", id:"questionComplete"},
+		{src:"sounds/stdClick.mp3?1527927448765", id:"stdClick"},
+		{src:"sounds/submitAns.mp3?1527927448765", id:"submitAns"},
+		{src:"sounds/suspense.mp3?1527927448765", id:"suspense"},
+		{src:"sounds/timeout.mp3?1527927448765", id:"timeout"}
 	],
 	preloads: []
 };

@@ -22,3 +22,7 @@ Route::get('/progress/{state}/{schoolId}/{teacherId}', 'Admin\ProgressController
 Route::get('/progress/{state}/{schoolId}/{teacherId}/{classId}', 'Admin\ProgressController@classProgress');
 Route::get('/progress/{state}/{schoolId}/{teacherId}/{classId}/{studentId}', 'Admin\ProgressController@studentProgress');
 Route::get('/progress/{state}/{schoolId}/{teacherId}/{classId}/{studentId}/detail', 'Admin\ProgressController@progressDetail');
+
+// Leader Board
+Route::get('/top/school/{type}', 'Admin\LeaderBoardController@index');
+Route::get('/top/student/{type}', 'Admin\LeaderBoardController@topStudents');

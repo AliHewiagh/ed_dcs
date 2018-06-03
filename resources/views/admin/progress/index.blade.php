@@ -31,10 +31,11 @@
                                         <?php
                                         $locationIds = \App\Location::where("state", $loc)->pluck('id')->toArray();
                                         $schools = \App\School::whereIn('location_id', $locationIds)->count();
+                                        $done = \App\School::where('done', 1)->whereIn('location_id', $locationIds)->count();
                                         ?>
                                         <tr>
                                             <td><a href="{{url('/admin/progress/'.$loc)}}">{{$loc}}</a></td>
-                                            <td>0/{{$schools}}</td>
+                                            <td>{{$done}}/{{$schools}}</td>
                                         </tr>
                                     @endforeach
                                     </tbody>

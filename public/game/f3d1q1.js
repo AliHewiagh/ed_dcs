@@ -3084,7 +3084,7 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 		}
 		this.timeGiven = 300;//time in seconds
 		this.secRemaining = this.timeGiven;
-		this.cScore = 0;
+		//this.cScore = 0;
 		var maxQ = 3;
 		this.currentQ = 0;
 		this.myData = {
@@ -3099,7 +3099,7 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 				"qSkill": 34,
 				"qResult": 9,
 				"time": 0,
-				"score": 0
+				"score": 1
 			},
 			{
 				"qId": "f3d1q1_2",
@@ -3108,7 +3108,7 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 				"qSkill": 34,
 				"qResult": 9,
 				"time": 0,
-				"score": 0
+				"score": 1
 			},
 			{
 				"qId": "f3d1q1_3",
@@ -3117,7 +3117,7 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 				"qSkill": 34,
 				"qResult": 9,
 				"time": 0,
-				"score": 0
+				"score": 1
 			},
 			{
 				"qId": "f3d1q1_4",
@@ -3126,7 +3126,7 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 				"qSkill": 34,
 				"qResult": 9,
 				"time": 0,
-				"score": 0
+				"score": 1
 			},
 			{
 				"qId": "f3d1q1_5",
@@ -3135,7 +3135,7 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 				"qSkill": 34,
 				"qResult": 9,
 				"time": 0,
-				"score": 0
+				"score": 1
 			}
 		];
 		this.qItem2 = [{
@@ -3145,7 +3145,7 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 				"qSkill": 34,
 				"qResult": 9,
 				"time": 0,
-				"score": 0
+				"score": 1
 			},
 			{
 				"qId": "f3d1q1_7",
@@ -3154,7 +3154,7 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 				"qSkill": 34,
 				"qResult": 9,
 				"time": 0,
-				"score": 0
+				"score": 1
 			},
 			{
 				"qId": "f3d1q1_8",
@@ -3163,7 +3163,7 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 				"qSkill": 34,
 				"qResult": 9,
 				"time": 0,
-				"score": 0
+				"score": 1
 			},
 			{
 				"qId": "f3d1q1_9",
@@ -3172,7 +3172,7 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 				"qSkill": 34,
 				"qResult": 9,
 				"time": 0,
-				"score": 0
+				"score": 1
 			},
 			{
 				"qId": "f3d1q1_10",
@@ -3181,7 +3181,7 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 				"qSkill": 34,
 				"qResult": 9,
 				"time": 0,
-				"score": 0
+				"score": 1
 			}
 		];
 		this.qItem3 = [{
@@ -3191,7 +3191,7 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 				"qSkill": 34,
 				"qResult": 9,
 				"time": 0,
-				"score": 0
+				"score": 1
 			},
 			{
 				"qId": "f3d1q1_12",
@@ -3200,7 +3200,7 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 				"qSkill": 34,
 				"qResult": 9,
 				"time": 0,
-				"score": 0
+				"score": 1
 			},
 			{
 				"qId": "f3d1q1_13",
@@ -3209,7 +3209,7 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 				"qSkill": 34,
 				"qResult": 9,
 				"time": 0,
-				"score": 0
+				"score": 1
 			},
 			{
 				"qId": "f3d1q1_14",
@@ -3218,7 +3218,7 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 				"qSkill": 34,
 				"qResult": 9,
 				"time": 0,
-				"score": 0
+				"score": 1
 			},
 			{
 				"qId": "f3d1q1_15",
@@ -3227,13 +3227,13 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 				"qSkill": 34,
 				"qResult": 9,
 				"time": 0,
-				"score": 0
+				"score": 1
 			}
 		];
 		if (typeof debugMode === "undefined") {
 			debugMode = false;
 		}
-		debugMode = true;
+		//debugMode = true;
 		if (debugMode) {
 			//no need shuffle, show all
 			this.myData.qItem.push(_this.qItem1[0]);
@@ -3279,7 +3279,6 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 				if (_this.currentQ<=maxQ){
 					_this["prog"+_this.currentQ].gotoAndStop("on");
 				}
-				console.log(_this.myData);
 			} else {
 				//all questions done
 				clearInterval(timeInterval);//stop time
@@ -3287,8 +3286,10 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 			}
 			console.log(_this.myData);
 		}
+		var isTimeOut = false;
 		_this.onTimeEnd = function (){
 			_this.myData.qItem[_this.currentQ-1].time = _this.timeGiven;
+			isTimeOut = true;
 			saveData();
 		};
 		function saveData(){
@@ -3300,8 +3301,10 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 								_this.myData,
 									function(data){
 										console.log("set score"+data.message);
-										if (data.message=="success"){
+										if (data.message=="success" && !isTimeOut){
 											_this.gotoAndPlay("finalFb");
+										} else if (data.message=="success"){
+											//nothing
 										} else {
 											console.log("error");
 										}
@@ -3322,7 +3325,7 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 		};
 		this.storeWrong = function (){
 			_this.myData.qItem[_this.currentQ-1].qResult = 0;
-			_this.myData.qItem[_this.currentQ-1].score = 0;
+			_this.myData.qItem[_this.currentQ-1].score = 1;
 			_this.myData.qItem[_this.currentQ-1].time = _this.timeGiven-_this.secRemaining;
 			goNextQ();
 		};
@@ -3735,20 +3738,20 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/f3d1q1/Bitmap14.png?1527760627752", id:"Bitmap14"},
-		{src:"images/f3d1q1/Bitmap19.png?1527760627752", id:"Bitmap19"},
-		{src:"images/f3d1q1/Bitmap3.png?1527760627752", id:"Bitmap3"},
-		{src:"images/f3d1q1/Bitmap8.png?1527760627752", id:"Bitmap8"},
-		{src:"images/f3d1q1/Bitmap9.png?1527760627752", id:"Bitmap9"},
-		{src:"sounds/mdroid_talk.mp3?1527760627752", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1527760627752", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1527760627752", id:"questionComplete"},
-		{src:"sounds/submitAns.mp3?1527760627752", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1527760627752", id:"suspense"},
-		{src:"sounds/timeout.mp3?1527760627752", id:"timeout"},
-		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1527760627752", id:"lib/jquery-2.2.4.min.js"},
-		{src:"components/sdk/anwidget.js?1527760627752", id:"sdk/anwidget.js"},
-		{src:"components/ui/src/textinput.js?1527760627752", id:"an.TextInput"}
+		{src:"images/f3d1q1/Bitmap14.png?1527924462339", id:"Bitmap14"},
+		{src:"images/f3d1q1/Bitmap19.png?1527924462339", id:"Bitmap19"},
+		{src:"images/f3d1q1/Bitmap3.png?1527924462339", id:"Bitmap3"},
+		{src:"images/f3d1q1/Bitmap8.png?1527924462339", id:"Bitmap8"},
+		{src:"images/f3d1q1/Bitmap9.png?1527924462339", id:"Bitmap9"},
+		{src:"sounds/mdroid_talk.mp3?1527924462339", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1527924462339", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1527924462339", id:"questionComplete"},
+		{src:"sounds/submitAns.mp3?1527924462339", id:"submitAns"},
+		{src:"sounds/suspense.mp3?1527924462339", id:"suspense"},
+		{src:"sounds/timeout.mp3?1527924462339", id:"timeout"},
+		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1527924462339", id:"lib/jquery-2.2.4.min.js"},
+		{src:"components/sdk/anwidget.js?1527924462339", id:"sdk/anwidget.js"},
+		{src:"components/ui/src/textinput.js?1527924462339", id:"an.TextInput"}
 	],
 	preloads: []
 };

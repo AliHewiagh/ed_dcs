@@ -29,10 +29,11 @@
                                     @foreach ($classes as $class)
                                         <?php
                                         $students = \App\User::where('class_id', $class->id)->count();
+                                        $done = \App\User::where([['class_id', $class->id], ['done', 1]])->count();
                                         ?>
                                         <tr>
                                             <td><a href="{{url('/teacher/progress/'.$class->id)}}">{{$class->name}}</a></td>
-                                            <td>0/{{$students}}</td>
+                                            <td>{{$done}}/{{$students}}</td>
                                         </tr>
                                     @endforeach
                                     </tbody>

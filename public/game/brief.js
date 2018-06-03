@@ -1431,7 +1431,7 @@ p.nominalBounds = new cjs.Rectangle(-132.7,-26,338.7,90.4);
 	this.timeline.addTween(cjs.Tween.get(this.mcCont).wait(1).to({_off:false},0).wait(1));
 
 	// Layer_6
-	this.myTxt2 = new cjs.Text("Gula-gula! Planet Kandi!\nSaya akan pergi ke situ dengan segera.", "italic bold 20px 'Quantico'", "#0EE0E0");
+	this.myTxt2 = new cjs.Text("Gula-gula! Planet Candy!\nSaya akan pergi ke situ dengan segera.", "italic bold 20px 'Quantico'", "#0EE0E0");
 	this.myTxt2.name = "myTxt2";
 	this.myTxt2.textAlign = "center";
 	this.myTxt2.lineHeight = 31;
@@ -2342,7 +2342,7 @@ p.nominalBounds = new cjs.Rectangle(-90.6,-46,401.6,89.9);
 	}
 	this.frame_39 = function() {
 		this.stop();
-		_this = this;
+		var _this = this;
 		function doPlay(e){
 			_this.removeEventListener("click", doPlay);
 			_this.gotoAndPlay("a1");
@@ -2350,6 +2350,7 @@ p.nominalBounds = new cjs.Rectangle(-90.6,-46,401.6,89.9);
 		this.addEventListener("click", doPlay);
 	}
 	this.frame_49 = function() {
+		var _this = this;
 		function doPlay(e){
 			_this.removeEventListener("click", doPlay);
 			_this.gotoAndPlay("a2");
@@ -2363,6 +2364,7 @@ p.nominalBounds = new cjs.Rectangle(-90.6,-46,401.6,89.9);
 		this.stop();
 	}
 	this.frame_152 = function() {
+		var _this = this;
 		function doPlay(e){
 			_this.removeEventListener("click", doPlay);
 			_this.gotoAndPlay("a3");
@@ -2373,6 +2375,7 @@ p.nominalBounds = new cjs.Rectangle(-90.6,-46,401.6,89.9);
 		this.stop();
 	}
 	this.frame_227 = function() {
+		var _this = this;
 		function doPlay(e){
 			_this.removeEventListener("click", doPlay);
 			nextScreen();
@@ -2430,19 +2433,19 @@ lib.properties = {
 	color: "#545E73",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/brief/Bitmap1.png?1524629924345", id:"Bitmap1"},
-		{src:"images/brief/Bitmap10.png?1524629924345", id:"Bitmap10"},
-		{src:"images/brief/Bitmap3.png?1524629924345", id:"Bitmap3"},
-		{src:"images/brief/Bitmap4.png?1524629924345", id:"Bitmap4"},
-		{src:"images/brief/Bitmap5.png?1524629924345", id:"Bitmap5"},
-		{src:"images/brief/Bitmap6.png?1524629924345", id:"Bitmap6"},
-		{src:"images/brief/Bitmap7.png?1524629924345", id:"Bitmap7"},
-		{src:"images/brief/Bitmap8.png?1524629924345", id:"Bitmap8"},
-		{src:"images/brief/Bitmap9.png?1524629924345", id:"Bitmap9"},
-		{src:"images/brief/intro1bg.png?1524629924345", id:"intro1bg"},
-		{src:"sounds/intro.mp3?1524629924345", id:"intro"},
-		{src:"sounds/phone_Accept.mp3?1524629924345", id:"phone_Accept"},
-		{src:"sounds/phone_ringtone.mp3?1524629924345", id:"phone_ringtone"}
+		{src:"images/brief/Bitmap1.png?1527954045077", id:"Bitmap1"},
+		{src:"images/brief/Bitmap10.png?1527954045077", id:"Bitmap10"},
+		{src:"images/brief/Bitmap3.png?1527954045077", id:"Bitmap3"},
+		{src:"images/brief/Bitmap4.png?1527954045077", id:"Bitmap4"},
+		{src:"images/brief/Bitmap5.png?1527954045077", id:"Bitmap5"},
+		{src:"images/brief/Bitmap6.png?1527954045077", id:"Bitmap6"},
+		{src:"images/brief/Bitmap7.png?1527954045077", id:"Bitmap7"},
+		{src:"images/brief/Bitmap8.png?1527954045077", id:"Bitmap8"},
+		{src:"images/brief/Bitmap9.png?1527954045077", id:"Bitmap9"},
+		{src:"images/brief/intro1bg.png?1527954045077", id:"intro1bg"},
+		{src:"sounds/intro.mp3?1527954045077", id:"intro"},
+		{src:"sounds/phone_Accept.mp3?1527954045077", id:"phone_Accept"},
+		{src:"sounds/phone_ringtone.mp3?1527954045077", id:"phone_ringtone"}
 	],
 	preloads: []
 };

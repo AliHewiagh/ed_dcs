@@ -409,7 +409,7 @@ p.nominalBounds = new cjs.Rectangle(-70,-39,140,79);
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 
 	// Layer_1
-	this.myTxt = new cjs.Text("Rotate the following puzzle pieces based on the instruction given. Click ‘Reset’ if you want to \nreturn the puzzle piece to the original position.", "italic bold 16px 'Quantico'", "#0EE0E0");
+	this.myTxt = new cjs.Text("Rotate the following puzzle pieces based on the instruction given. Click ‘Reset’ if you want to \nreturn a puzzle piece to its original position.", "italic bold 16px 'Quantico'", "#0EE0E0");
 	this.myTxt.name = "myTxt";
 	this.myTxt.lineHeight = 25;
 	this.myTxt.lineWidth = 412;
@@ -764,7 +764,7 @@ p.nominalBounds = new cjs.Rectangle(-69.2,-22,138.5,44.1);
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 
 	// Layer_1
-	this.myTxt = new cjs.Text("Putarkan kepingan susun suai berikut \nberdasarkan arahan yang diberi. Klik pada butang\n‘Semula’ sekiranya kamu ingin mengembalikan\nkepingan susun suai ke posisi asal. ", "italic bold 16px 'Quantico'", "#0EE0E0");
+	this.myTxt = new cjs.Text("Putarkan kepingan susun suai berikut \nberdasarkan arahan yang diberi. Klik pada butang\n‘Semula’ sekiranya anda ingin mengembalikan\nkepingan susun suai ke posisi asal. ", "italic bold 16px 'Quantico'", "#0EE0E0");
 	this.myTxt.name = "myTxt";
 	this.myTxt.lineHeight = 25;
 	this.myTxt.lineWidth = 417;
@@ -2910,6 +2910,51 @@ p.nominalBounds = new cjs.Rectangle(-17.6,-23.2,34.6,45.9);
 p.nominalBounds = new cjs.Rectangle(-136.7,302.4,274,237.4);
 
 
+(lib.mcTimesUp = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// timeline functions:
+	this.frame_0 = function() {
+		this.stop();
+	}
+	this.frame_1 = function() {
+		function onClick(){
+			return;
+		}
+		this.addEventListener("click", onClick);
+		playSound("timeout");
+	}
+	this.frame_150 = function() {
+		this.stop();
+		nextScreen();
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(149).call(this.frame_150).wait(1));
+
+	// anim
+	this.instance = new lib.timesUpAnim("synched",0,false);
+	this.instance.parent = this;
+	this.instance.setTransform(400,300);
+	this.instance._off = true;
+
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1).to({_off:false},0).wait(150));
+
+	// black
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("rgba(255,0,0,0.996)").s().p("AhyCMQAAAAgBAAQAAAAgBAAQAAgBgBAAQAAAAgBgBQAAAAAAAAQAAgBgBAAQAAgBAAAAQAAgBAAAAIAAgKQAAgBAAAAQAAAAAAgBQABAAAAgBQAAAAAAgBQABAAAAAAQABAAAAgBQABAAAAAAQABAAAAAAIAPAAQAAgpAQgfQARggAagQQgagQgRgfQgQgfAAgpIgPAAQAAAAgBAAQAAAAgBAAQAAgBgBAAQAAAAgBgBQAAAAAAAAQAAgBgBAAQAAgBAAAAQAAAAAAgBIAAgKQAAgBAAAAQAAAAAAgBQABAAAAgBQAAAAAAAAQABgBAAAAQABAAAAgBQABAAAAAAQABAAAAAAIDlAAQABAAAAAAQAAAAABAAQAAABABAAQAAAAAAABQABAAAAAAQAAABABAAQAAABAAAAQAAAAAAABIAAAKQAAABAAAAQAAAAAAABQgBAAAAABQAAAAgBAAQAAABAAAAQgBAAAAABQgBAAAAAAQAAAAgBAAIgPAAQAAApgQAfQgRAfgZAQQAZAQARAgQAQAfAAApIAPAAQABAAAAAAQAAAAABAAQAAABABAAQAAAAAAAAQABABAAAAQAAABABAAQAAABAAAAQAAAAAAABIAAAKQAAAAAAABQAAAAAAABQgBAAAAABQAAAAgBAAQAAABAAAAQgBAAAAABQgBAAAAAAQAAAAgBAAgAhKhQQAGATAJAPQAJAOALAJQAMAKALAFQAEAAABADQACADAAACQAAADgCADQgBADgEAAQgVAJgRAWIBsAAQgQgWgWgJQgDAAgBgDQgCgDAAgDQAAgCACgDQABgDADAAQAMgFAMgKQALgJAJgOQAJgPAGgTQAFgSAAgVIifAAQAAAVAFASg");
+	this.shape.setTransform(-73.5,92.7);
+
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f("rgba(0,0,0,0.698)").s().p("EhBvAyxMAAAhlhMCDgAAAMAAABlhg");
+	this.shape_1.setTransform(402.9,308.9);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape}]}).to({state:[{t:this.shape_1}]},1).wait(150));
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
+
+
 (lib.mcBtnReset = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
@@ -3741,59 +3786,6 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 }).prototype = getMCSymbolPrototype(lib.actMc1, new cjs.Rectangle(78.2,303.4,655.9,260.2), null);
 
 
-(lib.mcTimesUp = function(mode,startPosition,loop) {
-	this.initialize(mode,startPosition,loop,{});
-
-	// timeline functions:
-	this.frame_0 = function() {
-		this.stop();
-	}
-	this.frame_1 = function() {
-		playSound("timeout");
-	}
-	this.frame_86 = function() {
-		this.stop();
-		function doNext(e){
-			nextScreen();
-		}
-		this.addEventListener("click", doNext);
-	}
-
-	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(85).call(this.frame_86).wait(1));
-
-	// Layer_5
-	this.mcCont = new lib.cursor();
-	this.mcCont.name = "mcCont";
-	this.mcCont.parent = this;
-	this.mcCont.setTransform(497.4,447.9,0.35,0.35,0,0,0,0.5,0.5);
-	this.mcCont._off = true;
-
-	this.timeline.addTween(cjs.Tween.get(this.mcCont).wait(86).to({_off:false},0).wait(1));
-
-	// anim
-	this.instance = new lib.timesUpAnim("synched",0,false);
-	this.instance.parent = this;
-	this.instance.setTransform(400,300);
-	this.instance._off = true;
-
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1).to({_off:false},0).wait(86));
-
-	// black
-	this.shape = new cjs.Shape();
-	this.shape.graphics.f("rgba(255,0,0,0.996)").s().p("AhyCMQAAAAgBAAQAAAAgBAAQAAgBgBAAQAAAAgBgBQAAAAAAAAQAAgBgBAAQAAgBAAAAQAAgBAAAAIAAgKQAAgBAAAAQAAAAAAgBQABAAAAgBQAAAAAAgBQABAAAAAAQABAAAAgBQABAAAAAAQABAAAAAAIAPAAQAAgpAQgfQARggAagQQgagQgRgfQgQgfAAgpIgPAAQAAAAgBAAQAAAAgBAAQAAgBgBAAQAAAAgBgBQAAAAAAAAQAAgBgBAAQAAgBAAAAQAAAAAAgBIAAgKQAAgBAAAAQAAAAAAgBQABAAAAgBQAAAAAAAAQABgBAAAAQABAAAAgBQABAAAAAAQABAAAAAAIDlAAQABAAAAAAQAAAAABAAQAAABABAAQAAAAAAABQABAAAAAAQAAABABAAQAAABAAAAQAAAAAAABIAAAKQAAABAAAAQAAAAAAABQgBAAAAABQAAAAgBAAQAAABAAAAQgBAAAAABQgBAAAAAAQAAAAgBAAIgPAAQAAApgQAfQgRAfgZAQQAZAQARAgQAQAfAAApIAPAAQABAAAAAAQAAAAABAAQAAABABAAQAAAAAAAAQABABAAAAQAAABABAAQAAABAAAAQAAAAAAABIAAAKQAAAAAAABQAAAAAAABQgBAAAAABQAAAAgBAAQAAABAAAAQgBAAAAABQgBAAAAAAQAAAAgBAAgAhKhQQAGATAJAPQAJAOALAJQAMAKALAFQAEAAABADQACADAAACQAAADgCADQgBADgEAAQgVAJgRAWIBsAAQgQgWgWgJQgDAAgBgDQgCgDAAgDQAAgCACgDQABgDADAAQAMgFAMgKQALgJAJgOQAJgPAGgTQAFgSAAgVIifAAQAAAVAFASg");
-	this.shape.setTransform(-73.5,92.7);
-
-	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f("rgba(0,0,0,0.698)").s().p("EhBvAyxMAAAhlhMCDgAAAMAAABlhg");
-	this.shape_1.setTransform(402.9,308.9);
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape}]}).to({state:[{t:this.shape_1}]},1).wait(86));
-
-}).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
-
-
 // stage content:
 (lib.f3d2q2 = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{q1:104,q2:150,q3:195,finalFb:250});
@@ -3811,94 +3803,120 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 	this.frame_99 = function() {
 		this.stop();
 		var _this = this;
+		var stageNum = 6;
 		if (typeof cUserId === "undefined") {
 			cUserId = "";
+		} else {
+			if (schoolLevel==3){
+				stageNum = 8;
+			}
 		}
-		this.timeGiven = 120;//time in seconds
+		var maxQ = 2;
+		this.timeGiven = 240;//time in seconds
 		this.secRemaining = this.timeGiven;
 		this.timeTaken = 0;
 		this.cScore = 0;
 		var maxQ = 3;
 		this.currentQ = 0;
 		this.myData = {
-			"qNum": 6,
+			"stage": stageNum,
 			"userId": cUserId,
-			"time": _this.timeTaken,
-			"score": _this.cScore,
 			"qItem": []
 		};
 		this.qItem1 = [{
 				"qId": "f3d2q2_1",
 				"qDomain": 2,
-				"qParam": 1,
-				"qSkill": 1,
-				"qResult": 9
+				"qParam": 4,
+				"qSkill": 33,
+				"qResult": 9,
+				"time": 0,
+				"score": 1
 			},
 			{
 				"qId": "f3d2q2_2",
 				"qDomain": 2,
-				"qParam": 1,
-				"qSkill": 1,
-				"qResult": 9
+				"qParam": 4,
+				"qSkill": 33,
+				"qResult": 9,
+				"time": 0,
+				"score": 1
 			},
 			{
 				"qId": "f3d2q2_3",
 				"qDomain": 2,
-				"qParam": 1,
-				"qSkill": 1,
-				"qResult": 9
+				"qParam": 4,
+				"qSkill": 33,
+				"qResult": 9,
+				"time": 0,
+				"score": 1
 			}
 		];
 		if (typeof debugMode === "undefined") {
 			debugMode = false;
 		}
-		debugMode = true;
+		//debugMode = true;
 		if (debugMode) {
 			//no need shuffle, show all
 			this.myData.qItem.push(_this.qItem1[0]);
 			this.myData.qItem.push(_this.qItem1[1]);
 			this.myData.qItem.push(_this.qItem1[2]);
 		} else {
-			this.myData.qItem.push(_this.qItem1[randRange(1, 3)-1]);
+			this.myData.qItem.push(_this.qItem1[randRange(0, 2)]);
 		}
 		function goNextQ (){
 			_this.currentQ++;
 			if (_this.currentQ<=_this.myData.qItem.length){
-				console.log("q"+_this.myData.qItem[_this.currentQ-1].qId.substring(7));
-				_this.gotoAndPlay("q"+_this.myData.qItem[_this.currentQ-1].qId.substring(7));
-				console.log(_this.myData);
+				console.log(_this.myData.qItem[_this.currentQ-1].qId.substring(7));
+				_this.gotoAndPlay("q"+_this.currentQ);
 			} else {
-				//all questions done
+				//all done
 				clearInterval(timeInterval);//stop time
-				_this.myData.time = _this.timeGiven - _this.secRemaining;
-				//console.log(_this.myData.time);
-				_this.myData.score = Math.round(_this.cScore/_this.myData.qItem.length*10)/10;//average
-				if (cUserId == ""){//not online
-					_this.gotoAndPlay("finalFb");
-				} else {
-					/*
-					$.post('/game/save', _this.myData, function(respondData){
-						console.log(respondData);
-					});*/
-					_this.gotoAndPlay("finalFb");
-				}
-				console.log(_this.myData);
+				saveData();
+			}
+			console.log(_this.myData);
+		}
+		var isTimeOut = false;
+		_this.onTimeEnd = function (){
+			_this.myData.qItem[_this.currentQ-1].time = _this.timeGiven;
+			isTimeOut = true;
+			saveData();
+		};
+		function saveData(){
+			if (cUserId == ""){//not online
+				_this.gotoAndPlay("finalFb");
+			} else {
+				//save data here
+				var cData = $.post("/api/record/update/", 
+								_this.myData,
+									function(data){
+										console.log("set score"+data.message);
+										if (data.message=="success" && !isTimeOut){
+											_this.gotoAndPlay("finalFb");
+										} else if (data.message=="success"){
+											//nothing
+										} else {
+											console.log("error");
+										}
+									});
 			}
 		}
-		function doPlay(e){
-			_this.removeEventListener("click", doPlay);
-			goNextQ();
-		}
-		this.addEventListener("click", doPlay);
 		this.sendScore = function (_cScore){
 			if (_cScore==5){//all correct
 				_this.myData.qItem[_this.currentQ-1].qResult = 1;
 			} else {
 				_this.myData.qItem[_this.currentQ-1].qResult = 0;
 			}
-			_this.cScore += _cScore;
+			_this.myData.qItem[_this.currentQ-1].score = _cScore;
+			_this.myData.qItem[_this.currentQ-1].time = _this.timeGiven-_this.secRemaining;
+			_this.timeGiven = _this.secRemaining;
 			goNextQ();
 		};
+		
+		function doPlay(e){
+			_this.removeEventListener("click", doPlay);
+			goNextQ();
+		}
+		this.addEventListener("click", doPlay);
 		function randRange(min, max) {
 		    return Math.floor(Math.random() * (max - min + 1)) + min;
 		}
@@ -4160,18 +4178,18 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/f3d2q2/Bitmap19.png?1527262950507", id:"Bitmap19"},
-		{src:"images/f3d2q2/Bitmap22.png?1527262950507", id:"Bitmap22"},
-		{src:"images/f3d2q2/Bitmap3.png?1527262950507", id:"Bitmap3"},
-		{src:"images/f3d2q2/Bitmap8.png?1527262950507", id:"Bitmap8"},
-		{src:"images/f3d2q2/Bitmap9.png?1527262950507", id:"Bitmap9"},
-		{src:"sounds/mdroid_talk.mp3?1527262950507", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1527262950507", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1527262950507", id:"questionComplete"},
-		{src:"sounds/stdClick.mp3?1527262950507", id:"stdClick"},
-		{src:"sounds/submitAns.mp3?1527262950507", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1527262950507", id:"suspense"},
-		{src:"sounds/timeout.mp3?1527262950507", id:"timeout"}
+		{src:"images/f3d2q2/Bitmap19.png?1527924065411", id:"Bitmap19"},
+		{src:"images/f3d2q2/Bitmap22.png?1527924065411", id:"Bitmap22"},
+		{src:"images/f3d2q2/Bitmap3.png?1527924065411", id:"Bitmap3"},
+		{src:"images/f3d2q2/Bitmap8.png?1527924065411", id:"Bitmap8"},
+		{src:"images/f3d2q2/Bitmap9.png?1527924065411", id:"Bitmap9"},
+		{src:"sounds/mdroid_talk.mp3?1527924065411", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1527924065411", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1527924065411", id:"questionComplete"},
+		{src:"sounds/stdClick.mp3?1527924065411", id:"stdClick"},
+		{src:"sounds/submitAns.mp3?1527924065411", id:"submitAns"},
+		{src:"sounds/suspense.mp3?1527924065411", id:"suspense"},
+		{src:"sounds/timeout.mp3?1527924065411", id:"timeout"}
 	],
 	preloads: []
 };

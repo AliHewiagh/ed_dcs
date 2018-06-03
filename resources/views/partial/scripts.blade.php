@@ -1,5 +1,7 @@
 <script src="{{ asset('admin/plugins/jQuery/jquery-2.2.3.min.js')}}"></script>
 <script src="{{ asset('admin/bootstrap/js/bootstrap.min.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="{{ asset('admin/plugins/morris/morris.min.js')}}"></script>
 <script src="{{ asset('admin/plugins/datatables/jquery.dataTables.min.js')}}"></script>
 <script src="{{ asset('admin/plugins/datatables/dataTables.bootstrap.min.js')}}"></script>
 <!-- SlimScroll -->

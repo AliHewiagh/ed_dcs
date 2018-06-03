@@ -11335,6 +11335,51 @@ p.nominalBounds = new cjs.Rectangle(-79.1,-21.4,161.7,48.6);
 p.nominalBounds = new cjs.Rectangle(-136.7,302.4,274,237.4);
 
 
+(lib.mcTimesUp = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// timeline functions:
+	this.frame_0 = function() {
+		this.stop();
+	}
+	this.frame_1 = function() {
+		function onClick(){
+			return;
+		}
+		this.addEventListener("click", onClick);
+		playSound("timeout");
+	}
+	this.frame_150 = function() {
+		this.stop();
+		nextScreen();
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(149).call(this.frame_150).wait(1));
+
+	// anim
+	this.instance = new lib.timesUpAnim("synched",0,false);
+	this.instance.parent = this;
+	this.instance.setTransform(400,300);
+	this.instance._off = true;
+
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1).to({_off:false},0).wait(150));
+
+	// black
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("rgba(255,0,0,0.996)").s().p("AhyCMQAAAAgBAAQAAAAgBAAQAAgBgBAAQAAAAgBgBQAAAAAAAAQAAgBgBAAQAAgBAAAAQAAgBAAAAIAAgKQAAgBAAAAQAAAAAAgBQABAAAAgBQAAAAAAgBQABAAAAAAQABAAAAgBQABAAAAAAQABAAAAAAIAPAAQAAgpAQgfQARggAagQQgagQgRgfQgQgfAAgpIgPAAQAAAAgBAAQAAAAgBAAQAAgBgBAAQAAAAgBgBQAAAAAAAAQAAgBgBAAQAAgBAAAAQAAAAAAgBIAAgKQAAgBAAAAQAAAAAAgBQABAAAAgBQAAAAAAAAQABgBAAAAQABAAAAgBQABAAAAAAQABAAAAAAIDlAAQABAAAAAAQAAAAABAAQAAABABAAQAAAAAAABQABAAAAAAQAAABABAAQAAABAAAAQAAAAAAABIAAAKQAAABAAAAQAAAAAAABQgBAAAAABQAAAAgBAAQAAABAAAAQgBAAAAABQgBAAAAAAQAAAAgBAAIgPAAQAAApgQAfQgRAfgZAQQAZAQARAgQAQAfAAApIAPAAQABAAAAAAQAAAAABAAQAAABABAAQAAAAAAAAQABABAAAAQAAABABAAQAAABAAAAQAAAAAAABIAAAKQAAAAAAABQAAAAAAABQgBAAAAABQAAAAgBAAQAAABAAAAQgBAAAAABQgBAAAAAAQAAAAgBAAgAhKhQQAGATAJAPQAJAOALAJQAMAKALAFQAEAAABADQACADAAACQAAADgCADQgBADgEAAQgVAJgRAWIBsAAQgQgWgWgJQgDAAgBgDQgCgDAAgDQAAgCACgDQABgDADAAQAMgFAMgKQALgJAJgOQAJgPAGgTQAFgSAAgVIifAAQAAAVAFASg");
+	this.shape.setTransform(-73.5,92.7);
+
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f("rgba(0,0,0,0.698)").s().p("EhBvAyxMAAAhlhMCDgAAAMAAABlhg");
+	this.shape_1.setTransform(402.9,308.9);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape}]}).to({state:[{t:this.shape_1}]},1).wait(150));
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
+
+
 (lib.mcBtnCont = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
@@ -11468,7 +11513,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 				_this.parent.sendScore(5);
 			} else {
 				//wrong
-				_this.parent.sendScore(0);
+				_this.parent.sendScore(1);
 			}
 		}
 		this.btnSubmit.addEventListener("click", submitAns);
@@ -11542,7 +11587,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 				_this.parent.sendScore(5);
 			} else {
 				//wrong
-				_this.parent.sendScore(0);
+				_this.parent.sendScore(1);
 			}
 		}
 		this.btnSubmit.addEventListener("click", submitAns);
@@ -11634,7 +11679,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 				_this.parent.sendScore(5);
 			} else {
 				//wrong
-				_this.parent.sendScore(0);
+				_this.parent.sendScore(1);
 			}
 		}
 		this.btnSubmit.addEventListener("click", submitAns);
@@ -11726,7 +11771,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 				_this.parent.sendScore(5);
 			} else {
 				//wrong
-				_this.parent.sendScore(0);
+				_this.parent.sendScore(1);
 			}
 		}
 		this.btnSubmit.addEventListener("click", submitAns);
@@ -11818,7 +11863,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 				_this.parent.sendScore(5);
 			} else {
 				//wrong
-				_this.parent.sendScore(0);
+				_this.parent.sendScore(1);
 			}
 		}
 		this.btnSubmit.addEventListener("click", submitAns);
@@ -11910,7 +11955,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 				_this.parent.sendScore(5);
 			} else {
 				//wrong
-				_this.parent.sendScore(0);
+				_this.parent.sendScore(1);
 			}
 		}
 		this.btnSubmit.addEventListener("click", submitAns);
@@ -12002,7 +12047,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 				_this.parent.sendScore(5);
 			} else {
 				//wrong
-				_this.parent.sendScore(0);
+				_this.parent.sendScore(1);
 			}
 		}
 		this.btnSubmit.addEventListener("click", submitAns);
@@ -12094,7 +12139,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 				_this.parent.sendScore(5);
 			} else {
 				//wrong
-				_this.parent.sendScore(0);
+				_this.parent.sendScore(1);
 			}
 		}
 		this.btnSubmit.addEventListener("click", submitAns);
@@ -12186,7 +12231,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 				_this.parent.sendScore(5);
 			} else {
 				//wrong
-				_this.parent.sendScore(0);
+				_this.parent.sendScore(1);
 			}
 		}
 		this.btnSubmit.addEventListener("click", submitAns);
@@ -12278,7 +12323,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 				_this.parent.sendScore(5);
 			} else {
 				//wrong
-				_this.parent.sendScore(0);
+				_this.parent.sendScore(1);
 			}
 		}
 		this.btnSubmit.addEventListener("click", submitAns);
@@ -12370,7 +12415,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 				_this.parent.sendScore(5);
 			} else {
 				//wrong
-				_this.parent.sendScore(0);
+				_this.parent.sendScore(1);
 			}
 		}
 		this.btnSubmit.addEventListener("click", submitAns);
@@ -12462,7 +12507,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 				_this.parent.sendScore(5);
 			} else {
 				//wrong
-				_this.parent.sendScore(0);
+				_this.parent.sendScore(1);
 			}
 		}
 		this.btnSubmit.addEventListener("click", submitAns);
@@ -12524,59 +12569,6 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 }).prototype = getMCSymbolPrototype(lib.actMc1_1, new cjs.Rectangle(500.8,252.8,161.7,277.8), null);
 
 
-(lib.mcTimesUp = function(mode,startPosition,loop) {
-	this.initialize(mode,startPosition,loop,{});
-
-	// timeline functions:
-	this.frame_0 = function() {
-		this.stop();
-	}
-	this.frame_1 = function() {
-		playSound("timeout");
-	}
-	this.frame_86 = function() {
-		this.stop();
-		function doNext(e){
-			nextScreen();
-		}
-		this.addEventListener("click", doNext);
-	}
-
-	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(85).call(this.frame_86).wait(1));
-
-	// Layer_5
-	this.mcCont = new lib.cursor();
-	this.mcCont.name = "mcCont";
-	this.mcCont.parent = this;
-	this.mcCont.setTransform(497.4,447.9,0.35,0.35,0,0,0,0.5,0.5);
-	this.mcCont._off = true;
-
-	this.timeline.addTween(cjs.Tween.get(this.mcCont).wait(86).to({_off:false},0).wait(1));
-
-	// anim
-	this.instance = new lib.timesUpAnim("synched",0,false);
-	this.instance.parent = this;
-	this.instance.setTransform(400,300);
-	this.instance._off = true;
-
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1).to({_off:false},0).wait(86));
-
-	// black
-	this.shape = new cjs.Shape();
-	this.shape.graphics.f("rgba(255,0,0,0.996)").s().p("AhyCMQAAAAgBAAQAAAAgBAAQAAgBgBAAQAAAAgBgBQAAAAAAAAQAAgBgBAAQAAgBAAAAQAAgBAAAAIAAgKQAAgBAAAAQAAAAAAgBQABAAAAgBQAAAAAAgBQABAAAAAAQABAAAAgBQABAAAAAAQABAAAAAAIAPAAQAAgpAQgfQARggAagQQgagQgRgfQgQgfAAgpIgPAAQAAAAgBAAQAAAAgBAAQAAgBgBAAQAAAAgBgBQAAAAAAAAQAAgBgBAAQAAgBAAAAQAAAAAAgBIAAgKQAAgBAAAAQAAAAAAgBQABAAAAgBQAAAAAAAAQABgBAAAAQABAAAAgBQABAAAAAAQABAAAAAAIDlAAQABAAAAAAQAAAAABAAQAAABABAAQAAAAAAABQABAAAAAAQAAABABAAQAAABAAAAQAAAAAAABIAAAKQAAABAAAAQAAAAAAABQgBAAAAABQAAAAgBAAQAAABAAAAQgBAAAAABQgBAAAAAAQAAAAgBAAIgPAAQAAApgQAfQgRAfgZAQQAZAQARAgQAQAfAAApIAPAAQABAAAAAAQAAAAABAAQAAABABAAQAAAAAAAAQABABAAAAQAAABABAAQAAABAAAAQAAAAAAABIAAAKQAAAAAAABQAAAAAAABQgBAAAAABQAAAAgBAAQAAABAAAAQgBAAAAABQgBAAAAAAQAAAAgBAAgAhKhQQAGATAJAPQAJAOALAJQAMAKALAFQAEAAABADQACADAAACQAAADgCADQgBADgEAAQgVAJgRAWIBsAAQgQgWgWgJQgDAAgBgDQgCgDAAgDQAAgCACgDQABgDADAAQAMgFAMgKQALgJAJgOQAJgPAGgTQAFgSAAgVIifAAQAAAVAFASg");
-	this.shape.setTransform(-73.5,92.7);
-
-	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f("rgba(0,0,0,0.698)").s().p("EhBvAyxMAAAhlhMCDgAAAMAAABlhg");
-	this.shape_1.setTransform(402.9,308.9);
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape}]}).to({state:[{t:this.shape_1}]},1).wait(86));
-
-}).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
-
-
 // stage content:
 (lib.f3d1q9 = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{q1:104,q2:145,q3:186,q4:227,q5:268,q6:309,q7:350,q8:391,q9:432,q10:473,q11:519,q12:565,finalFb:624});
@@ -12594,6 +12586,7 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 	this.frame_99 = function() {
 		this.stop();
 		var _this = this;
+		var stageNum = 18;
 		if (typeof cUserId === "undefined") {
 			cUserId = "";
 		}
@@ -12604,105 +12597,127 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 		var maxQ = 6;
 		this.currentQ = 0;
 		this.myData = {
-			"qNum": 20,
+			"stage": stageNum,
 			"userId": cUserId,
-			"time": _this.timeTaken,
-			"score": _this.cScore,
 			"qItem": []
 		};
-		var qList1 = [1, 2, 3, 4, 5, 6];
+		this.qList1 = [0, 1, 2, 3, 4, 5];
 		var qItem1 = [{
 				"qId": "f3d1q9_1",
 				"qDomain": 1,
 				"qParam": 2,
-				"qSkill": 3,
-				"qResult": 9
+				"qSkill": 28,
+				"qResult": 9,
+				"time": 0,
+				"score": 1
 			},
 			{
 				"qId": "f3d1q9_2",
 				"qDomain": 1,
 				"qParam": 2,
-				"qSkill": 3,
-				"qResult": 9
+				"qSkill": 28,
+				"qResult": 9,
+				"time": 0,
+				"score": 1
 			},
 			{
 				"qId": "f3d1q9_3",
 				"qDomain": 1,
 				"qParam": 2,
-				"qSkill": 3,
-				"qResult": 9
+				"qSkill": 28,
+				"qResult": 9,
+				"time": 0,
+				"score": 1
 			},
 			{
 				"qId": "f3d1q9_4",
 				"qDomain": 1,
 				"qParam": 2,
-				"qSkill": 3,
-				"qResult": 9
+				"qSkill": 28,
+				"qResult": 9,
+				"time": 0,
+				"score": 1
 			},
 			{
 				"qId": "f3d1q9_5",
 				"qDomain": 1,
 				"qParam": 2,
-				"qSkill": 3,
-				"qResult": 9
+				"qSkill": 28,
+				"qResult": 9,
+				"time": 0,
+				"score": 1
 			},
 			{
 				"qId": "f3d1q9_6",
 				"qDomain": 1,
 				"qParam": 2,
-				"qSkill": 3,
-				"qResult": 9
+				"qSkill": 28,
+				"qResult": 9,
+				"time": 0,
+				"score": 1
 			}
 		];
-		var qList2 = [1, 2, 3, 4];
+		this.qList2 = [0, 1, 2, 3];
 		var qItem2 = [{
 				"qId": "f3d1q9_7",
 				"qDomain": 1,
 				"qParam": 3,
-				"qSkill": 1,
-				"qResult": 9
+				"qSkill": 29,
+				"qResult": 9,
+				"time": 0,
+				"score": 1
 			},
 			{
 				"qId": "f3d1q9_8",
 				"qDomain": 1,
 				"qParam": 3,
-				"qSkill": 1,
-				"qResult": 9
+				"qSkill": 29,
+				"qResult": 9,
+				"time": 0,
+				"score": 1
 			},
 			{
 				"qId": "f3d1q9_9",
 				"qDomain": 1,
 				"qParam": 3,
-				"qSkill": 1,
-				"qResult": 9
+				"qSkill": 29,
+				"qResult": 9,
+				"time": 0,
+				"score": 1
 			},
 			{
 				"qId": "f3d1q9_10",
 				"qDomain": 1,
 				"qParam": 3,
-				"qSkill": 1,
-				"qResult": 9
+				"qSkill": 29,
+				"qResult": 9,
+				"time": 0,
+				"score": 1
 			}
 		];
 		var qItem3 = [{
 				"qId": "f3d1q9_11",
 				"qDomain": 1,
 				"qParam": 3,
-				"qSkill": 4,
-				"qResult": 9
+				"qSkill": 32,
+				"qResult": 9,
+				"time": 0,
+				"score": 1
 			},
 			{
 				"qId": "f3d1q9_12",
 				"qDomain": 1,
 				"qParam": 3,
-				"qSkill": 4,
-				"qResult": 9
+				"qSkill": 32,
+				"qResult": 9,
+				"time": 0,
+				"score": 1
 			}
 		];
 		if (typeof debugMode === "undefined") {
 			debugMode = false;
 		}
-		debugMode = true;
+		//debugMode = true;
 		if (debugMode) {
 			//no need shuffle, show all
 			this.myData.qItem.push(qItem1[0]);
@@ -12720,14 +12735,13 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 		} else {
 			//shuffle and take only what we need
 			this.qList1 = shuffle(this.qList1);
-			this.myData.qItem.push(qItem1[this.qList1[0]-1]);
-			this.myData.qItem.push(qItem1[this.qList1[1]-1]);
-			this.myData.qItem.push(qItem1[this.qList1[2]-1]);
-			this.qList1 = shuffle(this.qList2);
-			this.myData.qItem.push(qItem2[this.qList2[0]-1]);
-			this.myData.qItem.push(qItem2[this.qList2[1]-1]);
-			this.myData.qItem.push(qItem3[0]);
-			this.myData.qItem.push(qItem3[1]);
+			this.myData.qItem.push(qItem1[this.qList1[0]]);
+			this.myData.qItem.push(qItem1[this.qList1[1]]);
+			this.myData.qItem.push(qItem1[this.qList1[2]]);
+			this.qList2 = shuffle(this.qList2);
+			this.myData.qItem.push(qItem2[this.qList2[0]]);
+			this.myData.qItem.push(qItem2[this.qList2[1]]);
+			this.myData.qItem.push(qItem3[randRange(0,1)]);
 		}
 		
 		function shuffle(array) {
@@ -12748,31 +12762,40 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 		function goNextQ (){
 			_this.currentQ++;
 			if (_this.currentQ<=_this.myData.qItem.length){
-				console.log(_this.myData.qItem[_this.currentQ-1].qId.substring(4));
-				_this.gotoAndPlay(_this.myData.qItem[_this.currentQ-1].qId.substring(4));
+				_this.gotoAndPlay("q"+_this.myData.qItem[_this.currentQ-1].qId.substring(7));
 				if (_this.currentQ<=maxQ){
 					_this["prog"+_this.currentQ].gotoAndStop("on");
 				}
 			} else {
 				//all questions done
 				clearInterval(timeInterval);//stop time
-				_this.myData.time = _this.timeGiven - _this.secRemaining;
-				//console.log(_this.myData.time);
-				_this.myData.score = Math.round(_this.cScore/_this.myData.qItem.length*10)/10;//average
 				saveData();
 			}
 			console.log(_this.myData);
 		}
+		var isTimeOut = false;
 		_this.onTimeEnd = function (){
-			_this.myData.time = _this.timeGiven;
+			_this.myData.qItem[_this.currentQ-1].time = _this.timeGiven;
+			isTimeOut = true;
 			saveData();
 		};
 		function saveData(){
 			if (cUserId == ""){//not online
 				_this.gotoAndPlay("finalFb");
 			} else {
-				//call save data here
-				_this.gotoAndPlay("finalFb");
+				//save data here
+				var cData = $.post("/api/record/update/", 
+								_this.myData,
+									function(data){
+										console.log("set score"+data.message);
+										if (data.message=="success" && !isTimeOut){
+											_this.gotoAndPlay("finalFb");
+										} else if (data.message=="success"){
+											//nothing
+										} else {
+											console.log("error");
+										}
+									});
 			}
 		}
 		function doPlay(e){
@@ -12780,19 +12803,20 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 			goNextQ();
 		}
 		this.addEventListener("click", doPlay);
-		_this.onTimeEnd = function (){
-			_this.myData.time = _this.timeGiven;
-			saveData();
-		};
 		this.sendScore = function (_cScore){
 			if (_cScore==5){//all correct
 				_this.myData.qItem[_this.currentQ-1].qResult = 1;
 			} else {
 				_this.myData.qItem[_this.currentQ-1].qResult = 0;
 			}
-			_this.cScore += _cScore;
+			_this.myData.qItem[_this.currentQ-1].score = _cScore;
+			_this.myData.qItem[_this.currentQ-1].time = _this.timeGiven-_this.secRemaining;
+			_this.timeGiven = _this.secRemaining;
 			goNextQ();
 		};
+		function randRange(min, max) {
+		    return Math.floor(Math.random() * (max - min + 1)) + min;
+		}
 	}
 	this.frame_109 = function() {
 		playSound("questionAlert");
@@ -13290,20 +13314,20 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/f3d1q9/Bitmap1.png?1527312726410", id:"Bitmap1"},
-		{src:"images/f3d1q9/Bitmap21.png?1527312726410", id:"Bitmap21"},
-		{src:"images/f3d1q9/Bitmap22.png?1527312726410", id:"Bitmap22"},
-		{src:"images/f3d1q9/Bitmap3.png?1527312726410", id:"Bitmap3"},
-		{src:"images/f3d1q9/Bitmap4.png?1527312726410", id:"Bitmap4"},
-		{src:"images/f3d1q9/Bitmap5.png?1527312726410", id:"Bitmap5"},
-		{src:"images/f3d1q9/Bitmap9.png?1527312726410", id:"Bitmap9"},
-		{src:"sounds/mdroid_talk.mp3?1527312726410", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1527312726410", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1527312726410", id:"questionComplete"},
-		{src:"sounds/stdClick.mp3?1527312726410", id:"stdClick"},
-		{src:"sounds/submitAns.mp3?1527312726410", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1527312726410", id:"suspense"},
-		{src:"sounds/timeout.mp3?1527312726410", id:"timeout"}
+		{src:"images/f3d1q9/Bitmap1.png?1527921280379", id:"Bitmap1"},
+		{src:"images/f3d1q9/Bitmap21.png?1527921280380", id:"Bitmap21"},
+		{src:"images/f3d1q9/Bitmap22.png?1527921280380", id:"Bitmap22"},
+		{src:"images/f3d1q9/Bitmap3.png?1527921280380", id:"Bitmap3"},
+		{src:"images/f3d1q9/Bitmap4.png?1527921280380", id:"Bitmap4"},
+		{src:"images/f3d1q9/Bitmap5.png?1527921280380", id:"Bitmap5"},
+		{src:"images/f3d1q9/Bitmap9.png?1527921280380", id:"Bitmap9"},
+		{src:"sounds/mdroid_talk.mp3?1527921280380", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1527921280380", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1527921280380", id:"questionComplete"},
+		{src:"sounds/stdClick.mp3?1527921280380", id:"stdClick"},
+		{src:"sounds/submitAns.mp3?1527921280380", id:"submitAns"},
+		{src:"sounds/suspense.mp3?1527921280380", id:"suspense"},
+		{src:"sounds/timeout.mp3?1527921280380", id:"timeout"}
 	],
 	preloads: []
 };

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Teacher;
 
 use App\Role;
+use App\School;
+use App\SchoolClass;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -38,6 +40,9 @@ class StudentExcelController extends Controller
                     $role = Role::where("id", 4)->first();
                     $user->attachRole($role);
                     $i++;
+
+                    SchoolClass::where('id', $data["class_id"])->update(['done'=>0]);
+                    School::where('id', $data["school_id"])->update(['done'=>0]);
                 }
             }
         }

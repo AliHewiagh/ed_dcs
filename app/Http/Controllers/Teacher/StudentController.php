@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Teacher;
 
 use App\Role;
+use App\School;
+use App\SchoolClass;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -72,6 +74,8 @@ class StudentController extends Controller
         $user = User::create($data);
         $role = Role::where("id", 4)->first();
         $user->attachRole($role);
+        SchoolClass::where('id', $data["class_id"])->update(['done'=>0]);
+        School::where('id', $data["school_id"])->update(['done'=>0]);
         return redirect('/teacher/class/'.$classId.'/student')->with("success", "Student created successfully!");
     }
 
@@ -134,6 +138,17 @@ class StudentController extends Controller
     public function destroy($classId, $id)
     {
         $user = User::findOrFail($id);
+
+        $classNotDone = User::where([['class_id', $user->class_id], ['done', 0]])->first();
+        if(empty($classNotDone)){
+            $class = SchoolClass::where('id', $user->class_id)->first();
+            $class->update(['done'=>1]);
+            $schoolNotDone =  SchoolClass::where([['school_id', $class->school_id], ['done', 0]])->first();
+            if(empty($schoolNotDone)){
+                School::where('id', $class->school_id)->update(['done'=>1]);
+            }
+        }
+
         $user->delete();
         return redirect('/teacher/class/'.$classId.'/student')->with("success", "Student deleted successfully!");
     }

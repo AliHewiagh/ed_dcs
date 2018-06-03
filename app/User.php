@@ -17,11 +17,19 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'school_id', 'class_id', 'ic_number', 'username', 'email', 'phone', 'password', "gender", "dob", "status", "image", "type", "done"
+        'name', 'school_id', 'class_id', 'ic_number', 'username', 'email', 'phone', 'password', "gender", "dob", "score", "status", "image", "type", "done"
     ];
     //status 1->active
     // 2->suspend
-    
 
+
+    /**
+     * @return array
+     */
+    public function totalTime()
+    {
+        $time = StudentRecord::where('user_id', $this->id)->sum('time');
+        return $time;
+    }
 
 }
