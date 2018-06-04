@@ -324,7 +324,7 @@ function handleCompleteSub(evt,comp) {
 		cStage = Number(scrList[currentProgress-1].constructorName.substring(4));
 		exportRoot.mcLevel.gotoAndStop(cStage);
 	}
-	if (cStage>0){
+	if (cStage>0 && scrList[currentProgress-1].constructorName!="splash"){
 		var cData = $.post("/api/stage/update/", 
 						{	userId: cUserId, 
 							stage: cStage,
