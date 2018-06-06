@@ -1,4 +1,4 @@
-var debugMode = false;
+var debugMode = true;
 var schoolLevel;
 //----turn this on for final to disable all console.log 
 //console.log = function() {};
