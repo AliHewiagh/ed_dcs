@@ -3634,16 +3634,16 @@ lib.properties = {
 	color: "#666666",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/intro13/Bitmap1.png?1527790340106", id:"Bitmap1"},
-		{src:"images/intro13/Bitmap11.png?1527790340106", id:"Bitmap11"},
-		{src:"images/intro13/Bitmap12.png?1527790340106", id:"Bitmap12"},
-		{src:"images/intro13/Bitmap15.png?1527790340106", id:"Bitmap15"},
-		{src:"images/intro13/Bitmap16.png?1527790340106", id:"Bitmap16"},
-		{src:"images/intro13/Bitmap5.png?1527790340106", id:"Bitmap5"},
-		{src:"images/intro13/Bitmap6.png?1527790340106", id:"Bitmap6"},
-		{src:"images/intro13/Bitmap7.png?1527790340106", id:"Bitmap7"},
-		{src:"images/intro13/Bitmap8.png?1527790340106", id:"Bitmap8"},
-		{src:"sounds/intro.mp3?1527790340106", id:"intro"}
+		{src:"images/intro13/Bitmap1.png?1528296522932", id:"Bitmap1"},
+		{src:"images/intro13/Bitmap11.png?1528296522932", id:"Bitmap11"},
+		{src:"images/intro13/Bitmap12.png?1528296522932", id:"Bitmap12"},
+		{src:"images/intro13/Bitmap15.png?1528296522932", id:"Bitmap15"},
+		{src:"images/intro13/Bitmap16.png?1528296522932", id:"Bitmap16"},
+		{src:"images/intro13/Bitmap5.png?1528296522932", id:"Bitmap5"},
+		{src:"images/intro13/Bitmap6.png?1528296522932", id:"Bitmap6"},
+		{src:"images/intro13/Bitmap7.png?1528296522932", id:"Bitmap7"},
+		{src:"images/intro13/Bitmap8.png?1528296522932", id:"Bitmap8"},
+		{src:"sounds/intro.mp3?1528296522932", id:"intro"}
 	],
 	preloads: []
 };

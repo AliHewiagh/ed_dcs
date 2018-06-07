@@ -1602,7 +1602,7 @@ p.nominalBounds = new cjs.Rectangle(-590.7,-247.3,178,143);
 			doc.setFontSize(18);
 			doc.setFontType('bolditalic');
 			doc.text(cUserName.toUpperCase(), 99, 104, 'center');
-			doc.save(cUserName+'dcsCert.pdf');
+			doc.save(cUserName+' DCS Cert.pdf');
 		}
 		this.btnCert.addEventListener("click", doOpenCert);
 	}
@@ -1825,19 +1825,19 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/end/_1.png?1528017088441", id:"_1"},
-		{src:"images/end/_2.png?1528017088441", id:"_2"},
-		{src:"images/end/_3.png?1528017088441", id:"_3"},
-		{src:"images/end/_4.png?1528017088441", id:"_4"},
-		{src:"images/end/_5.png?1528017088441", id:"_5"},
-		{src:"images/end/Bitmap2.png?1528017088441", id:"Bitmap2"},
-		{src:"images/end/Bitmap22.png?1528017088441", id:"Bitmap22"},
-		{src:"images/end/Bitmap4.png?1528017088441", id:"Bitmap4"},
-		{src:"images/end/Bitmap5.png?1528017088441", id:"Bitmap5"},
-		{src:"images/end/promotionBg01.jpg?1528017088441", id:"promotionBg01"},
-		{src:"images/end/tapirfriendly.png?1528017088441", id:"tapirfriendly"},
-		{src:"sounds/stdClick.mp3?1528017088441", id:"stdClick"},
-		{src:"sounds/win.mp3?1528017088441", id:"win"}
+		{src:"images/end/_1.png?1528299512985", id:"_1"},
+		{src:"images/end/_2.png?1528299512985", id:"_2"},
+		{src:"images/end/_3.png?1528299512985", id:"_3"},
+		{src:"images/end/_4.png?1528299512985", id:"_4"},
+		{src:"images/end/_5.png?1528299512985", id:"_5"},
+		{src:"images/end/Bitmap2.png?1528299512985", id:"Bitmap2"},
+		{src:"images/end/Bitmap22.png?1528299512985", id:"Bitmap22"},
+		{src:"images/end/Bitmap4.png?1528299512985", id:"Bitmap4"},
+		{src:"images/end/Bitmap5.png?1528299512985", id:"Bitmap5"},
+		{src:"images/end/promotionBg01.jpg?1528299512985", id:"promotionBg01"},
+		{src:"images/end/tapirfriendly.png?1528299512985", id:"tapirfriendly"},
+		{src:"sounds/stdClick.mp3?1528299512985", id:"stdClick"},
+		{src:"sounds/win.mp3?1528299512985", id:"win"}
 	],
 	preloads: []
 };

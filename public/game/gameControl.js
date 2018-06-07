@@ -229,6 +229,8 @@ function initTapir(){
 		if (typeof cUserName === 'undefined') {
 			// nothing
 		} else {
+			cUserName = htmlDecode(cUserName);
+			cUserName = truncate(cUserName, 30);
 			exportRoot.txtPlayerName.text = cUserName;
 			//get the current stage
 			var cData = $.get("/api/stage/get/"+cUserId, function (data) {
@@ -404,4 +406,17 @@ function doExit(){
 }
 function randRange(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+function htmlDecode(input){
+  var e = document.createElement('div');
+  e.innerHTML = input;
+  return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+}
+function truncate(string,limit){
+  if(string.length > limit){
+    return string.substring(0,limit)+"...";
+  }
+  else {
+    return string;
+  }
 }
