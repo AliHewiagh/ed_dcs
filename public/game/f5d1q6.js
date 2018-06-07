@@ -1439,7 +1439,7 @@ p.nominalBounds = new cjs.Rectangle(-5,-5,10,10);
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 
 	// t
-	this.txtTime = new cjs.Text("4:00", "60px 'Quantico'", "#006666");
+	this.txtTime = new cjs.Text("5:00", "60px 'Quantico'", "#006666");
 	this.txtTime.name = "txtTime";
 	this.txtTime.textAlign = "center";
 	this.txtTime.lineHeight = 88;
@@ -6890,7 +6890,7 @@ p.nominalBounds = new cjs.Rectangle(447.9,299,310.2,218);
 		if (typeof cUserId === "undefined") {
 			cUserId = "";
 		}
-		this.timeGiven = 240;//time in seconds
+		this.timeGiven = 300;//time in seconds
 		this.secRemaining = this.timeGiven;
 		this.timeTaken = 0;
 		this.cScore = 0;
@@ -7372,21 +7372,21 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/f5d1q6/Bitmap21.png?1527956789520", id:"Bitmap21"},
-		{src:"images/f5d1q6/Bitmap22.png?1527956789520", id:"Bitmap22"},
-		{src:"images/f5d1q6/Bitmap3.png?1527956789520", id:"Bitmap3"},
-		{src:"images/f5d1q6/Bitmap9.png?1527956789520", id:"Bitmap9"},
-		{src:"images/f5d1q6/Integratedcircuit.jpg?1527956789520", id:"Integratedcircuit"},
-		{src:"sounds/mdroid_talk.mp3?1527956789520", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1527956789520", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1527956789520", id:"questionComplete"},
-		{src:"sounds/stdClick.mp3?1527956789520", id:"stdClick"},
-		{src:"sounds/submitAns.mp3?1527956789520", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1527956789520", id:"suspense"},
-		{src:"sounds/timeout.mp3?1527956789520", id:"timeout"},
-		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1527956789520", id:"lib/jquery-2.2.4.min.js"},
-		{src:"components/sdk/anwidget.js?1527956789520", id:"sdk/anwidget.js"},
-		{src:"components/ui/src/textinput.js?1527956789520", id:"an.TextInput"}
+		{src:"images/f5d1q6/Bitmap21.png?1528349581573", id:"Bitmap21"},
+		{src:"images/f5d1q6/Bitmap22.png?1528349581573", id:"Bitmap22"},
+		{src:"images/f5d1q6/Bitmap3.png?1528349581573", id:"Bitmap3"},
+		{src:"images/f5d1q6/Bitmap9.png?1528349581573", id:"Bitmap9"},
+		{src:"images/f5d1q6/Integratedcircuit.jpg?1528349581573", id:"Integratedcircuit"},
+		{src:"sounds/mdroid_talk.mp3?1528349581573", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1528349581573", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1528349581573", id:"questionComplete"},
+		{src:"sounds/stdClick.mp3?1528349581573", id:"stdClick"},
+		{src:"sounds/submitAns.mp3?1528349581573", id:"submitAns"},
+		{src:"sounds/suspense.mp3?1528349581573", id:"suspense"},
+		{src:"sounds/timeout.mp3?1528349581573", id:"timeout"},
+		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1528349581573", id:"lib/jquery-2.2.4.min.js"},
+		{src:"components/sdk/anwidget.js?1528349581573", id:"sdk/anwidget.js"},
+		{src:"components/ui/src/textinput.js?1528349581573", id:"an.TextInput"}
 	],
 	preloads: []
 };

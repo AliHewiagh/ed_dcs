@@ -489,12 +489,12 @@ p._updateVisibility = _updateVisibility;
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 
 	// Layer_1
-	this.myTxt = new cjs.Text("Wow! Isn't the image incredible? Now \nfind the name of the object shown in the\nimage by using the Internet.", "italic bold 16px 'Quantico'", "#0EE0E0");
+	this.myTxt = new cjs.Text("Wow! Isn't the image incredible? Now \nfind the name of the object shown in \nthe image by using image search.", "italic bold 16px 'Quantico'", "#0EE0E0");
 	this.myTxt.name = "myTxt";
 	this.myTxt.lineHeight = 25;
-	this.myTxt.lineWidth = 335;
+	this.myTxt.lineWidth = 331;
 	this.myTxt.parent = this;
-	this.myTxt.setTransform(-236.5,-29.6);
+	this.myTxt.setTransform(-231.5,-29.6);
 
 	this.timeline.addTween(cjs.Tween.get(this.myTxt).wait(1));
 
@@ -946,7 +946,7 @@ p.nominalBounds = new cjs.Rectangle(-69.2,-22,138.5,44.1);
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 
 	// Layer_1
-	this.myTxt = new cjs.Text("Wah! Bukankah imej itu menakjubkan? \nSekarang cari nama objek dalam imej itu \nmelalui internet.", "italic bold 16px 'Quantico'", "#0EE0E0");
+	this.myTxt = new cjs.Text("Wah! Bukankah imej itu menakjubkan? \nSekarang cari nama objek dalam imej \nitu dengan menggunakan carian imej.", "italic bold 16px 'Quantico'", "#0EE0E0");
 	this.myTxt.name = "myTxt";
 	this.myTxt.lineHeight = 25;
 	this.myTxt.lineWidth = 334;
@@ -2783,7 +2783,8 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 		//console.log(myScale);
 		var fontSize = 18;
 		var txtAns = document.getElementById("txtAns");
-		txtAns.setAttribute("type", "file");
+		//txtAns.setAttribute("type", "file");
+		$("#txtAns").attr("type","file");
 		txtAns.style.fontFamily = "Muli, Arial, Helvetica, sans-serif";
 		txtAns.style.fontSize = fontSize * myScale + "px";
 		txtAns.style.textAlign = "center";
@@ -2792,6 +2793,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 			setTimeout(function(){
 				myScale = myContainer.offsetWidth/800;
 				txtAns.style.fontSize = fontSize * myScale + "px";
+				$("#txtAns").attr("type","file");
 			}, 1000);
 		});
 		$("#txtAns").change(function() {
@@ -2971,7 +2973,8 @@ p.nominalBounds = new cjs.Rectangle(145.5,241,561.5,221);
 		//console.log(myScale);
 		var fontSize = 18;
 		var txtAns = document.getElementById("txtAns");
-		txtAns.setAttribute("type", "file");
+		$("#txtAns").attr("type","file");
+		//txtAns.setAttribute("type", "file");
 		txtAns.style.fontFamily = "Muli, Arial, Helvetica, sans-serif";
 		txtAns.style.fontSize = fontSize * myScale + "px";
 		txtAns.style.textAlign = "center";
@@ -2980,6 +2983,7 @@ p.nominalBounds = new cjs.Rectangle(145.5,241,561.5,221);
 			setTimeout(function(){
 				myScale = myContainer.offsetWidth/800;
 				txtAns.style.fontSize = fontSize * myScale + "px";
+				$("#txtAns").attr("type","file");
 			}, 1000);
 		});
 		$("#txtAns").change(function() {
@@ -3159,7 +3163,8 @@ p.nominalBounds = new cjs.Rectangle(145.5,241,561.5,221);
 		//console.log(myScale);
 		var fontSize = 12;
 		var txtAns = document.getElementById("txtAns");
-		txtAns.setAttribute("type", "file");
+		//txtAns.setAttribute("type", "file");
+		$("#txtAns").attr("type","file");
 		txtAns.style.fontFamily = "Muli, Arial, Helvetica, sans-serif";
 		txtAns.style.fontSize = fontSize * myScale + "px";
 		txtAns.style.textAlign = "center";
@@ -3168,6 +3173,7 @@ p.nominalBounds = new cjs.Rectangle(145.5,241,561.5,221);
 			setTimeout(function(){
 				myScale = myContainer.offsetWidth/800;
 				txtAns.style.fontSize = fontSize * myScale + "px";
+				$("#txtAns").attr("type","file");
 			}, 1000);
 		});
 		$("#txtAns").change(function() {
@@ -3947,22 +3953,22 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/f3d1q5/Bitmap19.png?1527926039107", id:"Bitmap19"},
-		{src:"images/f3d1q5/Bitmap28.png?1527926039107", id:"Bitmap28"},
-		{src:"images/f3d1q5/Bitmap3.png?1527926039107", id:"Bitmap3"},
-		{src:"images/f3d1q5/Bitmap30.png?1527926039107", id:"Bitmap30"},
-		{src:"images/f3d1q5/Bitmap31.png?1527926039107", id:"Bitmap31"},
-		{src:"images/f3d1q5/Bitmap8.png?1527926039107", id:"Bitmap8"},
-		{src:"images/f3d1q5/Bitmap9.png?1527926039107", id:"Bitmap9"},
-		{src:"sounds/mdroid_talk.mp3?1527926039107", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1527926039107", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1527926039107", id:"questionComplete"},
-		{src:"sounds/submitAns.mp3?1527926039107", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1527926039107", id:"suspense"},
-		{src:"sounds/timeout.mp3?1527926039107", id:"timeout"},
-		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1527926039107", id:"lib/jquery-2.2.4.min.js"},
-		{src:"components/sdk/anwidget.js?1527926039107", id:"sdk/anwidget.js"},
-		{src:"components/ui/src/textinput.js?1527926039107", id:"an.TextInput"}
+		{src:"images/f3d1q5/Bitmap19.png?1528349108080", id:"Bitmap19"},
+		{src:"images/f3d1q5/Bitmap28.png?1528349108080", id:"Bitmap28"},
+		{src:"images/f3d1q5/Bitmap3.png?1528349108080", id:"Bitmap3"},
+		{src:"images/f3d1q5/Bitmap30.png?1528349108080", id:"Bitmap30"},
+		{src:"images/f3d1q5/Bitmap31.png?1528349108080", id:"Bitmap31"},
+		{src:"images/f3d1q5/Bitmap8.png?1528349108080", id:"Bitmap8"},
+		{src:"images/f3d1q5/Bitmap9.png?1528349108080", id:"Bitmap9"},
+		{src:"sounds/mdroid_talk.mp3?1528349108080", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1528349108080", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1528349108080", id:"questionComplete"},
+		{src:"sounds/submitAns.mp3?1528349108080", id:"submitAns"},
+		{src:"sounds/suspense.mp3?1528349108080", id:"suspense"},
+		{src:"sounds/timeout.mp3?1528349108080", id:"timeout"},
+		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1528349108080", id:"lib/jquery-2.2.4.min.js"},
+		{src:"components/sdk/anwidget.js?1528349108080", id:"sdk/anwidget.js"},
+		{src:"components/ui/src/textinput.js?1528349108080", id:"an.TextInput"}
 	],
 	preloads: []
 };
