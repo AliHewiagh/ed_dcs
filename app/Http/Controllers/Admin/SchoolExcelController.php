@@ -36,7 +36,6 @@ class SchoolExcelController extends Controller
                     if(array_key_exists('Source', $cu)){
                         $source = $cu["Source"];
                     }
-                    $data["name"] = $cu["Name"];
                     $data["username"] = $usernameS.$i;
                     $data["password"] = str_random(8);
                     $user = User::create($data);

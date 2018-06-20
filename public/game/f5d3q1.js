@@ -8875,7 +8875,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 	this.mcCont = new lib.cursor();
 	this.mcCont.name = "mcCont";
 	this.mcCont.parent = this;
-	this.mcCont.setTransform(445.8,124.6,0.35,0.35,0,0,0,0.5,0.5);
+	this.mcCont.setTransform(500.8,124.6,0.35,0.35,0,0,0,0.5,0.5);
 	this.mcCont._off = true;
 
 	this.timeline.addTween(cjs.Tween.get(this.mcCont).wait(99).to({_off:false},0).to({_off:true},5).wait(272));
@@ -9065,18 +9065,18 @@ lib.properties = {
 	opacity: 1.00,
 	webfonts: {},
 	manifest: [
-		{src:"images/f5d3q1/Bitmap3.png?1527928117716", id:"Bitmap3"},
-		{src:"images/f5d3q1/Bitmap8.png?1527928117716", id:"Bitmap8"},
-		{src:"images/f5d3q1/Bitmap9.png?1527928117716", id:"Bitmap9"},
-		{src:"images/f5d3q1/Blend_14.png?1527928117716", id:"Blend_14"},
-		{src:"sounds/mdroid_talk.mp3?1527928117716", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1527928117716", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1527928117716", id:"questionComplete"},
-		{src:"sounds/stdClick.mp3?1527928117717", id:"stdClick"},
-		{src:"sounds/stdClick_1.mp3?1527928117717", id:"stdClick_1"},
-		{src:"sounds/submitAns.mp3?1527928117717", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1527928117717", id:"suspense"},
-		{src:"sounds/timeout.mp3?1527928117717", id:"timeout"}
+		{src:"images/f5d3q1/Bitmap3.png?1529328266307", id:"Bitmap3"},
+		{src:"images/f5d3q1/Bitmap8.png?1529328266307", id:"Bitmap8"},
+		{src:"images/f5d3q1/Bitmap9.png?1529328266307", id:"Bitmap9"},
+		{src:"images/f5d3q1/Blend_14.png?1529328266307", id:"Blend_14"},
+		{src:"sounds/mdroid_talk.mp3?1529328266307", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1529328266307", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1529328266307", id:"questionComplete"},
+		{src:"sounds/stdClick.mp3?1529328266307", id:"stdClick"},
+		{src:"sounds/stdClick_1.mp3?1529328266307", id:"stdClick_1"},
+		{src:"sounds/submitAns.mp3?1529328266307", id:"submitAns"},
+		{src:"sounds/suspense.mp3?1529328266307", id:"suspense"},
+		{src:"sounds/timeout.mp3?1529328266307", id:"timeout"}
 	],
 	preloads: []
 };

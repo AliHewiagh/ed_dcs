@@ -24,7 +24,7 @@
             <li><a href="{{url('/teacher/progress')}}"><i class="fa fa-cubes"></i> <span>Progress</span></a></li>
             <li><a href="{{url('/teacher/classes')}}"><i class="fa fa-users"></i> <span>Student Management</span></a></li>
             <li><a href="{{url('/teacher/setting')}}"><i class="fa fa-gear"></i> <span>Setting</span></a></li>
-            <li><a href="#"><i class="fa fa-question-circle"></i> <span>Help</span></a></li>
+            <li><a href="{{url('/teacher/help')}}"><i class="fa fa-question-circle"></i> <span>Help</span></a></li>
 
             {{--<li><a href="{{url('/admin/product/merchants')}}"><i class="fa fa-cutlery"></i> <span>Product Item</span></a></li>--}}
             {{--<li><a href="#"><i class="fa fa-percent"></i> <span>Deals</span></a></li>--}}

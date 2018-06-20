@@ -30,12 +30,18 @@ class StudentExcelController extends Controller
         $i = 0;
         foreach ($cus as $cu){
             if(array_key_exists('Name', $cu) && array_key_exists('Ic Number', $cu) && strlen($cu["Ic Number"]) > 8){
-                $data["ic_number"] = $cu["Ic Number"];
+                $data["ic_number"] = str_replace(" ", "", $cu["Ic Number"]);
                 $data["name"] = $cu["Name"];
                 $old = User::where("username", $data["ic_number"])->first();
                 if(empty($old)){
                     $data["username"] = $data["ic_number"];
                     $data["password"] = substr($data["ic_number"], -4, 4);
+                    $gender = substr($data["ic_number"], -1, 1);
+                    if ($gender % 2 == 0) {
+                        $data["gender"] = "Female";
+                    }else{
+                        $data["gender"] = "Male";
+                    }
                     $user = User::create($data);
                     $role = Role::where("id", 4)->first();
                     $user->attachRole($role);

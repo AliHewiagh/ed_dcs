@@ -22,6 +22,15 @@
                                 <span>Detailed Progress</span>
                             </div>
                             @include('partial.alert')
+                            <div style="margin-top: 10px">
+                                <button class="btn btn-warning" data-domain="8">Overall</button>
+                                <button class="btn" data-domain="1">Technology</button>
+                                <button class="btn" data-domain="2">Cognitive</button>
+                                <button class="btn" data-domain="3">Digital Citizenship</button>
+                            </div>
+                            <div>
+                                <h3>Average Score: <span id="averageScoreClass">{{$overAllScore}}</span></h3>
+                            </div>
                         </div>
                         <div class="box-body">
                             <div class="table-responsive">
@@ -40,7 +49,7 @@
                                     </thead>
                                     <tbody>
                                     @foreach($records as $record)
-                                        <tr>
+                                        <tr class="record-det-a8" data-domain="{{$record->qDomain}}" data-all="{{$overAllScore}}" data-tech="{{$TScore}}" data-cog="{{$CScore}}" data-dig="{{$DScore}}">
                                             <td>{{$record->stage}}</td>
                                             <td>{{$record->qId}}</td>
                                             <td>@if(!empty($record->domain())){{$record->domain()->description}} @endif</td>
@@ -74,6 +83,36 @@
             });
         });
         $(document).ready(function () {
+            var av = $("#averageScoreClass");
+            $(".btn").on("click", function () {
+                $(".btn").each(function () {
+                    $(this).removeClass(" btn-warning");
+                });
+                $(this).addClass(" btn-warning");
+                var domain = $(this).data("domain");
+                if(domain == 8){
+                    $(".record-det-a8").each(function () {
+                        $(this).css("display", "table-row")
+                    });
+                }else{
+                    $(".record-det-a8").each(function () {
+                        if($(this).data("domain") == domain){
+                            $(this).css("display", "table-row")
+                        }else{
+                            $(this).css("display", "none")
+                        }
+                    });
+                }
+                if(domain == 8){
+                    av.html($(".record-det-a8").data('all'));
+                }else if(domain == 3){
+                    av.html($(".record-det-a8").data('dig'));
+                }else if(domain == 2){
+                    av.html($(".record-det-a8").data('cog'));
+                }else{
+                    av.html($(".record-det-a8").data('tech'));
+                }
+            });
         });
     </script>
 @endsection

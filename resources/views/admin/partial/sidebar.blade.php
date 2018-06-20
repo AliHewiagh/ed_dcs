@@ -39,7 +39,7 @@
                 </ul>
             </li>
             <li><a href="{{url('/admin/setting')}}"><i class="fa fa-gear"></i> <span>Setting</span></a></li>
-            <li><a href="{{url('/admin/school')}}"><i class="fa fa-question-circle"></i> <span>Help</span></a></li>
+            <li><a href="{{url('/admin/help')}}"><i class="fa fa-question-circle"></i> <span>Help</span></a></li>
             {{--<li><a href="#"><i class="fa fa-users"></i> <span>Customer</span></a></li>--}}
 
             {{--<li><a href="{{url('/admin/menu/merchants')}}"><i class="fa fa-cubes"></i> <span>Categories</span></a></li>--}}

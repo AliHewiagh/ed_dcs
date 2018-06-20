@@ -43,17 +43,17 @@
                                     $cognitive = \App\StudentRecord::where([['user_id', $student->id], ['qDomain', 2]])->get();
                                     $ethics = \App\StudentRecord::where([['user_id', $student->id], ['qDomain', 3]])->get();
                                     if(count($techs) > 0){
-                                        $techScore = $techs->sum('score') / count($techs);
+                                        $techScore = round($techs->sum('score') / count($techs), 1);
                                     }else{
                                         $techScore = 0;
                                     }
                                     if(count($cognitive) > 0){
-                                        $cognitiveScore = $cognitive->sum('score') / count($cognitive);
+                                        $cognitiveScore = round($cognitive->sum('score') / count($cognitive), 1);
                                     }else{
                                         $cognitiveScore = 0;
                                     }
                                     if(count($ethics) > 0){
-                                        $ethicsScore = $ethics->sum('score') / count($ethics);
+                                        $ethicsScore = round($ethics->sum('score') / count($ethics), 1);
                                     }else{
                                         $ethicsScore = 0;
                                     }
@@ -66,7 +66,7 @@
                                         <td>{{$techScore}}</td>
                                         <td>{{$ethicsScore}}</td>
                                         <td>{{$cognitiveScore}}</td>
-                                        <td>{{($techScore+$ethicsScore+$cognitiveScore)/3}}</td>
+                                        <td>{{round(($techScore+$ethicsScore+$cognitiveScore)/3, 1)}}</td>
                                     </tr>
                                     </tbody>
                                 </table>

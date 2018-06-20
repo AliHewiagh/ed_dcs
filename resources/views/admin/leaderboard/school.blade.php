@@ -26,9 +26,10 @@
                                     </thead>
                                     <tbody>
                                     @foreach ($schools as $school)
+                                        <?php $state = \App\State::find($school->state_id); ?>
                                         <tr>
                                             <td>@if(!empty($school->school_code)){{$school->school_code}} @else ?? @endif</td>
-                                            <td>{{$school->name}}</td>
+                                            <td><a href="{{url('/admin/progress/'.$state->name.'/'.$school->id)}}">{{$school->name}}</a></td>
                                             <td>@if(!empty($school->type)) @if($school->type==1)Primary School @else Secondary School @endif @else ?? @endif</td>
                                             <td>@if(!empty($school->location)){{$school->location->state}} @else ?? @endif</td>
                                             <td>{{$school->pkg}}</td>

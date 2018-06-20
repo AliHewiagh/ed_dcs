@@ -1,7 +1,7 @@
 @extends('partial.layout')
 @section('content')
-    @include('teacher.partial.header')
-    @include('teacher.partial.sidebar')
+    @include('manager.partial.header')
+    @include('manager.partial.sidebar')
     <div class="content-wrapper">
         <section class="content-header">
             <h1>Detailed Progress <small>{{$student->name}}</small></h1>
@@ -12,9 +12,10 @@
                     <div class="box">
                         <div class="box-header">
                             <div class="bread-crumbs">
-                                <a href="{{url('/teacher/progress')}}">Class Progress</a> /
-                                <a href="{{url('/teacher/progress/'.$classId)}}">Students Progress</a> /
-                                <a href="{{url('/teacher/progress/'.$classId.'/'.$student->id)}}">Individual Progress</a> /
+                                <a href="{{url('/manager/progress/')}}">School Progress</a> /
+                                <a href="{{url('/manager/progress/'.$teacherId)}}">Class Progress</a> /
+                                <a href="{{url('/manager/progress/'.$teacherId.'/'.$classId)}}">Students Progress</a> /
+                                <a href="{{url('/manager/progress/'.$teacherId.'/'.$classId.'/'.$student->id)}}">Individual Progress</a> /
                                 <span>Detailed Progress</span>
                             </div>
                             @include('partial.alert')
@@ -65,7 +66,7 @@
             </div>
         </section>
     </div>
-    @include('teacher.partial.footer')
+    @include('manager.partial.footer')
     @include('partial.scripts')
     <script>
         $(function () {
@@ -88,8 +89,7 @@
                 var domain = $(this).data("domain");
                 if(domain == 8){
                     $(".record-det-a8").each(function () {
-                        $(this).css("display", "table-row");
-
+                        $(this).css("display", "table-row")
                     });
                 }else{
                     $(".record-det-a8").each(function () {

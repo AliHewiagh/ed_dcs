@@ -55,6 +55,14 @@ class DashboardController extends Controller
         Auth::user()->update($data);
         return back()->with('success', 'Profile updated successfully!');
     }
-    
+
+
+    /**
+     * @return resource
+     */
+    public function helpPage()
+    {
+        return view("admin.home.help");
+    }
     
 }

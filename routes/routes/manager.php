@@ -5,6 +5,9 @@
 // Dashboard Page
 Route::get('/dashboard', ['as' => 'manager_dashboard_path', 'uses' => 'Manager\HomeController@index']);
 
+// Help
+Route::get('/help', 'Manager\HomeController@helpPage');
+
 // Update IC
 Route::post('/ic/update', ['as' => 'manager_ic_update', 'uses' => 'Manager\HomeController@icUpdate']);
 Route::get('/info/update', ['as' => 'manager_info_update', 'uses' => 'Manager\HomeController@infoUpdate']);
@@ -14,3 +17,10 @@ Route::get('/profile/edit', ['as' => 'manager_profile_edit', 'uses' => 'Manager\
 
 // Teachers
 Route::resource('/teacher', 'Manager\TeacherController');
+
+// Progress
+Route::get('/progress', 'Manager\ProgressController@schoolProgress');
+Route::get('/progress/{teacherId}', 'Manager\ProgressController@teacherProgress');
+Route::get('/progress/{teacherId}/{classId}', 'Manager\ProgressController@classProgress');
+Route::get('/progress/{teacherId}/{classId}/{studentId}', 'Manager\ProgressController@studentProgress');
+Route::get('/progress/{teacherId}/{classId}/{studentId}/detail', 'Manager\ProgressController@progressDetail');

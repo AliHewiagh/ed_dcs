@@ -1,7 +1,7 @@
 @extends('partial.layout')
 @section('content')
-    @include('teacher.partial.header')
-    @include('teacher.partial.sidebar')
+    @include('manager.partial.header')
+    @include('manager.partial.sidebar')
     <div class="content-wrapper">
         <section class="content-header">
             <h1>Individual Progress</h1>
@@ -12,8 +12,9 @@
                     <div class="box">
                         <div class="box-header">
                             <div class="bread-crumbs">
-                                <a href="{{url('/teacher/progress')}}">Class Progress</a> /
-                                <a href="{{url('/teacher/progress/'.$classId)}}">Students Progress</a> /
+                                <a href="{{url('/manager/progress/')}}">School Progress</a> /
+                                <a href="{{url('/manager/progress/'.$teacherId)}}">Class Progress</a> /
+                                <a href="{{url('/manager/progress/'.$teacherId.'/'.$classId)}}">Students Progress</a> /
                                 <span>Individual Progress</span>
                             </div>
                             @include('partial.alert')
@@ -24,7 +25,6 @@
                                     <thead>
                                     <tr>
                                         <th>Student's Name</th>
-                                        <th>School's Name</th>
                                         <th>Gender</th>
                                         <th>Technology</th>
                                         <th>Ethics</th>
@@ -33,7 +33,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <?php $school = \App\School::find($student->school_id);
+                                    <?php $school = \App\School::find($schoolId);
                                     $techs = \App\StudentRecord::where([['user_id', $student->id], ['qDomain', 1]])->get();
                                     $cognitive = \App\StudentRecord::where([['user_id', $student->id], ['qDomain', 2]])->get();
                                     $ethics = \App\StudentRecord::where([['user_id', $student->id], ['qDomain', 3]])->get();
@@ -51,10 +51,10 @@
                                         $ethicsScore = round($ethics->sum('score') / count($ethics), 1);
                                     }else{
                                         $ethicsScore = 0;
-                                    }?>
+                                    }
+                                    ?>
                                     <tr>
-                                        <td><a href="{{url('/teacher/progress/'.$classId.'/'.$student->id.'/detail')}}">{{$student->name}}</a></td>
-                                        <td>{{$school->name}}</td>
+                                        <td><a href="{{url('/manager/progress/'.$teacherId.'/'.$classId.'/'.$student->id.'/detail')}}">{{$student->name}}</a></td>
                                         <td>{{$student->gender}}</td>
                                         <td>{{$techScore}}</td>
                                         <td>{{$ethicsScore}}</td>
@@ -70,7 +70,7 @@
             </div>
         </section>
     </div>
-    @include('teacher.partial.footer')
+    @include('manager.partial.footer')
     @include('partial.scripts')
     <script>
         $(function () {

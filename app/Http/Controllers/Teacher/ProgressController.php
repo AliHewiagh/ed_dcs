@@ -54,6 +54,28 @@ class ProgressController extends Controller
     {
         $student = User::find($studentId);
         $records = StudentRecord::where('user_id', $studentId)->get();
-        return view("teacher.progress.detail", compact("student", "classId", "records"));
+        if(count($records) > 0){
+        $overAllScore = $records->sum('score')/count($records);
+        $overAllScore = round($overAllScore, 1);
+        }else{$overAllScore=0;}
+
+        $recordsT = StudentRecord::where([['user_id', $studentId], ['qDomain', 1]])->get();
+        if(count($recordsT) > 0){
+        $TScore = $recordsT->sum('score')/count($recordsT);
+        $TScore = round($TScore, 1);
+        }else{$TScore=0;}
+
+        $recordsC = StudentRecord::where([['user_id', $studentId], ['qDomain', 2]])->get();
+        if(count($recordsC)>0){
+        $CScore = $recordsC->sum('score')/count($recordsC);
+        $CScore = round($CScore, 1);
+        }else{$CScore=0;}
+
+        $recordsD = StudentRecord::where([['user_id', $studentId], ['qDomain', 3]])->get();
+        if(count($recordsD)>0){
+            $DScore = $recordsD->sum('score')/count($recordsD);
+            $DScore = round($DScore, 1);
+        }else{$DScore=0;}
+        return view("teacher.progress.detail", compact("student", "classId", "records", 'overAllScore', 'TScore', 'CScore', 'DScore'));
     }
 }
