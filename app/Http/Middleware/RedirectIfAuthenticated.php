@@ -19,7 +19,7 @@ class RedirectIfAuthenticated
     {
         if (Auth::guard($guard)->check()) {
             if(Auth::user()->hasRole("student")){
-                return redirect('/student/dashboard');
+                return redirect('/game/dashboard');
             }elseif(Auth::user()->hasRole("teacher")){
                 return redirect('/teacher/dashboard');
             }elseif(Auth::user()->hasRole("manager")){

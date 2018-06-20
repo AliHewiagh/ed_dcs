@@ -155,7 +155,7 @@ if (schoolLevel==1){//primary
 	scrList[56] = {constructorName: "f5d2q5", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[60] = {constructorName: "f5d1q6", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[64] = {constructorName: "y6d3q1", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
-	scrList[68] = {constructorName: "f3d1q8", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[68] = {constructorName: "f5d1q7", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[72] = {constructorName: "f5d2q6", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[76] = {constructorName: "f5d2q7", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[80] = {constructorName: "f5d2q8", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
@@ -176,10 +176,7 @@ var cLastState;
 var cTimeLeft;
 var didOnce = false;
 checkCookie();
-/*
-function setLevel(){
-	exportRoot.mcLevel.gotoAndStop(cStage);
-}*/
+
 function loadScript(url, callback){
     var script = document.createElement("script")
     script.type = "text/javascript";
@@ -230,8 +227,7 @@ function initTapir(){
 			// nothing
 		} else {
 			cUserName = htmlDecode(cUserName);
-			cUserName = truncate(cUserName, 30);
-			exportRoot.txtPlayerName.text = cUserName;
+			exportRoot.txtPlayerName.text = truncate(cUserName, 30);
 			//get the current stage
 			var cData = $.get("/api/stage/get/"+cUserId, function (data) {
 			if(data.status == 100){

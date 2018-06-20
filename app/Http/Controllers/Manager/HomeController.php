@@ -117,5 +117,13 @@ class HomeController extends Controller
         $school = School::where('user_id', $authId)->first();
         return view("manager.home.profileEdit", compact("priTypes", "secTypes", "pps", "pkgs", "states", "school"));
     }
-    
+
+
+    /**
+     * @return resource
+     */
+    public function helpPage()
+    {
+        return view("manager.home.help");
+    }
 }

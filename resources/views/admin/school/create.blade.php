@@ -25,8 +25,8 @@
                         <label for="sourceInput">Source</label>
                         <select class="form-control" id="sourceInput" name="source">
                             <option value="">Please select source</option>
-                            <option value="IKIM">IKIM</option>
-                            <option value="SPSS">SPSS</option>
+                            <option value="IKM">IKM</option>
+                            <option value="SSQS">SSQS</option>
                             <option value="Others">Others</option>
                         </select>
                     </div>

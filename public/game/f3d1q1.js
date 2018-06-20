@@ -2,9 +2,70 @@
 
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
+lib.webFontTxtInst = {}; 
+var loadedTypekitCount = 0;
+var loadedGoogleCount = 0;
+var gFontsUpdateCacheList = [];
+var tFontsUpdateCacheList = [];
 lib.ssMetadata = [];
 
 
+
+lib.updateListCache = function (cacheList) {		
+	for(var i = 0; i < cacheList.length; i++) {		
+		if(cacheList[i].cacheCanvas)		
+			cacheList[i].updateCache();		
+	}		
+};		
+
+lib.addElementsToCache = function (textInst, cacheList) {		
+	var cur = textInst;		
+	while(cur != null && cur != exportRoot) {		
+		if(cacheList.indexOf(cur) != -1)		
+			break;		
+		cur = cur.parent;		
+	}		
+	if(cur != exportRoot) {		
+		var cur2 = textInst;		
+		var index = cacheList.indexOf(cur);		
+		while(cur2 != null && cur2 != cur) {		
+			cacheList.splice(index, 0, cur2);		
+			cur2 = cur2.parent;		
+			index++;		
+		}		
+	}		
+	else {		
+		cur = textInst;		
+		while(cur != null && cur != exportRoot) {		
+			cacheList.push(cur);		
+			cur = cur.parent;		
+		}		
+	}		
+};		
+
+lib.gfontAvailable = function(family, totalGoogleCount) {		
+	lib.properties.webfonts[family] = true;		
+	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
+	for(var f = 0; f < txtInst.length; ++f)		
+		lib.addElementsToCache(txtInst[f], gFontsUpdateCacheList);		
+
+	loadedGoogleCount++;		
+	if(loadedGoogleCount == totalGoogleCount) {		
+		lib.updateListCache(gFontsUpdateCacheList);		
+	}		
+};		
+
+lib.tfontAvailable = function(family, totalTypekitCount) {		
+	lib.properties.webfonts[family] = true;		
+	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
+	for(var f = 0; f < txtInst.length; ++f)		
+		lib.addElementsToCache(txtInst[f], tFontsUpdateCacheList);		
+
+	loadedTypekitCount++;		
+	if(loadedTypekitCount == totalTypekitCount) {		
+		lib.updateListCache(tFontsUpdateCacheList);		
+	}		
+};
 // symbols:
 
 
@@ -1020,7 +1081,7 @@ p.nominalBounds = new cjs.Rectangle(-2.5,-13.5,5,8);
 	this.shape_3.graphics.f("rgba(255,153,0,0.8)").s().p("AjPDxQgJgJABgLIAAgRQAAgMAIgIIACgBQAIgGALgBIAEAAQAEg8AZgvIAAAAQAXgqAegbQgegagXgqIAAAAQgZgvgEg8IgEAAQgMAAgJgIQgIgIAAgMIAAgQQAAgMAIgIQAJgJAMAAIF2AAQANAAAIAKIgBgBQAIAIAAAMIAAAQQAAAMgIAIIABgCQgIAKgNAAIgFAAQgEA8gZAvQgWAqgfAaQAfAbAWAqQAZAvAEA8IAFAAQANAAAHAIQAIAIAAAMIAAARQABALgJAJIABgCQgIAJgNABIl2AAIgBAAQgLAAgJgIgAgBATIgEAGQgGAGgIADIAAAAQgLAFgJAGIBQAAQgKgGgLgFIAAAAQgIgDgGgGIgDgGIgDgDIgBADgAgzg2IAAABQAPANAQAGIAAABIABAAIAHADIAAAAIAAAAQAHAEAEAIIABAEIADgFQAEgHAGgEIABAAIAGgDIABAAIAAgBQAQgGAPgNIAAgBQAQgNANgVIAAAAQAOgUAIgcQAFgTACgUIjbAAQACAUAGATQAIAcANAUIAAAAQANAVAQANg");
 
 	this.shape_4 = new cjs.Shape();
-	this.shape_4.graphics.f("rgba(255,153,0,0.6)").s().p("AjdD/QgPgQABgSIAAgRQAAgUAOgOIADgDQAIgGAKgDQAGg2AYgsQASgjAYgZQgYgYgSgiQgYgtgGg1QgMgEgJgJQgOgOAAgUIAAgQQAAgUAOgPQAPgOAUAAIF2AAQAYAAANASQALANAAASIAAAQQAAASgLANQgKALgNAEQgHA2gXAtIAAgBQgSAjgYAYQAYAZASAjIAAAAQAXArAHA3QAMADAIAJQAOAOAAAUIAAARQABAQgMAOQgOARgXABIl2AAIgBAAQgUAAgOgOgAjNC3IgCABQgIAIAAAMIAAARQgBALAJAIQAJAJAMAAIF2AAQANgBAIgJIgBABQAJgIgBgLIAAgRQAAgMgIgIQgHgIgNAAIgFAAQgEg8gZgvQgWgqgfgbQAfgaAWgqQAZgvAEg8IAFAAQANAAAIgKIgBACQAIgIAAgMIAAgQQAAgMgIgIIABABQgIgKgNAAIl2AAQgMAAgJAJQgIAIAAAMIAAAQQAAAMAIAIQAJAIAMAAIAEAAQAEA8AZAvIAAAAQAXAqAeAaQgeAbgXAqIAAAAQgZAvgEA8IgEAAQgLABgIAGgAgoAtQAKgGALgFIAAAAQAIgDAGgGIALAAQAGAGAIADIAAAAQALAFAKAGgAgMgeIADgEIgDAEIAAAAgAALgiIACAEQgFgJgIgGQgHAGgGAJIgGgDIgBAAIAAgBQgQgGgPgNIAAgBQgQgNgNgVIAAAAQgNgUgIgcQgGgTgCgUIDbAAQgCAUgFATQgIAcgOAUIAAAAQgNAVgQANIAAABQgPANgQAGIAAABIgBAAIgHADIAAAAgAhSiOQAHAZALASQAMASAOANIABAAQAJAIAJAFIAGADQAIACAFAFQAGgEAHgDIABAAIABAAIAAgBIAFgCQAKgFAJgIIABAAQANgMALgSIABgBQALgSAIgZIADgNIisAAIADANg");
+	this.shape_4.graphics.f("rgba(255,153,0,0.6)").s().p("AjdD/QgPgQABgSIAAgRQAAgUAOgOIADgDQAIgGAKgDQAGg2AYgsQASgjAYgZQgYgYgSgiQgYgtgGg1QgMgEgJgJQgOgOAAgUIAAgQQAAgUAOgPQAPgOAUAAIF2AAQAYAAANASQALANAAASIAAAQQAAASgLANQgKALgNAEQgHA2gXAtIAAgBQgSAjgYAYQAYAZASAjIAAAAQAXArAHA3QAMADAIAJQAOAOAAAUIAAARQABAQgMAOQgOARgXABIl2AAIgBAAQgUAAgOgOgAjNC3IgCABQgIAIAAAMIAAARQgBALAJAIQAJAJAMAAIF2AAQANgBAIgJIgBABQAJgIgBgLIAAgRQAAgMgIgIQgHgIgNAAIgFAAQgEg8gZgvQgWgqgfgbQAfgaAWgqQAZgvAEg8IAFAAQANAAAIgKIgBACQAIgIAAgMIAAgQQAAgMgIgIIABABQgIgKgNAAIl2AAQgMAAgJAJQgIAIAAAMIAAAQQAAAMAIAIQAJAIAMAAIAEAAQAEA8AZAvIAAAAQAXAqAeAaQgeAbgXAqIAAAAQgZAvgEA8IgEAAQgLABgIAGgAgoAtQAKgGALgFIAAAAQAIgDAGgGIALAAQAGAGAIADIAAAAQALAFAKAGgAgMgeIADgEIgDAEIAAAAgAALgiIACAEIAAAAgAAAgtQAGgEAHgDIABAAIABAAIAAgBIAFgCQAKgFAJgIIABAAQANgMALgSIABgBQALgSAIgZIADgNIisAAIADANQAHAZALASQAMASAOANIABAAQAJAIAJAFIAGADQAIACAFAFQgHAGgGAJIgGgDIgBAAIAAgBQgQgGgPgNIAAgBQgQgNgNgVIAAAAQgNgUgIgcQgGgTgCgUIDbAAQgCAUgFATQgIAcgOAUIAAAAQgNAVgQANIAAABQgPANgQAGIAAABIgBAAIgHADQgFgJgIgGg");
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_4},{t:this.shape_3},{t:this.shape_2},{t:this.shape_1}]}).wait(1));
 
@@ -1504,6 +1565,51 @@ p.nominalBounds = new cjs.Rectangle(-48.5,-48.5,97,97);
 p.nominalBounds = new cjs.Rectangle(-136.7,302.4,274,237.4);
 
 
+(lib.mcTimesUp = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// timeline functions:
+	this.frame_0 = function() {
+		this.stop();
+	}
+	this.frame_1 = function() {
+		function onClick(){
+			return;
+		}
+		this.addEventListener("click", onClick);
+		playSound("timeout");
+	}
+	this.frame_150 = function() {
+		this.stop();
+		nextScreen();
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(149).call(this.frame_150).wait(1));
+
+	// anim
+	this.instance = new lib.timesUpAnim("synched",0,false);
+	this.instance.parent = this;
+	this.instance.setTransform(400,300);
+	this.instance._off = true;
+
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1).to({_off:false},0).wait(150));
+
+	// black
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("rgba(255,0,0,0.996)").s().p("AhyCMQAAAAgBAAQAAAAgBAAQAAgBgBAAQAAAAgBgBQAAAAAAAAQAAgBgBAAQAAgBAAAAQAAgBAAAAIAAgKQAAgBAAAAQAAAAAAgBQABAAAAgBQAAAAAAgBQABAAAAAAQABAAAAgBQABAAAAAAQABAAAAAAIAPAAQAAgpAQgfQARggAagQQgagQgRgfQgQgfAAgpIgPAAQAAAAgBAAQAAAAgBAAQAAgBgBAAQAAAAgBgBQAAAAAAAAQAAgBgBAAQAAgBAAAAQAAAAAAgBIAAgKQAAgBAAAAQAAAAAAgBQABAAAAgBQAAAAAAAAQABgBAAAAQABAAAAgBQABAAAAAAQABAAAAAAIDlAAQABAAAAAAQAAAAABAAQAAABABAAQAAAAAAABQABAAAAAAQAAABABAAQAAABAAAAQAAAAAAABIAAAKQAAABAAAAQAAAAAAABQgBAAAAABQAAAAgBAAQAAABAAAAQgBAAAAABQgBAAAAAAQAAAAgBAAIgPAAQAAApgQAfQgRAfgZAQQAZAQARAgQAQAfAAApIAPAAQABAAAAAAQAAAAABAAQAAABABAAQAAAAAAAAQABABAAAAQAAABABAAQAAABAAAAQAAAAAAABIAAAKQAAAAAAABQAAAAAAABQgBAAAAABQAAAAgBAAQAAABAAAAQgBAAAAABQgBAAAAAAQAAAAgBAAgAhKhQQAGATAJAPQAJAOALAJQAMAKALAFQAEAAABADQACADAAACQAAADgCADQgBADgEAAQgVAJgRAWIBsAAQgQgWgWgJQgDAAgBgDQgCgDAAgDQAAgCACgDQABgDADAAQAMgFAMgKQALgJAJgOQAJgPAGgTQAFgSAAgVIifAAQAAAVAFASg");
+	this.shape.setTransform(-73.5,92.7);
+
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f("rgba(0,0,0,0.698)").s().p("EhBvAyxMAAAhlhMCDgAAAMAAABlhg");
+	this.shape_1.setTransform(402.9,308.9);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape}]}).to({state:[{t:this.shape_1}]},1).wait(150));
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
+
+
 (lib.mcBtnCont = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
@@ -1615,7 +1721,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 	// timeline functions:
 	this.frame_4 = function() {
 		this.stop();
-		var cAns = ["Hiroshima Peace Memorial", "Atomic Bomb Dome", "Peace Memorial"];
+		var cAns = ["Battersea Bridge", "Jambatan Battersea", "River Thames", "Sungai Thames"];
 		var _this = this;
 		this.btnSubmit.mouseEnabled = false;
 		this.btnSubmit.alpha = .5;
@@ -1637,7 +1743,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 		txtPos.style.color = "purple";
 		txtPos.style.textAlign = "center"; 
 		txtPos.readOnly = true;
-		txtPos.value = "34.3955° N, 132.4536° E";
+		txtPos.value = "51.4812° N, 0.1725° W";
 		
 		window.addEventListener("resize", function (){
 			setTimeout(function(){
@@ -1690,7 +1796,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 	// input
 	this.txtPos = new lib.an_TextInput({'id': 'txtPos', 'value':'', 'disabled':false, 'visible':true, 'class':'ui-textinput'});
 
-	this.txtPos.setTransform(623.3,308.3,2.671,1.591,0,0,0,50.2,11.3);
+	this.txtPos.setTransform(388.3,261.3,2.671,1.591,0,0,0,50.2,11.3);
 
 	this.txtAns = new lib.an_TextInput({'id': 'txtAns', 'value':'', 'disabled':false, 'visible':true, 'class':'ui-textinput'});
 
@@ -1699,7 +1805,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.txtAns},{t:this.txtPos}]}).wait(5));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(247.6,289.5,510.1,262);
+p.nominalBounds = new cjs.Rectangle(247.6,242.5,282.8,309);
 
 
 (lib.actMc14 = function(mode,startPosition,loop) {
@@ -1708,7 +1814,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,289.5,510.1,262);
 	// timeline functions:
 	this.frame_4 = function() {
 		this.stop();
-		var cAns = ["Imperial Palace", "Tokyo Imperial Palace", "Istana Chiyoda", "Chiyoda"];
+		var cAns = ["Vauxhall Bridge", "Jambatan Vauxhall", "River Thames", "Sungai Thames"];
 		var _this = this;
 		this.btnSubmit.mouseEnabled = false;
 		this.btnSubmit.alpha = .5;
@@ -1730,7 +1836,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,289.5,510.1,262);
 		txtPos.style.color = "purple";
 		txtPos.style.textAlign = "center"; 
 		txtPos.readOnly = true;
-		txtPos.value = "35.6852° N, 139.7528° E";
+		txtPos.value = "51.4876° N, 0.1271° W";
 		
 		window.addEventListener("resize", function (){
 			setTimeout(function(){
@@ -1783,7 +1889,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,289.5,510.1,262);
 	// input
 	this.txtPos = new lib.an_TextInput({'id': 'txtPos', 'value':'', 'disabled':false, 'visible':true, 'class':'ui-textinput'});
 
-	this.txtPos.setTransform(627.5,301.1,2.671,1.591,0,0,0,50.2,11.3);
+	this.txtPos.setTransform(389.5,265.1,2.671,1.591,0,0,0,50.2,11.3);
 
 	this.txtAns = new lib.an_TextInput({'id': 'txtAns', 'value':'', 'disabled':false, 'visible':true, 'class':'ui-textinput'});
 
@@ -1792,7 +1898,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,289.5,510.1,262);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.txtAns},{t:this.txtPos}]}).wait(5));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(247.6,282.3,514.2,269.3);
+p.nominalBounds = new cjs.Rectangle(247.6,246.3,282.8,305.3);
 
 
 (lib.actMc13 = function(mode,startPosition,loop) {
@@ -1801,7 +1907,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,282.3,514.2,269.3);
 	// timeline functions:
 	this.frame_4 = function() {
 		this.stop();
-		var cAns = ["Himeji Castle", "Istana Himeji"];
+		var cAns = ["Lambeth Bridge", "Jambatan Lambeth", "River Thames", "Sungai Thames"];
 		var _this = this;
 		this.btnSubmit.mouseEnabled = false;
 		this.btnSubmit.alpha = .5;
@@ -1823,7 +1929,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,282.3,514.2,269.3);
 		txtPos.style.color = "purple";
 		txtPos.style.textAlign = "center"; 
 		txtPos.readOnly = true;
-		txtPos.value = "34.8394° N, 134.6939° E";
+		txtPos.value = "51.4946° N, 0.1234° W";
 		
 		window.addEventListener("resize", function (){
 			setTimeout(function(){
@@ -1876,7 +1982,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,282.3,514.2,269.3);
 	// input
 	this.txtPos = new lib.an_TextInput({'id': 'txtPos', 'value':'', 'disabled':false, 'visible':true, 'class':'ui-textinput'});
 
-	this.txtPos.setTransform(625.7,305.4,2.671,1.591,0,0,0,50.2,11.3);
+	this.txtPos.setTransform(388,262.4,2.671,1.591,0,0,0,50.2,11.3);
 
 	this.txtAns = new lib.an_TextInput({'id': 'txtAns', 'value':'', 'disabled':false, 'visible':true, 'class':'ui-textinput'});
 
@@ -1885,7 +1991,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,282.3,514.2,269.3);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.txtAns},{t:this.txtPos}]}).wait(5));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(247.6,286.6,512.4,264.9);
+p.nominalBounds = new cjs.Rectangle(247.6,243.6,282.8,307.9);
 
 
 (lib.actMc12 = function(mode,startPosition,loop) {
@@ -1894,7 +2000,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,286.6,512.4,264.9);
 	// timeline functions:
 	this.frame_4 = function() {
 		this.stop();
-		var cAns = ["Tokyo Tower", "Menara Tokyo"];
+		var cAns = ["Southwark Bridge", "Jambatan Southwark", "River Thames", "Sungai Thames"];
 		var _this = this;
 		this.btnSubmit.mouseEnabled = false;
 		this.btnSubmit.alpha = .5;
@@ -1916,7 +2022,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,286.6,512.4,264.9);
 		txtPos.style.color = "purple";
 		txtPos.style.textAlign = "center"; 
 		txtPos.readOnly = true;
-		txtPos.value = "35.6586° N, 139.7454° E";
+		txtPos.value = "51.5089° N, 0.0940° W";
 		
 		window.addEventListener("resize", function (){
 			setTimeout(function(){
@@ -1969,7 +2075,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,286.6,512.4,264.9);
 	// input
 	this.txtPos = new lib.an_TextInput({'id': 'txtPos', 'value':'', 'disabled':false, 'visible':true, 'class':'ui-textinput'});
 
-	this.txtPos.setTransform(625,303.7,2.671,1.591,0,0,0,50.2,11.3);
+	this.txtPos.setTransform(389,263.7,2.671,1.591,0,0,0,50.2,11.3);
 
 	this.txtAns = new lib.an_TextInput({'id': 'txtAns', 'value':'', 'disabled':false, 'visible':true, 'class':'ui-textinput'});
 
@@ -1978,7 +2084,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,286.6,512.4,264.9);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.txtAns},{t:this.txtPos}]}).wait(5));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(247.6,284.9,511.7,266.7);
+p.nominalBounds = new cjs.Rectangle(247.6,244.9,282.8,306.7);
 
 
 (lib.actMc11 = function(mode,startPosition,loop) {
@@ -1987,7 +2093,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,284.9,511.7,266.7);
 	// timeline functions:
 	this.frame_4 = function() {
 		this.stop();
-		var cAns = ["Mount Fuji", "Mt Fuji", "Mt. Fuji", "Gunung Fuji"];
+		var cAns = ["Williamsburg Bridge", "Jambatan Williamsburg", "East River"];
 		var _this = this;
 		this.btnSubmit.mouseEnabled = false;
 		this.btnSubmit.alpha = .5;
@@ -2009,7 +2115,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,284.9,511.7,266.7);
 		txtPos.style.color = "purple";
 		txtPos.style.textAlign = "center"; 
 		txtPos.readOnly = true;
-		txtPos.value = "35.3606° N, 138.7278° E";
+		txtPos.value = "40.7137° N, 73.9720° W";
 		
 		window.addEventListener("resize", function (){
 			setTimeout(function(){
@@ -2062,7 +2168,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,284.9,511.7,266.7);
 	// input
 	this.txtPos = new lib.an_TextInput({'id': 'txtPos', 'value':'', 'disabled':false, 'visible':true, 'class':'ui-textinput'});
 
-	this.txtPos.setTransform(625,303.7,2.671,1.591,0,0,0,50.2,11.3);
+	this.txtPos.setTransform(263,280.7,2.671,1.591,0,0,0,50.2,11.3);
 
 	this.txtAns = new lib.an_TextInput({'id': 'txtAns', 'value':'', 'disabled':false, 'visible':true, 'class':'ui-textinput'});
 
@@ -2071,7 +2177,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,284.9,511.7,266.7);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.txtAns},{t:this.txtPos}]}).wait(5));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(247.6,284.9,511.7,266.7);
+p.nominalBounds = new cjs.Rectangle(127.5,261.9,402.9,289.7);
 
 
 (lib.actMc10 = function(mode,startPosition,loop) {
@@ -2080,7 +2186,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,284.9,511.7,266.7);
 	// timeline functions:
 	this.frame_4 = function() {
 		this.stop();
-		var cAns = ["Eiffel Tower", "Tour Eiffel"];
+		var cAns = ["Manhattan Bridge", "Jambatan Manhattan", "East River"];
 		var _this = this;
 		this.btnSubmit.mouseEnabled = false;
 		this.btnSubmit.alpha = .5;
@@ -2102,7 +2208,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,284.9,511.7,266.7);
 		txtPos.style.color = "purple";
 		txtPos.style.textAlign = "center"; 
 		txtPos.readOnly = true;
-		txtPos.value = "48.8584° N, 2.2945° E";
+		txtPos.value = "40.7075° N, 73.9908° W";
 		
 		window.addEventListener("resize", function (){
 			setTimeout(function(){
@@ -2155,7 +2261,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,284.9,511.7,266.7);
 	// input
 	this.txtPos = new lib.an_TextInput({'id': 'txtPos', 'value':'', 'disabled':false, 'visible':true, 'class':'ui-textinput'});
 
-	this.txtPos.setTransform(393.1,268.6,2.671,1.591,0,0,0,50.2,11.3);
+	this.txtPos.setTransform(261.8,281.3,2.671,1.591,0,0,0,50.2,11.3);
 
 	this.txtAns = new lib.an_TextInput({'id': 'txtAns', 'value':'', 'disabled':false, 'visible':true, 'class':'ui-textinput'});
 
@@ -2164,7 +2270,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,284.9,511.7,266.7);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.txtAns},{t:this.txtPos}]}).wait(5));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(247.6,249.8,282.8,301.8);
+p.nominalBounds = new cjs.Rectangle(126.4,262.5,404,289);
 
 
 (lib.actMc9 = function(mode,startPosition,loop) {
@@ -2248,7 +2354,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,249.8,282.8,301.8);
 	// input
 	this.txtPos = new lib.an_TextInput({'id': 'txtPos', 'value':'', 'disabled':false, 'visible':true, 'class':'ui-textinput'});
 
-	this.txtPos.setTransform(262.2,287.6,2.671,1.591,0,0,0,50.2,11.3);
+	this.txtPos.setTransform(262.2,293.6,2.671,1.591,0,0,0,50.2,11.3);
 
 	this.txtAns = new lib.an_TextInput({'id': 'txtAns', 'value':'', 'disabled':false, 'visible':true, 'class':'ui-textinput'});
 
@@ -2257,7 +2363,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,249.8,282.8,301.8);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.txtAns},{t:this.txtPos}]}).wait(5));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(126.7,268.8,403.7,282.8);
+p.nominalBounds = new cjs.Rectangle(126.7,274.8,403.7,276.8);
 
 
 (lib.actMc8 = function(mode,startPosition,loop) {
@@ -2266,7 +2372,7 @@ p.nominalBounds = new cjs.Rectangle(126.7,268.8,403.7,282.8);
 	// timeline functions:
 	this.frame_4 = function() {
 		this.stop();
-		var cAns = ["University of Oxford", "Oxford University", "Universiti Oxford"];
+		var cAns = ["Brooklyn Bridge", "East River", "Jambatan Brooklyn"];
 		var _this = this;
 		this.btnSubmit.mouseEnabled = false;
 		this.btnSubmit.alpha = .5;
@@ -2288,7 +2394,7 @@ p.nominalBounds = new cjs.Rectangle(126.7,268.8,403.7,282.8);
 		txtPos.style.color = "purple";
 		txtPos.style.textAlign = "center"; 
 		txtPos.readOnly = true;
-		txtPos.value = "51.7548° N, 1.2544° W";
+		txtPos.value = "40.7061° N, 73.9969° W";
 		
 		window.addEventListener("resize", function (){
 			setTimeout(function(){
@@ -2341,7 +2447,7 @@ p.nominalBounds = new cjs.Rectangle(126.7,268.8,403.7,282.8);
 	// input
 	this.txtPos = new lib.an_TextInput({'id': 'txtPos', 'value':'', 'disabled':false, 'visible':true, 'class':'ui-textinput'});
 
-	this.txtPos.setTransform(391.2,257.6,2.671,1.591,0,0,0,50.2,11.3);
+	this.txtPos.setTransform(260.2,281.5,2.671,1.591,0,0,0,50.2,11.3);
 
 	this.txtAns = new lib.an_TextInput({'id': 'txtAns', 'value':'', 'disabled':false, 'visible':true, 'class':'ui-textinput'});
 
@@ -2350,7 +2456,7 @@ p.nominalBounds = new cjs.Rectangle(126.7,268.8,403.7,282.8);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.txtAns},{t:this.txtPos}]}).wait(5));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(247.6,238.8,282.8,312.8);
+p.nominalBounds = new cjs.Rectangle(124.7,262.7,405.7,288.8);
 
 
 (lib.actMc7 = function(mode,startPosition,loop) {
@@ -2359,7 +2465,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,238.8,282.8,312.8);
 	// timeline functions:
 	this.frame_4 = function() {
 		this.stop();
-		var cAns = ["Buckingham Palace"];
+		var cAns = ["Tower Bridge", "Tower Bridge Rd", "Tower Bridge Road", "River Thames", "Sungai Thames"];
 		var _this = this;
 		this.btnSubmit.mouseEnabled = false;
 		this.btnSubmit.alpha = .5;
@@ -2381,7 +2487,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,238.8,282.8,312.8);
 		txtPos.style.color = "purple";
 		txtPos.style.textAlign = "center"; 
 		txtPos.readOnly = true;
-		txtPos.value = "51.5014° N, 0.1419° W";
+		txtPos.value = "51.5055° N, 0.0754° W";
 		
 		window.addEventListener("resize", function (){
 			setTimeout(function(){
@@ -2452,7 +2558,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,244.3,282.8,307.2);
 	// timeline functions:
 	this.frame_4 = function() {
 		this.stop();
-		var cAns = ["London Eye", "The London Eye"];
+		var cAns = ["London Bridge", "River Thames", "Sungai Thames"];
 		var _this = this;
 		this.btnSubmit.mouseEnabled = false;
 		this.btnSubmit.alpha = .5;
@@ -2474,7 +2580,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,244.3,282.8,307.2);
 		txtPos.style.color = "purple";
 		txtPos.style.textAlign = "center"; 
 		txtPos.readOnly = true;
-		txtPos.value = "51.5033° N, 0.1195° W";
+		txtPos.value = "51.5079° N, 0.0877° W";
 		
 		window.addEventListener("resize", function (){
 			setTimeout(function(){
@@ -2545,7 +2651,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,245.2,282.8,306.3);
 	// timeline functions:
 	this.frame_4 = function() {
 		this.stop();
-		var cAns = ["Batu Feringghi"];
+		var cAns = ["Jambatan Pulau Pinang", "Penang Bridge"];
 		var _this = this;
 		this.btnSubmit.mouseEnabled = false;
 		this.btnSubmit.alpha = .5;
@@ -2567,7 +2673,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,245.2,282.8,306.3);
 		txtPos.style.color = "purple";
 		txtPos.style.textAlign = "center"; 
 		txtPos.readOnly = true;
-		txtPos.value = "5.4712° N, 100.2465° E";
+		txtPos.value = "5.3530° N, 100.3530° E";
 		
 		window.addEventListener("resize", function (){
 			setTimeout(function(){
@@ -2638,7 +2744,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,353.2,496.2,198.3);
 	// timeline functions:
 	this.frame_4 = function() {
 		this.stop();
-		var cAns = ["Muzium Negara", "Muzium Negara Malaysia", "National Museum", "National Museum of Malaysia"];
+		var cAns = ["Tasik Kenyir", "Kenyir Lake"];
 		var _this = this;
 		this.btnSubmit.mouseEnabled = false;
 		this.btnSubmit.alpha = .5;
@@ -2660,7 +2766,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,353.2,496.2,198.3);
 		txtPos.style.color = "purple";
 		txtPos.style.textAlign = "center"; 
 		txtPos.readOnly = true;
-		txtPos.value = "3.1380° N, 101.6871° E";
+		txtPos.value = "5.0040° N, 102.6388° E";
 		
 		window.addEventListener("resize", function (){
 			setTimeout(function(){
@@ -2824,7 +2930,8 @@ p.nominalBounds = new cjs.Rectangle(247.6,317.2,427,234.3);
 	// timeline functions:
 	this.frame_4 = function() {
 		this.stop();
-		var cAns = ["Genting Highlands", "Genting", "Tanah Tinggi Genting"];
+		var cAns = ["Genting Highlands", "Genting Highland", "Genting", "Tanah Tinggi Genting", 
+		"Genting Highlands Pahang", "Genting Highland Pahang"];
 		var _this = this;
 		this.btnSubmit.mouseEnabled = false;
 		this.btnSubmit.alpha = .5;
@@ -2917,7 +3024,7 @@ p.nominalBounds = new cjs.Rectangle(247.6,353.2,470.1,198.3);
 	// timeline functions:
 	this.frame_4 = function() {
 		this.stop();
-		var cAns = ["Mount Kinabalu", "Mt Kinabalu", "Mt. Kinabalu", "Gunung Kinabalu", "G. Kinabalu"];
+		var cAns = ["Mount Kinabalu", "Mt Kinabalu", "Mt. Kinabalu", "Gunung Kinabalu", "G. Kinabalu", "Kinabalu Rock Climbing"];
 		var _this = this;
 		this.btnSubmit.mouseEnabled = false;
 		this.btnSubmit.alpha = .5;
@@ -3004,59 +3111,6 @@ p.nominalBounds = new cjs.Rectangle(247.6,353.2,470.1,198.3);
 p.nominalBounds = new cjs.Rectangle(247.6,353.2,496.2,198.3);
 
 
-(lib.mcTimesUp = function(mode,startPosition,loop) {
-	this.initialize(mode,startPosition,loop,{});
-
-	// timeline functions:
-	this.frame_0 = function() {
-		this.stop();
-	}
-	this.frame_1 = function() {
-		playSound("timeout");
-	}
-	this.frame_86 = function() {
-		this.stop();
-		function doNext(e){
-			nextScreen();
-		}
-		this.addEventListener("click", doNext);
-	}
-
-	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(85).call(this.frame_86).wait(1));
-
-	// Layer_5
-	this.mcCont = new lib.cursor();
-	this.mcCont.name = "mcCont";
-	this.mcCont.parent = this;
-	this.mcCont.setTransform(497.4,447.9,0.35,0.35,0,0,0,0.5,0.5);
-	this.mcCont._off = true;
-
-	this.timeline.addTween(cjs.Tween.get(this.mcCont).wait(86).to({_off:false},0).wait(1));
-
-	// anim
-	this.instance = new lib.timesUpAnim("synched",0,false);
-	this.instance.parent = this;
-	this.instance.setTransform(400,300);
-	this.instance._off = true;
-
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1).to({_off:false},0).wait(86));
-
-	// black
-	this.shape = new cjs.Shape();
-	this.shape.graphics.f("rgba(255,0,0,0.996)").s().p("AhyCMQAAAAgBAAQAAAAgBAAQAAgBgBAAQAAAAgBgBQAAAAAAAAQAAgBgBAAQAAgBAAAAQAAgBAAAAIAAgKQAAgBAAAAQAAAAAAgBQABAAAAgBQAAAAAAgBQABAAAAAAQABAAAAgBQABAAAAAAQABAAAAAAIAPAAQAAgpAQgfQARggAagQQgagQgRgfQgQgfAAgpIgPAAQAAAAgBAAQAAAAgBAAQAAgBgBAAQAAAAgBgBQAAAAAAAAQAAgBgBAAQAAgBAAAAQAAAAAAgBIAAgKQAAgBAAAAQAAAAAAgBQABAAAAgBQAAAAAAAAQABgBAAAAQABAAAAgBQABAAAAAAQABAAAAAAIDlAAQABAAAAAAQAAAAABAAQAAABABAAQAAAAAAABQABAAAAAAQAAABABAAQAAABAAAAQAAAAAAABIAAAKQAAABAAAAQAAAAAAABQgBAAAAABQAAAAgBAAQAAABAAAAQgBAAAAABQgBAAAAAAQAAAAgBAAIgPAAQAAApgQAfQgRAfgZAQQAZAQARAgQAQAfAAApIAPAAQABAAAAAAQAAAAABAAQAAABABAAQAAAAAAAAQABABAAAAQAAABABAAQAAABAAAAQAAAAAAABIAAAKQAAAAAAABQAAAAAAABQgBAAAAABQAAAAgBAAQAAABAAAAQgBAAAAABQgBAAAAAAQAAAAgBAAgAhKhQQAGATAJAPQAJAOALAJQAMAKALAFQAEAAABADQACADAAACQAAADgCADQgBADgEAAQgVAJgRAWIBsAAQgQgWgWgJQgDAAgBgDQgCgDAAgDQAAgCACgDQABgDADAAQAMgFAMgKQALgJAJgOQAJgPAGgTQAFgSAAgVIifAAQAAAVAFASg");
-	this.shape.setTransform(-73.5,92.7);
-
-	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f("rgba(0,0,0,0.698)").s().p("EhBvAyxMAAAhlhMCDgAAAMAAABlhg");
-	this.shape_1.setTransform(402.9,308.9);
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape}]}).to({state:[{t:this.shape_1}]},1).wait(86));
-
-}).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
-
-
 // stage content:
 (lib.f3d1q1 = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{q1:104,q2:149,q3:194,q4:240,q5:285,q6:330,q7:375,q8:420,q9:465,q10:510,q11:555,q12:600,q13:646,q14:691,q15:736,finalFb:786});
@@ -3094,45 +3148,45 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 		};
 		this.qItem1 = [{
 				"qId": "f3d1q1_1",
-				"qDomain": 2,
-				"qParam": 4,
-				"qSkill": 34,
+				"qDomain": 1,
+				"qParam": 1,
+				"qSkill": 39,
 				"qResult": 9,
 				"time": 0,
 				"score": 1
 			},
 			{
 				"qId": "f3d1q1_2",
-				"qDomain": 2,
-				"qParam": 4,
-				"qSkill": 34,
+				"qDomain": 1,
+				"qParam": 1,
+				"qSkill": 39,
 				"qResult": 9,
 				"time": 0,
 				"score": 1
 			},
 			{
 				"qId": "f3d1q1_3",
-				"qDomain": 2,
-				"qParam": 4,
-				"qSkill": 34,
+				"qDomain": 1,
+				"qParam": 1,
+				"qSkill": 39,
 				"qResult": 9,
 				"time": 0,
 				"score": 1
 			},
 			{
 				"qId": "f3d1q1_4",
-				"qDomain": 2,
-				"qParam": 4,
-				"qSkill": 34,
+				"qDomain": 1,
+				"qParam": 1,
+				"qSkill": 39,
 				"qResult": 9,
 				"time": 0,
 				"score": 1
 			},
 			{
 				"qId": "f3d1q1_5",
-				"qDomain": 2,
-				"qParam": 4,
-				"qSkill": 34,
+				"qDomain": 1,
+				"qParam": 1,
+				"qSkill": 39,
 				"qResult": 9,
 				"time": 0,
 				"score": 1
@@ -3140,45 +3194,45 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 		];
 		this.qItem2 = [{
 				"qId": "f3d1q1_6",
-				"qDomain": 2,
-				"qParam": 4,
-				"qSkill": 34,
+				"qDomain": 1,
+				"qParam": 1,
+				"qSkill": 39,
 				"qResult": 9,
 				"time": 0,
 				"score": 1
 			},
 			{
 				"qId": "f3d1q1_7",
-				"qDomain": 2,
-				"qParam": 4,
-				"qSkill": 34,
+				"qDomain": 1,
+				"qParam": 1,
+				"qSkill": 39,
 				"qResult": 9,
 				"time": 0,
 				"score": 1
 			},
 			{
 				"qId": "f3d1q1_8",
-				"qDomain": 2,
-				"qParam": 4,
-				"qSkill": 34,
+				"qDomain": 1,
+				"qParam": 1,
+				"qSkill": 39,
 				"qResult": 9,
 				"time": 0,
 				"score": 1
 			},
 			{
 				"qId": "f3d1q1_9",
-				"qDomain": 2,
-				"qParam": 4,
-				"qSkill": 34,
+				"qDomain": 1,
+				"qParam": 1,
+				"qSkill": 39,
 				"qResult": 9,
 				"time": 0,
 				"score": 1
 			},
 			{
 				"qId": "f3d1q1_10",
-				"qDomain": 2,
-				"qParam": 4,
-				"qSkill": 34,
+				"qDomain": 1,
+				"qParam": 1,
+				"qSkill": 39,
 				"qResult": 9,
 				"time": 0,
 				"score": 1
@@ -3186,45 +3240,45 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 		];
 		this.qItem3 = [{
 				"qId": "f3d1q1_11",
-				"qDomain": 2,
-				"qParam": 4,
-				"qSkill": 34,
+				"qDomain": 1,
+				"qParam": 1,
+				"qSkill": 39,
 				"qResult": 9,
 				"time": 0,
 				"score": 1
 			},
 			{
 				"qId": "f3d1q1_12",
-				"qDomain": 2,
-				"qParam": 4,
-				"qSkill": 34,
+				"qDomain": 1,
+				"qParam": 1,
+				"qSkill": 39,
 				"qResult": 9,
 				"time": 0,
 				"score": 1
 			},
 			{
 				"qId": "f3d1q1_13",
-				"qDomain": 2,
-				"qParam": 4,
-				"qSkill": 34,
+				"qDomain": 1,
+				"qParam": 1,
+				"qSkill": 39,
 				"qResult": 9,
 				"time": 0,
 				"score": 1
 			},
 			{
 				"qId": "f3d1q1_14",
-				"qDomain": 2,
-				"qParam": 4,
-				"qSkill": 34,
+				"qDomain": 1,
+				"qParam": 1,
+				"qSkill": 39,
 				"qResult": 9,
 				"time": 0,
 				"score": 1
 			},
 			{
 				"qId": "f3d1q1_15",
-				"qDomain": 2,
-				"qParam": 4,
-				"qSkill": 34,
+				"qDomain": 1,
+				"qParam": 1,
+				"qSkill": 39,
 				"qResult": 9,
 				"time": 0,
 				"score": 1
@@ -3615,7 +3669,7 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 		maskedShapeInstanceList[shapedInstanceItr].mask = mask;
 	}
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_19).wait(109).to({_off:false},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,x:603.3,y:324.7},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.5,regY:0.5,scaleX:0.1,scaleY:0.1,x:584.3,y:322.2},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.5,regY:0.5,scaleX:0.1,scaleY:0.1,x:540.3,y:299.2},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,x:541.3,y:284.2},20,cjs.Ease.elasticOut).to({_off:true},17).wait(9).to({_off:false,regX:0,regY:0,scaleX:0.1,scaleY:0.1,x:584.3,y:343.2},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,y:322.2},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.5,regY:0.5,scaleX:0.1,scaleY:0.1},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.5,regY:0,scaleX:0.1,scaleY:0.1,x:391.5,y:215.1},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,x:391.4,y:215},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.5,regY:0,scaleX:0.1,scaleY:0.1,x:391.5,y:215.1},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,x:389.6,y:214.1},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0,regY:0,scaleX:0.1,scaleY:0.1,x:390.3,y:230.2},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,y:209.2},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.5,regY:0.5,scaleX:0.1,scaleY:0.1,x:263.3,y:235.8},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,x:269.3,y:246.7},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0,regY:0.5,scaleX:0.1,scaleY:0.1,x:393.2,y:222.2},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0,regY:0,scaleX:0.1,scaleY:0.1,x:652,y:252.6},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,x:651.9,y:252.5},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.5,regY:0.5,scaleX:0.1,scaleY:0.1,x:652.2,y:250.2},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75},20,cjs.Ease.elasticOut).to({_off:true},17).wait(9).to({_off:false,regX:0.5,regY:0,scaleX:0.1,scaleY:0.1,x:645.1,y:253},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,x:645,y:252.9},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.5,regY:0.5,scaleX:0.1,scaleY:0.1,x:652.1,y:251.2},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,x:652},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.5,regY:0.5,scaleX:0.1,scaleY:0.1,x:642.4,y:253.8},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,x:642.3},20,cjs.Ease.elasticOut).to({_off:true},25).wait(181));
+	this.timeline.addTween(cjs.Tween.get(this.instance_19).wait(109).to({_off:false},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,x:603.3,y:324.7},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.5,regY:0.5,scaleX:0.1,scaleY:0.1,x:584.3,y:322.2},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.5,regY:0.5,scaleX:0.1,scaleY:0.1,x:540.3,y:299.2},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,x:541.3,y:284.2},20,cjs.Ease.elasticOut).to({_off:true},17).wait(9).to({_off:false,regX:0,regY:0,scaleX:0.1,scaleY:0.1,x:584.3,y:343.2},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,y:322.2},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.5,regY:0.5,scaleX:0.1,scaleY:0.1},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.5,regY:0,scaleX:0.1,scaleY:0.1,x:391.5,y:215.1},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,x:391.4,y:215},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.5,regY:0,scaleX:0.1,scaleY:0.1,x:391.5,y:215.1},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,x:389.6,y:214.1},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0,regY:0,scaleX:0.1,scaleY:0.1,x:260.6,y:257.2},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,x:262.8,y:233.4},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.5,regY:0.5,scaleX:0.1,scaleY:0.1,x:263.3,y:235.8},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,x:269.3,y:246.7},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0,regY:0,scaleX:0.1,scaleY:0.1,x:260.6,y:257.2},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,x:262.8,y:233.4},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0,regY:0,scaleX:0.1,scaleY:0.1,x:260.6,y:257.2},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75,x:262.8,y:233.4},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.4,regY:0.4,scaleX:0.12,scaleY:0.12,x:389.6,y:214.1},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75},20,cjs.Ease.elasticOut).to({_off:true},17).wait(9).to({_off:false,regX:0.4,regY:0.4,scaleX:0.12,scaleY:0.12},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.4,regY:0.4,scaleX:0.12,scaleY:0.12},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75},20,cjs.Ease.elasticOut).to({_off:true},16).wait(9).to({_off:false,regX:0.4,regY:0.4,scaleX:0.12,scaleY:0.12},0).to({regX:0.1,regY:0.1,scaleX:0.75,scaleY:0.75},20,cjs.Ease.elasticOut).to({_off:true},25).wait(181));
 
 	// flash
 	this.shape = new cjs.Shape();
@@ -3737,21 +3791,22 @@ lib.properties = {
 	fps: 60,
 	color: "#FFFFFF",
 	opacity: 1.00,
+	webfonts: {},
 	manifest: [
-		{src:"images/f3d1q1/Bitmap14.png?1527924462339", id:"Bitmap14"},
-		{src:"images/f3d1q1/Bitmap19.png?1527924462339", id:"Bitmap19"},
-		{src:"images/f3d1q1/Bitmap3.png?1527924462339", id:"Bitmap3"},
-		{src:"images/f3d1q1/Bitmap8.png?1527924462339", id:"Bitmap8"},
-		{src:"images/f3d1q1/Bitmap9.png?1527924462339", id:"Bitmap9"},
-		{src:"sounds/mdroid_talk.mp3?1527924462339", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1527924462339", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1527924462339", id:"questionComplete"},
-		{src:"sounds/submitAns.mp3?1527924462339", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1527924462339", id:"suspense"},
-		{src:"sounds/timeout.mp3?1527924462339", id:"timeout"},
-		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1527924462339", id:"lib/jquery-2.2.4.min.js"},
-		{src:"components/sdk/anwidget.js?1527924462339", id:"sdk/anwidget.js"},
-		{src:"components/ui/src/textinput.js?1527924462339", id:"an.TextInput"}
+		{src:"images/f3d1q1/Bitmap14.png?1529297680429", id:"Bitmap14"},
+		{src:"images/f3d1q1/Bitmap19.png?1529297680429", id:"Bitmap19"},
+		{src:"images/f3d1q1/Bitmap3.png?1529297680429", id:"Bitmap3"},
+		{src:"images/f3d1q1/Bitmap8.png?1529297680429", id:"Bitmap8"},
+		{src:"images/f3d1q1/Bitmap9.png?1529297680429", id:"Bitmap9"},
+		{src:"sounds/mdroid_talk.mp3?1529297680429", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1529297680429", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1529297680429", id:"questionComplete"},
+		{src:"sounds/submitAns.mp3?1529297680429", id:"submitAns"},
+		{src:"sounds/suspense.mp3?1529297680429", id:"suspense"},
+		{src:"sounds/timeout.mp3?1529297680429", id:"timeout"},
+		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1529297680429", id:"lib/jquery-2.2.4.min.js"},
+		{src:"components/sdk/anwidget.js?1529297680429", id:"sdk/anwidget.js"},
+		{src:"components/ui/src/textinput.js?1529297680429", id:"an.TextInput"}
 	],
 	preloads: []
 };

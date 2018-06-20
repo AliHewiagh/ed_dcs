@@ -5013,7 +5013,7 @@ p.nominalBounds = new cjs.Rectangle(98,222.9,643.6,330.2);
 	this.shape_47.setTransform(650.4,318.5);
 
 	this.shape_48 = new cjs.Shape();
-	this.shape_48.graphics.f("#000000").s().p("AgPAyQgGgBgEgDQgFgEgCgEQgCgGAAgFQAAgJAFgHQAGgHAKgFQgKgEgEgHQgFgGAAgIQAAgFACgEQACgFAEgDQAFgEAGgDQAGgBAHAAQAIgBAGACQAGACAEADQAEADACAEQACAFAAAFQAAAKgFAFQgFAHgJAEIAJAFIAGAGQADADACAEQACAEAAAFQAAAHgDAFQgDAFgFAEQgEADgHABQgGACgHAAQgIAAgHgCgAgJAKIgGAFIgDAGIgBAFQAAAEABACIAEAFIAHADIAHABIAIgBIAGgCIAEgFQACgDAAgDIgBgGQgBgDgDgDQgCgDgEgCIgJgGIgJAGgAgNglQgFADAAAIIABAFIAEAFQACACAEACIAIAFQAJgEAEgFQAEgEAAgGQAAgHgFgEQgEgDgJAAQgIAAgFADg");
+	this.shape_48.graphics.f("#000000").s().p("AAJAzIAAgWIgwAAIAAgNIAqhCIAUAAIAABCIARAAIAAANIgRAAIAAAWgAgaAQIAjAAIAAg1g");
 	this.shape_48.setTransform(632.8,317.4);
 
 	this.shape_49 = new cjs.Shape();
@@ -5877,27 +5877,27 @@ lib.properties = {
 	opacity: 1.00,
 	webfonts: {},
 	manifest: [
-		{src:"images/f5d2q8/a_1.png?1527955267189", id:"a_1"},
-		{src:"images/f5d2q8/a_4.png?1527955267189", id:"a_4"},
-		{src:"images/f5d2q8/Bitmap1.png?1527955267189", id:"Bitmap1"},
-		{src:"images/f5d2q8/Bitmap21.png?1527955267189", id:"Bitmap21"},
-		{src:"images/f5d2q8/Bitmap3.png?1527955267189", id:"Bitmap3"},
-		{src:"images/f5d2q8/Bitmap9.png?1527955267189", id:"Bitmap9"},
-		{src:"images/f5d2q8/block_02_qube.png?1527955267190", id:"block_02_qube"},
-		{src:"images/f5d2q8/block_03_qube.png?1527955267190", id:"block_03_qube"},
-		{src:"images/f5d2q8/character_facing_direction.png?1527955267190", id:"character_facing_direction"},
-		{src:"images/f5d2q8/cube_start.png?1527955267190", id:"cube_start"},
-		{src:"images/f5d2q8/qube_lava_01.png?1527955267190", id:"qube_lava_01"},
-		{src:"images/f5d2q8/qube_lava_02.png?1527955267190", id:"qube_lava_02"},
-		{src:"images/f5d2q8/qube_lava_03.png?1527955267190", id:"qube_lava_03"},
-		{src:"images/f5d2q8/qube_lava_base.png?1527955267190", id:"qube_lava_base"},
-		{src:"sounds/mdroid_talk.mp3?1527955267190", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1527955267190", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1527955267190", id:"questionComplete"},
-		{src:"sounds/stdClick.mp3?1527955267190", id:"stdClick"},
-		{src:"sounds/submitAns.mp3?1527955267190", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1527955267190", id:"suspense"},
-		{src:"sounds/timeout.mp3?1527955267190", id:"timeout"}
+		{src:"images/f5d2q8/a_1.png?1529253288397", id:"a_1"},
+		{src:"images/f5d2q8/a_4.png?1529253288397", id:"a_4"},
+		{src:"images/f5d2q8/Bitmap1.png?1529253288397", id:"Bitmap1"},
+		{src:"images/f5d2q8/Bitmap21.png?1529253288397", id:"Bitmap21"},
+		{src:"images/f5d2q8/Bitmap3.png?1529253288397", id:"Bitmap3"},
+		{src:"images/f5d2q8/Bitmap9.png?1529253288397", id:"Bitmap9"},
+		{src:"images/f5d2q8/block_02_qube.png?1529253288397", id:"block_02_qube"},
+		{src:"images/f5d2q8/block_03_qube.png?1529253288397", id:"block_03_qube"},
+		{src:"images/f5d2q8/character_facing_direction.png?1529253288397", id:"character_facing_direction"},
+		{src:"images/f5d2q8/cube_start.png?1529253288397", id:"cube_start"},
+		{src:"images/f5d2q8/qube_lava_01.png?1529253288397", id:"qube_lava_01"},
+		{src:"images/f5d2q8/qube_lava_02.png?1529253288397", id:"qube_lava_02"},
+		{src:"images/f5d2q8/qube_lava_03.png?1529253288397", id:"qube_lava_03"},
+		{src:"images/f5d2q8/qube_lava_base.png?1529253288397", id:"qube_lava_base"},
+		{src:"sounds/mdroid_talk.mp3?1529253288397", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1529253288397", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1529253288397", id:"questionComplete"},
+		{src:"sounds/stdClick.mp3?1529253288397", id:"stdClick"},
+		{src:"sounds/submitAns.mp3?1529253288397", id:"submitAns"},
+		{src:"sounds/suspense.mp3?1529253288397", id:"suspense"},
+		{src:"sounds/timeout.mp3?1529253288397", id:"timeout"}
 	],
 	preloads: []
 };

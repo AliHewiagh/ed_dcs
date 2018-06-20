@@ -3986,7 +3986,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 				_this.parent.sendScore(5);
 			} else {
 				//wrong
-				_this.parent.sendScore(0);
+				_this.parent.sendScore(1);
 			}
 		}
 		this.btnSubmit.addEventListener("click", submitAns);
@@ -4194,7 +4194,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 				_this.parent.sendScore(5);
 			} else {
 				//wrong
-				_this.parent.sendScore(0);
+				_this.parent.sendScore(1);
 			}
 		}
 		this.btnSubmit.addEventListener("click", submitAns);
@@ -4402,7 +4402,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 				_this.parent.sendScore(5);
 			} else {
 				//wrong
-				_this.parent.sendScore(0);
+				_this.parent.sendScore(1);
 			}
 		}
 		this.btnSubmit.addEventListener("click", submitAns);
@@ -4996,17 +4996,17 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/f5d2q6/Bitmap21.png?1527956723938", id:"Bitmap21"},
-		{src:"images/f5d2q6/Bitmap22.png?1527956723938", id:"Bitmap22"},
-		{src:"images/f5d2q6/Bitmap3.png?1527956723938", id:"Bitmap3"},
-		{src:"images/f5d2q6/Bitmap9.png?1527956723938", id:"Bitmap9"},
-		{src:"sounds/mdroid_talk.mp3?1527956723938", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1527956723938", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1527956723938", id:"questionComplete"},
-		{src:"sounds/stdClick.mp3?1527956723938", id:"stdClick"},
-		{src:"sounds/submitAns.mp3?1527956723938", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1527956723938", id:"suspense"},
-		{src:"sounds/timeout.mp3?1527956723938", id:"timeout"}
+		{src:"images/f5d2q6/Bitmap21.png?1529254860405", id:"Bitmap21"},
+		{src:"images/f5d2q6/Bitmap22.png?1529254860405", id:"Bitmap22"},
+		{src:"images/f5d2q6/Bitmap3.png?1529254860405", id:"Bitmap3"},
+		{src:"images/f5d2q6/Bitmap9.png?1529254860405", id:"Bitmap9"},
+		{src:"sounds/mdroid_talk.mp3?1529254860405", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1529254860405", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1529254860405", id:"questionComplete"},
+		{src:"sounds/stdClick.mp3?1529254860405", id:"stdClick"},
+		{src:"sounds/submitAns.mp3?1529254860405", id:"submitAns"},
+		{src:"sounds/suspense.mp3?1529254860405", id:"suspense"},
+		{src:"sounds/timeout.mp3?1529254860405", id:"timeout"}
 	],
 	preloads: []
 };

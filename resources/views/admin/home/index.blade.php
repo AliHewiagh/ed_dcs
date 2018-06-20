@@ -7,26 +7,20 @@
     $year6Done = \App\User::where('done', 1)->whereIn('class_id', $year6Classes)->count();
     $year6NotDone = \App\User::where('done', 0)->whereIn('class_id', $year6Classes)->count();
     $year6T = $year6Done + $year6NotDone;
-    if($year6T < 1){
-        $year6T = 1;
-    }
+
 
     $form3Classes = \App\SchoolClass::where('type', 'Form 3')->pluck('id')->toArray();
     $form3Done = \App\User::where('done', 1)->whereIn('class_id', $form3Classes)->count();
     $form3NotDone = \App\User::where('done', 0)->whereIn('class_id', $form3Classes)->count();
     $form3T = $form3Done + $form3NotDone;
-    if($form3T < 1){
-        $form3T = 1;
-    }
+
 
     $form5Classes = \App\SchoolClass::where('type', 'Form 5')->pluck('id')->toArray();
     $form5Done = \App\User::where('done', 1)->whereIn('class_id', $form5Classes)->count();
     $form5NotDone = \App\User::where('done', 0)->whereIn('class_id', $form5Classes)->count();
     $form5T = $form5Done + $form5NotDone;
-    if($form5T < 1){
-        $form5T = 1;
-    }
-            $schoolP = \App\School::where('type', 1)->count();
+
+    $schoolP = \App\School::where('type', 1)->count();
     $schoolS = \App\School::where('type', 2)->count();
     ?>
     <div class="content-wrapper">
@@ -112,6 +106,22 @@
     </div>
     @include('admin.partial.footer')
     @include('partial.scripts')
+    <?php
+    if($year6T < 1){
+        $year6T2 = 1;
+    }else{
+        $year6T2=$year6T;
+    }
+    if($form3T < 1){
+        $form3T2 = 1;
+    }else{
+        $form3T2=$form3T;
+    }
+    if($form5T < 1){
+        $form5T2 = 1;
+    }else{
+        $form5T2=$form5T;
+    } ?>
     <script>
         //DONUT CHART
         var donut = new Morris.Donut({
@@ -119,8 +129,8 @@
             resize: true,
             colors: ["#00a65a", "#f56954", "#00a65a"],
             data: [
-                {label: "{{($year6Done/$year6T)*100}}% Students", value: '{{$year6Done}}'},
-                {label: "{{($year6NotDone/$year6T)*100}}% Students", value: '{{$year6NotDone}}'}
+                {label: "{{(round($year6Done/$year6T2, 2))*100}}% Students", value: '{{$year6Done}}'},
+                {label: "{{(round($year6NotDone/$year6T2, 2))*100}}% Students", value: '{{$year6NotDone}}'}
             ],
             hideHover: 'auto'
         });
@@ -129,8 +139,8 @@
             resize: true,
             colors: ["#00a65a", "#f56954", "#00a65a"],
             data: [
-                {label: "{{($form3Done/$form3T)*100}}% Students", value: '{{$form3Done}}'},
-                {label: "{{($form3NotDone/$form3T)*100}}% Students", value: '{{$form3NotDone}}'}
+                {label: "{{(round($form3Done/$form3T2, 2))*100}}% Students", value: '{{$form3Done}}'},
+                {label: "{{(round($form3NotDone/$form3T2, 2))*100}}% Students", value: '{{$form3NotDone}}'}
             ],
             hideHover: 'auto'
         });
@@ -139,8 +149,8 @@
             resize: true,
             colors: ["#00a65a", "#f56954", "#00a65a"],
             data: [
-                {label: "{{($form5Done/$form5T)*100}}% Students", value: '{{$form5Done}}'},
-                {label: "{{($form5NotDone/$form5T)*100}}% Students", value: '{{$form5NotDone}}'}
+                {label: "{{(round($form5Done/$form5T2, 2))*100}}% Students", value: '{{$form5Done}}'},
+                {label: "{{(round($form5NotDone/$form5T2, 2))*100}}% Students", value: '{{$form5NotDone}}'}
             ],
             hideHover: 'auto'
         });

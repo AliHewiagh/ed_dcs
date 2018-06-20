@@ -6,6 +6,8 @@
 Route::get('/dashboard', ['as' => 'teacher_dashboard_path', 'uses' => 'Teacher\HomeController@index']);
 Route::get('/setting', 'Teacher\HomeController@setting');
 Route::patch('/setting', 'Teacher\HomeController@settingUpdate');
+// Help
+Route::get('/help', 'Teacher\HomeController@helpPage');
 
 // Update IC
 Route::post('/ic/update', ['as' => 'teacher_ic_update', 'uses' => 'Teacher\HomeController@icUpdate']);

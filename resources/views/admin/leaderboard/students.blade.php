@@ -32,14 +32,15 @@
                                     @foreach ($students as $student)
                                         <?php
                                         $school = \App\School::find($student->school_id);
-                                                $state = \App\State::find($school->state_id);
+                                        $state = \App\State::find($school->state_id);
+                                        $teacherId = \App\SchoolClass::where('id', $student->class_id)->first();
                                         $i++;
                                         ?>
                                     <tr>
                                         <td>{{$i}}</td>
-                                        <td>{{$student->name}}</td>
+                                        <td><a href="{{url('/admin/progress/'.$state->name.'/'.$school->id.'/'.$teacherId.'/'.$student->class_id.'/'.$student->id)}}">{{$student->name}}</a></td>
                                         <td>{{$school->school_code}}</td>
-                                        <td>{{$school->name}}</td>
+                                        <td><a href="{{url('/admin/progress/'.$state->name.'/'.$school->id)}}">{{$school->name}}</a></td>
                                         <td>{{$state->name}}</td>
                                         <td>{{$student->score}}</td>
                                         <td>{{$student->totalTime()}}</td>

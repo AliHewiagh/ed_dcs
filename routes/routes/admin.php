@@ -8,6 +8,9 @@ Route::get('/dashboard', ['as' => 'admin_dashboard_path', 'uses' => 'Admin\Dashb
 Route::get('/setting', 'Admin\DashboardController@setting');
 Route::patch('/setting', 'Admin\DashboardController@settingUpdate');
 
+// Help
+Route::get('/help', 'Admin\DashboardController@helpPage');
+
 // School
 Route::resource('/school', 'Admin\SchoolController');
 
@@ -26,3 +29,4 @@ Route::get('/progress/{state}/{schoolId}/{teacherId}/{classId}/{studentId}/detai
 // Leader Board
 Route::get('/top/school/{type}', 'Admin\LeaderBoardController@index');
 Route::get('/top/student/{type}', 'Admin\LeaderBoardController@topStudents');
+
