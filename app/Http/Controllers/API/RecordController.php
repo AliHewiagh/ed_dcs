@@ -27,7 +27,7 @@ class RecordController extends Controller
 
         foreach($items as $item){
             StudentRecord::create(['user_id'=>$userId, 'stage'=>$stage, "qId"=>$item["qId"], "qDomain"=>$item["qDomain"],
-                "qParam"=>$item["qParam"], "qSkill"=>$item["qSkill"], "qResult"=>$item["qResult"], "time"=>$item["time"], "score"=>$item["score"]]);
+                "qParam"=>$item["qParam"], "qSkill"=>$item["qSkill"], "qResult"=>$item["qResult"], "userAns"=>$item["userAns"], "time"=>$item["time"], "score"=>$item["score"]]);
         }
         $user = User::find($userId);
         if($stage == 20){

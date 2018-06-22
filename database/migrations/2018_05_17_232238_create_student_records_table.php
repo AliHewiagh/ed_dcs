@@ -22,6 +22,7 @@ class CreateStudentRecordsTable extends Migration
             $table->char('qParam', 50)->nullable();
             $table->char('qSkill', 50)->nullable();
             $table->char('qResult', 50)->nullable();
+            $table->string('userAns')->nullable();
             $table->char('time', 50)->nullable();
             $table->char('score', 20)->nullable();
             $table->timestamps();

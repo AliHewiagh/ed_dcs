@@ -8,6 +8,7 @@ Route::get('/setting', 'Teacher\HomeController@setting');
 Route::patch('/setting', 'Teacher\HomeController@settingUpdate');
 // Help
 Route::get('/help', 'Teacher\HomeController@helpPage');
+Route::post('/search', 'Teacher\HomeController@search');
 
 // Update IC
 Route::post('/ic/update', ['as' => 'teacher_ic_update', 'uses' => 'Teacher\HomeController@icUpdate']);

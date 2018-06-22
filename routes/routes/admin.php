@@ -10,6 +10,7 @@ Route::patch('/setting', 'Admin\DashboardController@settingUpdate');
 
 // Help
 Route::get('/help', 'Admin\DashboardController@helpPage');
+Route::post('/search', 'Admin\DashboardController@search');
 
 // School
 Route::resource('/school', 'Admin\SchoolController');

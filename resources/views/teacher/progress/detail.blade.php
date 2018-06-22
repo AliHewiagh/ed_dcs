@@ -39,6 +39,7 @@
                                         <th>Parameter</th>
                                         <th>Skill</th>
                                         <th>Result</th>
+                                        <th>Answer</th>
                                         <th>Time (In Second)</th>
                                         <th>Score</th>
                                     </tr>
@@ -52,6 +53,7 @@
                                             <td>@if(!empty($record->parameter())){{$record->parameter()->description}} @endif</td>
                                             <td>@if(!empty($record->skill())){{$record->skill()->description}} @endif</td>
                                             <td>{{$record->qResult}}</td>
+                                            <td>{{$record->userAns}}</td>
                                             <td>{{$record->time}}</td>
                                             <td>{{$record->score}}</td>
                                         </tr>

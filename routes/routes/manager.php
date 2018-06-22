@@ -7,6 +7,7 @@ Route::get('/dashboard', ['as' => 'manager_dashboard_path', 'uses' => 'Manager\H
 
 // Help
 Route::get('/help', 'Manager\HomeController@helpPage');
+Route::post('/search', 'Manager\HomeController@search');
 
 // Update IC
 Route::post('/ic/update', ['as' => 'manager_ic_update', 'uses' => 'Manager\HomeController@icUpdate']);

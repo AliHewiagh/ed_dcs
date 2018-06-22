@@ -19,7 +19,7 @@ class StudentRecord extends Model
      * @var array
      */
     protected $fillable = [
-        "user_id", "stage", "qId", "qDomain", "qParam", "qSkill", "qResult", "time", "score",
+        "user_id", "stage", "qId", "qDomain", "qParam", "qSkill", "qResult", "userAns", "time", "score",
     ];
 
 

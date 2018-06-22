@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Teacher;
 
+use App\SchoolClass;
 use App\SchoolType;
 use App\User;
 use Illuminate\Http\Request;
@@ -122,6 +123,18 @@ class HomeController extends Controller
     public function helpPage()
     {
         return view("teacher.home.help");
+    }
+
+
+    /**
+     * @return resource
+     */
+    public function search(Request $request)
+    {
+        $q = $request->q;
+        $classIds = SchoolClass::where('teacher_id', Auth::user()->id)->pluck('id')->toArray();
+        $students = User::where([["name", 'LIKE', '%'.$q.'%'], ['type', 4]])->whereIn('class_id', $classIds)->get();
+        return view("teacher.home.search", compact('students'));
     }
     
 }

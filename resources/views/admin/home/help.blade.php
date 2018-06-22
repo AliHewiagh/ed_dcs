@@ -4,14 +4,10 @@
         label{
             display: block;
         }
-		.bottom-edge{
-			border-bottom: 1px solid #cccccc; 
-			padding-bottom: 25px;
-		}
     </style>
     @include('admin.partial.header')
     @include('admin.partial.sidebar')
-    <div class="content-wrapper">
+	<div class="content-wrapper">
         <section class="content-header">
             <h1>Help</h1>
         </section>
@@ -39,7 +35,7 @@
 							<ol>
 								<li><strong>Admin</strong>
 									<ul>
-										<li>Admins are stakeholders of DCS, i.e. users from BTP, BTPN, PKG, JPN, MDeC and the developer.
+										<li>Admins are stakeholders of DCS, i.e. users from BTP, BTPN, PKG, JPN, MDEC and the developer.
 										<li>Functions of Admins include:
 											<ol type="i">
 												<li>Creating accounts for selected schools and their school managers by generating a set of temporary username and password for each school manager.</li>
