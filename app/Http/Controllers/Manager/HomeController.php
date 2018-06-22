@@ -7,6 +7,7 @@ use App\Pkg;
 use App\School;
 use App\SchoolType;
 use App\State;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -125,5 +126,15 @@ class HomeController extends Controller
     public function helpPage()
     {
         return view("manager.home.help");
+    }
+
+    /**
+     * @return resource
+     */
+    public function search(Request $request)
+    {
+        $q = $request->q;
+        $students = User::where([["name", 'LIKE', '%'.$q.'%'], ['type', 4], ['school_id', Auth::user()->school_id]])->get();
+        return view("manager.home.search", compact('students'));
     }
 }

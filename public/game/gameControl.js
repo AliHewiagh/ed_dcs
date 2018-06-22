@@ -1,4 +1,4 @@
-var debugMode = true;
+var debugMode = false;
 var schoolLevel;
 //----turn this on for final to disable all console.log 
 //console.log = function() {};
@@ -117,48 +117,48 @@ if (schoolLevel==1){//primary
 	scrList[76] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
 	scrList[80] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
 } else if (schoolLevel==2){//f3
-	scrList[4] = {constructorName: "f3d2q1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[8] = {constructorName: "f3d1q1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[12] = {constructorName: "f3d1q2", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[16] = {constructorName: "f3d3q1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[20] = {constructorName: "f3d1q3", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[24] = {constructorName: "f3d2q2", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[28] = {constructorName: "f3d3q2", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
-	scrList[32] = {constructorName: "f3d3q3", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[36] = {constructorName: "f3d2q3", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[40] = {constructorName: "f3d1q4", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[44] = {constructorName: "f3d1q5", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[48] = {constructorName: "f3d3q4", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[52] = {constructorName: "f3d2q4", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[56] = {constructorName: "f3d1q6", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[60] = {constructorName: "y6d3q1", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
-	scrList[64] = {constructorName: "f3d1q8", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[68] = {constructorName: "f3d2q6", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[72] = {constructorName: "f3d1q9", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[76] = {constructorName: "f3d2q7", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[80] = {constructorName: "f3d1q10", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[4] = {constructorName: "f3s1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[8] = {constructorName: "f3s2", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[12] = {constructorName: "f3s3", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[16] = {constructorName: "f3s4", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[20] = {constructorName: "f3s5", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[24] = {constructorName: "f3s6", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[28] = {constructorName: "f3s7", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
+	scrList[32] = {constructorName: "f3s8", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[36] = {constructorName: "f3s9", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[40] = {constructorName: "f3s10", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[44] = {constructorName: "f3s11", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[48] = {constructorName: "f3s12", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[52] = {constructorName: "f3s13", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[56] = {constructorName: "f3s14", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[60] = {constructorName: "y6s2", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
+	scrList[64] = {constructorName: "f3s16", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[68] = {constructorName: "f3s17", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[72] = {constructorName: "f3s18", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[76] = {constructorName: "f3s19", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[80] = {constructorName: "f3s20", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 } else {
 	//f5
-	scrList[4] = {constructorName: "f5d1q1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[8] = {constructorName: "f3d1q5", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[12] = {constructorName: "f5d2q1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[16] = {constructorName: "f5d3q1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[20] = {constructorName: "f3d2q1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[24] = {constructorName: "f5d3q2", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
-	scrList[28] = {constructorName: "f5d1q3", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[32] = {constructorName: "f3d2q2", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[36] = {constructorName: "f3d1q1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[40] = {constructorName: "f3d3q3", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[44] = {constructorName: "f3d2q3", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[48] = {constructorName: "f3d3q4", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[52] = {constructorName: "f5d1q5", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[56] = {constructorName: "f5d2q5", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[60] = {constructorName: "f5d1q6", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[64] = {constructorName: "y6d3q1", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
-	scrList[68] = {constructorName: "f5d1q7", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[72] = {constructorName: "f5d2q6", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[76] = {constructorName: "f5d2q7", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[80] = {constructorName: "f5d2q8", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[4] = {constructorName: "f5s1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[8] = {constructorName: "f3s11", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[12] = {constructorName: "f5s3", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[16] = {constructorName: "f5s4", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[20] = {constructorName: "f3s1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[24] = {constructorName: "f5s6", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
+	scrList[28] = {constructorName: "f5s7", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[32] = {constructorName: "f3s6", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[36] = {constructorName: "f3s2", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[40] = {constructorName: "f3s8", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[44] = {constructorName: "f3s9", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[48] = {constructorName: "f3s12", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[52] = {constructorName: "f5s13", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[56] = {constructorName: "f5s14", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[60] = {constructorName: "f5s15", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[64] = {constructorName: "y6s2", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
+	scrList[68] = {constructorName: "f5s17", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[72] = {constructorName: "f5s18", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[76] = {constructorName: "f5s19", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[80] = {constructorName: "f5s20", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 }
 }
 if (currentProgress==undefined){

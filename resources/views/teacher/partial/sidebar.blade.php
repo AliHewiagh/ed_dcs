@@ -9,7 +9,8 @@
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
-        <form action="#" method="get" class="sidebar-form">
+        <form action="{{url('/teacher/search')}}" method="post" class="sidebar-form">
+            @csrf
             <div class="input-group">
                 <input type="text" name="q" class="form-control" placeholder="Search...">
               <span class="input-group-btn">

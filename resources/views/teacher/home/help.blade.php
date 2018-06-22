@@ -13,7 +13,6 @@
         </section>
         <section class="content">
             <div style="max-width: 600px">
-				Help content here
                 <br />
             </div>
         </section>

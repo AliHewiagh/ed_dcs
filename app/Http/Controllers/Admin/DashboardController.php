@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\School;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -64,5 +65,17 @@ class DashboardController extends Controller
     {
         return view("admin.home.help");
     }
-    
+
+
+    /**
+     * @return resource
+     */
+    public function search(Request $request)
+    {
+        $q = $request->q;
+        $schools = School::where("name", 'LIKE', '%'.$q.'%')->get();
+        $students = User::where([["name", 'LIKE', '%'.$q.'%'], ['type', 4]])->get();
+        return view("admin.home.search", compact('schools', 'students'));
+    }
+
 }
