@@ -4289,7 +4289,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 		function goNextQ (){
 			_this.currentQ++;
 			if (_this.currentQ<=_this.myData.qItem.length){
-				_this.gotoAndPlay("q"+_this.myData.qItem[_this.currentQ-1].qId.substring(5));
+				_this.gotoAndPlay("q"+_this.myData.qItem[_this.currentQ-1].qId.substring(6));
 			} else {
 				//all questions done
 				clearInterval(timeInterval);//stop time
@@ -4599,18 +4599,18 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/f5s14/Bitmap21.png?1529634898985", id:"Bitmap21"},
-		{src:"images/f5s14/Bitmap22.png?1529634898985", id:"Bitmap22"},
-		{src:"images/f5s14/Bitmap23.png?1529634898985", id:"Bitmap23"},
-		{src:"images/f5s14/Bitmap27.png?1529634898985", id:"Bitmap27"},
-		{src:"images/f5s14/Bitmap3.png?1529634898985", id:"Bitmap3"},
-		{src:"images/f5s14/Bitmap9.png?1529634898985", id:"Bitmap9"},
-		{src:"sounds/mdroid_talk.mp3?1529634898985", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1529634898985", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1529634898985", id:"questionComplete"},
-		{src:"sounds/submitAns.mp3?1529634898985", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1529634898985", id:"suspense"},
-		{src:"sounds/timeout.mp3?1529634898985", id:"timeout"}
+		{src:"images/f5s14/Bitmap21.png?1529741574817", id:"Bitmap21"},
+		{src:"images/f5s14/Bitmap22.png?1529741574817", id:"Bitmap22"},
+		{src:"images/f5s14/Bitmap23.png?1529741574817", id:"Bitmap23"},
+		{src:"images/f5s14/Bitmap27.png?1529741574817", id:"Bitmap27"},
+		{src:"images/f5s14/Bitmap3.png?1529741574817", id:"Bitmap3"},
+		{src:"images/f5s14/Bitmap9.png?1529741574817", id:"Bitmap9"},
+		{src:"sounds/mdroid_talk.mp3?1529741574817", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1529741574817", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1529741574817", id:"questionComplete"},
+		{src:"sounds/submitAns.mp3?1529741574817", id:"submitAns"},
+		{src:"sounds/suspense.mp3?1529741574817", id:"suspense"},
+		{src:"sounds/timeout.mp3?1529741574817", id:"timeout"}
 	],
 	preloads: []
 };

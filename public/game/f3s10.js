@@ -9166,8 +9166,8 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 		function goNextQ (){
 			_this.currentQ++;
 			if (_this.currentQ<=_this.myData.qItem.length){
-				console.log("q"+_this.myData.qItem[_this.currentQ-1].qId.substring(5));
-				_this.gotoAndPlay("q"+_this.myData.qItem[_this.currentQ-1].qId.substring(5));
+				console.log("q"+_this.myData.qItem[_this.currentQ-1].qId.substring(6));
+				_this.gotoAndPlay("q"+_this.myData.qItem[_this.currentQ-1].qId.substring(6));
 				if (_this.currentQ<=maxQ){
 					_this["prog"+_this.currentQ].gotoAndStop("on");
 				}
@@ -9544,17 +9544,17 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/f3s10/Bitmap19.png?1529548478712", id:"Bitmap19"},
-		{src:"images/f3s10/Bitmap3.png?1529548478712", id:"Bitmap3"},
-		{src:"images/f3s10/Bitmap9.png?1529548478712", id:"Bitmap9"},
-		{src:"images/f3s10/Blend_14.png?1529548478712", id:"Blend_14"},
-		{src:"sounds/mdroid_talk.mp3?1529548478712", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1529548478712", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1529548478712", id:"questionComplete"},
-		{src:"sounds/stdClick.mp3?1529548478712", id:"stdClick"},
-		{src:"sounds/submitAns.mp3?1529548478712", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1529548478712", id:"suspense"},
-		{src:"sounds/timeout.mp3?1529548478712", id:"timeout"}
+		{src:"images/f3s10/Bitmap19.png?1529743297053", id:"Bitmap19"},
+		{src:"images/f3s10/Bitmap3.png?1529743297053", id:"Bitmap3"},
+		{src:"images/f3s10/Bitmap9.png?1529743297053", id:"Bitmap9"},
+		{src:"images/f3s10/Blend_14.png?1529743297053", id:"Blend_14"},
+		{src:"sounds/mdroid_talk.mp3?1529743297053", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1529743297053", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1529743297053", id:"questionComplete"},
+		{src:"sounds/stdClick.mp3?1529743297053", id:"stdClick"},
+		{src:"sounds/submitAns.mp3?1529743297053", id:"submitAns"},
+		{src:"sounds/suspense.mp3?1529743297053", id:"suspense"},
+		{src:"sounds/timeout.mp3?1529743297053", id:"timeout"}
 	],
 	preloads: []
 };

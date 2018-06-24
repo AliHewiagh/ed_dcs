@@ -97,7 +97,7 @@
 							<div class="row">
 								<div class="col-md-8">
 									<div class="embed-responsive embed-responsive-16by9">
-										<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/liUxDkj0JBw" allowfullscreen></iframe>
+										<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/PGLR6dKunR4" allowfullscreen></iframe>
 									</div>
 								</div>
 								<div class="col-md-4">
@@ -113,7 +113,7 @@
 							<div class="row">
 								<div class="col-md-8">
 									<div class="embed-responsive embed-responsive-16by9">
-										<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/liUxDkj0JBw" allowfullscreen></iframe>
+										<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/1vsGxxwhvIg" allowfullscreen></iframe>
 									</div>
 								</div>
 								<div class="col-md-4">
@@ -139,7 +139,7 @@
 							<div class="row">
 								<div class="col-md-8">
 									<div class="embed-responsive embed-responsive-16by9">
-										<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/liUxDkj0JBw" allowfullscreen></iframe>
+										<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Mgr4roF6nso" allowfullscreen></iframe>
 									</div>
 								</div>
 								<div class="col-md-4">
@@ -159,7 +159,7 @@
 							<div class="row">
 								<div class="col-md-8">
 									<div class="embed-responsive embed-responsive-16by9">
-										<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wBhHp39tXK0" allowfullscreen></iframe>
+										<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/hizrx0qbZhk" allowfullscreen></iframe>
 									</div>
 								</div>
 								<div class="col-md-4">
@@ -182,7 +182,7 @@
 							<div class="row">
 								<div class="col-md-8">
 									<div class="embed-responsive embed-responsive-16by9">
-										<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wBhHp39tXK0" allowfullscreen></iframe>
+										<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/2jdogmy0mKY" allowfullscreen></iframe>
 									</div>
 								</div>
 								<div class="col-md-4">
@@ -203,7 +203,7 @@
 							<div class="row">
 								<div class="col-md-8">
 									<div class="embed-responsive embed-responsive-16by9">
-										<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wBhHp39tXK0" allowfullscreen></iframe>
+										<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Bj4EYVef5QU" allowfullscreen></iframe>
 									</div>
 								</div>
 								<div class="col-md-4">
@@ -222,7 +222,7 @@
 							<div class="row">
 								<div class="col-md-8">
 									<div class="embed-responsive embed-responsive-16by9">
-										<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/oICnUU-FFEU" allowfullscreen></iframe>
+										<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/m4l_tjtb3IQ" allowfullscreen></iframe>
 									</div>
 								</div>
 								<div class="col-md-4">
@@ -244,7 +244,7 @@
 							<div class="row">
 								<div class="col-md-8">
 									<div class="embed-responsive embed-responsive-16by9">
-										<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/oICnUU-FFEU" allowfullscreen></iframe>
+										<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/LeRMZC8YKI8" allowfullscreen></iframe>
 									</div>
 								</div>
 								<div class="col-md-4">
@@ -272,7 +272,7 @@
 							<div class="row">
 								<div class="col-md-8">
 									<div class="embed-responsive embed-responsive-16by9">
-										<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/oICnUU-FFEU" allowfullscreen></iframe>
+										<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/skqbgTdkeWU" allowfullscreen></iframe>
 									</div>
 								</div>
 								<div class="col-md-4">
@@ -291,7 +291,7 @@
 							<div class="row">
 								<div class="col-md-8">
 									<div class="embed-responsive embed-responsive-16by9">
-										<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/oICnUU-FFEU" allowfullscreen></iframe>
+										<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Gpz3QnfHkG8" allowfullscreen></iframe>
 									</div>
 								</div>
 								<div class="col-md-4">
@@ -308,7 +308,7 @@
 							<div class="row">
 								<div class="col-md-8">
 									<div class="embed-responsive embed-responsive-16by9">
-										<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/oICnUU-FFEU" allowfullscreen></iframe>
+										<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/77s4uuABmc8" allowfullscreen></iframe>
 									</div>
 								</div>
 								<div class="col-md-4">
@@ -347,7 +347,7 @@
 							<p>The username should be his/her MyKad/MyKid number and the password should be the last four (4) digit of his/her MyKad/MyKid number.</p>
 						</div>
 						<div class="bottom-edge">
-							<h4 class="text-primary">4. Some details about a school was wrongly entered. How can I fix this?</h4>
+							<h4 class="text-primary">4. Some details about a school were wrongly entered. How can I fix this?</h4>
 							<ol type="a">
 								<li>In the side menu, click <strong>School Management</strong>.</li>
 								<li>Type the name of the school into the <strong>Search</strong> box on the top right of the screen.</li>

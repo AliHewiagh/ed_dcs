@@ -7468,8 +7468,8 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 		function goNextQ (){
 			_this.currentQ++;
 			if (_this.currentQ<=_this.myData.qItem.length){
-				console.log("q"+_this.myData.qItem[_this.currentQ-1].qId.substring(7));
-				_this.gotoAndPlay("q"+_this.myData.qItem[_this.currentQ-1].qId.substring(7));
+				console.log("q"+_this.myData.qItem[_this.currentQ-1].qId.substring(5));
+				_this.gotoAndPlay("q"+_this.myData.qItem[_this.currentQ-1].qId.substring(5));
 			} else {
 				//all questions done
 				clearInterval(timeInterval);//stop time
@@ -7807,22 +7807,22 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/f3s9/Bitmap1copy3.png?1529492231201", id:"Bitmap1copy3"},
-		{src:"images/f3s9/Bitmap19.png?1529492231201", id:"Bitmap19"},
-		{src:"images/f3s9/Bitmap3.png?1529492231201", id:"Bitmap3"},
-		{src:"images/f3s9/Bitmap31.png?1529492231201", id:"Bitmap31"},
-		{src:"images/f3s9/Bitmap32.png?1529492231201", id:"Bitmap32"},
-		{src:"images/f3s9/Bitmap33.png?1529492231201", id:"Bitmap33"},
-		{src:"images/f3s9/Bitmap34.png?1529492231201", id:"Bitmap34"},
-		{src:"images/f3s9/Bitmap35.png?1529492231201", id:"Bitmap35"},
-		{src:"images/f3s9/Bitmap9.png?1529492231201", id:"Bitmap9"},
-		{src:"sounds/mdroid_talk.mp3?1529492231201", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1529492231201", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1529492231201", id:"questionComplete"},
-		{src:"sounds/stdClick.mp3?1529492231201", id:"stdClick"},
-		{src:"sounds/submitAns.mp3?1529492231201", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1529492231201", id:"suspense"},
-		{src:"sounds/timeout.mp3?1529492231201", id:"timeout"}
+		{src:"images/f3s9/Bitmap1copy3.png?1529743410966", id:"Bitmap1copy3"},
+		{src:"images/f3s9/Bitmap19.png?1529743410966", id:"Bitmap19"},
+		{src:"images/f3s9/Bitmap3.png?1529743410966", id:"Bitmap3"},
+		{src:"images/f3s9/Bitmap31.png?1529743410966", id:"Bitmap31"},
+		{src:"images/f3s9/Bitmap32.png?1529743410966", id:"Bitmap32"},
+		{src:"images/f3s9/Bitmap33.png?1529743410966", id:"Bitmap33"},
+		{src:"images/f3s9/Bitmap34.png?1529743410966", id:"Bitmap34"},
+		{src:"images/f3s9/Bitmap35.png?1529743410966", id:"Bitmap35"},
+		{src:"images/f3s9/Bitmap9.png?1529743410966", id:"Bitmap9"},
+		{src:"sounds/mdroid_talk.mp3?1529743410966", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1529743410966", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1529743410966", id:"questionComplete"},
+		{src:"sounds/stdClick.mp3?1529743410966", id:"stdClick"},
+		{src:"sounds/submitAns.mp3?1529743410966", id:"submitAns"},
+		{src:"sounds/suspense.mp3?1529743410966", id:"suspense"},
+		{src:"sounds/timeout.mp3?1529743410966", id:"timeout"}
 	],
 	preloads: []
 };

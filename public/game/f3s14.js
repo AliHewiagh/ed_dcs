@@ -5694,8 +5694,8 @@ p.nominalBounds = new cjs.Rectangle(500.4,309.1,254.2,221.7);
 		function goNextQ (){
 			_this.currentQ++;
 			if (_this.currentQ<=_this.myData.qItem.length){
-				console.log(_this.myData.qItem[_this.currentQ-1].qId.substring(5));
-				_this.gotoAndPlay("q"+_this.myData.qItem[_this.currentQ-1].qId.substring(5));
+				console.log(_this.myData.qItem[_this.currentQ-1].qId.substring(6));
+				_this.gotoAndPlay("q"+_this.myData.qItem[_this.currentQ-1].qId.substring(6));
 				if (_this.currentQ<=maxQ){
 					_this["prog"+_this.currentQ].gotoAndStop("on");
 				}
@@ -6070,20 +6070,20 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/f3s14/Bitmap21.png?1529570460515", id:"Bitmap21"},
-		{src:"images/f3s14/Bitmap22.png?1529570460515", id:"Bitmap22"},
-		{src:"images/f3s14/Bitmap3.png?1529570460515", id:"Bitmap3"},
-		{src:"images/f3s14/Bitmap9.png?1529570460515", id:"Bitmap9"},
-		{src:"sounds/mdroid_talk.mp3?1529570460515", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1529570460515", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1529570460515", id:"questionComplete"},
-		{src:"sounds/submitAns.mp3?1529570460515", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1529570460515", id:"suspense"},
-		{src:"sounds/timeout.mp3?1529570460515", id:"timeout"},
-		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1529570460515", id:"lib/jquery-2.2.4.min.js"},
-		{src:"components/sdk/anwidget.js?1529570460515", id:"sdk/anwidget.js"},
-		{src:"components/ui/src/textinput.js?1529570460515", id:"an.TextInput"},
-		{src:"components/ui/src/combobox.js?1529570460515", id:"an.ComboBox"}
+		{src:"images/f3s14/Bitmap21.png?1529742870524", id:"Bitmap21"},
+		{src:"images/f3s14/Bitmap22.png?1529742870524", id:"Bitmap22"},
+		{src:"images/f3s14/Bitmap3.png?1529742870524", id:"Bitmap3"},
+		{src:"images/f3s14/Bitmap9.png?1529742870524", id:"Bitmap9"},
+		{src:"sounds/mdroid_talk.mp3?1529742870524", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1529742870524", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1529742870524", id:"questionComplete"},
+		{src:"sounds/submitAns.mp3?1529742870524", id:"submitAns"},
+		{src:"sounds/suspense.mp3?1529742870524", id:"suspense"},
+		{src:"sounds/timeout.mp3?1529742870524", id:"timeout"},
+		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1529742870524", id:"lib/jquery-2.2.4.min.js"},
+		{src:"components/sdk/anwidget.js?1529742870524", id:"sdk/anwidget.js"},
+		{src:"components/ui/src/textinput.js?1529742870524", id:"an.TextInput"},
+		{src:"components/ui/src/combobox.js?1529742870524", id:"an.ComboBox"}
 	],
 	preloads: []
 };
