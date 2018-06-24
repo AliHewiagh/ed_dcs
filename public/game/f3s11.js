@@ -2782,25 +2782,25 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 		var myScale = myContainer.offsetWidth/800;
 		//console.log(myScale);
 		var fontSize = 18;
-		var txtAns = document.getElementById("txtAns");
+		var txtAns2 = document.getElementById("txtAns2");
 		//txtAns.setAttribute("type", "file");
-		$("#txtAns").attr("type","file");
-		txtAns.style.fontFamily = "Muli, Arial, Helvetica, sans-serif";
-		txtAns.style.fontSize = fontSize * myScale + "px";
-		txtAns.style.textAlign = "center";
+		$("#txtAns2").attr("type","file");
+		txtAns2.style.fontFamily = "Muli, Arial, Helvetica, sans-serif";
+		txtAns2.style.fontSize = fontSize * myScale + "px";
+		txtAns2.style.textAlign = "center";
 		
 		window.addEventListener("resize", function (){
 			setTimeout(function(){
 				myScale = myContainer.offsetWidth/800;
-				txtAns.style.fontSize = fontSize * myScale + "px";
-				$("#txtAns").attr("type","file");
+				txtAns2.style.fontSize = fontSize * myScale + "px";
+				$("#txtAns2").attr("type","file");
 			}, 1000);
 		});
-		$("#txtAns").change(function() {
+		$("#txtAns2").change(function() {
 		    _this.updateAll();
 		});
 		this.updateAll = function (){
-			if (txtAns.value!=""){
+			if (txtAns2.value!=""){
 				_this.btnSubmit.mouseEnabled = true;
 				_this.btnSubmit.alpha = 1;
 			} else {
@@ -2811,7 +2811,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 		function checkAns(e){
 			var myLength =cAns.length;
 			var cResult = false;
-			var filename = $('#txtAns').val().split('\\').pop();
+			var filename = $('#txtAns2').val().split('\\').pop();
 			for (var i=1; i<=myLength; i++){
 				if (filename.replace(/\s/g,'').toLowerCase()==cAns[i-1].replace(/\s/g,'').toLowerCase()){
 					cResult = true;
@@ -2835,16 +2835,16 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 	this.instance.parent = this;
 	this.instance.setTransform(568.3,294.6);
 
-	this.txtAns = new lib.an_TextInput({'id': 'txtAns', 'value':'', 'disabled':false, 'visible':true, 'class':'ui-textinput'});
+	this.txtAns2 = new lib.an_TextInput({'id': 'txtAns2', 'value':'', 'disabled':false, 'visible':true, 'class':'ui-textinput'});
 
-	this.txtAns.setTransform(553.9,383,2.8,4.015,0,0,0,50.1,11.5);
+	this.txtAns2.setTransform(553.9,383,2.8,4.015,0,0,0,50.1,11.5);
 
 	this.btnSubmit = new lib.mcBtnCont();
 	this.btnSubmit.name = "btnSubmit";
 	this.btnSubmit.parent = this;
 	this.btnSubmit.setTransform(481,461.5,0.85,0.85,0,0,0,0.2,0.6);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.btnSubmit},{t:this.txtAns},{t:this.instance}]}).wait(5));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.btnSubmit},{t:this.txtAns2},{t:this.instance}]}).wait(5));
 
 	// Layer_3
 	this.shape = new cjs.Shape();
@@ -2972,25 +2972,25 @@ p.nominalBounds = new cjs.Rectangle(145.5,241,561.5,221);
 		var myScale = myContainer.offsetWidth/800;
 		//console.log(myScale);
 		var fontSize = 18;
-		var txtAns = document.getElementById("txtAns");
-		$("#txtAns").attr("type","file");
+		var txtAns2 = document.getElementById("txtAns2");
+		$("#txtAns2").attr("type","file");
 		//txtAns.setAttribute("type", "file");
-		txtAns.style.fontFamily = "Muli, Arial, Helvetica, sans-serif";
-		txtAns.style.fontSize = fontSize * myScale + "px";
-		txtAns.style.textAlign = "center";
+		txtAns2.style.fontFamily = "Muli, Arial, Helvetica, sans-serif";
+		txtAns2.style.fontSize = fontSize * myScale + "px";
+		txtAns2.style.textAlign = "center";
 		
 		window.addEventListener("resize", function (){
 			setTimeout(function(){
 				myScale = myContainer.offsetWidth/800;
-				txtAns.style.fontSize = fontSize * myScale + "px";
-				$("#txtAns").attr("type","file");
+				txtAns2.style.fontSize = fontSize * myScale + "px";
+				$("#txtAns2").attr("type","file");
 			}, 1000);
 		});
-		$("#txtAns").change(function() {
+		$("#txtAns2").change(function() {
 		    _this.updateAll();
 		});
 		this.updateAll = function (){
-			if (txtAns.value!=""){
+			if (txtAns2.value!=""){
 				_this.btnSubmit.mouseEnabled = true;
 				_this.btnSubmit.alpha = 1;
 			} else {
@@ -3001,7 +3001,7 @@ p.nominalBounds = new cjs.Rectangle(145.5,241,561.5,221);
 		function checkAns(e){
 			var myLength =cAns.length;
 			var cResult = false;
-			var filename = $('#txtAns').val().split('\\').pop();
+			var filename = $('#txtAns2').val().split('\\').pop();
 			for (var i=1; i<=myLength; i++){
 				if (filename.replace(/\s/g,'').toLowerCase()==cAns[i-1].replace(/\s/g,'').toLowerCase()){
 					cResult = true;
@@ -3025,16 +3025,16 @@ p.nominalBounds = new cjs.Rectangle(145.5,241,561.5,221);
 	this.instance.parent = this;
 	this.instance.setTransform(568.3,294.6);
 
-	this.txtAns = new lib.an_TextInput({'id': 'txtAns', 'value':'', 'disabled':false, 'visible':true, 'class':'ui-textinput'});
+	this.txtAns2 = new lib.an_TextInput({'id': 'txtAns2', 'value':'', 'disabled':false, 'visible':true, 'class':'ui-textinput'});
 
-	this.txtAns.setTransform(553.9,383,2.8,4.015,0,0,0,50.1,11.5);
+	this.txtAns2.setTransform(553.9,383,2.8,4.015,0,0,0,50.1,11.5);
 
 	this.btnSubmit = new lib.mcBtnCont();
 	this.btnSubmit.name = "btnSubmit";
 	this.btnSubmit.parent = this;
 	this.btnSubmit.setTransform(481,461.5,0.85,0.85,0,0,0,0.2,0.6);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.btnSubmit},{t:this.txtAns},{t:this.instance}]}).wait(5));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.btnSubmit},{t:this.txtAns2},{t:this.instance}]}).wait(5));
 
 	// Layer_3
 	this.shape = new cjs.Shape();
@@ -3162,25 +3162,25 @@ p.nominalBounds = new cjs.Rectangle(145.5,241,561.5,221);
 		var myScale = myContainer.offsetWidth/800;
 		//console.log(myScale);
 		var fontSize = 12;
-		var txtAns = document.getElementById("txtAns");
+		var txtAns2 = document.getElementById("txtAns2");
 		//txtAns.setAttribute("type", "file");
-		$("#txtAns").attr("type","file");
-		txtAns.style.fontFamily = "Muli, Arial, Helvetica, sans-serif";
-		txtAns.style.fontSize = fontSize * myScale + "px";
-		txtAns.style.textAlign = "center";
+		$("#txtAns2").attr("type","file");
+		txtAns2.style.fontFamily = "Muli, Arial, Helvetica, sans-serif";
+		txtAns2.style.fontSize = fontSize * myScale + "px";
+		txtAns2.style.textAlign = "center";
 		
 		window.addEventListener("resize", function (){
 			setTimeout(function(){
 				myScale = myContainer.offsetWidth/800;
-				txtAns.style.fontSize = fontSize * myScale + "px";
-				$("#txtAns").attr("type","file");
+				txtAns2.style.fontSize = fontSize * myScale + "px";
+				$("#txtAns2").attr("type","file");
 			}, 1000);
 		});
-		$("#txtAns").change(function() {
+		$("#txtAns2").change(function() {
 		    _this.updateAll();
 		});
 		this.updateAll = function (){
-			if (txtAns.value!=""){
+			if (txtAns2.value!=""){
 				_this.btnSubmit.mouseEnabled = true;
 				_this.btnSubmit.alpha = 1;
 			} else {
@@ -3191,7 +3191,7 @@ p.nominalBounds = new cjs.Rectangle(145.5,241,561.5,221);
 		function checkAns(e){
 			var myLength =cAns.length;
 			var cResult = false;
-			var filename = $('#txtAns').val().split('\\').pop();
+			var filename = $('#txtAns2').val().split('\\').pop();
 			for (var i=1; i<=myLength; i++){
 				if (filename.replace(/\s/g,'').toLowerCase()==cAns[i-1].replace(/\s/g,'').toLowerCase()){
 					cResult = true;
@@ -3215,16 +3215,16 @@ p.nominalBounds = new cjs.Rectangle(145.5,241,561.5,221);
 	this.instance.parent = this;
 	this.instance.setTransform(568.3,294.6);
 
-	this.txtAns = new lib.an_TextInput({'id': 'txtAns', 'value':'', 'disabled':false, 'visible':true, 'class':'ui-textinput'});
+	this.txtAns2 = new lib.an_TextInput({'id': 'txtAns2', 'value':'', 'disabled':false, 'visible':true, 'class':'ui-textinput'});
 
-	this.txtAns.setTransform(553.9,383,2.8,4.015,0,0,0,50.1,11.5);
+	this.txtAns2.setTransform(553.9,383,2.8,4.015,0,0,0,50.1,11.5);
 
 	this.btnSubmit = new lib.mcBtnCont();
 	this.btnSubmit.name = "btnSubmit";
 	this.btnSubmit.parent = this;
 	this.btnSubmit.setTransform(481,461.5,0.85,0.85,0,0,0,0.2,0.6);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.btnSubmit},{t:this.txtAns},{t:this.instance}]}).wait(5));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.btnSubmit},{t:this.txtAns2},{t:this.instance}]}).wait(5));
 
 	// Layer_3
 	this.shape = new cjs.Shape();
@@ -3605,8 +3605,8 @@ p.nominalBounds = new cjs.Rectangle(145.5,241,561.5,221);
 		function goNextQ (){
 			_this.currentQ++;
 			if (_this.currentQ<=_this.myData.qItem.length){
-				console.log(_this.myData.qItem[_this.currentQ-1].qId.substring(5));
-				_this.gotoAndPlay("q"+_this.myData.qItem[_this.currentQ-1].qId.substring(5));
+				console.log(_this.myData.qItem[_this.currentQ-1].qId.substring(6));
+				_this.gotoAndPlay("q"+_this.myData.qItem[_this.currentQ-1].qId.substring(6));
 				if (_this.currentQ<=maxQ){
 					_this["prog"+_this.currentQ].gotoAndStop("on");
 				}
@@ -4028,22 +4028,22 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/f3s11/Bitmap19.png?1529567828558", id:"Bitmap19"},
-		{src:"images/f3s11/Bitmap28.png?1529567828558", id:"Bitmap28"},
-		{src:"images/f3s11/Bitmap3.png?1529567828558", id:"Bitmap3"},
-		{src:"images/f3s11/Bitmap30.png?1529567828558", id:"Bitmap30"},
-		{src:"images/f3s11/Bitmap31.png?1529567828558", id:"Bitmap31"},
-		{src:"images/f3s11/Bitmap8.png?1529567828558", id:"Bitmap8"},
-		{src:"images/f3s11/Bitmap9.png?1529567828558", id:"Bitmap9"},
-		{src:"sounds/mdroid_talk.mp3?1529567828558", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1529567828558", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1529567828558", id:"questionComplete"},
-		{src:"sounds/submitAns.mp3?1529567828558", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1529567828558", id:"suspense"},
-		{src:"sounds/timeout.mp3?1529567828558", id:"timeout"},
-		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1529567828558", id:"lib/jquery-2.2.4.min.js"},
-		{src:"components/sdk/anwidget.js?1529567828558", id:"sdk/anwidget.js"},
-		{src:"components/ui/src/textinput.js?1529567828558", id:"an.TextInput"}
+		{src:"images/f3s11/Bitmap19.png?1529743205739", id:"Bitmap19"},
+		{src:"images/f3s11/Bitmap28.png?1529743205739", id:"Bitmap28"},
+		{src:"images/f3s11/Bitmap3.png?1529743205739", id:"Bitmap3"},
+		{src:"images/f3s11/Bitmap30.png?1529743205739", id:"Bitmap30"},
+		{src:"images/f3s11/Bitmap31.png?1529743205739", id:"Bitmap31"},
+		{src:"images/f3s11/Bitmap8.png?1529743205739", id:"Bitmap8"},
+		{src:"images/f3s11/Bitmap9.png?1529743205739", id:"Bitmap9"},
+		{src:"sounds/mdroid_talk.mp3?1529743205739", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1529743205739", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1529743205739", id:"questionComplete"},
+		{src:"sounds/submitAns.mp3?1529743205739", id:"submitAns"},
+		{src:"sounds/suspense.mp3?1529743205739", id:"suspense"},
+		{src:"sounds/timeout.mp3?1529743205739", id:"timeout"},
+		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1529743205739", id:"lib/jquery-2.2.4.min.js"},
+		{src:"components/sdk/anwidget.js?1529743205739", id:"sdk/anwidget.js"},
+		{src:"components/ui/src/textinput.js?1529743205739", id:"an.TextInput"}
 	],
 	preloads: []
 };

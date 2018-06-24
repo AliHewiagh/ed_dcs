@@ -2437,12 +2437,20 @@ p.nominalBounds = new cjs.Rectangle(-5,-5,10,10);
 				}
 				_this.txtTime.text = txtMin + ":" + txtSec;
 		
-				if (_this.parent.secRemaining <= 0) {
+				if (_this.parent.secRemaining==0) {
 					clearInterval(timeInterval);
-					$("#dom_overlay_container").empty();
-					$("#blocklyDiv").empty();
-					_this.parent.onTimeEnd();
-					_this.parent.mcTimesUp.play();
+					if (!_this.parent.isTutorial){
+						$("#dom_overlay_container").empty();
+						$("#blocklyDiv").empty();
+						_this.parent.onTimeEnd();
+						_this.parent.mcTimesUp.play();
+					} else {
+						$("#dom_overlay_container").hide();
+						$("#blocklyDiv").hide();
+						_this.parent.mcTimesUp2.play();
+					}
+				} else if(_this.parent.secRemaining<0){
+					clearInterval(timeInterval);
 				} else {
 					_this.parent.secRemaining--;
 				}
@@ -2454,6 +2462,7 @@ p.nominalBounds = new cjs.Rectangle(-5,-5,10,10);
 			initClock(_this.parent.timeGiven);
 		}
 		this.stage.addEventListener("startClocking", doStartTimer);
+		initClock(_this.parent.timeGiven);
 	}
 
 	// actions tween:
@@ -12652,7 +12661,13 @@ p.nominalBounds = new cjs.Rectangle(-136.7,302.4,274,237.4);
 	}
 	this.frame_150 = function() {
 		this.stop();
-		nextScreen();
+		if (this.parent.isTutorial){
+			var custom = new createjs.Event("skipTutorial", true, false);
+			this.dispatchEvent(custom);
+			this.gotoAndStop(0);
+		} else {
+			nextScreen();
+		}
 	}
 
 	// actions tween:
@@ -14952,11 +14967,12 @@ p.nominalBounds = new cjs.Rectangle(-195.8,23.8,76,32.6);
 			cognitive_create(1);
 		}
 		function getNextMap(){
-			isoGroup.destroy();
+			isoGroup.destroy();	
 			if(player_direction_group != null)
 		    {
 		        player_direction_group.destroy();
 		    }
+			_this.mcHelp.gotoAndStop(0);
 			_this.qNum++;
 			/*
 			//debug
@@ -14967,6 +14983,7 @@ p.nominalBounds = new cjs.Rectangle(-195.8,23.8,76,32.6);
 				myContainer.style.display = "none";
 				divEditor.style.display = "none";
 				_this.mcNotice.gotoAndPlay("anim");
+				clearInterval(timeInterval);//stop time
 			} else if (_this.qNum<=4){
 				_this.mcCont.visible = true;
 				cognitive_create(_this.qNum);
@@ -14990,6 +15007,11 @@ p.nominalBounds = new cjs.Rectangle(-195.8,23.8,76,32.6);
 				//game.destroy();
 			}
 		}
+		function onSkipTutorial(e){
+			_this.qNum=4;
+			getNextMap();
+		}
+		this.stage.addEventListener("skipTutorial", onSkipTutorial);
 		function onHelp(e){
 			_this.mcCont.visible = false;
 			myContainer.style.display = "none";
@@ -15019,6 +15041,7 @@ p.nominalBounds = new cjs.Rectangle(-195.8,23.8,76,32.6);
 			myContainer.style.display = "block";
 			divEditor.style.display = "block";
 			cognitive_create(5);
+			_this.parent.isTutorial = false;
 			var custom = new createjs.Event("startClocking", true, false);
 			_this.dispatchEvent(custom);
 		}
@@ -15116,10 +15139,12 @@ p.nominalBounds = new cjs.Rectangle(-195.8,23.8,76,32.6);
 		if (typeof cUserId === "undefined") {
 			cUserId = "";
 		}
+		//this.timeGiven = 15;//time in seconds
 		this.timeGiven = 600;//time in seconds
 		this.secRemaining = this.timeGiven;
 		this.timeTaken = 0;
 		this.cScore = 0;
+		this.isTutorial = true;
 		//var maxQ = 3;
 		this.currentQ = 0;
 		this.myData = {
@@ -15162,7 +15187,7 @@ p.nominalBounds = new cjs.Rectangle(-195.8,23.8,76,32.6);
 		if (typeof debugMode === "undefined") {
 			debugMode = false;
 		}
-		//debugMode = true;
+		//debugMode = false;
 		this.selectedQ = randRange(0,1);
 		console.log(this.selectedQ);
 		if (debugMode) {
@@ -15218,12 +15243,14 @@ p.nominalBounds = new cjs.Rectangle(-195.8,23.8,76,32.6);
 		}
 		this.addEventListener("click", doPlay);
 		var isTimeOut = false;
-		_this.onTimeEnd = function (){
+		this.onTimeEnd = function (){
 			_this.myData.qItem[_this.currentQ-1].time = _this.timeGiven;
 			isTimeOut = true;
 			saveData();
+			console.log("destoyr!!");
 			var custom = new createjs.Event("destroyMe", true, false);
 			_this.dispatchEvent(custom);
+			_this.onTimeEnd = null;
 		};
 		this.sendScore = function (_userAns, _cScore){
 			console.log("update score to index:"+_this.currentQ-1);
@@ -15263,6 +15290,14 @@ p.nominalBounds = new cjs.Rectangle(-195.8,23.8,76,32.6);
 
 	// actions tween:
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(4).call(this.frame_4).wait(39).call(this.frame_43).wait(56).call(this.frame_99).wait(5).call(this.frame_104).wait(15).call(this.frame_119).wait(13).call(this.frame_132).wait(169).call(this.frame_301).wait(1));
+
+	// mcTimesUp2
+	this.mcTimesUp2 = new lib.mcTimesUp();
+	this.mcTimesUp2.name = "mcTimesUp2";
+	this.mcTimesUp2.parent = this;
+	this.mcTimesUp2._off = true;
+
+	this.timeline.addTween(cjs.Tween.get(this.mcTimesUp2).wait(104).to({_off:false},0).wait(198));
 
 	// mcTimesUp
 	this.mcTimesUp = new lib.mcTimesUp();
@@ -15495,17 +15530,17 @@ lib.properties = {
 	opacity: 1.00,
 	webfonts: {},
 	manifest: [
-		{src:"images/f5s19/Bitmap1.png?1529640935930", id:"Bitmap1"},
-		{src:"images/f5s19/Bitmap2.png?1529640935930", id:"Bitmap2"},
-		{src:"images/f5s19/Bitmap21.png?1529640935930", id:"Bitmap21"},
-		{src:"images/f5s19/Bitmap3.png?1529640935930", id:"Bitmap3"},
-		{src:"images/f5s19/Bitmap9.png?1529640935930", id:"Bitmap9"},
-		{src:"sounds/mdroid_talk.mp3?1529640935930", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1529640935930", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1529640935930", id:"questionComplete"},
-		{src:"sounds/submitAns.mp3?1529640935930", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1529640935930", id:"suspense"},
-		{src:"sounds/timeout.mp3?1529640935930", id:"timeout"}
+		{src:"images/f5s19/Bitmap1.png?1529767652132", id:"Bitmap1"},
+		{src:"images/f5s19/Bitmap2.png?1529767652132", id:"Bitmap2"},
+		{src:"images/f5s19/Bitmap21.png?1529767652132", id:"Bitmap21"},
+		{src:"images/f5s19/Bitmap3.png?1529767652132", id:"Bitmap3"},
+		{src:"images/f5s19/Bitmap9.png?1529767652132", id:"Bitmap9"},
+		{src:"sounds/mdroid_talk.mp3?1529767652132", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1529767652132", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1529767652132", id:"questionComplete"},
+		{src:"sounds/submitAns.mp3?1529767652132", id:"submitAns"},
+		{src:"sounds/suspense.mp3?1529767652132", id:"suspense"},
+		{src:"sounds/timeout.mp3?1529767652132", id:"timeout"}
 	],
 	preloads: []
 };

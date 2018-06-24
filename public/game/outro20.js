@@ -6479,37 +6479,6 @@ p.nominalBounds = null;
 p.nominalBounds = new cjs.Rectangle(-43.6,-46.9,90,97);
 
 
-(lib.endfxx = function(mode,startPosition,loop) {
-	this.initialize(mode,startPosition,loop,{});
-
-	// timeline functions:
-	this.frame_149 = function() {
-		this.stop();
-	}
-
-	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).wait(149).call(this.frame_149).wait(1));
-
-	// Misi selesai!
-	this.instance = new lib.misiselesai();
-	this.instance.parent = this;
-	this.instance.setTransform(-2.4,-12.2,0.023,0.023);
-	this.instance._off = true;
-
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(44).to({_off:false},0).to({scaleX:1,scaleY:1},27,cjs.Ease.backOut).wait(79));
-
-	// Layer 6
-	this.instance_1 = new lib.merahbg();
-	this.instance_1.parent = this;
-	this.instance_1.setTransform(1.1,780.2);
-	this.instance_1.alpha = 0.5;
-
-	this.timeline.addTween(cjs.Tween.get(this.instance_1).to({y:7.7},38,cjs.Ease.backOut).wait(112));
-
-}).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-733.1,305.9,1468,948.5);
-
-
 (lib.inventory_2 = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
@@ -8603,6 +8572,46 @@ p.nominalBounds = new cjs.Rectangle(-21.8,-21.4,46,46);
 p.nominalBounds = new cjs.Rectangle(-32,-42.1,48,47);
 
 
+(lib.endfxx = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// timeline functions:
+	this.frame_149 = function() {
+		this.stop();
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).wait(149).call(this.frame_149).wait(1));
+
+	// Layer_3
+	this.mcCont = new lib.cursor();
+	this.mcCont.name = "mcCont";
+	this.mcCont.parent = this;
+	this.mcCont.setTransform(13.9,94.8,0.35,0.35,0,0,0,0.5,0.5);
+	this.mcCont._off = true;
+
+	this.timeline.addTween(cjs.Tween.get(this.mcCont).wait(73).to({_off:false},0).wait(77));
+
+	// Misi selesai!
+	this.instance = new lib.misiselesai();
+	this.instance.parent = this;
+	this.instance.setTransform(-2.4,-12.2,0.023,0.023);
+	this.instance._off = true;
+
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(44).to({_off:false},0).to({scaleX:1,scaleY:1},27,cjs.Ease.backOut).wait(79));
+
+	// Layer 6
+	this.instance_1 = new lib.merahbg();
+	this.instance_1.parent = this;
+	this.instance_1.setTransform(1.1,780.2);
+	this.instance_1.alpha = 0.5;
+
+	this.timeline.addTween(cjs.Tween.get(this.instance_1).to({y:7.7},38,cjs.Ease.backOut).wait(112));
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(-733.1,305.9,1468,948.5);
+
+
 (lib.dialogue5 = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
@@ -9128,78 +9137,78 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/outro20/Path_10_0.png?1527800590433", id:"Path_10_0"},
-		{src:"images/outro20/Path_11_0.png?1527800590433", id:"Path_11_0"},
-		{src:"images/outro20/Path_12_0.png?1527800590433", id:"Path_12_0"},
-		{src:"images/outro20/Path_13_0.png?1527800590433", id:"Path_13_0"},
-		{src:"images/outro20/Path_14_0.png?1527800590433", id:"Path_14_0"},
-		{src:"images/outro20/Path_15_0.png?1527800590433", id:"Path_15_0"},
-		{src:"images/outro20/Path_16_0.png?1527800590433", id:"Path_16_0"},
-		{src:"images/outro20/Path_17_0.png?1527800590433", id:"Path_17_0"},
-		{src:"images/outro20/Path_18_0.png?1527800590433", id:"Path_18_0"},
-		{src:"images/outro20/Path_19_0.png?1527800590433", id:"Path_19_0"},
-		{src:"images/outro20/Path_1_0.png?1527800590433", id:"Path_1_0"},
-		{src:"images/outro20/Path_20_0.png?1527800590433", id:"Path_20_0"},
-		{src:"images/outro20/Path_21_0.png?1527800590433", id:"Path_21_0"},
-		{src:"images/outro20/Path_22_0.png?1527800590433", id:"Path_22_0"},
-		{src:"images/outro20/Path_23.png?1527800590433", id:"Path_23"},
-		{src:"images/outro20/Path_24_0.png?1527800590433", id:"Path_24_0"},
-		{src:"images/outro20/Path_25_0.png?1527800590433", id:"Path_25_0"},
-		{src:"images/outro20/Path_26_0.png?1527800590433", id:"Path_26_0"},
-		{src:"images/outro20/Path_27_0.png?1527800590433", id:"Path_27_0"},
-		{src:"images/outro20/Path_28_0.png?1527800590433", id:"Path_28_0"},
-		{src:"images/outro20/Path_29_0.png?1527800590433", id:"Path_29_0"},
-		{src:"images/outro20/Path_2_0.png?1527800590433", id:"Path_2_0"},
-		{src:"images/outro20/Path_30_0.png?1527800590433", id:"Path_30_0"},
-		{src:"images/outro20/Path_31_0.png?1527800590433", id:"Path_31_0"},
-		{src:"images/outro20/Path_32.png?1527800590433", id:"Path_32"},
-		{src:"images/outro20/Path_33_0.png?1527800590433", id:"Path_33_0"},
-		{src:"images/outro20/Path_34_0.png?1527800590433", id:"Path_34_0"},
-		{src:"images/outro20/Path_35_0.png?1527800590433", id:"Path_35_0"},
-		{src:"images/outro20/Path_36.png?1527800590433", id:"Path_36"},
-		{src:"images/outro20/Path_37.png?1527800590433", id:"Path_37"},
-		{src:"images/outro20/Path_38.png?1527800590433", id:"Path_38"},
-		{src:"images/outro20/Path_39.png?1527800590433", id:"Path_39"},
-		{src:"images/outro20/Path_3_0.png?1527800590433", id:"Path_3_0"},
-		{src:"images/outro20/Path_40.png?1527800590433", id:"Path_40"},
-		{src:"images/outro20/Path_41.png?1527800590433", id:"Path_41"},
-		{src:"images/outro20/Path_4_0.png?1527800590433", id:"Path_4_0"},
-		{src:"images/outro20/Path_5_0.png?1527800590433", id:"Path_5_0"},
-		{src:"images/outro20/Path_6_0.png?1527800590434", id:"Path_6_0"},
-		{src:"images/outro20/Path_7_0.png?1527800590434", id:"Path_7_0"},
-		{src:"images/outro20/Path_8_0.png?1527800590434", id:"Path_8_0"},
-		{src:"images/outro20/Path_9_0.png?1527800590434", id:"Path_9_0"},
-		{src:"images/outro20/Bitmap1.png?1527800590434", id:"Bitmap1"},
-		{src:"images/outro20/Bitmap10.png?1527800590434", id:"Bitmap10"},
-		{src:"images/outro20/Bitmap10_1.png?1527800590434", id:"Bitmap10_1"},
-		{src:"images/outro20/Bitmap11.png?1527800590434", id:"Bitmap11"},
-		{src:"images/outro20/Bitmap13.png?1527800590434", id:"Bitmap13"},
-		{src:"images/outro20/Bitmap13_1.png?1527800590434", id:"Bitmap13_1"},
-		{src:"images/outro20/Bitmap14.png?1527800590434", id:"Bitmap14"},
-		{src:"images/outro20/Bitmap15.png?1527800590434", id:"Bitmap15"},
-		{src:"images/outro20/Bitmap16.png?1527800590434", id:"Bitmap16"},
-		{src:"images/outro20/Bitmap17.png?1527800590434", id:"Bitmap17"},
-		{src:"images/outro20/Bitmap18.png?1527800590434", id:"Bitmap18"},
-		{src:"images/outro20/Bitmap19.png?1527800590434", id:"Bitmap19"},
-		{src:"images/outro20/Bitmap1_galaxy.png?1527800590434", id:"Bitmap1_galaxy"},
-		{src:"images/outro20/Bitmap2.png?1527800590434", id:"Bitmap2"},
-		{src:"images/outro20/Bitmap20.png?1527800590434", id:"Bitmap20"},
-		{src:"images/outro20/Bitmap23.png?1527800590434", id:"Bitmap23"},
-		{src:"images/outro20/Bitmap3.png?1527800590434", id:"Bitmap3"},
-		{src:"images/outro20/Bitmap4.png?1527800590434", id:"Bitmap4"},
-		{src:"images/outro20/Bitmap5.png?1527800590434", id:"Bitmap5"},
-		{src:"images/outro20/Bitmap7.png?1527800590434", id:"Bitmap7"},
-		{src:"images/outro20/Bitmap8.png?1527800590434", id:"Bitmap8"},
-		{src:"images/outro20/Bitmap9.png?1527800590434", id:"Bitmap9"},
-		{src:"images/outro20/Bitmap9_1.png?1527800590434", id:"Bitmap9_1"},
-		{src:"sounds/aerosolcanspray2_z1wCs2Vu.mp3?1527800590434", id:"aerosolcanspray2_z1wCs2Vu"},
-		{src:"sounds/glassdooropenhydraulics_MkZ1yYEd.mp3?1527800590434", id:"glassdooropenhydraulics_MkZ1yYEd"},
-		{src:"sounds/harpUp.mp3?1527800590434", id:"harpUp"},
-		{src:"sounds/icefreezesuperpowerlong_zygQL3NO.mp3?1527800590434", id:"icefreezesuperpowerlong_zygQL3NO"},
-		{src:"sounds/intro.mp3?1527800590434", id:"intro"},
-		{src:"sounds/photonshot4_zkyuNTN_.mp3?1527800590434", id:"photonshot4_zkyuNTN_"},
-		{src:"sounds/questionComplete.mp3?1527800590434", id:"questionComplete"},
-		{src:"sounds/stdClick.mp3?1527800590434", id:"stdClick"}
+		{src:"images/outro20/Path_10_0.png?1529665154024", id:"Path_10_0"},
+		{src:"images/outro20/Path_11_0.png?1529665154024", id:"Path_11_0"},
+		{src:"images/outro20/Path_12_0.png?1529665154024", id:"Path_12_0"},
+		{src:"images/outro20/Path_13_0.png?1529665154024", id:"Path_13_0"},
+		{src:"images/outro20/Path_14_0.png?1529665154024", id:"Path_14_0"},
+		{src:"images/outro20/Path_15_0.png?1529665154024", id:"Path_15_0"},
+		{src:"images/outro20/Path_16_0.png?1529665154024", id:"Path_16_0"},
+		{src:"images/outro20/Path_17_0.png?1529665154024", id:"Path_17_0"},
+		{src:"images/outro20/Path_18_0.png?1529665154024", id:"Path_18_0"},
+		{src:"images/outro20/Path_19_0.png?1529665154024", id:"Path_19_0"},
+		{src:"images/outro20/Path_1_0.png?1529665154024", id:"Path_1_0"},
+		{src:"images/outro20/Path_20_0.png?1529665154024", id:"Path_20_0"},
+		{src:"images/outro20/Path_21_0.png?1529665154024", id:"Path_21_0"},
+		{src:"images/outro20/Path_22_0.png?1529665154024", id:"Path_22_0"},
+		{src:"images/outro20/Path_23.png?1529665154024", id:"Path_23"},
+		{src:"images/outro20/Path_24_0.png?1529665154024", id:"Path_24_0"},
+		{src:"images/outro20/Path_25_0.png?1529665154024", id:"Path_25_0"},
+		{src:"images/outro20/Path_26_0.png?1529665154024", id:"Path_26_0"},
+		{src:"images/outro20/Path_27_0.png?1529665154024", id:"Path_27_0"},
+		{src:"images/outro20/Path_28_0.png?1529665154024", id:"Path_28_0"},
+		{src:"images/outro20/Path_29_0.png?1529665154024", id:"Path_29_0"},
+		{src:"images/outro20/Path_2_0.png?1529665154024", id:"Path_2_0"},
+		{src:"images/outro20/Path_30_0.png?1529665154024", id:"Path_30_0"},
+		{src:"images/outro20/Path_31_0.png?1529665154024", id:"Path_31_0"},
+		{src:"images/outro20/Path_32.png?1529665154024", id:"Path_32"},
+		{src:"images/outro20/Path_33_0.png?1529665154024", id:"Path_33_0"},
+		{src:"images/outro20/Path_34_0.png?1529665154024", id:"Path_34_0"},
+		{src:"images/outro20/Path_35_0.png?1529665154024", id:"Path_35_0"},
+		{src:"images/outro20/Path_36.png?1529665154024", id:"Path_36"},
+		{src:"images/outro20/Path_37.png?1529665154024", id:"Path_37"},
+		{src:"images/outro20/Path_38.png?1529665154024", id:"Path_38"},
+		{src:"images/outro20/Path_39.png?1529665154024", id:"Path_39"},
+		{src:"images/outro20/Path_3_0.png?1529665154024", id:"Path_3_0"},
+		{src:"images/outro20/Path_40.png?1529665154024", id:"Path_40"},
+		{src:"images/outro20/Path_41.png?1529665154024", id:"Path_41"},
+		{src:"images/outro20/Path_4_0.png?1529665154024", id:"Path_4_0"},
+		{src:"images/outro20/Path_5_0.png?1529665154024", id:"Path_5_0"},
+		{src:"images/outro20/Path_6_0.png?1529665154024", id:"Path_6_0"},
+		{src:"images/outro20/Path_7_0.png?1529665154024", id:"Path_7_0"},
+		{src:"images/outro20/Path_8_0.png?1529665154024", id:"Path_8_0"},
+		{src:"images/outro20/Path_9_0.png?1529665154024", id:"Path_9_0"},
+		{src:"images/outro20/Bitmap1.png?1529665154024", id:"Bitmap1"},
+		{src:"images/outro20/Bitmap10.png?1529665154024", id:"Bitmap10"},
+		{src:"images/outro20/Bitmap10_1.png?1529665154024", id:"Bitmap10_1"},
+		{src:"images/outro20/Bitmap11.png?1529665154024", id:"Bitmap11"},
+		{src:"images/outro20/Bitmap13.png?1529665154024", id:"Bitmap13"},
+		{src:"images/outro20/Bitmap13_1.png?1529665154024", id:"Bitmap13_1"},
+		{src:"images/outro20/Bitmap14.png?1529665154024", id:"Bitmap14"},
+		{src:"images/outro20/Bitmap15.png?1529665154024", id:"Bitmap15"},
+		{src:"images/outro20/Bitmap16.png?1529665154024", id:"Bitmap16"},
+		{src:"images/outro20/Bitmap17.png?1529665154024", id:"Bitmap17"},
+		{src:"images/outro20/Bitmap18.png?1529665154024", id:"Bitmap18"},
+		{src:"images/outro20/Bitmap19.png?1529665154024", id:"Bitmap19"},
+		{src:"images/outro20/Bitmap1_galaxy.png?1529665154024", id:"Bitmap1_galaxy"},
+		{src:"images/outro20/Bitmap2.png?1529665154024", id:"Bitmap2"},
+		{src:"images/outro20/Bitmap20.png?1529665154024", id:"Bitmap20"},
+		{src:"images/outro20/Bitmap23.png?1529665154024", id:"Bitmap23"},
+		{src:"images/outro20/Bitmap3.png?1529665154024", id:"Bitmap3"},
+		{src:"images/outro20/Bitmap4.png?1529665154024", id:"Bitmap4"},
+		{src:"images/outro20/Bitmap5.png?1529665154024", id:"Bitmap5"},
+		{src:"images/outro20/Bitmap7.png?1529665154024", id:"Bitmap7"},
+		{src:"images/outro20/Bitmap8.png?1529665154024", id:"Bitmap8"},
+		{src:"images/outro20/Bitmap9.png?1529665154024", id:"Bitmap9"},
+		{src:"images/outro20/Bitmap9_1.png?1529665154024", id:"Bitmap9_1"},
+		{src:"sounds/aerosolcanspray2_z1wCs2Vu.mp3?1529665154024", id:"aerosolcanspray2_z1wCs2Vu"},
+		{src:"sounds/glassdooropenhydraulics_MkZ1yYEd.mp3?1529665154024", id:"glassdooropenhydraulics_MkZ1yYEd"},
+		{src:"sounds/harpUp.mp3?1529665154024", id:"harpUp"},
+		{src:"sounds/icefreezesuperpowerlong_zygQL3NO.mp3?1529665154024", id:"icefreezesuperpowerlong_zygQL3NO"},
+		{src:"sounds/intro.mp3?1529665154024", id:"intro"},
+		{src:"sounds/photonshot4_zkyuNTN_.mp3?1529665154024", id:"photonshot4_zkyuNTN_"},
+		{src:"sounds/questionComplete.mp3?1529665154024", id:"questionComplete"},
+		{src:"sounds/stdClick.mp3?1529665154024", id:"stdClick"}
 	],
 	preloads: []
 };

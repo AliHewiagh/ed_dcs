@@ -8105,19 +8105,19 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/f3s5/Bitmap22.png?1529488629624", id:"Bitmap22"},
-		{src:"images/f3s5/Bitmap3.png?1529488629624", id:"Bitmap3"},
-		{src:"images/f3s5/Bitmap8.png?1529488629624", id:"Bitmap8"},
-		{src:"images/f3s5/Bitmap9.png?1529488629624", id:"Bitmap9"},
-		{src:"sounds/mdroid_talk.mp3?1529488629624", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1529488629624", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1529488629624", id:"questionComplete"},
-		{src:"sounds/submitAns.mp3?1529488629624", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1529488629624", id:"suspense"},
-		{src:"sounds/timeout.mp3?1529488629624", id:"timeout"},
-		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1529488629624", id:"lib/jquery-2.2.4.min.js"},
-		{src:"components/sdk/anwidget.js?1529488629624", id:"sdk/anwidget.js"},
-		{src:"components/ui/src/combobox.js?1529488629624", id:"an.ComboBox"}
+		{src:"images/f3s5/Bitmap22.png?1529743819884", id:"Bitmap22"},
+		{src:"images/f3s5/Bitmap3.png?1529743819884", id:"Bitmap3"},
+		{src:"images/f3s5/Bitmap8.png?1529743819884", id:"Bitmap8"},
+		{src:"images/f3s5/Bitmap9.png?1529743819885", id:"Bitmap9"},
+		{src:"sounds/mdroid_talk.mp3?1529743819885", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1529743819885", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1529743819885", id:"questionComplete"},
+		{src:"sounds/submitAns.mp3?1529743819885", id:"submitAns"},
+		{src:"sounds/suspense.mp3?1529743819885", id:"suspense"},
+		{src:"sounds/timeout.mp3?1529743819885", id:"timeout"},
+		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1529743819885", id:"lib/jquery-2.2.4.min.js"},
+		{src:"components/sdk/anwidget.js?1529743819885", id:"sdk/anwidget.js"},
+		{src:"components/ui/src/combobox.js?1529743819885", id:"an.ComboBox"}
 	],
 	preloads: []
 };

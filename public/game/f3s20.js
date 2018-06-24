@@ -2460,7 +2460,7 @@ p.nominalBounds = new cjs.Rectangle(98,222.9,643.6,330.2);
 			_this.currentQ++;
 			$("#dom_overlay_container").empty();
 			if (_this.currentQ<=_this.myData.qItem.length){
-				_this.gotoAndPlay("q"+_this.myData.qItem[_this.currentQ-1].qId.substring(5));
+				_this.gotoAndPlay("q"+_this.myData.qItem[_this.currentQ-1].qId.substring(6));
 			} else {
 				//all questions done
 				clearInterval(timeInterval);//stop time
@@ -2769,16 +2769,16 @@ lib.properties = {
 	opacity: 1.00,
 	webfonts: {},
 	manifest: [
-		{src:"images/f3s20/Bitmap21.png?1529639697228", id:"Bitmap21"},
-		{src:"images/f3s20/Bitmap22.png?1529639697228", id:"Bitmap22"},
-		{src:"images/f3s20/Bitmap3.png?1529639697228", id:"Bitmap3"},
-		{src:"images/f3s20/Bitmap9.png?1529639697228", id:"Bitmap9"},
-		{src:"sounds/mdroid_talk.mp3?1529639697228", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1529639697228", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1529639697228", id:"questionComplete"},
-		{src:"sounds/submitAns.mp3?1529639697228", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1529639697228", id:"suspense"},
-		{src:"sounds/timeout.mp3?1529639697228", id:"timeout"}
+		{src:"images/f3s20/Bitmap21.png?1529742575723", id:"Bitmap21"},
+		{src:"images/f3s20/Bitmap22.png?1529742575723", id:"Bitmap22"},
+		{src:"images/f3s20/Bitmap3.png?1529742575723", id:"Bitmap3"},
+		{src:"images/f3s20/Bitmap9.png?1529742575723", id:"Bitmap9"},
+		{src:"sounds/mdroid_talk.mp3?1529742575723", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1529742575723", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1529742575723", id:"questionComplete"},
+		{src:"sounds/submitAns.mp3?1529742575723", id:"submitAns"},
+		{src:"sounds/suspense.mp3?1529742575723", id:"suspense"},
+		{src:"sounds/timeout.mp3?1529742575723", id:"timeout"}
 	],
 	preloads: []
 };

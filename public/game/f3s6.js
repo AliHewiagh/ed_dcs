@@ -409,7 +409,7 @@ p.nominalBounds = new cjs.Rectangle(-70,-39,140,79);
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 
 	// Layer_1
-	this.myTxt = new cjs.Text("Rotate the following puzzle pieces based on the instruction given. Click ‘Reset’ if you want to \nreturn a puzzle piece to its original position.", "italic bold 16px 'Quantico'", "#0EE0E0");
+	this.myTxt = new cjs.Text("Rotate the following puzzle pieces based on the\ninstruction given. Click ‘Reset’ if you want to \nreturn a puzzle piece to its original position.", "italic bold 16px 'Quantico'", "#0EE0E0");
 	this.myTxt.name = "myTxt";
 	this.myTxt.lineHeight = 25;
 	this.myTxt.lineWidth = 412;
@@ -3875,8 +3875,8 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 		function goNextQ (){
 			_this.currentQ++;
 			if (_this.currentQ<=_this.myData.qItem.length){
-				console.log(_this.myData.qItem[_this.currentQ-1].qId.substring(7));
-				_this.gotoAndPlay("q"+_this.currentQ);
+				console.log(_this.myData.qItem[_this.currentQ-1].qId.substring(5));
+				_this.gotoAndPlay("q"+_this.myData.qItem[_this.currentQ-1].qId.substring(5));
 			} else {
 				//all done
 				clearInterval(timeInterval);//stop time
@@ -4187,18 +4187,18 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/f3s6/Bitmap19.png?1529490243685", id:"Bitmap19"},
-		{src:"images/f3s6/Bitmap22.png?1529490243685", id:"Bitmap22"},
-		{src:"images/f3s6/Bitmap3.png?1529490243685", id:"Bitmap3"},
-		{src:"images/f3s6/Bitmap8.png?1529490243685", id:"Bitmap8"},
-		{src:"images/f3s6/Bitmap9.png?1529490243685", id:"Bitmap9"},
-		{src:"sounds/mdroid_talk.mp3?1529490243685", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1529490243685", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1529490243685", id:"questionComplete"},
-		{src:"sounds/stdClick.mp3?1529490243685", id:"stdClick"},
-		{src:"sounds/submitAns.mp3?1529490243685", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1529490243685", id:"suspense"},
-		{src:"sounds/timeout.mp3?1529490243685", id:"timeout"}
+		{src:"images/f3s6/Bitmap19.png?1529743773529", id:"Bitmap19"},
+		{src:"images/f3s6/Bitmap22.png?1529743773529", id:"Bitmap22"},
+		{src:"images/f3s6/Bitmap3.png?1529743773529", id:"Bitmap3"},
+		{src:"images/f3s6/Bitmap8.png?1529743773529", id:"Bitmap8"},
+		{src:"images/f3s6/Bitmap9.png?1529743773529", id:"Bitmap9"},
+		{src:"sounds/mdroid_talk.mp3?1529743773529", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1529743773529", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1529743773529", id:"questionComplete"},
+		{src:"sounds/stdClick.mp3?1529743773529", id:"stdClick"},
+		{src:"sounds/submitAns.mp3?1529743773529", id:"submitAns"},
+		{src:"sounds/suspense.mp3?1529743773529", id:"suspense"},
+		{src:"sounds/timeout.mp3?1529743773529", id:"timeout"}
 	],
 	preloads: []
 };

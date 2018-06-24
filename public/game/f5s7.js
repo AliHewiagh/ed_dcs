@@ -5385,17 +5385,17 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/f5s7/Bitmap22.png?1529634636267", id:"Bitmap22"},
-		{src:"images/f5s7/Bitmap3.png?1529634636267", id:"Bitmap3"},
-		{src:"images/f5s7/Bitmap8.png?1529634636267", id:"Bitmap8"},
-		{src:"images/f5s7/Bitmap9.png?1529634636267", id:"Bitmap9"},
-		{src:"sounds/mdroid_talk.mp3?1529634636267", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1529634636267", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1529634636267", id:"questionComplete"},
-		{src:"sounds/stdClick.mp3?1529634636267", id:"stdClick"},
-		{src:"sounds/submitAns.mp3?1529634636267", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1529634636267", id:"suspense"},
-		{src:"sounds/timeout.mp3?1529634636267", id:"timeout"}
+		{src:"images/f5s7/Bitmap22.png?1529741774279", id:"Bitmap22"},
+		{src:"images/f5s7/Bitmap3.png?1529741774279", id:"Bitmap3"},
+		{src:"images/f5s7/Bitmap8.png?1529741774279", id:"Bitmap8"},
+		{src:"images/f5s7/Bitmap9.png?1529741774279", id:"Bitmap9"},
+		{src:"sounds/mdroid_talk.mp3?1529741774279", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1529741774279", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1529741774279", id:"questionComplete"},
+		{src:"sounds/stdClick.mp3?1529741774279", id:"stdClick"},
+		{src:"sounds/submitAns.mp3?1529741774279", id:"submitAns"},
+		{src:"sounds/suspense.mp3?1529741774279", id:"suspense"},
+		{src:"sounds/timeout.mp3?1529741774279", id:"timeout"}
 	],
 	preloads: []
 };
