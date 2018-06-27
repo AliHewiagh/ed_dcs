@@ -4,7 +4,8 @@
     @include('admin.partial.sidebar')
     <div class="content-wrapper">
         <section class="content-header">
-            <h1>State Progress <small>{{$state}}</small></h1>
+            <?php $s = \App\State::find($state); ?>
+            <h1>State Progress <small>{{$s->name}}</small></h1>
         </section>
         <section class="content">
             <div class="row">

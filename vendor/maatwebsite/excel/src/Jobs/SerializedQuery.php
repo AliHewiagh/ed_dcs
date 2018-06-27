@@ -5,9 +5,7 @@ namespace Maatwebsite\Excel\Jobs;
 use Illuminate\Database\Connection;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Database\Query\Builder;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Events\StatementPrepared;
-use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 
 class SerializedQuery
 {
@@ -27,11 +25,6 @@ class SerializedQuery
     public $connection;
 
     /**
-     * @var string|null
-     */
-    public $model;
-
-    /**
      * @param Builder $builder
      */
     public function __construct($builder)
@@ -39,10 +32,6 @@ class SerializedQuery
         $this->query      = $builder->toSql();
         $this->bindings   = $builder->getBindings();
         $this->connection = $builder->getConnection()->getName();
-
-        if ($builder instanceof EloquentBuilder) {
-            $this->model = get_class($builder->getModel());
-        }
     }
 
     /**
@@ -57,41 +46,6 @@ class SerializedQuery
             $event->statement->setFetchMode(\PDO::FETCH_ASSOC);
         });
 
-        return $this->hydrate(
-            $connection->select($this->query, $this->bindings)
-        );
-    }
-
-    /**
-     * @param array $items
-     *
-     * @return mixed
-     */
-    public function hydrate(array $items)
-    {
-        if (!$instance = $this->newModelInstance()) {
-            return $items;
-        }
-
-        return array_map(function ($item) use ($instance) {
-            return $instance->newFromBuilder($item);
-        }, $items);
-    }
-
-    /**
-     * @return Model|null
-     */
-    private function newModelInstance()
-    {
-        if (null === $this->model) {
-            return null;
-        }
-
-        /** @var Model $model */
-        $model = new $this->model;
-
-        $model->setConnection($this->connection);
-
-        return $model;
+        return $connection->select($this->query, $this->bindings);
     }
 }

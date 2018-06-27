@@ -7,7 +7,6 @@ use Illuminate\Support\ServiceProvider;
 use Maatwebsite\Excel\Mixins\StoreCollection;
 use Maatwebsite\Excel\Mixins\DownloadCollection;
 use Illuminate\Contracts\Routing\ResponseFactory;
-use Laravel\Lumen\Application as LumenApplication;
 
 class ExcelServiceProvider extends ServiceProvider
 {
@@ -17,13 +16,9 @@ class ExcelServiceProvider extends ServiceProvider
     public function boot()
     {
         if ($this->app->runningInConsole()) {
-            if ($this->app instanceof LumenApplication) {
-                $this->app->configure('excel');
-            } else {
-                $this->publishes([
-                    $this->getConfigFile() => config_path('excel.php'),
-                ], 'config');
-            }
+            $this->publishes([
+                $this->getConfigFile() => config_path('excel.php'),
+            ], 'config');
         }
     }
 

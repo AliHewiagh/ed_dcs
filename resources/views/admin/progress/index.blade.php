@@ -29,12 +29,12 @@
                                     <tbody>
                                     @foreach ($locs as $loc)
                                         <?php
-                                        $locationIds = \App\Location::where("state", $loc)->pluck('id')->toArray();
+                                        $locationIds = \App\Location::where("state_id", $loc->id)->pluck('id')->toArray();
                                         $schools = \App\School::whereIn('location_id', $locationIds)->count();
                                         $done = \App\School::where('done', 1)->whereIn('location_id', $locationIds)->count();
                                         ?>
                                         <tr>
-                                            <td><a href="{{url('/admin/progress/'.$loc)}}">{{$loc}}</a></td>
+                                            <td><a href="{{url('/admin/progress/'.$loc->id)}}">{{$loc->name}}</a></td>
                                             <td>{{$done}}/{{$schools}}</td>
                                         </tr>
                                     @endforeach

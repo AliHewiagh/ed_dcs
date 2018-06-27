@@ -113,7 +113,7 @@ class LogManager implements LoggerInterface
     {
         try {
             return $this->channels[$name] ?? with($this->resolve($name), function ($logger) use ($name) {
-                return $this->channels[$name] = $this->tap($name, new Logger($logger, $this->app['events']));
+                return $this->tap($name, new Logger($logger, $this->app['events']));
             });
         } catch (Throwable $e) {
             return tap($this->createEmergencyLogger(), function ($logger) use ($e) {
@@ -213,9 +213,7 @@ class LogManager implements LoggerInterface
      */
     protected function createCustomDriver(array $config)
     {
-        $factory = is_callable($via = $config['via']) ? $via : $this->app->make($via);
-
-        return $factory($config);
+        return $this->app->make($config['via'])->__invoke($config);
     }
 
     /**
@@ -243,10 +241,7 @@ class LogManager implements LoggerInterface
     {
         return new Monolog($this->parseChannel($config), [
             $this->prepareHandler(
-                new StreamHandler(
-                    $config['path'], $this->level($config),
-                    $config['bubble'] ?? true, $config['permission'] ?? null, $config['locking'] ?? false
-                )
+                new StreamHandler($config['path'], $this->level($config))
             ),
         ]);
     }
@@ -261,8 +256,7 @@ class LogManager implements LoggerInterface
     {
         return new Monolog($this->parseChannel($config), [
             $this->prepareHandler(new RotatingFileHandler(
-                $config['path'], $config['days'] ?? 7, $this->level($config),
-                $config['bubble'] ?? true, $config['permission'] ?? null, $config['locking'] ?? false
+                $config['path'], $config['days'] ?? 7, $this->level($config)
             )),
         ]);
     }
@@ -320,30 +314,6 @@ class LogManager implements LoggerInterface
     }
 
     /**
-     * Create an instance of any handler available in Monolog.
-     *
-     * @param  array  $config
-     * @return \Psr\Log\LoggerInterface
-     *
-     * @throws \InvalidArgumentException
-     * @throws \Illuminate\Contracts\Container\BindingResolutionException
-     */
-    protected function createMonologDriver(array $config)
-    {
-        if (! is_a($config['handler'], HandlerInterface::class, true)) {
-            throw new InvalidArgumentException(
-                $config['handler'].' must be an instance of '.HandlerInterface::class
-            );
-        }
-
-        $with = array_merge($config['with'] ?? [], $config['handler_with'] ?? []);
-
-        return new Monolog($this->parseChannel($config), [$this->prepareHandler(
-            $this->app->make($config['handler'], $with), $config
-        )]);
-    }
-
-    /**
      * Prepare the handlers for usage by Monolog.
      *
      * @param  array  $handlers
@@ -362,18 +332,11 @@ class LogManager implements LoggerInterface
      * Prepare the handler for usage by Monolog.
      *
      * @param  \Monolog\Handler\HandlerInterface  $handler
-     * @param  array  $config
      * @return \Monolog\Handler\HandlerInterface
      */
-    protected function prepareHandler(HandlerInterface $handler, array $config = [])
+    protected function prepareHandler(HandlerInterface $handler)
     {
-        if (! isset($config['formatter'])) {
-            $handler->setFormatter($this->formatter());
-        } elseif ($config['formatter'] !== 'default') {
-            $handler->setFormatter($this->app->make($config['formatter'], $config['formatter_with'] ?? []));
-        }
-
-        return $handler;
+        return $handler->setFormatter($this->formatter());
     }
 
     /**

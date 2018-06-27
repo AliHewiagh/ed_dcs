@@ -134,7 +134,8 @@ class HomeController extends Controller
     public function search(Request $request)
     {
         $q = $request->q;
-        $students = User::where([["name", 'LIKE', '%'.$q.'%'], ['type', 4], ['school_id', Auth::user()->school_id]])->get();
+        $students = User::where([["name", 'LIKE', '%'.$q.'%'], ['type', 4], ['school_id', Auth::user()->school_id]])
+            ->orWhere([["ic_number", 'LIKE', '%'.$q.'%'], ['type', 4], ['school_id', Auth::user()->school_id]])->get();
         return view("manager.home.search", compact('students'));
     }
 }

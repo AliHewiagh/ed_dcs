@@ -17,7 +17,6 @@ use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 use Maatwebsite\Excel\Concerns\WithColumnFormatting;
-use Maatwebsite\Excel\Concerns\WithStrictNullComparison;
 use Maatwebsite\Excel\Exceptions\ConcernConflictException;
 
 class Sheet
@@ -71,7 +70,7 @@ class Sheet
         }
 
         if (!$sheetExport instanceof FromView && $sheetExport instanceof WithHeadings) {
-            $this->append([$sheetExport->headings()], null, $this->hasStrictNullComparison($sheetExport));
+            $this->append([$sheetExport->headings()]);
         }
     }
 
@@ -134,9 +133,7 @@ class Sheet
 
         /** @var Html $reader */
         $reader = IOFactory::createReader('Html');
-
-        // Insert content into the last sheet
-        $reader->setSheetIndex($spreadsheet->getSheetCount() - 1);
+        $reader->setSheetIndex($spreadsheet->getActiveSheetIndex());
         $reader->loadIntoExisting($tempFile, $spreadsheet);
     }
 
@@ -169,11 +166,10 @@ class Sheet
     /**
      * @param array    $rows
      * @param int|null $row
-     * @param bool  $strictNullComparison
      *
      * @throws \PhpOffice\PhpSpreadsheet\Exception
      */
-    public function append(array $rows, int $row = null, bool $strictNullComparison = false)
+    public function append(array $rows, int $row = null)
     {
         if (!$row) {
             $row = 1;
@@ -182,7 +178,7 @@ class Sheet
             }
         }
 
-        $this->worksheet->fromArray($rows, null, 'A' . $row, $strictNullComparison);
+        $this->worksheet->fromArray($rows, null, 'A' . $row);
     }
 
     /**
@@ -190,7 +186,7 @@ class Sheet
      */
     public function autoSize()
     {
-        foreach ($this->buildColumnRange('A', $this->worksheet->getHighestDataColumn()) as $col) {
+        foreach (range('A', $this->worksheet->getHighestDataColumn()) as $col) {
             $this->worksheet->getColumnDimension($col)->setAutoSize(true);
         }
     }
@@ -246,7 +242,7 @@ class Sheet
             $append[] = $row;
         }
 
-        $this->append($append, null, $this->hasStrictNullComparison($sheetExport));
+        $this->append($append);
     }
 
     /**
@@ -265,21 +261,7 @@ class Sheet
             $row = $row->toArray();
         }
 
-        $this->append([$row], null, $this->hasStrictNullComparison($sheetExport));
-    }
-
-    /**
-     * @param string $lower
-     * @param string $upper
-     *
-     * @return \Generator
-     */
-    protected function buildColumnRange(string $lower, string $upper)
-    {
-        $upper++;
-        for ($i = $lower; $i !== $upper; $i++) {
-            yield $i;
-        }
+        $this->append([$row]);
     }
 
     /**
@@ -297,15 +279,5 @@ class Sheet
     private function hasRows(): bool
     {
         return $this->worksheet->cellExists('A1');
-    }
-
-    /**
-     * @param object $sheetExport
-     *
-     * @return bool
-     */
-    private function hasStrictNullComparison($sheetExport): bool
-    {
-        return $sheetExport instanceof WithStrictNullComparison;
     }
 }

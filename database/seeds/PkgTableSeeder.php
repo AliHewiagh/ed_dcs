@@ -378,7 +378,7 @@ class PkgTableSeeder extends Seeder
         \App\Pkg::create(['state_id'=>	13	, 'pkg'=>'	PKG Peroh	']);
         \App\Pkg::create(['state_id'=>	13	, 'pkg'=>'	PKG Kuala Berang	']);
         \App\Pkg::create(['state_id'=>	13	, 'pkg'=>'	PKG Langkap	']);
-        \App\Pkg::create(['state_id'=>	13	, 'pkg'=>'	PKG Durian Burong	']);
-
+        \App\Pkg::create(['state_id'=>	13	, 'pkg'=>'	PKG Durian Burung	']);
+        \App\Pkg::create(['state_id'=>	16	, 'pkg'=>'	BTPNKL	']);
     }
 }

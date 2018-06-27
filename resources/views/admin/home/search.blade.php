@@ -21,6 +21,7 @@
                                         <thead>
                                         <tr>
                                             <th>School</th>
+                                            <th>School Code</th>
                                             <th>PKG</th>
                                             <th>PPD/PPW</th>
                                             <th>Completion by class</th>
@@ -34,6 +35,7 @@
                                             ?>
                                             <tr>
                                                 <td><a href="{{url('/admin/progress/'.$school->state_id.'/'.$school->id)}}">{{$school->name}}</a></td>
+                                                <td>{{$school->school_code}}</td>
                                                 <td>{{$school->pkg}}</td>
                                                 <td>@if(!empty($school->location)){{$school->location->pp}}@endif</td>
                                                 <td>{{$done}}/{{$classes}}</td>

@@ -295,37 +295,9 @@
 								<p>Whatsapp | SMS | Voice call</p>
 								<p>The DCS Helpline is available daily Monday to Friday, 9 am to 5 pm.</p>
 								<p>Issues raised after the support hours will be attended to on the next working day. You can also reach us via email:</p>
-								<h4><i class="fa fa-envelope"></i> <a href="mailto:dcs@gmail.com">dcs@gmail.com</a></h4>
-							</div>							
-						</div>
-						<div class="bottom-edge">
-							<h2>BTPN Contact Number</h2>
-							<table class="table table-striped">
-								<thead>
-								  <tr>
-									<th>State</th>
-									<th>Contact Person</th>
-									<th>Contact Number</th>
-								  </tr>
-								</thead>
-								<tbody>
-								  <tr>
-									<td>Perlis, Kedah & Kelantan</td>
-									<td>Mohd Ali bin Mohd Abu</td>
-									<td>012 3456 789</td>
-								  </tr>
-								  <tr>
-									<td>Perak, Selangor & Negeri Sembilan</td>
-									<td>Mohd Ali bin Mohd Abu</td>
-									<td>012 3456 789</td>
-								  </tr>
-								  <tr>
-									<td>Melaka & Johor</td>
-									<td>Mohd Ali bin Mohd Abu</td>
-									<td>012 3456 789</td>
-								  </tr>
-								</tbody>
-							</table>
+								<h4><i class="fa fa-envelope"></i> <a href="mailto:tapirhero2018@gmail.com">tapirhero2018@gmail.com</a></h4>
+							</div>
+							<p>You can also contact your respective PKG or BTPN.</p>
 						</div>
 					</div>
 				</div>

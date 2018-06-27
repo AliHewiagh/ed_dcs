@@ -4,7 +4,6 @@ namespace Maatwebsite\Excel\Mixins;
 
 use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\Exportable;
-use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\FromCollection;
 
 class StoreCollection
@@ -14,14 +13,9 @@ class StoreCollection
      */
     public function storeExcel()
     {
-        return function (string $filePath, string $disk = null, string $writerType = null, $withHeadings = false) {
-            $export = new class($this, $withHeadings) implements FromCollection, WithHeadings {
+        return function (string $filePath, string $disk = null, string $writerType = null) {
+            $export = new class($this) implements FromCollection {
                 use Exportable;
-
-                /**
-                 * @var bool
-                 */
-                private $withHeadings;
 
                 /**
                  * @var Collection
@@ -30,12 +24,10 @@ class StoreCollection
 
                 /**
                  * @param Collection $collection
-                 * @param bool       $withHeadings
                  */
-                public function __construct(Collection $collection, bool $withHeadings = false)
+                public function __construct(Collection $collection)
                 {
-                    $this->collection   = $collection->toBase();
-                    $this->withHeadings = $withHeadings;
+                    $this->collection = $collection->toBase();
                 }
 
                 /**
@@ -44,14 +36,6 @@ class StoreCollection
                 public function collection()
                 {
                     return $this->collection;
-                }
-
-                /**
-                 * @return array
-                 */
-                public function headings(): array
-                {
-                    return $this->withHeadings ? $this->collection->collapse()->keys()->all() : [];
                 }
             };
 
