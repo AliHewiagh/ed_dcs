@@ -167,9 +167,7 @@ class Helper
         }
 
         $model = new $class;
-        $primaryKey = $model->getKeyName();
-
-        $model->setAttribute($primaryKey, $data[$primaryKey])->setAttribute('name', $data['name']);
+        $model->setAttribute('id', $data['id'])->setAttribute('name', $data['name']);
         $model->setRelation(
             'pivot',
             MorphPivot::fromRawAttributes($model, $data['pivot'], 'pivot_table')

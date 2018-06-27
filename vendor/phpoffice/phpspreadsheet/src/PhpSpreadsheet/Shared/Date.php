@@ -256,7 +256,7 @@ class Date
     /**
      * Convert a Unix timestamp to an MS Excel serialized date/time value.
      *
-     * @param int $dateValue Unix Timestamp
+     * @param DateTimeInterface $dateValue Unix Timestamp
      *
      * @return float MS Excel serialized date/time value
      */
@@ -474,7 +474,7 @@ class Date
     }
 
     /**
-     * Strips an ordinal from a numeric value.
+     * Strips an ordinal froma numeric value.
      *
      * @param string $day Day number with an ordinal
      *

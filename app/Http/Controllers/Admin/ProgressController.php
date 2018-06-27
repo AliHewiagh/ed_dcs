@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Location;
 use App\School;
 use App\SchoolClass;
+use App\State;
 use App\StudentRecord;
 use App\User;
 use Illuminate\Http\Request;
@@ -20,7 +21,7 @@ class ProgressController extends Controller
     public function index()
     {
 
-        $locs = ['Johor', 'Kedah', 'Kelantan', 'Melaka', 'Negeri Sembilan', 'Pahang', 'Perak', 'Perlis', 'Pulau Pinang', 'Sabah', 'Sarawak', 'Selangor', 'Terengganu', 'Wilayah Persekutuan Kuala Lumpur', 'Wilayah Persekutuan Labuan', 'Wilayah Persekutuan Putrajaya'];
+        $locs = State::all();
         return view("admin.progress.index", compact("locs"));
     }
 
@@ -32,7 +33,7 @@ class ProgressController extends Controller
      */
     public function stateProgress($state)
     {
-        $locationIds = Location::where("state", $state)->pluck('id')->toArray();
+        $locationIds = Location::where("state_id", $state)->pluck('id')->toArray();
         $schools = School::whereIn('location_id', $locationIds)->get();
        return view("admin.progress.state", compact("schools", "state"));
     }

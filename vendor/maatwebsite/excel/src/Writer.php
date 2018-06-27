@@ -158,7 +158,6 @@ class Writer
             $writer->setDelimiter($this->delimiter);
             $writer->setEnclosure($this->enclosure);
             $writer->setLineEnding($this->lineEnding);
-            $writer->setUseBOM($this->useBom);
             $writer->setIncludeSeparatorLine($this->includeSeparatorLine);
             $writer->setExcelCompatibility($this->excelCompatibility);
         }

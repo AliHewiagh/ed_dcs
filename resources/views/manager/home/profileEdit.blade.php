@@ -74,7 +74,7 @@
                                 <select name="location_id" class="form-control required" id="statePPInput" required>
                                     <option value="">Please select PPD/PPW</option>
                                     @foreach($pps as $pp)
-                                        <option value="{{$pp->id}}" id="{{$pp->state}}" class="ppTypes" @if($school->location_id == $pp->id) selected="selected" @endif>{{$pp->pp}}</option>
+                                        <option value="{{$pp->id}}" class="ppTypes {{$pp->state_id}}" @if($school->location_id == $pp->id) selected="selected" @endif>{{$pp->pp}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -177,10 +177,11 @@
                 }
             });
             $("#stateInput").on("change", function () {
-                var groupId = $(this).find(':selected').data('name');
-                console.log(groupId);
+                var val = $(this).val();
                 $(".ppTypes").css("display", "none");
-                $("#statePPInput").children("#"+groupId).css("display", "block");
+                $(".PKGOptions").css("display", "none");
+                $(".PKGOptions."+val).css("display", "block");
+                $(".ppTypes."+val).css("display", "block");
             });
 
         });

@@ -12,9 +12,3 @@ disabled:
   - concat_without_spaces
   - not_operator_with_successor_space
   - unalign_equals
-
-finder:
-  not-name:
-    - "*.md"
-  not-path:
-    - ".github"

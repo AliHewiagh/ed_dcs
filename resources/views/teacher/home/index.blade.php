@@ -147,4 +147,5 @@
                     hideHover: 'auto'
                 });
     @endif
+    </script>
 @endsection

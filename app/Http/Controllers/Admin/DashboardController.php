@@ -73,8 +73,10 @@ class DashboardController extends Controller
     public function search(Request $request)
     {
         $q = $request->q;
-        $schools = School::where("name", 'LIKE', '%'.$q.'%')->get();
-        $students = User::where([["name", 'LIKE', '%'.$q.'%'], ['type', 4]])->get();
+        $schools = School::where("name", 'LIKE', '%'.$q.'%')
+            ->orWhere("school_code", 'LIKE', '%'.$q.'%')->get();
+        $students = User::where([["name", 'LIKE', '%'.$q.'%'], ['type', 4]])
+            ->orWhere([["ic_number", 'LIKE', '%'.$q.'%'], ['type', 4]])->get();
         return view("admin.home.search", compact('schools', 'students'));
     }
 

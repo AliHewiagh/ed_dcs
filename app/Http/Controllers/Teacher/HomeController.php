@@ -133,7 +133,9 @@ class HomeController extends Controller
     {
         $q = $request->q;
         $classIds = SchoolClass::where('teacher_id', Auth::user()->id)->pluck('id')->toArray();
-        $students = User::where([["name", 'LIKE', '%'.$q.'%'], ['type', 4]])->whereIn('class_id', $classIds)->get();
+        $students = User::where([["name", 'LIKE', '%'.$q.'%'], ['type', 4]])
+            ->orWhere([["ic_number", 'LIKE', '%'.$q.'%'], ['type', 4]])
+            ->whereIn('class_id', $classIds)->get();
         return view("teacher.home.search", compact('students'));
     }
     

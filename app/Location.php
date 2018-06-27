@@ -19,6 +19,6 @@ class Location extends Model
      * @var array
      */
     protected $fillable = [
-        "group", "state", "pp", "active",
+        "group", "state_id", "pp", "active",
     ];
 }

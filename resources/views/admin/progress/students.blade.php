@@ -4,7 +4,7 @@
     @include('admin.partial.sidebar')
     <div class="content-wrapper">
         <section class="content-header">
-            <h1>Students Progress <small>{{$state}}</small></h1>
+            <h1>Students Progress</h1>
         </section>
         <section class="content">
             <div class="row">
