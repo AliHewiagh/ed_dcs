@@ -15,8 +15,9 @@
                                 <a href="{{url('/admin/dashboard')}}">Dashboard</a> /
                                 <a href="{{url('/admin/progress')}}">Nationwide Progress</a> /
                                 <a href="{{url('/admin/progress/'.$state)}}">State Progress</a> /
-                                <a href="{{url('/admin/progress/'.$state.'/'.$schoolId)}}">School Progress</a> /
-                                <a href="{{url('/admin/progress/'.$state.'/'.$schoolId.'/'.$teacherId)}}">Class Progress</a> /
+                                <a href="{{url('/admin/progress/'.$state.'/'.$pkg)}}">PKG Progress</a> /
+                                <a href="{{url('/admin/progress/'.$state.'/'.$pkg.'/'.$schoolId)}}">School Progress</a> /
+                                <a href="{{url('/admin/progress/'.$state.'/'.$pkg.'/'.$schoolId.'/'.$teacherId)}}">Class Progress</a> /
                                 <span>Students Progress</span>
                             </div>
                             @include('partial.alert')
@@ -36,7 +37,7 @@
                                         <?php $stages = \App\StudentRecord::where('user_id', $student->id)->pluck('stage')->toArray();
                                         $stages = array_unique($stages); ?>
                                     <tr>
-                                        <td><a href="{{url('/admin/progress/'.$state.'/'.$schoolId.'/'.$teacherId.'/'.$classId.'/'.$student->id)}}">{{$student->name}}</a></td>
+                                        <td><a href="{{url('/admin/progress/'.$state.'/'.$pkg.'/'.$schoolId.'/'.$teacherId.'/'.$classId.'/'.$student->id)}}">{{$student->name}}</a></td>
                                         <td>{{$student->ic_number}}</td>
                                         <td>{{count($stages)}}/20</td>
                                     </tr>

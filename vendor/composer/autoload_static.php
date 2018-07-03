@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit147b5f3d7d5e30201d0f61eb3ed2c2f9
+class ComposerStaticInit9ddbed8278d117b3258b0151d9969c49
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -367,15 +367,20 @@ class ComposerStaticInit147b5f3d7d5e30201d0f61eb3ed2c2f9
         'App\\Http\\Controllers\\API\\StageController' => __DIR__ . '/../..' . '/app/Http/Controllers/API/StageController.php',
         'App\\Http\\Controllers\\Admin\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/DashboardController.php',
         'App\\Http\\Controllers\\Admin\\LeaderBoardController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/LeaderBoardController.php',
+        'App\\Http\\Controllers\\Admin\\PkgAdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/PkgAdminController.php',
         'App\\Http\\Controllers\\Admin\\ProgressController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ProgressController.php',
         'App\\Http\\Controllers\\Admin\\SchoolController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SchoolController.php',
         'App\\Http\\Controllers\\Admin\\SchoolExcelController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SchoolExcelController.php',
+        'App\\Http\\Controllers\\Admin\\StateAdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/StateAdminController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\Manager\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Manager/HomeController.php',
         'App\\Http\\Controllers\\Manager\\ProgressController' => __DIR__ . '/../..' . '/app/Http/Controllers/Manager/ProgressController.php',
         'App\\Http\\Controllers\\Manager\\TeacherController' => __DIR__ . '/../..' . '/app/Http/Controllers/Manager/TeacherController.php',
+        'App\\Http\\Controllers\\PKG\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/PKG/DashboardController.php',
+        'App\\Http\\Controllers\\PKG\\LeaderBoardController' => __DIR__ . '/../..' . '/app/Http/Controllers/PKG/LeaderBoardController.php',
+        'App\\Http\\Controllers\\PKG\\ProgressController' => __DIR__ . '/../..' . '/app/Http/Controllers/PKG/ProgressController.php',
         'App\\Http\\Controllers\\Student\\GameController' => __DIR__ . '/../..' . '/app/Http/Controllers/Student/GameController.php',
         'App\\Http\\Controllers\\Teacher\\ClassController' => __DIR__ . '/../..' . '/app/Http/Controllers/Teacher/ClassController.php',
         'App\\Http\\Controllers\\Teacher\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Teacher/HomeController.php',
@@ -4117,10 +4122,10 @@ class ComposerStaticInit147b5f3d7d5e30201d0f61eb3ed2c2f9
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit147b5f3d7d5e30201d0f61eb3ed2c2f9::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit147b5f3d7d5e30201d0f61eb3ed2c2f9::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit147b5f3d7d5e30201d0f61eb3ed2c2f9::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit147b5f3d7d5e30201d0f61eb3ed2c2f9::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit9ddbed8278d117b3258b0151d9969c49::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit9ddbed8278d117b3258b0151d9969c49::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit9ddbed8278d117b3258b0151d9969c49::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit9ddbed8278d117b3258b0151d9969c49::$classMap;
 
         }, null, ClassLoader::class);
     }

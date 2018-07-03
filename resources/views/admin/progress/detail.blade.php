@@ -15,10 +15,11 @@
                                 <a href="{{url('/admin/dashboard')}}">Dashboard</a> /
                                 <a href="{{url('/admin/progress')}}">Nationwide Progress</a> /
                                 <a href="{{url('/admin/progress/'.$state)}}">State Progress</a> /
-                                <a href="{{url('/admin/progress/'.$state.'/'.$schoolId)}}">School Progress</a> /
-                                <a href="{{url('/admin/progress/'.$state.'/'.$schoolId.'/'.$teacherId)}}">Class Progress</a> /
-                                <a href="{{url('/admin/progress/'.$state.'/'.$schoolId.'/'.$teacherId.'/'.$classId)}}">Students Progress</a> /
-                                <a href="{{url('/admin/progress/'.$state.'/'.$schoolId.'/'.$teacherId.'/'.$classId.'/'.$student->id)}}">Individual Progress</a> /
+                                <a href="{{url('/admin/progress/'.$state.'/'.$pkg)}}">PKG Progress</a> /
+                                <a href="{{url('/admin/progress/'.$state.'/'.$pkg.'/'.$schoolId)}}">School Progress</a> /
+                                <a href="{{url('/admin/progress/'.$state.'/'.$pkg.'/'.$schoolId.'/'.$teacherId)}}">Class Progress</a> /
+                                <a href="{{url('/admin/progress/'.$state.'/'.$pkg.'/'.$schoolId.'/'.$teacherId.'/'.$classId)}}">Students Progress</a> /
+                                <a href="{{url('/admin/progress/'.$state.'/'.$pkg.'/'.$schoolId.'/'.$teacherId.'/'.$classId.'/'.$student->id)}}">Individual Progress</a> /
                                 <span>Detailed Progress</span>
                             </div>
                             @include('partial.alert')

@@ -12,8 +12,50 @@
 */
 
 
+Route::get('/update/pkg', function (){
+    $pkgs = \App\Pkg::all();
+    foreach ($pkgs as $pkg){
+        $p = trim($pkg->pkg);
+        $pkg->update(['pkg'=>$p]);
+    }
+    echo "DONE";
+    exit;
+//    $schools = \App\School::all();
+//    foreach ($schools as $school){
+//        if(preg_match("/[a-z]/i", strtolower($school->pkg))){
+//            $pk = \App\Pkg::where('pkg', $school->pkg)->first();
+//            if(!empty($pk)){
+//                $school->update(['pkg'=>$pk->id]);
+//            }
+//        }
+//    }
+});
+Route::get('/update/admins', function (){
+    $role = \App\Role::where('name', 'state')->first();
+    $now = \Carbon\Carbon::now();
+    if(empty($role)){
+        \Illuminate\Support\Facades\DB::table('roles')->insert([
+            'name' => "state",
+            'display_name' => "State Admin",
+            'description' => "State admin role to manage states",
+            'created_at'=>$now,
+            'updated_at'=>$now
+        ]);
+    }
+    $role = \App\Role::where('name', 'pkg')->first();
+    if(empty($role)){
+        \Illuminate\Support\Facades\DB::table('roles')->insert([
+            'name' => "pkg",
+            'display_name' => "PKG Admin",
+            'description' => "PKG admin role to manage PKGs",
+            'created_at'=>$now,
+            'updated_at'=>$now
+        ]);
+    }
 
-
+    echo "DONE";
+    exit;
+});
 
 Route::group(['middleware' => 'guest'], function () {
 
@@ -31,6 +73,12 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::prefix('admin')->middleware(['role:admin'])->group(function () {
         require base_path('routes/routes/admin.php');
+    });
+    Route::prefix('pkg')->middleware(['role:pkg'])->group(function () {
+        require base_path('routes/routes/pkg.php');
+    });
+    Route::prefix('state')->middleware(['role:state'])->group(function () {
+        require base_path('routes/routes/state.php');
     });
     Route::prefix('manager')->middleware(['role:manager'])->group(function () {
         require base_path('routes/routes/manager.php');

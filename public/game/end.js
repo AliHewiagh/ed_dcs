@@ -1463,7 +1463,7 @@ p.nominalBounds = new cjs.Rectangle(-120.5,-24.6,240.4,51.8);
 	this.frame_1 = function() {
 		var _this = this;
 		function doOpenBadge(e){
-			window.open("http://mtheheromaker.mdeclabs.com/dcs/reg/"+cUserIc+"/"+_this.myRank, "_blank");
+			window.open("https://hero.mydigitalmaker.com/dcs/reg/"+cUserIc+"/"+_this.myRank, "_blank");
 		}
 		this.btnClaim.addEventListener("click", doOpenBadge);
 	}
@@ -1825,19 +1825,19 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/end/_1.png?1528430261678", id:"_1"},
-		{src:"images/end/_2.png?1528430261678", id:"_2"},
-		{src:"images/end/_3.png?1528430261678", id:"_3"},
-		{src:"images/end/_4.png?1528430261678", id:"_4"},
-		{src:"images/end/_5.png?1528430261678", id:"_5"},
-		{src:"images/end/Bitmap2.png?1528430261678", id:"Bitmap2"},
-		{src:"images/end/Bitmap22.png?1528430261681", id:"Bitmap22"},
-		{src:"images/end/Bitmap4.png?1528430261681", id:"Bitmap4"},
-		{src:"images/end/Bitmap5.png?1528430261681", id:"Bitmap5"},
-		{src:"images/end/promotionBg01.jpg?1528430261681", id:"promotionBg01"},
-		{src:"images/end/tapirfriendly.png?1528430261681", id:"tapirfriendly"},
-		{src:"sounds/stdClick.mp3?1528430261681", id:"stdClick"},
-		{src:"sounds/win.mp3?1528430261681", id:"win"}
+		{src:"images/end/_1.png?1530179712610", id:"_1"},
+		{src:"images/end/_2.png?1530179712610", id:"_2"},
+		{src:"images/end/_3.png?1530179712610", id:"_3"},
+		{src:"images/end/_4.png?1530179712610", id:"_4"},
+		{src:"images/end/_5.png?1530179712610", id:"_5"},
+		{src:"images/end/Bitmap2.png?1530179712610", id:"Bitmap2"},
+		{src:"images/end/Bitmap22.png?1530179712610", id:"Bitmap22"},
+		{src:"images/end/Bitmap4.png?1530179712610", id:"Bitmap4"},
+		{src:"images/end/Bitmap5.png?1530179712610", id:"Bitmap5"},
+		{src:"images/end/promotionBg01.jpg?1530179712610", id:"promotionBg01"},
+		{src:"images/end/tapirfriendly.png?1530179712610", id:"tapirfriendly"},
+		{src:"sounds/stdClick.mp3?1530179712610", id:"stdClick"},
+		{src:"sounds/win.mp3?1530179712610", id:"win"}
 	],
 	preloads: []
 };

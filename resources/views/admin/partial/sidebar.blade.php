@@ -39,6 +39,17 @@
                     <li><a href="{{ url('/admin/top/student/form5') }}">Top Form 5 Students</a></li>
                 </ul>
             </li>
+            <li class="treeview">
+                <a href="#"><i class="fa fa-users"></i> <span>Manage Admin</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ url('/admin/manage/admin/state') }}">Manage State Admin</a></li>
+                    <li><a href="{{ url('/admin/manage/admin/pkg') }}">Manage PKG Admin</a></li>
+                </ul>
+            </li>
             <li><a href="{{url('/admin/setting')}}"><i class="fa fa-gear"></i> <span>Setting</span></a></li>
             <li><a href="{{url('/admin/help')}}"><i class="fa fa-question-circle"></i> <span>Help</span></a></li>
             {{--<li><a href="#"><i class="fa fa-users"></i> <span>Customer</span></a></li>--}}

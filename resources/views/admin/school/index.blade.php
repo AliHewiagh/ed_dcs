@@ -47,7 +47,7 @@
                                             <td>{{$school->user->username}}</td>
                                             <td>{{$school->user->password}}</td>
                                             <td>@if(!empty($school->type)) @if($school->type==1)Primary School @else Secondary School @endif @else ?? @endif</td>
-                                            <td>@if(!empty($school->location)){{$school->location->state}} @else ?? @endif</td>
+                                            <td>@if(!empty($school->state)){{$school->state->name}} @else ?? @endif</td>
                                             <td>{{$school->pkg}}</td>
                                             <td>@if(!empty($school->location)){{$school->location->pp}} @else ?? @endif</td>
                                             <td><a href="{{url('/admin/school/'.$school->user_id.'/edit')}}" class="btn btn-warning">Edit</a></td>

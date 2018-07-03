@@ -16,6 +16,7 @@
                                 <a href="{{url('/admin/dashboard')}}">Dashboard</a> /
                                 <a href="{{url('/admin/progress')}}">Nationwide Progress</a> /
                                 <a href="{{url('/admin/progress/'.$state)}}">State Progress</a> /
+                                <a href="{{url('/admin/progress/'.$state.'/'.$pkg)}}">PKG Progress</a> /
                                 <span>School Progress</span>
                             </div>
                             @include('partial.alert')
@@ -42,7 +43,7 @@
                                         $done = \App\SchoolClass::where([['teacher_id', $teacher->id], ['done', 1]])->count();
                                         ?>
                                         <tr>
-                                            <td><a href="{{url('/admin/progress/'.$state.'/'.$school->id.'/'.$teacher->id)}}">{{$teacher->name}}</a></td>
+                                            <td><a href="{{url('/admin/progress/'.$state.'/'.$pkg.'/'.$school->id.'/'.$teacher->id)}}">{{$teacher->name}}</a></td>
                                             <td>{{$done}}/{{$classes}}</td>
                                         </tr>
                                     @endforeach

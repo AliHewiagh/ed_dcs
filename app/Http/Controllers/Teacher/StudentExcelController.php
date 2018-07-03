@@ -34,21 +34,23 @@ class StudentExcelController extends Controller
                 $data["name"] = $cu["Name"];
                 $old = User::where("username", $data["ic_number"])->first();
                 if(empty($old)){
-                    $data["username"] = $data["ic_number"];
-                    $data["password"] = substr($data["ic_number"], -4, 4);
-                    $gender = substr($data["ic_number"], -1, 1);
-                    if ($gender % 2 == 0) {
-                        $data["gender"] = "Female";
-                    }else{
-                        $data["gender"] = "Male";
-                    }
-                    $user = User::create($data);
-                    $role = Role::where("id", 4)->first();
-                    $user->attachRole($role);
-                    $i++;
+                    if(strlen($data["ic_number"]) == 12){
+                        $data["username"] = $data["ic_number"];
+                        $data["password"] = substr($data["ic_number"], -4, 4);
+                        $gender = substr($data["ic_number"], -1, 1);
+                        if ($gender % 2 == 0) {
+                            $data["gender"] = "Female";
+                        }else{
+                            $data["gender"] = "Male";
+                        }
+                        $user = User::create($data);
+                        $role = Role::where("id", 4)->first();
+                        $user->attachRole($role);
+                        $i++;
 
-                    SchoolClass::where('id', $data["class_id"])->update(['done'=>0]);
-                    School::where('id', $data["school_id"])->update(['done'=>0]);
+                        SchoolClass::where('id', $data["class_id"])->update(['done'=>0]);
+                        School::where('id', $data["school_id"])->update(['done'=>0]);
+                    }
                 }
             }
         }
