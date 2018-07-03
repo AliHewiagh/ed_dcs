@@ -19,6 +19,8 @@
                 @include('partial.alert')
                 <div class="card card-default">
                     <div class="card-header">Please insert your IC number</div>
+					<div class="alert alert-warning"><i class="fa fa-lightbulb-o"></i> If you are also the School Manager, key in 999999 to replace the first six(6) digits of your IC number below. (E.g. if your IC number is 654321123456 and you are also the School Manager, key in 999999123456.)<br>
+					Otherwise, please key in your full IC number.</div>
                     <div id="errorMessageA"></div>
                     <div class="card-body">
                         <form method="POST" action="#">

@@ -15,9 +15,10 @@
                                 <a href="{{url('/admin/dashboard')}}">Dashboard</a> /
                                 <a href="{{url('/admin/progress')}}">Nationwide Progress</a> /
                                 <a href="{{url('/admin/progress/'.$state)}}">State Progress</a> /
-                                <a href="{{url('/admin/progress/'.$state.'/'.$schoolId)}}">School Progress</a> /
-                                <a href="{{url('/admin/progress/'.$state.'/'.$schoolId.'/'.$teacherId)}}">Class Progress</a> /
-                                <a href="{{url('/admin/progress/'.$state.'/'.$schoolId.'/'.$teacherId.'/'.$classId)}}">Students Progress</a> /
+                                <a href="{{url('/admin/progress/'.$state.'/'.$pkg)}}">PKG Progress</a> /
+                                <a href="{{url('/admin/progress/'.$state.'/'.$pkg.'/'.$schoolId)}}">School Progress</a> /
+                                <a href="{{url('/admin/progress/'.$state.'/'.$pkg.'/'.$schoolId.'/'.$teacherId)}}">Class Progress</a> /
+                                <a href="{{url('/admin/progress/'.$state.'/'.$pkg.'/'.$schoolId.'/'.$teacherId.'/'.$classId)}}">Students Progress</a> /
                                 <span>Individual Progress</span>
                             </div>
                             @include('partial.alert')
@@ -59,7 +60,7 @@
                                     }
                                     ?>
                                     <tr>
-                                        <td><a href="{{url('/admin/progress/'.$state.'/'.$schoolId.'/'.$teacherId.'/'.$classId.'/'.$student->id.'/detail')}}">{{$student->name}}</a></td>
+                                        <td><a href="{{url('/admin/progress/'.$state.'/'.$pkg.'/'.$schoolId.'/'.$teacherId.'/'.$classId.'/'.$student->id.'/detail')}}">{{$student->name}}</a></td>
                                         <td>{{$state}}</td>
                                         <td>{{$school->name}}</td>
                                         <td>{{$student->gender}}</td>

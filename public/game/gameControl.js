@@ -398,7 +398,8 @@ function checkCookie() {
     }
 }
 function doExit(){
-	window.location.href="/logout";
+	//window.location.href="/logout";
+	window.location.href="/../logout";
 }
 function randRange(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;

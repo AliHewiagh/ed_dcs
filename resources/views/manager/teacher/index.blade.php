@@ -15,6 +15,7 @@
                             @include('partial.alert')
                         </div>
                         <div class="box-body">
+						<div class="alert alert-warning"><i class="fa fa-lightbulb-o"></i> If you are also taking on the role of a Teacher, create a Teacher account for yourself. Login with your Teacher username and password to manage your Classes and Students.</div>
                             <div class="table-responsive">
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>

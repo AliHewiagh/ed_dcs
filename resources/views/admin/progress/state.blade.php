@@ -24,23 +24,20 @@
                                 <table id="example2" class="table table-bordered table-striped">
                                     <thead>
                                     <tr>
-                                        <th>School</th>
                                         <th>PKG</th>
-                                        <th>PPD/PPW</th>
-                                        <th>Completion by class</th>
+                                        <th>Completion by school</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach ($schools as $school)
+                                    @foreach ($pkgs as $pkg)
                                         <?php
-                                        $classes = \App\SchoolClass::where('school_id', $school->id)->count();
-                                        $done = \App\SchoolClass::where([['school_id', $school->id], ['done', 1]])->count();
+                                        $p = $pkg->pkg;
+                                        $school = \App\School::where('pkg', $p)->count();
+                                        $done = \App\School::where([['pkg', $p], ['done', 1]])->count();
                                         ?>
                                         <tr>
-                                            <td><a href="{{url('/admin/progress/'.$state.'/'.$school->id)}}">{{$school->name}}</a></td>
-                                            <td>{{$school->pkg}}</td>
-                                            <td>{{$school->location->pp}}</td>
-                                            <td>{{$done}}/{{$classes}}</td>
+                                            <td><a href="{{url('/admin/progress/'.$state.'/'.$pkg->id)}}">{{$p}}</a></td>
+                                            <td>{{$done}}/{{$school}}</td>
                                         </tr>
                                     @endforeach
                                     </tbody>

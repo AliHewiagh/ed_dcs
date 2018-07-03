@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Location;
+use App\Pkg;
 use App\School;
 use App\SchoolClass;
 use App\State;
@@ -33,9 +34,8 @@ class ProgressController extends Controller
      */
     public function stateProgress($state)
     {
-        $locationIds = Location::where("state_id", $state)->pluck('id')->toArray();
-        $schools = School::whereIn('location_id', $locationIds)->get();
-       return view("admin.progress.state", compact("schools", "state"));
+        $pkgs = Pkg::where('state_id', $state)->get();
+       return view("admin.progress.state", compact("pkgs", "state"));
     }
 
 
@@ -44,11 +44,24 @@ class ProgressController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function schoolProgress($state, $schoolId)
+    public function pkgProgress($state, $pkg)
+    {
+        $pkgM = Pkg::find($pkg);
+        $schools = School::where([['state_id', $state], ['pkg', $pkgM->pkg]])->get();
+        return view("admin.progress.pkg", compact("schools", "state", "pkg"));
+    }
+
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function schoolProgress($state, $pkg, $schoolId)
     {
         $school = School::find($schoolId);
         $teachers = User::where([['school_id', $schoolId], ['type', 3]])->get();
-        return view("admin.progress.school", compact("teachers", "state", "school"));
+        return view("admin.progress.school", compact("teachers", "state", "school", "pkg"));
     }
 
 
@@ -57,33 +70,35 @@ class ProgressController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function teacherProgress($state, $schoolId, $teacherId)
+    public function teacherProgress($state, $pkg, $schoolId, $teacherId)
     {
         $classes = SchoolClass::where('teacher_id', $teacherId)->get();
         $teacher = User::find($teacherId);
-        return view("admin.progress.class", compact("classes", "state", "schoolId", "teacherId", 'teacher'));
+        return view("admin.progress.class", compact("classes", "state", "schoolId", "teacherId", 'teacher', "pkg"));
     }
+
 
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function classProgress($state, $schoolId, $teacherId, $classId)
+    public function classProgress($state, $pkg, $schoolId, $teacherId, $classId)
     {
         $students = User::where('class_id', $classId)->get();
-        return view("admin.progress.students", compact("students", "state", "schoolId", "teacherId", "classId"));
+        return view("admin.progress.students", compact("students", "state", "schoolId", "teacherId", "classId", "pkg"));
     }
+
 
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function studentProgress($state, $schoolId, $teacherId, $classId, $studentId)
+    public function studentProgress($state, $pkg, $schoolId, $teacherId, $classId, $studentId)
     {
         $student = User::find($studentId);
-        return view("admin.progress.individual", compact("student", "state", "schoolId", "teacherId", "classId"));
+        return view("admin.progress.individual", compact("student", "state", "schoolId", "teacherId", "classId", "pkg"));
     }
 
 
@@ -92,7 +107,7 @@ class ProgressController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function progressDetail($state, $schoolId, $teacherId, $classId, $studentId)
+    public function progressDetail($state, $pkg, $schoolId, $teacherId, $classId, $studentId)
     {
         $student = User::find($studentId);
         $records = StudentRecord::where('user_id', $studentId)->get();
@@ -118,6 +133,8 @@ class ProgressController extends Controller
             $DScore = $recordsD->sum('score')/count($recordsD);
             $DScore = round($DScore, 1);
         }else{$DScore=0;}
-        return view("admin.progress.detail", compact("student", "state", "schoolId", "teacherId", "classId", "records", 'overAllScore', 'TScore', 'CScore', 'DScore'));
+        return view("admin.progress.detail", compact("student", "state", "schoolId", "teacherId", "classId", "records", 'overAllScore', 'TScore', 'CScore', 'DScore', "pkg"));
     }
+
+
 }

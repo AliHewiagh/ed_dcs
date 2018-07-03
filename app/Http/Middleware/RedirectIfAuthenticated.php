@@ -24,6 +24,10 @@ class RedirectIfAuthenticated
                 return redirect('/teacher/dashboard');
             }elseif(Auth::user()->hasRole("manager")){
                 return redirect('/manager/dashboard');
+            }elseif(Auth::user()->hasRole("pkg")){
+                return redirect('/pkg/dashboard');
+            }elseif(Auth::user()->hasRole("state")){
+                return redirect('/state/dashboard');
             }elseif(Auth::user()->hasRole("admin")){
                 return redirect('/admin/dashboard');
             }else{

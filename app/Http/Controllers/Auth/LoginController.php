@@ -60,6 +60,12 @@ class LoginController extends Controller
                 }elseif($user->hasRole("manager") === true){
                     Auth::login($user);
                     return redirect()->route("manager_dashboard_path");
+                }elseif($user->hasRole("pkg") === true){
+                    Auth::login($user);
+                    return redirect()->route("pkg_dashboard_path");
+                }elseif($user->hasRole("state") === true){
+                    Auth::login($user);
+                    return redirect()->route("state_dashboard_path");
                 }elseif($user->hasRole("admin") === true){
                     Auth::login($user);
                     return redirect()->route("admin_dashboard_path");

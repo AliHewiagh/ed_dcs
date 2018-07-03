@@ -39,5 +39,13 @@ class School extends Model
     {
         return $this->belongsTo(Location::class);
     }
-    
+
+
+    /**
+     * @return array
+     */
+    public function state()
+    {
+        return $this->belongsTo(State::class);
+    }
 }
