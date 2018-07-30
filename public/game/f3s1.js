@@ -1067,7 +1067,7 @@ p.nominalBounds = new cjs.Rectangle(-69.2,-22,138.5,44.1);
 				if (_this.parent.secRemaining <= 0) {
 					clearInterval(timeInterval);
 					$("#dom_overlay_container").empty();
-					_this.parent.onTimeEnd();
+					//_this.parent.onTimeEnd();
 					_this.parent.mcTimesUp.play();
 				} else {
 					_this.parent.secRemaining--;
@@ -1852,6 +1852,7 @@ p.nominalBounds = new cjs.Rectangle(-136.7,302.4,274,237.4);
 
 
 (lib.mcTimesUp = function(mode,startPosition,loop) {
+	var _this = this;
 	this.initialize(mode,startPosition,loop,{});
 
 	// timeline functions:
@@ -1867,7 +1868,8 @@ p.nominalBounds = new cjs.Rectangle(-136.7,302.4,274,237.4);
 	}
 	this.frame_150 = function() {
 		this.stop();
-		nextScreen();
+		//nextScreen();
+		_this.parent.onTimeEnd();
 	}
 
 	// actions tween:
@@ -2182,7 +2184,7 @@ p.nominalBounds = new cjs.Rectangle(70.5,212.9,666.5,336.7);
 		playSound("mdroid_talk");
 	}
 	this.frame_43 = function() {
-		playSound("suspense",-1);
+		//playSound("suspense",-1);
 	}
 	this.frame_100 = function() {
 		this.stop();
@@ -2196,6 +2198,7 @@ p.nominalBounds = new cjs.Rectangle(70.5,212.9,666.5,336.7);
 			}
 		}
 		this.timeGiven = 240;//time in seconds
+		//this.timeGiven = 10;//time in seconds
 		this.secRemaining = this.timeGiven;
 		this.timeTaken = 0;
 		this.cScore = 0;
@@ -2265,8 +2268,9 @@ p.nominalBounds = new cjs.Rectangle(70.5,212.9,666.5,336.7);
 											_this.gotoAndPlay("finalFb");
 										} else if (data.message=="success"){
 											//nothing
+											nextScreen();
 										} else {
-											console.log("error");
+											alert("Oppss... something went wrong. Please refresh your browser and try again.");
 										}
 									});
 			}
@@ -2517,17 +2521,16 @@ lib.properties = {
 	opacity: 1.00,
 	webfonts: {},
 	manifest: [
-		{src:"images/f3s1/Bitmap3.png?1529466036533", id:"Bitmap3"},
-		{src:"images/f3s1/Bitmap8.png?1529466036533", id:"Bitmap8"},
-		{src:"images/f3s1/Bitmap9.png?1529466036533", id:"Bitmap9"},
-		{src:"images/f3s1/Safe201.png?1529466036533", id:"Safe201"},
-		{src:"images/f3s1/safe3.png?1529466036533", id:"safe3"},
-		{src:"sounds/mdroid_talk.mp3?1529466036533", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1529466036533", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1529466036533", id:"questionComplete"},
-		{src:"sounds/submitAns.mp3?1529466036533", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1529466036533", id:"suspense"},
-		{src:"sounds/timeout.mp3?1529466036533", id:"timeout"},
+		{src:"images/f3s1/Bitmap3.png", id:"Bitmap3"},
+		{src:"images/f3s1/Bitmap8.png", id:"Bitmap8"},
+		{src:"images/f3s1/Bitmap9.png", id:"Bitmap9"},
+		{src:"images/f3s1/Safe201.png", id:"Safe201"},
+		{src:"images/f3s1/safe3.png", id:"safe3"},
+		{src:"sounds/mdroid_talk.mp3", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3", id:"questionComplete"},
+		{src:"sounds/submitAns.mp3", id:"submitAns"},
+		{src:"sounds/timeout.mp3", id:"timeout"},
 		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1529466036533", id:"lib/jquery-2.2.4.min.js"},
 		{src:"components/sdk/anwidget.js?1529466036533", id:"sdk/anwidget.js"},
 		{src:"components/ui/src/textinput.js?1529466036533", id:"an.TextInput"}

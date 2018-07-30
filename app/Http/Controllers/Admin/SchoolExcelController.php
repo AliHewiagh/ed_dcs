@@ -36,13 +36,18 @@ class SchoolExcelController extends Controller
                     if(array_key_exists('Source', $cu)){
                         $source = $cu["Source"];
                     }
-                    $data["username"] = $usernameS.$i;
-                    $data["password"] = str_random(8);
-                    $user = User::create($data);
-                    $user->attachRole($role);
-                    $school = School::create(["name"=>$cu["Name"], "school_code"=>$code, "source"=>$source, "user_id"=>$user->id]);
-                    $user->update(["school_id"=>$school->id]);
-                    $i++;
+                    $exist = School::where("school_code", $code)->first();
+                    if(empty($exist)){
+//                        $data["username"] = $usernameS.$i;
+//                        $data["password"] = str_random(8);
+                        $data["username"] = $code;
+                        $data["password"] = $code;
+                        $user = User::create($data);
+                        $user->attachRole($role);
+                        $school = School::create(["name"=>$cu["Name"], "school_code"=>$code, "source"=>$source, "user_id"=>$user->id]);
+                        $user->update(["school_id"=>$school->id]);
+                        $i++;
+                    }
                 }
             }
         }

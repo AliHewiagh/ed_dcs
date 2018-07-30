@@ -174,27 +174,29 @@
 <body onload="init();" style="margin:0px;">
 <div style="color: #CFCFCF">
 		<ul id="stageList">
+			<li><a href="javascript:directNavi(2);">Intro</a></li>
 			<li><a href="javascript:directNavi(3);">Stage 1</a></li>
-			<li><a href="javascript:directNavi(7);">Stage 2</a></li>
-			<li><a href="javascript:directNavi(11);">Stage 3</a></li>
-			<li><a href="javascript:directNavi(15);">Stage 4</a></li>
-			<li><a href="javascript:directNavi(19);">Stage 5</a></li>
-			<li><a href="javascript:directNavi(23);">Stage 6</a></li>
-			<li><a href="javascript:directNavi(27);">Stage 7</a></li>
-			<li><a href="javascript:directNavi(31);">Stage 8</a></li>
-			<li><a href="javascript:directNavi(35);">Stage 9</a></li>
-			<li><a href="javascript:directNavi(39);">Stage 10</a></li>
-			<li><a href="javascript:directNavi(43);">Stage 11</a></li>
-			<li><a href="javascript:directNavi(47);">Stage 12</a></li>
-			<li><a href="javascript:directNavi(51);">Stage 13</a></li>
-			<li><a href="javascript:directNavi(55);">Stage 14</a></li>
-			<li><a href="javascript:directNavi(59);">Stage 15</a></li>
-			<li><a href="javascript:directNavi(63);">Stage 16</a></li>
-			<li><a href="javascript:directNavi(67);">Stage 17</a></li>
-			<li><a href="javascript:directNavi(71);">Stage 18</a></li>
-			<li><a href="javascript:directNavi(75);">Stage 19</a></li>
-			<li><a href="javascript:directNavi(79);">Stage 20</a></li>
-			<li><a href="javascript:directNavi(83);">Completion</a></li>
+			<li><a href="javascript:directNavi(4);">Stage 2</a></li>
+			<li><a href="javascript:directNavi(5);">Stage 3</a></li>
+			<li><a href="javascript:directNavi(6);">Stage 4</a></li>
+			<li><a href="javascript:directNavi(7);">Stage 5</a></li>
+			<li><a href="javascript:directNavi(8);">Stage 6</a></li>
+			<li><a href="javascript:directNavi(9);">Stage 7</a></li>
+			<li><a href="javascript:directNavi(10);">Stage 8</a></li>
+			<li><a href="javascript:directNavi(11);">Stage 9</a></li>
+			<li><a href="javascript:directNavi(12);">Stage 10</a></li>
+			<li><a href="javascript:directNavi(13);">Stage 11</a></li>
+			<li><a href="javascript:directNavi(14);">Stage 12</a></li>
+			<li><a href="javascript:directNavi(15);">Stage 13</a></li>
+			<li><a href="javascript:directNavi(16);">Stage 14</a></li>
+			<li><a href="javascript:directNavi(17);">Stage 15</a></li>
+			<li><a href="javascript:directNavi(18);">Stage 16</a></li>
+			<li><a href="javascript:directNavi(19);">Stage 17</a></li>
+			<li><a href="javascript:directNavi(20);">Stage 18</a></li>
+			<li><a href="javascript:directNavi(21);">Stage 19</a></li>
+			<li><a href="javascript:directNavi(22);">Stage 20</a></li>
+			<li><a href="javascript:directNavi(23);">Outro</a></li>
+			<li><a href="javascript:directNavi(24);">End</a></li>
 		</ul>
 	</div>
 <div id="animation_container" style="background-color:rgba(0, 0, 0, 1.00); width:800px; height:600px">

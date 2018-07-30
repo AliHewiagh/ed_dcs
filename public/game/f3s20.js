@@ -1992,7 +1992,7 @@ p.nominalBounds = new cjs.Rectangle(-136.7,302.4,274,237.4);
 
 (lib.mcTimesUp = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
-
+	var _this = this;
 	// timeline functions:
 	this.frame_0 = function() {
 		this.stop();
@@ -2006,7 +2006,8 @@ p.nominalBounds = new cjs.Rectangle(-136.7,302.4,274,237.4);
 	}
 	this.frame_150 = function() {
 		this.stop();
-		nextScreen();
+		//nextScreen();
+		_this.parent.onTimeEnd();
 	}
 
 	// actions tween:
@@ -2404,7 +2405,7 @@ p.nominalBounds = new cjs.Rectangle(98,222.9,643.6,330.2);
 		playSound("mdroid_talk");
 	}
 	this.frame_43 = function() {
-		playSound("suspense",-1);
+		//playSound("suspense",-1);
 	}
 	this.frame_99 = function() {
 		this.stop();
@@ -2492,8 +2493,9 @@ p.nominalBounds = new cjs.Rectangle(98,222.9,643.6,330.2);
 											_this.gotoAndPlay("finalFb");
 										} else if (data.message=="success"){
 											//nothing
+											nextScreen();
 										} else {
-											console.log("error");
+											alert("Oppss... something went wrong. Please refresh your browser and try again.");
 										}
 									});
 			}
@@ -2769,16 +2771,15 @@ lib.properties = {
 	opacity: 1.00,
 	webfonts: {},
 	manifest: [
-		{src:"images/f3s20/Bitmap21.png?1529742575723", id:"Bitmap21"},
-		{src:"images/f3s20/Bitmap22.png?1529742575723", id:"Bitmap22"},
-		{src:"images/f3s20/Bitmap3.png?1529742575723", id:"Bitmap3"},
-		{src:"images/f3s20/Bitmap9.png?1529742575723", id:"Bitmap9"},
-		{src:"sounds/mdroid_talk.mp3?1529742575723", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1529742575723", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1529742575723", id:"questionComplete"},
-		{src:"sounds/submitAns.mp3?1529742575723", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1529742575723", id:"suspense"},
-		{src:"sounds/timeout.mp3?1529742575723", id:"timeout"}
+		{src:"images/f3s20/Bitmap21.png", id:"Bitmap21"},
+		{src:"images/f3s20/Bitmap22.png", id:"Bitmap22"},
+		{src:"images/f3s20/Bitmap3.png", id:"Bitmap3"},
+		{src:"images/f3s20/Bitmap9.png", id:"Bitmap9"},
+		{src:"sounds/mdroid_talk.mp3", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3", id:"questionComplete"},
+		{src:"sounds/submitAns.mp3", id:"submitAns"},
+		{src:"sounds/timeout.mp3", id:"timeout"}
 	],
 	preloads: []
 };

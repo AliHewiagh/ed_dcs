@@ -26,12 +26,13 @@
                                     </thead>
                                     <tbody>
                                     @foreach ($schools as $school)
-                                        <?php $state = \App\State::find($school->state_id); ?>
+                                        <?php $state = \App\State::find($school->state_id);
+                                        $pkg = \App\Pkg::where('pkg', $school->pkg)->first();?>
                                         <tr>
                                             <td>@if(!empty($school->school_code)){{$school->school_code}} @else ?? @endif</td>
-                                            <td><a href="{{url('/admin/progress/'.$state->name.'/'.$school->id)}}">{{$school->name}}</a></td>
+                                            <td><a href="{{url('/admin/progress/'.$state->id.'/'.$pkg->id.'/'.$school->id)}}">{{$school->name}}</a></td>
                                             <td>@if(!empty($school->type)) @if($school->type==1)Primary School @else Secondary School @endif @else ?? @endif</td>
-                                            <td>@if(!empty($school->location)){{$school->location->state}} @else ?? @endif</td>
+                                            <td>@if(!empty($school->state)){{$school->state->name}} @else ?? @endif</td>
                                             <td>{{$school->pkg}}</td>
                                             <td>@if(!empty($school->location)){{$school->location->pp}} @else ?? @endif</td>
                                             <td>{{$school->score}}</td>

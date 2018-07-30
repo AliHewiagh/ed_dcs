@@ -23,11 +23,22 @@
                         <input type="text" name="name" class="form-control required" id="nameInput" value="{{$user->name}}" required>
                     </div>
                     <div class="form-group">
+                        <label for="stateInput">State</label>
+                        <select class="form-control" id="stateInput" name="state_id">
+                            <option value="">Please select state</option>
+                            @foreach($states as $state)
+                                <option value="{{$state->id}}" @if($state->id == $user->state_id) selected="selected" @endif>{{$state->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="sourceInput">PKG</label>
                         <select class="form-control" id="sourceInput" name="pkg_id">
                             <option value="">Please select pkg</option>
                             @foreach($pkgs as $pkg)
-                            <option value="{{$pkg->id}}" @if($pkg->id == $user->pkg_id) selected="selected" @endif>{{$pkg->pkg}}</option>
+                            <option value="{{$pkg->id}}"  data-state="{{$pkg->state_id}}" class="pkgClass"
+                                    @if($pkg->id == $user->pkg_id) selected="selected" @endif
+                            @if($pkg->state_id != $user->state_id) style="display: none" @endif>{{$pkg->pkg}}</option>
                            @endforeach
                         </select>
                     </div>
@@ -45,7 +56,16 @@
     @include('partial.scripts')
     <script>
         $(document).ready(function () {
-
+            $("#stateInput").on("change", function () {
+                var v = $(this).val();
+                $(".pkgClass").each(function () {
+                    if($(this).data("state") == v){
+                        $(this).css("display", "block");
+                    }else{
+                        $(this).css("display", "none");
+                    }
+                });
+            });
         });
     </script>
 @endsection

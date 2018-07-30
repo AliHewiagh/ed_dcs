@@ -1,4 +1,4 @@
-var debugMode = false;
+var debugMode = true;
 var schoolLevel;
 //----turn this on for final to disable all console.log 
 //console.log = function() {};
@@ -11,154 +11,76 @@ var d2q2List = [["y6d2q2_1", "97C298EB0FE8B14591D54AA479C6ADCF"],
 var d2q2Index = randRange(0,3);
 console.log(d2q2Index);
 var scrList = [{constructorName: "splash", compId: "B80CE73EAFE3CF40BDB98EF8906FA491", preloader: 1},
-				{constructorName: "brief", compId: "679F3CBA7A830C41AD08029BD2541F31", preloader: 1},
-				{constructorName: "menu1", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				{constructorName: "intro1", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				,
-				{constructorName: "outro1", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 1},
-				{constructorName: "menu2", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				{constructorName: "intro2", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				,
-				{constructorName: "outro2", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 1},
-				{constructorName: "menu3", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				{constructorName: "intro3", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				,
-				{constructorName: "outro3", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 1},
-				{constructorName: "menu4", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				{constructorName: "intro4", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				,
-				{constructorName: "outro4", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 1},
-				{constructorName: "menu5", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				{constructorName: "intro5", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				,
-				{constructorName: "outro5", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 1},
-				{constructorName: "menu6", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				{constructorName: "intro6", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				,
-				{constructorName: "outro6", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 1},
-				{constructorName: "menu7", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				{constructorName: "intro7", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				,
-				{constructorName: "outro7", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 1},
-				{constructorName: "menu8", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				{constructorName: "intro8", compId: "6E20039D2D5BE84684E4AEF89CE16C20", preloader: 2},
-				,
-				{constructorName: "outro8", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 1},
-				{constructorName: "menu9", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				{constructorName: "intro9", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				,
-				{constructorName: "outro9", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 1},
-				{constructorName: "menu10", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				{constructorName: "intro10", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				,
-				{constructorName: "outro10", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 1},
-				{constructorName: "menu11", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				{constructorName: "intro11", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				,
-				{constructorName: "outro11", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 1},
-				{constructorName: "menu12", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				{constructorName: "intro12", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				,
-				{constructorName: "outro12", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 1},
-				{constructorName: "menu13", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				{constructorName: "intro13", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				,
-				{constructorName: "outro13", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 1},
-				{constructorName: "menu14", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				{constructorName: "intro14", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				,
-				{constructorName: "outro14", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 1},
-				{constructorName: "menu15", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				{constructorName: "intro15", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				,
-				{constructorName: "outro15", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 1},
-				{constructorName: "menu16", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				{constructorName: "intro16", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				,
-				{constructorName: "outro16", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 1},
-				{constructorName: "menu17", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				{constructorName: "intro17", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				,
-				{constructorName: "outro17", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 1},
-				{constructorName: "menu18", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				{constructorName: "intro18", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				,
-				{constructorName: "outro18", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 1},
-				{constructorName: "menu19", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				{constructorName: "intro19", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				,
-				{constructorName: "outro19", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 1},
-				{constructorName: "menu20", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				{constructorName: "intro20", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 2},
-				,
-				{constructorName: "outro20", compId: "11CABBE8EF0CC945B3CD9040447EEBC2", preloader: 1},
+				{constructorName: "intro", compId: "A41131DFBA5B1348ACDE9360A45CDB27", preloader: 1},
+				,,,,,,,,,,,,,,,,,,,,
+				{constructorName: "outro", compId: "A41131DFBA5B1348ACDE9360A45CDB27", preloader: 1},
 				{constructorName: "end", compId: "134DC6FF3421C64FBDE34F1D4B89988D", preloader: 1}
 				];
 function doOnce(){
 if (schoolLevel==1){//primary
-	scrList[4] = {constructorName: "y6d1q1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[8] = {constructorName: "y6d3q1", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
-	scrList[12] = {constructorName: "y6d2q1", compId: "0531B783B312A2449858C08B8DC0FA38", preloader: 1};
-	scrList[16] = {constructorName: "y6d1q2", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[20] = {constructorName: d2q2List[d2q2Index][0], compId: d2q2List[d2q2Index][1], preloader: 1};
-	scrList[24] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
-	scrList[28] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
-	scrList[32] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
-	scrList[36] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
-	scrList[40] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
-	scrList[44] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
-	scrList[48] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
-	scrList[52] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
-	scrList[56] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
-	scrList[60] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
-	scrList[64] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
-	scrList[68] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
-	scrList[72] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
-	scrList[76] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
-	scrList[80] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
+	scrList[2] = {constructorName: "y6d1q1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[3] = {constructorName: "y6d3q1", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
+	scrList[4] = {constructorName: "y6d2q1", compId: "0531B783B312A2449858C08B8DC0FA38", preloader: 1};
+	scrList[5] = {constructorName: "y6d1q2", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[6] = {constructorName: d2q2List[d2q2Index][0], compId: d2q2List[d2q2Index][1], preloader: 1};
+	scrList[7] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
+	scrList[8] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
+	scrList[9] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
+	scrList[10] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
+	scrList[11] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
+	scrList[12] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
+	scrList[13] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
+	scrList[14] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
+	scrList[15] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
+	scrList[16] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
+	scrList[17] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
+	scrList[18] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
+	scrList[19] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
+	scrList[20] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
+	scrList[21] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
 } else if (schoolLevel==2){//f3
-	scrList[4] = {constructorName: "f3s1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[8] = {constructorName: "f3s2", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[12] = {constructorName: "f3s3", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[16] = {constructorName: "f3s4", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[20] = {constructorName: "f3s5", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[24] = {constructorName: "f3s6", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[28] = {constructorName: "f3s7", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
-	scrList[32] = {constructorName: "f3s8", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[36] = {constructorName: "f3s9", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[40] = {constructorName: "f3s10", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[44] = {constructorName: "f3s11", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[48] = {constructorName: "f3s12", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[52] = {constructorName: "f3s13", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[56] = {constructorName: "f3s14", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[60] = {constructorName: "y6s2", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
-	scrList[64] = {constructorName: "f3s16", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[68] = {constructorName: "f3s17", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[72] = {constructorName: "f3s18", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[76] = {constructorName: "f3s19", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[80] = {constructorName: "f3s20", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[2] = {constructorName: "f3s1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[3] = {constructorName: "f3s2", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[4] = {constructorName: "f3s3", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[5] = {constructorName: "f3s4", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[6] = {constructorName: "f3s5", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[7] = {constructorName: "f3s6", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[8] = {constructorName: "f3s7", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
+	scrList[9] = {constructorName: "f3s8", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[10] = {constructorName: "f3s9", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[11] = {constructorName: "f3s10", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[12] = {constructorName: "f3s11", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[13] = {constructorName: "f3s12", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[14] = {constructorName: "f3s13", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[15] = {constructorName: "f3s14", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[16] = {constructorName: "y6s2", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
+	scrList[17] = {constructorName: "f3s16", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[18] = {constructorName: "f3s17", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[19] = {constructorName: "f3s18", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[20] = {constructorName: "f3s19", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[21] = {constructorName: "f3s20", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 } else {
 	//f5
-	scrList[4] = {constructorName: "f5s1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[8] = {constructorName: "f3s11", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[12] = {constructorName: "f5s3", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[16] = {constructorName: "f5s4", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[20] = {constructorName: "f3s1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[24] = {constructorName: "f5s6", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
-	scrList[28] = {constructorName: "f5s7", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[32] = {constructorName: "f3s6", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[36] = {constructorName: "f3s2", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[40] = {constructorName: "f3s8", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[44] = {constructorName: "f3s9", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[48] = {constructorName: "f3s12", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[52] = {constructorName: "f5s13", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[56] = {constructorName: "f5s14", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[60] = {constructorName: "f5s15", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[64] = {constructorName: "y6s2", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
-	scrList[68] = {constructorName: "f5s17", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[72] = {constructorName: "f5s18", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[76] = {constructorName: "f5s19", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[80] = {constructorName: "f5s20", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[2] = {constructorName: "f5s1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[3] = {constructorName: "f3s11", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[4] = {constructorName: "f5s3", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[5] = {constructorName: "f5s4", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[6] = {constructorName: "f3s1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[7] = {constructorName: "f5s6", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
+	scrList[8] = {constructorName: "f5s7", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[9] = {constructorName: "f3s6", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[10] = {constructorName: "f3s2", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[11] = {constructorName: "f3s8", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[12] = {constructorName: "f3s9", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[13] = {constructorName: "f3s12", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[14] = {constructorName: "f5s13", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[15] = {constructorName: "f5s14", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[16] = {constructorName: "f5s15", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[17] = {constructorName: "y6s2", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
+	scrList[18] = {constructorName: "f5s17", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[19] = {constructorName: "f5s18", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[20] = {constructorName: "f5s19", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[21] = {constructorName: "f5s20", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 }
 }
 if (currentProgress==undefined){
@@ -318,9 +240,18 @@ function handleCompleteSub(evt,comp) {
 	}	
 	AdobeAn.compositionLoaded(libSub.properties.id);
 	fnStartAnimationSub();
+	/*
 	if (scrList[currentProgress-1].constructorName.indexOf("menu")!=-1){
 		cStage = Number(scrList[currentProgress-1].constructorName.substring(4));
 		exportRoot.mcLevel.gotoAndStop(cStage);
+	}*/
+	if (currentProgress>=2 && currentProgress<=22){
+		exportRoot.mcLevel.gotoAndStop(currentProgress-2);
+	} else if (currentProgress>22){
+		exportRoot.mcLevel.gotoAndStop(20);
+	}
+	if (currentProgress==23){
+		cStage = 21;//hack for update
 	}
 	if (cStage>0 && scrList[currentProgress-1].constructorName!="splash"){
 		var cData = $.post("/api/stage/update/", 

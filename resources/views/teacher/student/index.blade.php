@@ -39,15 +39,18 @@
 
                                     </script>
                                     @foreach ($students as $student)
+                                        <?php $started = \App\StudentRecord::where("user_id", $student->id)->first(); ?>
                                         <tr>
                                             <td>{{$student->created_at}}</td>
                                             <td>{{$student->name}}</td>
                                             <td>{{$student->gender}}</td>
                                             <td>{{$student->username}}</td>
                                             <td>{{$student->password}}</td>
-                                            <td><a href="#modal{{$student->id}}" class="btn btn-danger">DELETE</a>
+                                            <td>
+                                                @if(empty($started))<a href="#modal{{$student->id}}" class="btn btn-danger">DELETE</a> @endif
                                                 <a href="{{url("teacher/class/".$classId."/student/".$student->id."/edit")}}" class="btn btn-warning">Edit</a></td>
                                         </tr>
+                                        @if(empty($started))
                                         <div data-remodal-id="modal{{$student->id}}" role="dialog" class="delete_model_c">
                                             <div>
                                                 <h2>Delete Student</h2>
@@ -61,6 +64,7 @@
                                                 <button type="submit" class="remodal-confirm">Confirm</button>
                                             </form>
                                         </div>
+                                        @endif
                                     @endforeach
                                     </tbody>
                                 </table>

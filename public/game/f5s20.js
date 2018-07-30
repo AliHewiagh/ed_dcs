@@ -1099,7 +1099,7 @@ p.nominalBounds = new cjs.Rectangle(-5,-5,10,10);
 				if (_this.parent.secRemaining <= 0) {
 					clearInterval(timeInterval);
 					$("#dom_overlay_container").empty();
-					_this.parent.onTimeEnd();
+					//_this.parent.onTimeEnd();
 					_this.parent.mcTimesUp.play();
 				} else {
 					_this.parent.secRemaining--;
@@ -3392,7 +3392,7 @@ p.nominalBounds = new cjs.Rectangle(-136.7,302.4,274,237.4);
 
 (lib.mcTimesUp = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
-
+	var _this = this;
 	// timeline functions:
 	this.frame_0 = function() {
 		this.stop();
@@ -3406,7 +3406,8 @@ p.nominalBounds = new cjs.Rectangle(-136.7,302.4,274,237.4);
 	}
 	this.frame_150 = function() {
 		this.stop();
-		nextScreen();
+		//nextScreen();
+		_this.parent.onTimeEnd();
 	}
 
 	// actions tween:
@@ -5424,7 +5425,7 @@ p.nominalBounds = new cjs.Rectangle(98,222.9,643.6,330.2);
 		playSound("mdroid_talk");
 	}
 	this.frame_43 = function() {
-		playSound("suspense",-1);
+		//playSound("suspense",-1);
 	}
 	this.frame_99 = function() {
 		this.stop();
@@ -5550,8 +5551,9 @@ p.nominalBounds = new cjs.Rectangle(98,222.9,643.6,330.2);
 											_this.gotoAndPlay("finalFb");
 										} else if (data.message=="success"){
 											//nothing
+											nextScreen();
 										} else {
-											console.log("error");
+											alert("Oppss... something went wrong. Please refresh your browser and try again.");
 										}
 									});
 			}
@@ -5892,27 +5894,26 @@ lib.properties = {
 	opacity: 1.00,
 	webfonts: {},
 	manifest: [
-		{src:"images/f5s20/a_1.png?1529741081510", id:"a_1"},
-		{src:"images/f5s20/a_4.png?1529741081510", id:"a_4"},
-		{src:"images/f5s20/Bitmap1.png?1529741081510", id:"Bitmap1"},
-		{src:"images/f5s20/Bitmap21.png?1529741081510", id:"Bitmap21"},
-		{src:"images/f5s20/Bitmap3.png?1529741081510", id:"Bitmap3"},
-		{src:"images/f5s20/Bitmap9.png?1529741081510", id:"Bitmap9"},
-		{src:"images/f5s20/block_02_qube.png?1529741081510", id:"block_02_qube"},
-		{src:"images/f5s20/block_03_qube.png?1529741081510", id:"block_03_qube"},
-		{src:"images/f5s20/character_facing_direction.png?1529741081510", id:"character_facing_direction"},
-		{src:"images/f5s20/cube_start.png?1529741081510", id:"cube_start"},
-		{src:"images/f5s20/qube_lava_01.png?1529741081510", id:"qube_lava_01"},
-		{src:"images/f5s20/qube_lava_02.png?1529741081510", id:"qube_lava_02"},
-		{src:"images/f5s20/qube_lava_03.png?1529741081510", id:"qube_lava_03"},
-		{src:"images/f5s20/qube_lava_base.png?1529741081510", id:"qube_lava_base"},
-		{src:"sounds/mdroid_talk.mp3?1529741081510", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1529741081510", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1529741081510", id:"questionComplete"},
-		{src:"sounds/stdClick.mp3?1529741081510", id:"stdClick"},
-		{src:"sounds/submitAns.mp3?1529741081510", id:"submitAns"},
-		{src:"sounds/suspense.mp3?1529741081510", id:"suspense"},
-		{src:"sounds/timeout.mp3?1529741081510", id:"timeout"}
+		{src:"images/f5s20/a_1.png", id:"a_1"},
+		{src:"images/f5s20/a_4.png", id:"a_4"},
+		{src:"images/f5s20/Bitmap1.png", id:"Bitmap1"},
+		{src:"images/f5s20/Bitmap21.png", id:"Bitmap21"},
+		{src:"images/f5s20/Bitmap3.png", id:"Bitmap3"},
+		{src:"images/f5s20/Bitmap9.png", id:"Bitmap9"},
+		{src:"images/f5s20/block_02_qube.png", id:"block_02_qube"},
+		{src:"images/f5s20/block_03_qube.png", id:"block_03_qube"},
+		{src:"images/f5s20/character_facing_direction.png", id:"character_facing_direction"},
+		{src:"images/f5s20/cube_start.png", id:"cube_start"},
+		{src:"images/f5s20/qube_lava_01.png", id:"qube_lava_01"},
+		{src:"images/f5s20/qube_lava_02.png", id:"qube_lava_02"},
+		{src:"images/f5s20/qube_lava_03.png", id:"qube_lava_03"},
+		{src:"images/f5s20/qube_lava_base.png", id:"qube_lava_base"},
+		{src:"sounds/mdroid_talk.mp3", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3", id:"questionComplete"},
+		{src:"sounds/stdClick.mp3", id:"stdClick"},
+		{src:"sounds/submitAns.mp3", id:"submitAns"},
+		{src:"sounds/timeout.mp3", id:"timeout"}
 	],
 	preloads: []
 };
