@@ -20,8 +20,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $pass = Auth::user()->password;
-        if(strlen($pass)>4){
+        if(empty(Auth::user()->ic_number)){
             return view("manager.home.insertIC");
         }elseif(empty(Auth::user()->email)){
             return redirect("/manager/info/update");
@@ -49,8 +48,8 @@ class HomeController extends Controller
         if(strlen($ic)>12 || strlen($ic)<12){
             return back()->with('error', 'Please insert correct IC number!');
         }
-        $pass = substr($ic, -4, 4);
-        Auth::user()->update(["ic_number"=>$ic, "username"=>$ic, "password"=>$pass]);
+//        $pass = substr($ic, -4, 4);
+        Auth::user()->update(["ic_number"=>$ic]);
         return redirect("/manager/info/update");
     }
 
@@ -86,20 +85,44 @@ class HomeController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         }
-        $data = $request->only("school_code", "name", "state_id", "pkg", "type", "school_type_id", "location_id", "area", "mypib", "sekolahi", "sekolahk", "sbt");
-        if($data["school_type_id"] == "other"){
-            if(empty($request->other_type)){
-                return back()->withInput()->with("error", "Please specify type of school!");
+//        $data = $request->only("school_code", "name", "state_id", "pkg", "type", "school_type_id", "location_id", "area", "mypib", "sekolahi", "sekolahk", "sbt");
+//        if($data["school_type_id"] == "other"){
+//            if(empty($request->other_type)){
+//                return back()->withInput()->with("error", "Please specify type of school!");
+//            }
+//            $newType = SchoolType::create(["group"=>$request->type, "name"=>$request->other_type]);
+//            $data["school_type_id"] = $newType->id;
+//        }
+//        $school = School::where("user_id", Auth::user()->id)->first();
+//        if(empty($school)){
+//            return back()->withInput()->with("error", "School does not exist anymore!");
+//        }
+//
+//        $exist = School::where("school_code", $data['school_code'])->first();
+//        if(!empty($exist) && $school->school_code!= $data['school_code']){
+//            return back()->with('error', 'This school code exist, please insert a unique school code!');
+//        }
+
+        $user = Auth::user();
+        $dataUser = $request->only("password", "email", "phone");
+        $dataUser['name'] = $request->manager_name;
+        //$dataUser['username'] = $data['school_code'];
+        $ic = $request->ic_number;
+        if(!empty($ic)){
+            if(strlen($ic)>12 || strlen($ic)<12){
+                return back()->with('error', 'Please insert correct IC number!');
             }
-            $newType = SchoolType::create(["group"=>$request->type, "name"=>$request->other_type]);
-            $data["school_type_id"] = $newType->id;
+            $dataUser['ic_number'] = $ic;
+//            $exist = User::where("ic_number", $dataUser['ic_number'])->first();
+//            if(!empty($exist) && $exist->id != $user->id){
+//                return back()->with('error', 'This ic number is registered already!');
+//            }
+//        $dataUser['password'] = substr($ic, -4, 4);
+
         }
-        $school = School::where("user_id", Auth::user()->id)->first();
-        if(empty($school)){
-            return back()->with("error", "School does not exist anymore!");
-        }
-        Auth::user()->update(["email"=>$request->email, "phone"=>$request->phone]);
-        $school->update($data);
+
+        $user->update($dataUser);
+        //$school->update($data);
         return redirect('/manager/dashboard')->with('success', 'Profile updated successfully!');
     }
 

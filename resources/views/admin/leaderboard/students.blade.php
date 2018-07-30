@@ -33,13 +33,12 @@
                                         <?php
                                         $school = \App\School::find($student->school_id);
                                         $state = \App\State::find($school->state_id);
-                                        $teacherId = \App\SchoolClass::where('id', $student->class_id)->first();
                                         $pkg = \App\Pkg::where('pkg', $school->pkg)->first();
                                         $i++;
                                         ?>
                                     <tr>
                                         <td>{{$i}}</td>
-                                        <td><a href="{{url('/admin/progress/'.$state->id.'/'.$pkg->id.'/'.$school->id.'/'.$teacherId.'/'.$student->class_id.'/'.$student->id)}}">{{$student->name}}</a></td>
+                                        <td><a href="{{url('/admin/progress/'.$state->id.'/'.$pkg->id.'/'.$school->id.'/'.$student->class_id.'/'.$student->class_id.'/'.$student->id)}}">{{$student->name}}</a></td>
                                         <td>{{$school->school_code}}</td>
                                         <td><a href="{{url('/admin/progress/'.$state->id.'/'.$pkg->id.'/'.$school->id)}}">{{$school->name}}</a></td>
                                         <td>{{$state->name}}</td>

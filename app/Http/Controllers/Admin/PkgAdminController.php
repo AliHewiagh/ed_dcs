@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Pkg;
 use App\Role;
+use App\State;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -30,7 +31,8 @@ class PkgAdminController extends Controller
     public function create()
     {
         $pkgs = Pkg::all();
-        return view('admin.user.pkgCreate', compact('pkgs'));
+        $states = State::all();
+        return view('admin.user.pkgCreate', compact('pkgs', 'states'));
     }
 
     /**
@@ -41,10 +43,11 @@ class PkgAdminController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->only("name", "pkg_id");
+        $data = $request->only("name", "pkg_id", "state_id");
         $validator = Validator::make($data, [
             'name' => 'required|max:200',
             'pkg_id' => 'required',
+            'state_id' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -54,7 +57,7 @@ class PkgAdminController extends Controller
         }
         $username = "pkg".time();
         $pass = str_random(8);
-        $user = User::create(["name"=>$data['name'], "username"=>$username, "password"=>$pass, "type"=>6, 'pkg_id'=>$data['pkg_id']]);
+        $user = User::create(["name"=>$data['name'], "username"=>$username, "password"=>$pass, "type"=>6, 'pkg_id'=>$data['pkg_id'], 'state_id'=>$data['state_id']]);
         $role = Role::where("id", 6)->first();
         $user->attachRole($role);
         return redirect('/admin/manage/admin/pkg')->with("success", "PKG Admin created successfully!");
@@ -81,7 +84,8 @@ class PkgAdminController extends Controller
     {
         $user = User::find($id);
         $pkgs = Pkg::all();
-        return view('admin.user.pkgEdit', compact('pkgs', 'user'));
+        $states = State::all();
+        return view('admin.user.pkgEdit', compact('pkgs', 'user', 'states'));
     }
 
     /**
@@ -94,11 +98,12 @@ class PkgAdminController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::find($id);
-        $data = $request->only("name", "pkg_id", "password");
+        $data = $request->only("name", "pkg_id", "password", "state_id");
         $validator = Validator::make($data, [
             'name' => 'required|max:200',
             'pkg_id' => 'required',
             'password' => 'required|min:3',
+            'state_id' => 'required',
         ]);
 
         if ($validator->fails()) {

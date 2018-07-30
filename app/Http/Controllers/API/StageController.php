@@ -47,8 +47,8 @@ class StageController extends Controller
             return $data;
         }
         $game = Game::where('user_id', $userId)->first();
+        $user = User::find($userId);
         if(empty($game)){
-            $user = User::find($userId);
             if(empty($user)){
                 $data = ['status'=>102, 'message'=>'User does not exist!'];
                 return $data;
@@ -58,7 +58,7 @@ class StageController extends Controller
         }else{
             $game->update(['stage'=>$stage, "last_screen"=>$request->last_screen, "last_state"=>$request->last_state, "time_left"=>$request->time_left]);
         }
-        if($stage == 20){
+        if($stage == 21){
             $score = StudentRecord::where('user_id', $userId)->avg('score');
             $user->update(['done'=>1, 'score'=>$score]);
             $classNotDone = User::where([['class_id', $user->class_id], ['done', 0]])->first();

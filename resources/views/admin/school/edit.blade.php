@@ -141,6 +141,17 @@
                         <label for="manager_nameInput">School Manager Name</label>
                         <input type="text" name="manager_name" class="form-control required" id="manager_nameInput" value="{{$user->name}}" required>
                     </div>
+
+                    <div class="form-group">
+                        <label for="mykadInput">School Manager myKad Number</label>
+                        <input type="text" name="ic_number" class="form-control required" id="mykadInput" value="{{$user->ic_number}}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="passwordInput">Password</label>
+                        <input type="text" name="password" class="form-control required" id="passwordInput" value="{{$user->password}}" required>
+                    </div>
+
                     <button id="submitBtn" type="submit" class="btn btn-primary btn-block">Update</button>
                 </form>
                 <br />

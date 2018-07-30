@@ -35,7 +35,8 @@
                                             <td>{{$cl->created_at}}</td>
                                             <td>{{$cl->name}}</td>
                                             <td>{{$cl->type}}</td>
-                                            <td><a href="#modal{{$cl->id}}" class="btn btn-danger">DELETE</a>
+                                            <td>
+                                                @if($totalS == 0)<a href="#modal{{$cl->id}}" class="btn btn-danger">DELETE</a> @endif
                                                 <a href="{{url("teacher/classes/".$cl->id."/edit")}}" class="btn btn-warning">Edit</a>
                                                 <a href="{{url("teacher/class/".$cl->id."/student")}}" class="btn btn-primary">Students ({{$totalS}})</a></td>
                                         </tr>

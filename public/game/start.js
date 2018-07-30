@@ -991,13 +991,13 @@ lib.properties = {
 	color: "#000000",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/beamExhaust.png?1521201389595", id:"beamExhaust"},
-		{src:"images/bgGradient.png?1521201389595", id:"bgGradient"},
-		{src:"images/speedlines1.png?1521201389595", id:"speedlines1"},
-		{src:"images/speedlines2.png?1521201389595", id:"speedlines2"},
-		{src:"images/speedlines3.png?1521201389595", id:"speedlines3"},
-		{src:"sounds/flyby.mp3?1521201389595", id:"flyby"},
-		{src:"sounds/stdClick.mp3?1521201389595", id:"stdClick"}
+		{src:"images/beamExhaust.png", id:"beamExhaust"},
+		{src:"images/bgGradient.png", id:"bgGradient"},
+		{src:"images/speedlines1.png", id:"speedlines1"},
+		{src:"images/speedlines2.png", id:"speedlines2"},
+		{src:"images/speedlines3.png", id:"speedlines3"},
+		{src:"sounds/flyby.mp3", id:"flyby"},
+		{src:"sounds/stdClick.mp3", id:"stdClick"}
 	],
 	preloads: []
 };
