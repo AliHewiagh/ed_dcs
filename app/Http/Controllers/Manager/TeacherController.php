@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Manager;
 
 use App\Role;
+use App\SchoolClass;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -78,7 +79,8 @@ class TeacherController extends Controller
      */
     public function edit($id)
     {
-        //
+        $teacher = User::findOrFail($id);
+        return view("manager.teacher.edit", compact('teacher'));
     }
 
     /**
@@ -90,7 +92,30 @@ class TeacherController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $teacher = User::findOrFail($id);
+        $data = $request->only('name', 'username', 'password', 'email', 'phone');
+        $validator = Validator::make($data, [
+            'name' => 'required|max:200',
+            'username' => 'required',
+            'password' => 'required',
+            'email' => 'required|min:3',
+            'phone' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $exist = User::where("username", $data['username'])->first();
+        if(!empty($exist) && $exist->id != $id){
+            return back()->withInput()->with("error", "This username exist is taken!");
+        }
+
+        $teacher->update($data);
+        return redirect('/manager/teacher')->with('success', 'Teacher updated successfully!');
+
     }
 
     /**
@@ -101,6 +126,12 @@ class TeacherController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $classes = SchoolClass::where("teacher_id", $id)->count();
+        if($classes > 0){
+            return back()->with("error", "This teacher has class!");
+        }
+        $teacher = User::findOrFail($id);
+        $teacher->delete();
+        return back()->with("success", "Teacher is deleted successfully!");
     }
 }

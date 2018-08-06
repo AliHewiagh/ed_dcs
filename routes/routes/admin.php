@@ -21,12 +21,13 @@ Route::post('/schools/upload', 'Admin\SchoolExcelController@uploadFile');
 // Progress
 Route::get('/progress', 'Admin\ProgressController@index');
 Route::get('/progress/{state}', 'Admin\ProgressController@stateProgress');
-Route::get('/progress/{state}/{pkg}', 'Admin\ProgressController@pkgProgress');
-Route::get('/progress/{state}/{pkg}/{schoolId}', 'Admin\ProgressController@schoolProgress');
-Route::get('/progress/{state}/{pkg}/{schoolId}/{teacherId}', 'Admin\ProgressController@teacherProgress');
-Route::get('/progress/{state}/{pkg}/{schoolId}/{teacherId}/{classId}', 'Admin\ProgressController@classProgress');
-Route::get('/progress/{state}/{pkg}/{schoolId}/{teacherId}/{classId}/{studentId}', 'Admin\ProgressController@studentProgress');
-Route::get('/progress/{state}/{pkg}/{schoolId}/{teacherId}/{classId}/{studentId}/detail', 'Admin\ProgressController@progressDetail');
+Route::get('/progress/{state}/{schoolId}', 'Admin\ProgressController@schoolProgress');
+Route::get('/progress/{state}/{schoolId}/{classId}', 'Admin\ProgressController@classProgress');
+Route::get('/progress/{state}/{schoolId}/{classId}/{studentId}', 'Admin\ProgressController@studentProgress');
+Route::get('/progress/{state}/{schoolId}/{classId}/{studentId}/detail', 'Admin\ProgressController@progressDetail');
+
+// Student
+Route::PATCH('/student/done/update/{id}', 'Admin\StudentController@doneUpdate');
 
 // Leader Board
 Route::get('/top/school/{type}', 'Admin\LeaderBoardController@index');

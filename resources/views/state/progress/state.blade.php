@@ -23,20 +23,23 @@
                                 <table id="example2" class="table table-bordered table-striped">
                                     <thead>
                                     <tr>
+                                        <th>School</th>
+                                        <th>School code</th>
                                         <th>PKG</th>
-                                        <th>Completion by school</th>
+                                        <th>Completion by class</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach ($pkgs as $pkg)
+                                    @foreach ($schools as $school)
                                         <?php
-                                        $p = $pkg->pkg;
-                                        $school = \App\School::where('pkg', $p)->count();
-                                        $done = \App\School::where([['pkg', $p], ['done', 1]])->count();
+                                        $classes = \App\SchoolClass::where('school_id', $school->id)->count();
+                                        $done = \App\SchoolClass::where([['school_id', $school->id], ['done', 1]])->count();
                                         ?>
                                         <tr>
-                                            <td><a href="{{url('/state/progress/'.$pkg->id)}}">{{$p}}</a></td>
-                                            <td>{{$done}}/{{$school}}</td>
+                                            <td><a href="{{url('/state/progress/'.$school->id)}}">{{$school->name}}</a></td>
+                                            <td>{{$school->school_code}}</td>
+                                            <td>{{$school->pkg}}</td>
+                                            <td>{{$done}}/{{$classes}}</td>
                                         </tr>
                                     @endforeach
                                     </tbody>

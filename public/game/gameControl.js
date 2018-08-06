@@ -18,8 +18,8 @@ var scrList = [{constructorName: "splash", compId: "B80CE73EAFE3CF40BDB98EF8906F
 				];
 function doOnce(){
 if (schoolLevel==1){//primary
-	scrList[2] = {constructorName: "y6d1q1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[3] = {constructorName: "y6d3q1", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
+	scrList[2] = {constructorName: "y6s1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[3] = {constructorName: "y6s2", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
 	scrList[4] = {constructorName: "y6d2q1", compId: "0531B783B312A2449858C08B8DC0FA38", preloader: 1};
 	scrList[5] = {constructorName: "y6d1q2", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[6] = {constructorName: d2q2List[d2q2Index][0], compId: d2q2List[d2q2Index][1], preloader: 1};

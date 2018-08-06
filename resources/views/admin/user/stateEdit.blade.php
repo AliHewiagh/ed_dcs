@@ -32,6 +32,10 @@
                         </select>
                     </div>
                     <div class="form-group">
+                        <label for="usernameInput">Username</label>
+                        <input type="text" name="username" class="form-control required" id="usernameInput" value="{{$user->username}}" required>
+                    </div>
+                    <div class="form-group">
                         <label for="passwordInput">Password</label>
                         <input type="text" name="password" class="form-control required" id="passwordInput" value="{{$user->password}}" required>
                     </div>

@@ -4,7 +4,8 @@
     @include('teacher.partial.sidebar')
     <div class="content-wrapper">
         <section class="content-header">
-            <h1>Individual Progress</h1>
+            <?php $school = \App\School::find(\Auth::user()->school_id); ?>
+            <h1>Individual Progress <small>{{$school->school_code.' | '.$school->name}}</small></h1>
         </section>
         <section class="content">
             <div class="row">
@@ -19,12 +20,15 @@
                             @include('partial.alert')
                         </div>
                         <div class="box-body">
+                            <?php $class = \App\SchoolClass::find($classId);
+                            ?>
+                            <p>Class: {{$class->name}}</p>
+                            <p>Class Type: {{$class->type}}</p>
                             <div class="table-responsive">
                                 <table id="example2" class="table table-bordered table-striped">
                                     <thead>
                                     <tr>
                                         <th>Student's Name</th>
-                                        <th>School's Name</th>
                                         <th>Gender</th>
                                         <th>Technology</th>
                                         <th>Ethics</th>
@@ -33,7 +37,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <?php $school = \App\School::find($student->school_id);
+                                    <?php
                                     $techs = \App\StudentRecord::where([['user_id', $student->id], ['qDomain', 1]])->get();
                                     $cognitive = \App\StudentRecord::where([['user_id', $student->id], ['qDomain', 2]])->get();
                                     $ethics = \App\StudentRecord::where([['user_id', $student->id], ['qDomain', 3]])->get();
@@ -54,7 +58,6 @@
                                     }?>
                                     <tr>
                                         <td><a href="{{url('/teacher/progress/'.$classId.'/'.$student->id.'/detail')}}">{{$student->name}}</a></td>
-                                        <td>{{$school->name}}</td>
                                         <td>{{$student->gender}}</td>
                                         <td>{{$techScore}}</td>
                                         <td>{{$ethicsScore}}</td>

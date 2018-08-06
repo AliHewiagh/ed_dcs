@@ -94,7 +94,7 @@ class StateAdminController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::find($id);
-        $data = $request->only("name", "state_id", "password");
+        $data = $request->only("name", "state_id", "username", "password");
         $validator = Validator::make($data, [
             'name' => 'required|max:200',
             'state_id' => 'required',
@@ -106,6 +106,13 @@ class StateAdminController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         }
+        $exist = User::where("username", $data['username'])->first();
+        if(!empty($exist)){
+            if($exist->id != $id){
+                return back()->with('error', 'This username exist!');
+            }
+        }
+
         $user->update($data);
         return redirect('/admin/manage/admin/state')->with("success", "State Admin updated successfully!");
     }
@@ -118,6 +125,8 @@ class StateAdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+        return back()->with("success", "State Admin deleted successfully!");
     }
 }

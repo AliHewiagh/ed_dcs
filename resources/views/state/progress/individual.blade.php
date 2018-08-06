@@ -4,7 +4,8 @@
     @include('state.partial.sidebar')
     <div class="content-wrapper">
         <section class="content-header">
-            <h1>Individual Progress</h1>
+            <?php $school = \App\School::find($schoolId); ?>
+            <h1>Individual Progress <small>{{$school->school_code}} | {{$school->name}}</small></h1>
         </section>
         <section class="content">
             <div class="row">
@@ -14,22 +15,26 @@
                             <div class="bread-crumbs">
                                 <a href="{{url('/state/dashboard')}}">Dashboard</a> /
                                 <a href="{{url('/state/progress/')}}">State Progress</a> /
-                                <a href="{{url('/state/progress/'.$pkg)}}">PKG Progress</a> /
-                                <a href="{{url('/state/progress/'.$pkg.'/'.$schoolId)}}">School Progress</a> /
-                                <a href="{{url('/state/progress/'.$pkg.'/'.$schoolId.'/'.$teacherId)}}">Class Progress</a> /
-                                <a href="{{url('/state/progress/'.$pkg.'/'.$schoolId.'/'.$teacherId.'/'.$classId)}}">Students Progress</a> /
+                                <a href="{{url('/state/progress/'.$schoolId)}}">School Progress</a> /
+                                <a href="{{url('/state/progress/'.$schoolId.'/'.$classId)}}">Class Progress</a> /
                                 <span>Individual Progress</span>
                             </div>
                             @include('partial.alert')
                         </div>
                         <div class="box-body">
+                            <?php $class = \App\SchoolClass::find($classId);
+                            $teacher = \App\User::find($class->teacher_id);
+                            ?>
+                            <p>Class: {{$class->name}}</p>
+                            <p>Class Type: {{$class->type}}</p>
+                            <p>Teacher: {{$teacher->name}}</p>
+                            <p>Email: {{$teacher->email}}</p>
+                            <p>Phone: {{$teacher->phone}}</p>
                             <div class="table-responsive">
                                 <table id="example2" class="table table-bordered table-striped">
                                     <thead>
                                     <tr>
                                         <th>Student's Name</th>
-                                        <th>State</th>
-                                        <th>School's Name</th>
                                         <th>Gender</th>
                                         <th>Technology</th>
                                         <th>Ethics</th>
@@ -59,9 +64,7 @@
                                     }
                                     ?>
                                     <tr>
-                                        <td><a href="{{url('/state/progress/'.$pkg.'/'.$schoolId.'/'.$teacherId.'/'.$classId.'/'.$student->id.'/detail')}}">{{$student->name}}</a></td>
-                                        <td>{{$state}}</td>
-                                        <td>{{$school->name}}</td>
+                                        <td><a href="{{url('/state/progress/'.$schoolId.'/'.$classId.'/'.$student->id.'/detail')}}">{{$student->name}}</a></td>
                                         <td>{{$student->gender}}</td>
                                         <td>{{$techScore}}</td>
                                         <td>{{$ethicsScore}}</td>

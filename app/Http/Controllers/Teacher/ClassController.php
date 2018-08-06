@@ -96,9 +96,10 @@ class ClassController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->only("name");
+        $data = $request->only("name", "type");
         $validator = Validator::make($data, [
             'name' => 'required|max:200',
+            'type' => 'required|max:40',
         ]);
 
         if ($validator->fails()) {
@@ -107,7 +108,7 @@ class ClassController extends Controller
                 ->withInput();
         }
         $class = SchoolClass::where([['id', $id], ['teacher_id', Auth::user()->id]])->firstOrFail();
-        $class->update(['name'=>$data['name']]);
+        $class->update(['name'=>$data['name'], 'type'=>$data['type']]);
         return redirect('/teacher/classes')->with("success", "Class updated successfully!");
     }
 
@@ -125,6 +126,6 @@ class ClassController extends Controller
             School::where('id', $class->school_id)->update(['done'=>1]);
         }
         $class->delete();
-        return redirect('/teacher/classes')->with("success", "Class deleted successfully!");
+        return back()->with("success", "Class deleted successfully!");
     }
 }

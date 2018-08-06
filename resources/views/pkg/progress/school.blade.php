@@ -4,7 +4,7 @@
     @include('pkg.partial.sidebar')
     <div class="content-wrapper">
         <section class="content-header">
-            <h1>School Progress <small>{{$school->name}}</small></h1>
+            <h1>School Progress <small>{{$school->school_code}} | {{$school->name}}</small></h1>
         </section>
         <section class="content">
             <div class="row">
@@ -29,19 +29,21 @@
                                 <table id="example2" class="table table-bordered table-striped">
                                     <thead>
                                     <tr>
-                                        <th>Teacher's Name</th>
-                                        <th>Completion by class</th>
+                                        <th>Class</th>
+                                        <th>Class Type</th>
+                                        <th>Students Completion</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach ($teachers as $teacher)
+                                    @foreach ($classes as $class)
                                         <?php
-                                        $classes = \App\SchoolClass::where('teacher_id', $teacher->id)->count();
-                                        $done = \App\SchoolClass::where([['teacher_id', $teacher->id], ['done', 1]])->count();
+                                        $students = \App\User::where('class_id', $class->id)->count();
+                                        $done = \App\User::where([['class_id', $class->id], ['done', 1]])->count();
                                         ?>
                                         <tr>
-                                            <td><a href="{{url('/pkg/progress/'.$school->id.'/'.$teacher->id)}}">{{$teacher->name}}</a></td>
-                                            <td>{{$done}}/{{$classes}}</td>
+                                            <td><a href="{{url('/pkg/progress/'.$school->id.'/'.$class->id)}}">{{$class->name}}</a></td>
+                                            <td>{{$class->type}}</td>
+                                            <td>{{$done}}/{{$students}}</td>
                                         </tr>
                                     @endforeach
                                     </tbody>

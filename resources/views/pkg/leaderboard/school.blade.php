@@ -29,7 +29,7 @@
                                         <?php $state = \App\State::find($school->state_id); ?>
                                         <tr>
                                             <td>@if(!empty($school->school_code)){{$school->school_code}} @else ?? @endif</td>
-                                            <td><a href="{{url('/pkg/progress/'.$state->name.'/'.$school->id)}}">{{$school->name}}</a></td>
+                                            <td><a href="{{url('/pkg/progress/'.$school->id)}}">{{$school->name}}</a></td>
                                             <td>@if(!empty($school->type)) @if($school->type==1)Primary School @else Secondary School @endif @else ?? @endif</td>
                                             <td>@if(!empty($school->user)){{$school->user->name}} @else ?? @endif</td>
                                             <td>{{$school->pkg}}</td>

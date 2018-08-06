@@ -30,7 +30,7 @@ class RecordController extends Controller
                 "qParam"=>$item["qParam"], "qSkill"=>$item["qSkill"], "qResult"=>$item["qResult"], "userAns"=>$item["userAns"], "time"=>$item["time"], "score"=>$item["score"]]);
         }
         $user = User::find($userId);
-        if($stage == 20){
+        if($stage == 20 || $request->last_screen == "end"){
             $score = StudentRecord::where('user_id', $userId)->avg('score');
             $user->update(['done'=>1, 'score'=>$score]);
             $classNotDone = User::where([['class_id', $user->class_id], ['done', 0]])->first();

@@ -4,7 +4,8 @@
     @include('state.partial.sidebar')
     <div class="content-wrapper">
         <section class="content-header">
-            <h1>Students Progress</h1>
+            <?php $school = \App\School::find($schoolId); ?>
+            <h1>Class Progress <small>{{$school->school_code}} | {{$school->name}}</small></h1>
         </section>
         <section class="content">
             <div class="row">
@@ -14,14 +15,20 @@
                             <div class="bread-crumbs">
                                 <a href="{{url('/state/dashboard')}}">Dashboard</a> /
                                 <a href="{{url('/state/progress/')}}">State Progress</a> /
-                                <a href="{{url('/state/progress/'.$pkg)}}">PKG Progress</a> /
-                                <a href="{{url('/state/progress/'.$pkg.'/'.$schoolId)}}">School Progress</a> /
-                                <a href="{{url('/state/progress/'.$pkg.'/'.$schoolId.'/'.$teacherId)}}">Class Progress</a> /
-                                <span>Students Progress</span>
+                                <a href="{{url('/state/progress/'.$schoolId)}}">School Progress</a> /
+                                <span>Class Progress</span>
                             </div>
                             @include('partial.alert')
                         </div>
                         <div class="box-body">
+                            <?php $class = \App\SchoolClass::find($classId);
+                            $teacher = \App\User::find($class->teacher_id);
+                            ?>
+                            <p>Class: {{$class->name}}</p>
+                            <p>Class Type: {{$class->type}}</p>
+                            <p>Teacher: {{$teacher->name}}</p>
+                            <p>Email: {{$teacher->email}}</p>
+                            <p>Phone: {{$teacher->phone}}</p>
                             <div class="table-responsive">
                                 <table id="example2" class="table table-bordered table-striped">
                                     <thead>
@@ -29,17 +36,31 @@
                                         <th>Student's Name</th>
                                         <th>MyKad No</th>
                                         <th>Stage</th>
+                                        <th>Done</th>
+                                        <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     @foreach ($students as $student)
                                         <?php $stages = \App\StudentRecord::where('user_id', $student->id)->pluck('stage')->toArray();
                                         $stages = array_unique($stages); ?>
-                                    <tr>
-                                        <td><a href="{{url('/state/progress/'.$pkg.'/'.$schoolId.'/'.$teacherId.'/'.$classId.'/'.$student->id)}}">{{$student->name}}</a></td>
-                                        <td>{{$student->ic_number}}</td>
-                                        <td>{{count($stages)}}/20</td>
-                                    </tr>
+                                        <tr>
+                                            <td><a href="{{url('/state/progress/'.$schoolId.'/'.$classId.'/'.$student->id)}}">{{$student->name}}</a></td>
+                                            <td>{{$student->ic_number}}</td>
+                                            <td>{{count($stages)}}/20</td>
+                                            <td>@if($student->done == 1) <span class="badge label-success">Yes</span> @else <span class="badge label-danger">No</span> @endif</td>
+                                            <td>
+                                                <form method="post" action="{{url('/state/student/done/update/'.$student->id)}}">
+                                                    @csrf @method('PATCH')
+                                                    @if($student->done == 1 && count($stages) == 20)
+                                                    @elseif($student->done == 1)
+                                                        <button type="submit" class="btn btn-danger">Mark As Not Done</button>
+                                                    @else
+                                                        <button type="submit" class="btn btn-success">Mark As Done</button>
+                                                    @endif
+                                                </form>
+                                            </td>
+                                        </tr>
                                     @endforeach
                                     </tbody>
                                 </table>

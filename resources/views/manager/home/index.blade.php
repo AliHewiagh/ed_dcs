@@ -4,6 +4,7 @@
     @include('manager.partial.sidebar')
     <?php
     $schoolId = Auth::user()->school_id;
+    $school = \App\School::find($schoolId);
     $year6Classes = \App\SchoolClass::where('type', 'Year 6')->pluck('id')->toArray();
     $year6Done = \App\User::where([['done', 1], ['school_id', $schoolId]])->whereIn('class_id', $year6Classes)->count();
     $year6NotDone = \App\User::where([['done', 0], ['school_id', $schoolId]])->whereIn('class_id', $year6Classes)->count();
@@ -23,13 +24,13 @@
     ?>
     <div class="content-wrapper">
         <section class="content-header">
-            <h1>Dashboard</h1>
+            <h1>Dashboard <small>{{$school->school_code.' | '.$school->name}}</small></h1>
         </section>
         <section class="content">
                 <div class="row">
                     @include('partial.alert')
                     <?php $totalStudents=\App\User::where([['type', 4], ['school_id', $schoolId]])->count();
-                        $school = \App\School::find($schoolId);
+
                     ?>
                     {{--secondary--}}
                     @if($school->type == 2)

@@ -21,7 +21,6 @@ Route::resource('/teacher', 'Manager\TeacherController');
 
 // Progress
 Route::get('/progress', 'Manager\ProgressController@schoolProgress');
-Route::get('/progress/{teacherId}', 'Manager\ProgressController@teacherProgress');
-Route::get('/progress/{teacherId}/{classId}', 'Manager\ProgressController@classProgress');
-Route::get('/progress/{teacherId}/{classId}/{studentId}', 'Manager\ProgressController@studentProgress');
-Route::get('/progress/{teacherId}/{classId}/{studentId}/detail', 'Manager\ProgressController@progressDetail');
+Route::get('/progress/{classId}', 'Manager\ProgressController@classProgress');
+Route::get('/progress/{classId}/{studentId}', 'Manager\ProgressController@studentProgress');
+Route::get('/progress/{classId}/{studentId}/detail', 'Manager\ProgressController@progressDetail');

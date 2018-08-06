@@ -30,7 +30,7 @@
                                         $pkg = \App\Pkg::where('pkg', $school->pkg)->first();?>
                                         <tr>
                                             <td>@if(!empty($school->school_code)){{$school->school_code}} @else ?? @endif</td>
-                                            <td><a href="{{url('/state/progress/'.$pkg->id.'/'.$school->id)}}">{{$school->name}}</a></td>
+                                            <td><a href="{{url('/state/progress/'.$school->id)}}">{{$school->name}}</a></td>
                                             <td>@if(!empty($school->type)) @if($school->type==1)Primary School @else Secondary School @endif @else ?? @endif</td>
                                             <td>@if(!empty($school->location)){{$school->location->state}} @else ?? @endif</td>
                                             <td>{{$school->pkg}}</td>

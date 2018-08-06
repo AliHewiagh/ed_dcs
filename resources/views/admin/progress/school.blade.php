@@ -5,7 +5,7 @@
     <div class="content-wrapper">
         <section class="content-header">
             <?php $s = \App\State::find($state); ?>
-            <h1>School Progress <small>{{$s->name}} | {{$school->name}}</small></h1>
+            <h1>School Progress <small>{{$s->name}} | {{$school->school_code}} | {{$school->name}}</small></h1>
         </section>
         <section class="content">
             <div class="row">
@@ -16,7 +16,6 @@
                                 <a href="{{url('/admin/dashboard')}}">Dashboard</a> /
                                 <a href="{{url('/admin/progress')}}">Nationwide Progress</a> /
                                 <a href="{{url('/admin/progress/'.$state)}}">State Progress</a> /
-                                <a href="{{url('/admin/progress/'.$state.'/'.$pkg)}}">PKG Progress</a> /
                                 <span>School Progress</span>
                             </div>
                             @include('partial.alert')
@@ -32,19 +31,21 @@
                                 <table id="example2" class="table table-bordered table-striped">
                                     <thead>
                                     <tr>
-                                        <th>Teacher's Name</th>
-                                        <th>Completion by class</th>
+                                        <th>Class</th>
+                                        <th>Class Type</th>
+                                        <th>Students Completion</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach ($teachers as $teacher)
+                                    @foreach ($classes as $class)
                                         <?php
-                                        $classes = \App\SchoolClass::where('teacher_id', $teacher->id)->count();
-                                        $done = \App\SchoolClass::where([['teacher_id', $teacher->id], ['done', 1]])->count();
+                                        $students = \App\User::where('class_id', $class->id)->count();
+                                        $done = \App\User::where([['class_id', $class->id], ['done', 1]])->count();
                                         ?>
                                         <tr>
-                                            <td><a href="{{url('/admin/progress/'.$state.'/'.$pkg.'/'.$school->id.'/'.$teacher->id)}}">{{$teacher->name}}</a></td>
-                                            <td>{{$done}}/{{$classes}}</td>
+                                            <td><a href="{{url('/admin/progress/'.$state.'/'.$school->id.'/'.$class->id)}}">{{$class->name}}</a></td>
+                                            <td>{{$class->type}}</td>
+                                            <td>{{$done}}/{{$students}}</td>
                                         </tr>
                                     @endforeach
                                     </tbody>
