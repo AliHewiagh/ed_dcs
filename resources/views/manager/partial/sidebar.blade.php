@@ -22,9 +22,8 @@
         <ul class="sidebar-menu">
             <li class="header">DASHBOARD MENU</li>
             <li><a href="{{ route('manager_dashboard_path') }}"><i class="fa fa-tachometer"></i> <span>Dashboard</span></a></li>
-            <li><a href="{{url('/manager/teacher')}}"><i class="fa fa-users"></i> <span>Teachers</span></a></li>
-            {{--<li><a href="#"><i class="fa fa-users"></i> <span>Customer</span></a></li>--}}
             <li><a href="{{url('/manager/progress')}}"><i class="fa fa-cubes"></i> <span>Progress</span></a></li>
+            <li><a href="{{url('/manager/teacher')}}"><i class="fa fa-users"></i> <span>Teacher Management</span></a></li>
             <li><a href="{{url('/manager/profile/edit')}}"><i class="fa fa-gear"></i> <span>Setting</span></a></li>
             <li><a href="{{url('/manager/help')}}"><i class="fa fa-question-circle"></i> <span>Help</span></a></li>
             <li><a href="{{ route('user_logout_path') }}"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>

@@ -4,7 +4,8 @@
     @include('teacher.partial.sidebar')
     <div class="content-wrapper">
         <section class="content-header">
-            <h1>Detailed Progress <small>{{$student->name}}</small></h1>
+            <?php $school = \App\School::find(\Auth::user()->school_id); ?>
+            <h1>Detailed Progress <small>{{$school->school_code.' | '.$school->name}}</small></h1>
         </section>
         <section class="content">
             <div class="row">
@@ -29,6 +30,12 @@
                             </div>
                         </div>
                         <div class="box-body">
+                            <?php $class = \App\SchoolClass::find($classId);
+                            ?>
+                            <p>Class: {{$class->name}}</p>
+                            <p>Class Type: {{$class->type}}</p>
+                            <p>Student Name: {{$student->name}}</p>
+                            <p>Student MyKad No: {{$student->ic_number}}</p>
                             <div class="table-responsive">
                                 <table id="example2" class="table table-bordered table-striped">
                                     <thead>

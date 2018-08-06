@@ -735,6 +735,9 @@ p.nominalBounds = new cjs.Rectangle(-155.8,-23,422.7,139.6);
 	this.frame_0 = function() {
 		txtAnimSpeed=18;
 	}
+	this.frame_4 = function() {
+		playSound("questionAlert");
+	}
 	this.frame_32 = function() {
 		this.stop();
 		var _this = this;
@@ -755,7 +758,7 @@ p.nominalBounds = new cjs.Rectangle(-155.8,-23,422.7,139.6);
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(32).call(this.frame_32).wait(7).call(this.frame_39).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(4).call(this.frame_4).wait(28).call(this.frame_32).wait(7).call(this.frame_39).wait(1));
 
 	// t
 	this.instance = new lib.dialogue1();
@@ -834,13 +837,14 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/intro/Bitmap1.png?1532873345634", id:"Bitmap1"},
-		{src:"images/intro/Bitmap3.png?1532873345634", id:"Bitmap3"},
-		{src:"images/intro/Bitmap4.png?1532873345634", id:"Bitmap4"},
-		{src:"images/intro/Bitmap5.png?1532873345634", id:"Bitmap5"},
-		{src:"images/intro/Bitmap6.png?1532873345634", id:"Bitmap6"},
-		{src:"images/intro/Bitmap7.png?1532873345634", id:"Bitmap7"},
-		{src:"images/intro/starbg.png?1532873345634", id:"starbg"}
+		{src:"images/intro/Bitmap1.png?1533474746550", id:"Bitmap1"},
+		{src:"images/intro/Bitmap3.png?1533474746550", id:"Bitmap3"},
+		{src:"images/intro/Bitmap4.png?1533474746550", id:"Bitmap4"},
+		{src:"images/intro/Bitmap5.png?1533474746550", id:"Bitmap5"},
+		{src:"images/intro/Bitmap6.png?1533474746550", id:"Bitmap6"},
+		{src:"images/intro/Bitmap7.png?1533474746550", id:"Bitmap7"},
+		{src:"images/intro/starbg.png?1533474746550", id:"starbg"},
+		{src:"sounds/questionAlert.mp3?1533474746550", id:"questionAlert"}
 	],
 	preloads: []
 };

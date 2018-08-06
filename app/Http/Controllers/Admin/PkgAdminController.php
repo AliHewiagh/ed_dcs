@@ -98,7 +98,7 @@ class PkgAdminController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::find($id);
-        $data = $request->only("name", "pkg_id", "password", "state_id");
+        $data = $request->only("name", "pkg_id", "username", "password", "state_id");
         $validator = Validator::make($data, [
             'name' => 'required|max:200',
             'pkg_id' => 'required',
@@ -111,6 +111,13 @@ class PkgAdminController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         }
+        $exist = User::where("username", $data['username'])->first();
+        if(!empty($exist)){
+            if($exist->id != $id){
+                return back()->with('error', 'This username exist!');
+            }
+        }
+
         $user->update($data);
         return redirect('/admin/manage/admin/pkg')->with("success", "PKG Admin updated successfully!");
     }
@@ -123,6 +130,8 @@ class PkgAdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+        return back()->with("success", "PKG Admin deleted successfully!");
     }
 }

@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit1e2ed7d45c686d51f5a2a347ad808517
+class ComposerStaticInit1b7f94d600968eb1100fddc05b67138c
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -372,6 +372,7 @@ class ComposerStaticInit1e2ed7d45c686d51f5a2a347ad808517
         'App\\Http\\Controllers\\Admin\\SchoolController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SchoolController.php',
         'App\\Http\\Controllers\\Admin\\SchoolExcelController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SchoolExcelController.php',
         'App\\Http\\Controllers\\Admin\\StateAdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/StateAdminController.php',
+        'App\\Http\\Controllers\\Admin\\StudentController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/StudentController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
@@ -381,9 +382,11 @@ class ComposerStaticInit1e2ed7d45c686d51f5a2a347ad808517
         'App\\Http\\Controllers\\PKG\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/PKG/DashboardController.php',
         'App\\Http\\Controllers\\PKG\\LeaderBoardController' => __DIR__ . '/../..' . '/app/Http/Controllers/PKG/LeaderBoardController.php',
         'App\\Http\\Controllers\\PKG\\ProgressController' => __DIR__ . '/../..' . '/app/Http/Controllers/PKG/ProgressController.php',
+        'App\\Http\\Controllers\\PKG\\StudentController' => __DIR__ . '/../..' . '/app/Http/Controllers/PKG/StudentController.php',
         'App\\Http\\Controllers\\State\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/State/DashboardController.php',
         'App\\Http\\Controllers\\State\\LeaderBoardController' => __DIR__ . '/../..' . '/app/Http/Controllers/State/LeaderBoardController.php',
         'App\\Http\\Controllers\\State\\ProgressController' => __DIR__ . '/../..' . '/app/Http/Controllers/State/ProgressController.php',
+        'App\\Http\\Controllers\\State\\StudentController' => __DIR__ . '/../..' . '/app/Http/Controllers/State/StudentController.php',
         'App\\Http\\Controllers\\Student\\GameController' => __DIR__ . '/../..' . '/app/Http/Controllers/Student/GameController.php',
         'App\\Http\\Controllers\\Teacher\\ClassController' => __DIR__ . '/../..' . '/app/Http/Controllers/Teacher/ClassController.php',
         'App\\Http\\Controllers\\Teacher\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Teacher/HomeController.php',
@@ -4125,10 +4128,10 @@ class ComposerStaticInit1e2ed7d45c686d51f5a2a347ad808517
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit1e2ed7d45c686d51f5a2a347ad808517::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit1e2ed7d45c686d51f5a2a347ad808517::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit1e2ed7d45c686d51f5a2a347ad808517::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit1e2ed7d45c686d51f5a2a347ad808517::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit1b7f94d600968eb1100fddc05b67138c::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit1b7f94d600968eb1100fddc05b67138c::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit1b7f94d600968eb1100fddc05b67138c::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit1b7f94d600968eb1100fddc05b67138c::$classMap;
 
         }, null, ClassLoader::class);
     }

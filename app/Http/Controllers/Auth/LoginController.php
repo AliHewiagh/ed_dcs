@@ -72,7 +72,7 @@ class LoginController extends Controller
                 }
             }
         }
-        return back()->with("error", "Email or password is wrong!");
+        return back()->with("error", "Username or password is wrong!");
     }
 
 

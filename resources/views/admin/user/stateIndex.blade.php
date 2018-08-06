@@ -33,8 +33,22 @@
                                             <td>@if(!empty($user->state)){{$user->state->name}} @endif</td>
                                             <td>{{$user->username}}</td>
                                             <td>{{$user->password}}</td>
-                                            <td><a href="{{url('/admin/manage/admin/state/'.$user->id.'/edit')}}" class="btn btn-warning">Edit</a></td>
+                                            <td><a href="{{url('/admin/manage/admin/state/'.$user->id.'/edit')}}" class="btn btn-warning">Edit</a>
+                                                <a href="#deleteAdmin{{$user->id}}" class="btn btn-danger">DELETE</a>
+                                            </td>
                                         </tr>
+                                        <div data-remodal-id="deleteAdmin{{$user->id}}" role="dialog" class="delete_model_c">
+                                            <div>
+                                                <h2>Delete State Admin</h2>
+                                                <p>The selected State Admin will be DELETED. This action CANNOT be reversed. Are you sure?</p>
+                                            </div>
+                                            <br>
+                                            <form method="post" action="{{url('/admin/manage/admin/state/'.$user->id)}}">
+                                                @csrf @method('DELETE')
+                                                <button data-remodal-action="cancel" class="remodal-confirm">No</button>
+                                                <button type="submit" class="remodal-cancel">Yes</button>
+                                            </form>
+                                        </div>
                                     @endforeach
                                     </tbody>
                                 </table>
@@ -49,6 +63,7 @@
     @include('partial.scripts')
     <script>
         $(function () {
+            $('.delete_model_c').remodal();
             $("#example1").DataTable();
             $('#example2').DataTable({
                 "paging": true,

@@ -180,6 +180,14 @@ class SchoolController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $classes = \App\SchoolClass::where("school_id", $id)->count();
+        if($classes > 0){
+            return back()->with('error', 'This school have class, you can not delete it!');
+        }
+
+        School::where('id', $id)->delete();
+        User::where('school_id', $id)->delete();
+        return redirect('/admin/school')->with('success', 'School deleted successfully!');
+
     }
 }

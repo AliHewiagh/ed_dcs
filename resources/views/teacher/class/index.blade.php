@@ -4,7 +4,8 @@
     @include('teacher.partial.sidebar')
     <div class="content-wrapper">
         <section class="content-header">
-            <h1>Class List</h1>
+            <?php $school = \App\School::find(\Auth::user()->school_id); ?>
+            <h1>Class List <small>{{$school->school_code.' | '.$school->name}}</small></h1>
         </section>
         <section class="content">
             <div class="row">

@@ -22,6 +22,7 @@
                                         <tr>
                                             <th>School</th>
                                             <th>School Code</th>
+                                            <th>School Level</th>
                                             <th>PKG</th>
                                             <th>PPD/PPW</th>
                                             <th>Completion by class</th>
@@ -34,8 +35,9 @@
                                             $done = \App\SchoolClass::where([['school_id', $school->id], ['done', 1]])->count();
                                             ?>
                                             <tr>
-                                                <td><a href="{{url('/state/progress/'.$school->state_id.'/'.$school->id)}}">{{$school->name}}</a></td>
+                                                <td><a href="{{url('/state/progress/'.$school->id)}}">{{$school->name}}</a></td>
                                                 <td>{{$school->school_code}}</td>
+                                                <td>@if($school->type== 1) Primary School @else Secondary School @endif</td>
                                                 <td>{{$school->pkg}}</td>
                                                 <td>@if(!empty($school->location)){{$school->location->pp}}@endif</td>
                                                 <td>{{$done}}/{{$classes}}</td>
@@ -59,6 +61,10 @@
                                         <thead>
                                         <tr>
                                             <th>Student's Name</th>
+                                            <th>School Code</th>
+                                            <th>School Name</th>
+                                            <th>Class Name</th>
+                                            <th>Class Type</th>
                                             <th>MyKad No</th>
                                             <th>Stage</th>
                                         </tr>
@@ -72,7 +78,11 @@
                                             $class3 = \App\SchoolClass::find($student->class_id)
                                             ?>
                                             <tr>
-                                                <td><a href="{{url('/state/progress/'.$school->state_id.'/'.$school->id.'/'.$class3->teacher_id.'/'.$student->class_id.'/'.$student->id)}}">{{$student->name}}</a></td>
+                                                <td><a href="{{url('/state/progress/'.$school->id.'/'.$student->class_id.'/'.$student->id)}}">{{$student->name}}</a></td>
+                                                <td>{{$school->school_code}}</td>
+                                                <td><a href="{{url('/state/progress/'.$school->id)}}">{{$school->name}}</a></td>
+                                                <td><a href="{{url('/state/progress/'.$school->id.'/'.$student->class_id)}}">{{$class3->name}}</a></td>
+                                                <td>{{$class3->type}}</td>
                                                 <td>{{$student->ic_number}}</td>
                                                 <td>{{count($stages)}}/20</td>
                                             </tr>

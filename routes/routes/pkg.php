@@ -18,10 +18,12 @@ Route::post('/ic/update', 'PKG\DashboardController@icUpdate');
 // Progress
 Route::get('/progress', 'PKG\ProgressController@pkgProgress');
 Route::get('/progress/{schoolId}', 'PKG\ProgressController@schoolProgress');
-Route::get('/progress/{schoolId}/{teacherId}', 'PKG\ProgressController@teacherProgress');
-Route::get('/progress/{schoolId}/{teacherId}/{classId}', 'PKG\ProgressController@classProgress');
-Route::get('/progress/{schoolId}/{teacherId}/{classId}/{studentId}', 'PKG\ProgressController@studentProgress');
-Route::get('/progress/{schoolId}/{teacherId}/{classId}/{studentId}/detail', 'PKG\ProgressController@progressDetail');
+Route::get('/progress/{schoolId}/{classId}', 'PKG\ProgressController@classProgress');
+Route::get('/progress/{schoolId}/{classId}/{studentId}', 'PKG\ProgressController@studentProgress');
+Route::get('/progress/{schoolId}/{classId}/{studentId}/detail', 'PKG\ProgressController@progressDetail');
+
+// Student
+Route::PATCH('/student/done/update/{id}', 'PKG\StudentController@doneUpdate');
 
 // Leader Board
 Route::get('/top/school/{type}', 'PKG\LeaderBoardController@index');

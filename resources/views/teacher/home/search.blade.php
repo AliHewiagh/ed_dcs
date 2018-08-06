@@ -4,7 +4,8 @@
     @include('teacher.partial.sidebar')
     <div class="content-wrapper">
         <section class="content-header">
-            <h1>Search</h1>
+            <?php $school = \App\School::find(\Auth::user()->school_id); ?>
+            <h1>Search <small>{{$school->school_code.' | '.$school->name}}</small></h1>
         </section>
         <section class="content">
             <div class="row">
@@ -22,6 +23,8 @@
                                         <tr>
                                             <th>Student's Name</th>
                                             <th>MyKad No</th>
+                                            <th>Class</th>
+                                            <th>Class Type</th>
                                             <th>Stage</th>
                                         </tr>
                                         </thead>
@@ -30,10 +33,13 @@
                                             <?php
                                             $stages = \App\StudentRecord::where('user_id', $student->id)->pluck('stage')->toArray();
                                             $stages = array_unique($stages);
+                                            $class = \App\SchoolClass::find($student->class_id);
                                             ?>
                                             <tr>
                                                 <td><a href="{{url('/teacher/progress/'.$student->class_id.'/'.$student->id)}}">{{$student->name}}</a></td>
                                                 <td>{{$student->ic_number}}</td>
+                                                <td><a href="{{url('/teacher/progress/'.$student->class_id)}}">{{$class->name}}</a></td>
+                                                <td>{{$class->type}}</td>
                                                 <td>{{count($stages)}}/20</td>
                                             </tr>
                                         @endforeach

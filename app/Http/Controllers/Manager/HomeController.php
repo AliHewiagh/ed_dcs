@@ -85,7 +85,8 @@ class HomeController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         }
-//        $data = $request->only("school_code", "name", "state_id", "pkg", "type", "school_type_id", "location_id", "area", "mypib", "sekolahi", "sekolahk", "sbt");
+        //$data22 = $request->only("school_code", "name", "state_id", "pkg", "type", "school_type_id", "location_id", "area", "mypib", "sekolahi", "sekolahk", "sbt");
+        $data22 = $request->only( "mypib", "sekolahi", "sekolahk", "sbt");
 //        if($data["school_type_id"] == "other"){
 //            if(empty($request->other_type)){
 //                return back()->withInput()->with("error", "Please specify type of school!");
@@ -93,10 +94,13 @@ class HomeController extends Controller
 //            $newType = SchoolType::create(["group"=>$request->type, "name"=>$request->other_type]);
 //            $data["school_type_id"] = $newType->id;
 //        }
-//        $school = School::where("user_id", Auth::user()->id)->first();
-//        if(empty($school)){
-//            return back()->withInput()->with("error", "School does not exist anymore!");
-//        }
+        $school = School::where("user_id", Auth::user()->id)->first();
+        if(empty($school)){
+            return back()->withInput()->with("error", "School does not exist anymore!");
+        }
+        if($request->edit_profile == 1){
+            $school->update($data22);
+        }
 //
 //        $exist = School::where("school_code", $data['school_code'])->first();
 //        if(!empty($exist) && $school->school_code!= $data['school_code']){
@@ -104,7 +108,7 @@ class HomeController extends Controller
 //        }
 
         $user = Auth::user();
-        $dataUser = $request->only("password", "email", "phone");
+        $dataUser = $request->only("email", "phone");
         $dataUser['name'] = $request->manager_name;
         //$dataUser['username'] = $data['school_code'];
         $ic = $request->ic_number;
@@ -122,7 +126,6 @@ class HomeController extends Controller
         }
 
         $user->update($dataUser);
-        //$school->update($data);
         return redirect('/manager/dashboard')->with('success', 'Profile updated successfully!');
     }
 

@@ -38,9 +38,9 @@
                                         ?>
                                     <tr>
                                         <td>{{$i}}</td>
-                                        <td><a href="{{url('/admin/progress/'.$state->id.'/'.$pkg->id.'/'.$school->id.'/'.$student->class_id.'/'.$student->class_id.'/'.$student->id)}}">{{$student->name}}</a></td>
+                                        <td><a href="{{url('/admin/progress/'.$state->id.'/'.$school->id.'/'.$student->class_id.'/'.$student->id)}}">{{$student->name}}</a></td>
                                         <td>{{$school->school_code}}</td>
-                                        <td><a href="{{url('/admin/progress/'.$state->id.'/'.$pkg->id.'/'.$school->id)}}">{{$school->name}}</a></td>
+                                        <td><a href="{{url('/admin/progress/'.$state->id.'/'.$school->id)}}">{{$school->name}}</a></td>
                                         <td>{{$state->name}}</td>
                                         <td>{{$student->score}}</td>
                                         <td>{{$student->totalTime()}}</td>

@@ -21,7 +21,7 @@
             <div class="col-md-12">
                 @include('partial.alert')
                 <div class="card card-default">
-                    <div class="card-header">Please provide your schools details and your details</div>
+                    <div class="card-header">Please provide your details</div>
                     <div id="errorMessageA"></div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('manager_info_update_store') }}">
@@ -146,11 +146,6 @@
                             <div class="form-group">
                                 <label for="phoneInput">Phone</label>
                                 <input type="number" name="phone" class="form-control" id="phoneInput" value="{{Auth::user()->phone, old('phone')}}" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="passwordInput">Password</label>
-                                <input type="text" name="password" class="form-control required" id="passwordInput" value="{{Auth::user()->password}}" required>
                             </div>
 
                             <div class="form-group">

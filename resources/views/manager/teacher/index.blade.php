@@ -25,6 +25,7 @@
                                         <th>Password</th>
                                         <th>Email</th>
                                         <th>Phone</th>
+                                        <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -32,6 +33,7 @@
 
                                     </script>
                                     @foreach ($teachers as $teacher)
+                                        <?php $classes = \App\SchoolClass::where("teacher_id", $teacher->id)->count(); ?>
                                         <tr>
                                             <td>{{$teacher->created_at}}</td>
                                             <td>{{$teacher->name}}</td>
@@ -39,7 +41,24 @@
                                             <td>{{$teacher->password}}</td>
                                             <td>{{$teacher->email}}</td>
                                             <td>{{$teacher->phone}}</td>
+                                            <td><a href="{{url('/manager/teacher/'.$teacher->id.'/edit')}}" class="btn btn-warning">Edit</a>
+                                                @if($classes < 1)<a href="#deleteTeacher{{$teacher->id}}" class="btn btn-danger">DELETE</a> @endif
+                                            </td>
                                         </tr>
+                                        @if($classes < 1)
+                                            <div data-remodal-id="deleteTeacher{{$teacher->id}}" role="dialog" class="delete_model_c">
+                                                <div>
+                                                    <h2>Delete Teacher</h2>
+                                                    <p>The selected Teacher will be DELETED. This action CANNOT be reversed. Are you sure?</p>
+                                                </div>
+                                                <br>
+                                                <form method="post" action="{{url('/manager/teacher/'.$teacher->id)}}">
+                                                    @csrf @method('DELETE')
+                                                    <button data-remodal-action="cancel" class="remodal-confirm">No</button>
+                                                    <button type="submit" class="remodal-cancel">Yes</button>
+                                                </form>
+                                            </div>
+                                        @endif
                                     @endforeach
                                     </tbody>
                                 </table>
@@ -53,6 +72,7 @@
     @include('manager.partial.footer')
     @include('partial.scripts')
     <script>
+        $('.delete_model_c').remodal();
         $(function () {
             $("#example1").DataTable();
             $('#example2').DataTable({

@@ -4,7 +4,8 @@
     @include('manager.partial.sidebar')
     <div class="content-wrapper">
         <section class="content-header">
-            <h1>Search</h1>
+            <?php $school = \App\School::find(\Auth::user()->school_id); ?>
+            <h1>Search <small>{{$school->school_code.' | '.$school->name}}</small></h1>
         </section>
         <section class="content">
             <div class="row">
@@ -21,6 +22,8 @@
                                         <thead>
                                         <tr>
                                             <th>Student's Name</th>
+                                            <th>Class</th>
+                                            <th>Class Type</th>
                                             <th>MyKad No</th>
                                             <th>Stage</th>
                                         </tr>
@@ -34,7 +37,9 @@
                                             $class3 = \App\SchoolClass::find($student->class_id)
                                             ?>
                                             <tr>
-                                                <td><a href="{{url('/manager/progress/'.$class3->teacher_id.'/'.$student->class_id.'/'.$student->id)}}">{{$student->name}}</a></td>
+                                                <td><a href="{{url('/manager/progress/'.$student->class_id.'/'.$student->id)}}">{{$student->name}}</a></td>
+                                                <td><a href="{{url('/manager/progress/'.$student->class_id)}}">{{$class3->name}}</a></td>
+                                                <td>{{$class3->type}}</td>
                                                 <td>{{$student->ic_number}}</td>
                                                 <td>{{count($stages)}}/20</td>
                                             </tr>

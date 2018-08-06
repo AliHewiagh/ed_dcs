@@ -40,6 +40,7 @@
                                     </thead>
                                     <tbody>
                                     @foreach ($schools as $school)
+                                        <?php $classes = \App\SchoolClass::where("school_id", $school->id)->count(); ?>
                                         <tr>
                                             <td>@if(!empty($school->school_code)){{$school->school_code}} @else ?? @endif</td>
                                             <td>{{$school->name}}</td>
@@ -50,8 +51,24 @@
                                             <td>@if(!empty($school->state)){{$school->state->name}} @else ?? @endif</td>
                                             <td>{{$school->pkg}}</td>
                                             <td>@if(!empty($school->location)){{$school->location->pp}} @else ?? @endif</td>
-                                            <td><a href="{{url('/admin/school/'.$school->user_id.'/edit')}}" class="btn btn-warning">Edit</a></td>
+                                            <td><a href="{{url('/admin/school/'.$school->user_id.'/edit')}}" class="btn btn-warning">Edit</a>
+                                                @if($classes < 1)<a href="#deleteSchool{{$school->id}}" class="btn btn-danger">DELETE</a> @endif
+                                            </td>
                                         </tr>
+                                        @if($classes < 1)
+                                        <div data-remodal-id="deleteSchool{{$school->id}}" role="dialog" class="delete_model_c">
+                                            <div>
+                                                <h2>Delete School</h2>
+                                                <p>All records of this school will be DELETED. This action CANNOT be reversed. Are you sure?</p>
+                                            </div>
+                                            <br>
+                                            <form method="post" action="{{url('/admin/school/'.$school->id)}}">
+                                                @csrf @method('DELETE')
+                                                <button data-remodal-action="cancel" class="remodal-confirm">No</button>
+                                                <button type="submit" class="remodal-cancel">Yes</button>
+                                            </form>
+                                        </div>
+                                        @endif
                                     @endforeach
                                     </tbody>
                                 </table>
@@ -66,6 +83,7 @@
     @include('partial.scripts')
     <script>
         $(function () {
+            $('.delete_model_c').remodal();
             $("#example1").DataTable();
             $('#example2').DataTable({
                 "paging": true,

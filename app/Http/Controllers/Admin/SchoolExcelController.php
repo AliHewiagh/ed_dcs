@@ -7,6 +7,7 @@ use App\School;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Maatwebsite\Excel\Facades\Excel;
 
 class SchoolExcelController extends Controller
 {
@@ -17,6 +18,7 @@ class SchoolExcelController extends Controller
      */
     public function uploadFile(Request $request)
     {
+
 
         $file = $request->file('excel')->getRealPath();
         $cus = $this->csvToArray($file);

@@ -37,7 +37,7 @@
                                         ?>
                                     <tr>
                                         <td>{{$i}}</td>
-                                        <td><a href="{{url('/pkg/progress/'.$school->id.'/'.$student->class_id.'/'.$student->class_id.'/'.$student->id)}}">{{$student->name}}</a></td>
+                                        <td><a href="{{url('/pkg/progress/'.$school->id.'/'.$student->class_id.'/'.$student->id)}}">{{$student->name}}</a></td>
                                         <td>{{$school->school_code}}</td>
                                         <td><a href="{{url('/pkg/progress/'.$school->id)}}">{{$school->name}}</a></td>
                                         <td>{{$state->name}}</td>

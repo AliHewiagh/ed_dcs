@@ -4,7 +4,8 @@
     @include('admin.partial.sidebar')
     <div class="content-wrapper">
         <section class="content-header">
-            <h1>Detailed Progress <small>{{$student->name}}</small></h1>
+            <?php $school = \App\School::find($schoolId); ?>
+            <h1>Detailed Progress <small>{{$school->school_code}} | {{$school->name}}</small></h1>
         </section>
         <section class="content">
             <div class="row">
@@ -15,11 +16,9 @@
                                 <a href="{{url('/admin/dashboard')}}">Dashboard</a> /
                                 <a href="{{url('/admin/progress')}}">Nationwide Progress</a> /
                                 <a href="{{url('/admin/progress/'.$state)}}">State Progress</a> /
-                                <a href="{{url('/admin/progress/'.$state.'/'.$pkg)}}">PKG Progress</a> /
-                                <a href="{{url('/admin/progress/'.$state.'/'.$pkg.'/'.$schoolId)}}">School Progress</a> /
-                                <a href="{{url('/admin/progress/'.$state.'/'.$pkg.'/'.$schoolId.'/'.$teacherId)}}">Class Progress</a> /
-                                <a href="{{url('/admin/progress/'.$state.'/'.$pkg.'/'.$schoolId.'/'.$teacherId.'/'.$classId)}}">Students Progress</a> /
-                                <a href="{{url('/admin/progress/'.$state.'/'.$pkg.'/'.$schoolId.'/'.$teacherId.'/'.$classId.'/'.$student->id)}}">Individual Progress</a> /
+                                <a href="{{url('/admin/progress/'.$state.'/'.$schoolId)}}">School Progress</a> /
+                                <a href="{{url('/admin/progress/'.$state.'/'.$schoolId.'/'.$classId)}}">Class Progress</a> /
+                                <a href="{{url('/admin/progress/'.$state.'/'.$schoolId.'/'.$classId.'/'.$student->id)}}">Individual Progress</a> /
                                 <span>Detailed Progress</span>
                             </div>
                             @include('partial.alert')
@@ -34,6 +33,16 @@
                             </div>
                         </div>
                         <div class="box-body">
+                            <?php $class = \App\SchoolClass::find($classId);
+                            $teacher = \App\User::find($class->teacher_id);
+                            ?>
+                                <p>Class: {{$class->name}}</p>
+                                <p>Class Type: {{$class->type}}</p>
+                                <p>Teacher: {{$teacher->name}}</p>
+                                <p>Email: {{$teacher->email}}</p>
+                                <p>Phone: {{$teacher->phone}}</p>
+                                <p>Student Name: {{$student->name}}</p>
+                                <p>Student MyKad No: {{$student->ic_number}}</p>
                             <div class="table-responsive">
                                 <table id="example2" class="table table-bordered table-striped">
                                     <thead>

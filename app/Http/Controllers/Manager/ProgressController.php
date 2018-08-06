@@ -23,9 +23,10 @@ class ProgressController extends Controller
     {
         $schoolId = Auth::user()->school_id;
         $school = School::find($schoolId);
-        $teachers = User::where([['school_id', $schoolId], ['type', 3]])->get();
-        return view("manager.progress.school", compact("teachers", "school"));
+        $classes = SchoolClass::where('school_id', $schoolId)->get();
+        return view("manager.progress.school", compact("classes", "school"));
     }
+
 
 
     /**
@@ -33,24 +34,11 @@ class ProgressController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function teacherProgress($teacherId)
-    {
-        $schoolId = Auth::user()->school_id;
-        $classes = SchoolClass::where('teacher_id', $teacherId)->get();
-        $teacher = User::find($teacherId);
-        return view("manager.progress.class", compact("classes", "schoolId", "teacherId", 'teacher'));
-    }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function classProgress($teacherId, $classId)
+    public function classProgress($classId)
     {
         $schoolId = Auth::user()->school_id;
         $students = User::where('class_id', $classId)->get();
-        return view("manager.progress.students", compact("students", "schoolId", "teacherId", "classId"));
+        return view("manager.progress.students", compact("students", "schoolId", "classId"));
     }
 
     /**
@@ -58,11 +46,11 @@ class ProgressController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function studentProgress($teacherId, $classId, $studentId)
+    public function studentProgress($classId, $studentId)
     {
         $schoolId = Auth::user()->school_id;
         $student = User::find($studentId);
-        return view("manager.progress.individual", compact("student", "schoolId", "teacherId", "classId"));
+        return view("manager.progress.individual", compact("student", "schoolId", "classId"));
     }
 
 
@@ -71,7 +59,7 @@ class ProgressController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function progressDetail($teacherId, $classId, $studentId)
+    public function progressDetail($classId, $studentId)
     {
         $schoolId = Auth::user()->school_id;
         $student = User::find($studentId);
@@ -98,6 +86,6 @@ class ProgressController extends Controller
             $DScore = $recordsD->sum('score')/count($recordsD);
             $DScore = round($DScore, 1);
         }else{$DScore=0;}
-        return view("manager.progress.detail", compact("student", "schoolId", "teacherId", "classId", "records", 'overAllScore', 'TScore', 'CScore', 'DScore'));
+        return view("manager.progress.detail", compact("student", "schoolId", "classId", "records", 'overAllScore', 'TScore', 'CScore', 'DScore'));
     }
 }

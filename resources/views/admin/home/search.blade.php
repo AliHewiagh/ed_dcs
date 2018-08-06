@@ -22,9 +22,11 @@
                                         <tr>
                                             <th>School</th>
                                             <th>School Code</th>
+                                            <th>School Level</th>
                                             <th>PKG</th>
                                             <th>PPD/PPW</th>
                                             <th>Completion by class</th>
+                                            <th>Action</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -36,10 +38,28 @@
                                             <tr>
                                                 <td><a href="{{url('/admin/progress/'.$school->state_id.'/'.$school->id)}}">{{$school->name}}</a></td>
                                                 <td>{{$school->school_code}}</td>
+                                                <td>@if($school->type== 1) Primary School @else Secondary School @endif</td>
                                                 <td>{{$school->pkg}}</td>
                                                 <td>@if(!empty($school->location)){{$school->location->pp}}@endif</td>
                                                 <td>{{$done}}/{{$classes}}</td>
+                                                <td><a href="{{url('/admin/school/'.$school->user_id.'/edit')}}" class="btn btn-warning">Edit</a>
+                                                    @if($classes < 1)<a href="#deleteSchool{{$school->id}}" class="btn btn-danger">DELETE</a> @endif
+                                                </td>
                                             </tr>
+                                            @if($classes < 1)
+                                                <div data-remodal-id="deleteSchool{{$school->id}}" role="dialog" class="delete_model_c">
+                                                    <div>
+                                                        <h2>Delete School</h2>
+                                                        <p>All records of this school will be DELETED. This action CANNOT be reversed. Are you sure?</p>
+                                                    </div>
+                                                    <br>
+                                                    <form method="post" action="{{url('/admin/school/'.$school->id)}}">
+                                                        @csrf @method('DELETE')
+                                                        <button data-remodal-action="cancel" class="remodal-confirm">No</button>
+                                                        <button type="submit" class="remodal-cancel">Yes</button>
+                                                    </form>
+                                                </div>
+                                            @endif
                                         @endforeach
                                         </tbody>
                                     </table>
@@ -59,6 +79,10 @@
                                         <thead>
                                         <tr>
                                             <th>Student's Name</th>
+                                            <th>School Code</th>
+                                            <th>School Name</th>
+                                            <th>Class Name</th>
+                                            <th>Class Type</th>
                                             <th>MyKad No</th>
                                             <th>Stage</th>
                                         </tr>
@@ -72,7 +96,11 @@
                                             $class3 = \App\SchoolClass::find($student->class_id)
                                             ?>
                                             <tr>
-                                                <td><a href="{{url('/admin/progress/'.$school->state_id.'/'.$school->id.'/'.$class3->teacher_id.'/'.$student->class_id.'/'.$student->id)}}">{{$student->name}}</a></td>
+                                                <td><a href="{{url('/admin/progress/'.$school->state_id.'/'.$school->id.'/'.$student->class_id.'/'.$student->id)}}">{{$student->name}}</a></td>
+                                                <td>{{$school->school_code}}</td>
+                                                <td><a href="{{url('/admin/progress/'.$school->state_id.'/'.$school->id)}}">{{$school->name}}</a></td>
+                                                <td><a href="{{url('/admin/progress/'.$school->state_id.'/'.$school->id.'/'.$student->class_id)}}">{{$class3->name}}</a></td>
+                                                <td>{{$class3->type}}</td>
                                                 <td>{{$student->ic_number}}</td>
                                                 <td>{{count($stages)}}/20</td>
                                             </tr>
@@ -91,6 +119,7 @@
     @include('partial.scripts')
     <script>
         $(function () {
+            $('.delete_model_c').remodal();
             $("#example1").DataTable();
             $('#example2').DataTable();
         });

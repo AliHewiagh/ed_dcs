@@ -58,7 +58,7 @@ class StageController extends Controller
         }else{
             $game->update(['stage'=>$stage, "last_screen"=>$request->last_screen, "last_state"=>$request->last_state, "time_left"=>$request->time_left]);
         }
-        if($stage == 21){
+        if($request->last_screen == "end"){
             $score = StudentRecord::where('user_id', $userId)->avg('score');
             $user->update(['done'=>1, 'score'=>$score]);
             $classNotDone = User::where([['class_id', $user->class_id], ['done', 0]])->first();

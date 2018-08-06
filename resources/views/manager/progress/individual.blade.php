@@ -4,7 +4,8 @@
     @include('manager.partial.sidebar')
     <div class="content-wrapper">
         <section class="content-header">
-            <h1>Individual Progress</h1>
+            <?php $school = \App\School::find(\Auth::user()->school_id); ?>
+            <h1>Individual Progress <small>{{$school->school_code.' | '.$school->name}}</small></h1>
         </section>
         <section class="content">
             <div class="row">
@@ -13,13 +14,20 @@
                         <div class="box-header">
                             <div class="bread-crumbs">
                                 <a href="{{url('/manager/progress/')}}">School Progress</a> /
-                                <a href="{{url('/manager/progress/'.$teacherId)}}">Class Progress</a> /
-                                <a href="{{url('/manager/progress/'.$teacherId.'/'.$classId)}}">Students Progress</a> /
+                                <a href="{{url('/manager/progress/'.$classId)}}">Class Progress</a> /
                                 <span>Individual Progress</span>
                             </div>
                             @include('partial.alert')
                         </div>
                         <div class="box-body">
+                            <?php $class = \App\SchoolClass::find($classId);
+                            $teacher = \App\User::find($class->teacher_id);
+                            ?>
+                            <p>Class: {{$class->name}}</p>
+                            <p>Class Type: {{$class->type}}</p>
+                            <p>Teacher: {{$teacher->name}}</p>
+                            <p>Email: {{$teacher->email}}</p>
+                            <p>Phone: {{$teacher->phone}}</p>
                             <div class="table-responsive">
                                 <table id="example2" class="table table-bordered table-striped">
                                     <thead>
@@ -54,7 +62,7 @@
                                     }
                                     ?>
                                     <tr>
-                                        <td><a href="{{url('/manager/progress/'.$teacherId.'/'.$classId.'/'.$student->id.'/detail')}}">{{$student->name}}</a></td>
+                                        <td><a href="{{url('/manager/progress/'.$classId.'/'.$student->id.'/detail')}}">{{$student->name}}</a></td>
                                         <td>{{$student->gender}}</td>
                                         <td>{{$techScore}}</td>
                                         <td>{{$ethicsScore}}</td>
