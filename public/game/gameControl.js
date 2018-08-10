@@ -3,13 +3,6 @@ var schoolLevel;
 //----turn this on for final to disable all console.log 
 //console.log = function() {};
 
-var d2q2List = [["y6d2q2_1", "97C298EB0FE8B14591D54AA479C6ADCF"],
-				["y6d2q2_3", "97C298EB0FE8B14591D54AA479C6ADCF"],
-				["y6d2q2_5", "97C298EB0FE8B14591D54AA479C6ADCF"],
-				["y6d2q2_7", "97C298EB0FE8B14591D54AA479C6ADCF"]
-				];
-var d2q2Index = randRange(0,3);
-console.log(d2q2Index);
 var scrList = [{constructorName: "splash", compId: "B80CE73EAFE3CF40BDB98EF8906FA491", preloader: 1},
 				{constructorName: "intro", compId: "A41131DFBA5B1348ACDE9360A45CDB27", preloader: 1},
 				,,,,,,,,,,,,,,,,,,,,
@@ -20,24 +13,24 @@ function doOnce(){
 if (schoolLevel==1){//primary
 	scrList[2] = {constructorName: "y6s1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[3] = {constructorName: "y6s2", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
-	scrList[4] = {constructorName: "y6d2q1", compId: "0531B783B312A2449858C08B8DC0FA38", preloader: 1};
+	scrList[4] = {constructorName: "y6s3", compId: "0531B783B312A2449858C08B8DC0FA38", preloader: 1};
 	scrList[5] = {constructorName: "y6d1q2", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[6] = {constructorName: d2q2List[d2q2Index][0], compId: d2q2List[d2q2Index][1], preloader: 1};
-	scrList[7] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
+	scrList[6] = {constructorName: "y6s5", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[7] = {constructorName: "y6s6", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[8] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
-	scrList[9] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
-	scrList[10] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
+	scrList[9] = {constructorName: "y6s8", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[10] = {constructorName: "f3s7", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
 	scrList[11] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
 	scrList[12] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
-	scrList[13] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
+	scrList[13] = {constructorName: "f3s12", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[14] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
-	scrList[15] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
+	scrList[15] = {constructorName: "f3s8", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[16] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
 	scrList[17] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
-	scrList[18] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
+	scrList[18] = {constructorName: "y6s17", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[19] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
-	scrList[20] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
-	scrList[21] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
+	scrList[20] = {constructorName: "y6s19", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	scrList[21] = {constructorName: "y6s20", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
 } else if (schoolLevel==2){//f3
 	scrList[2] = {constructorName: "f3s1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[3] = {constructorName: "f3s2", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
@@ -155,7 +148,12 @@ function initTapir(){
 			if(data.status == 100){
 				//success api call
 				cStage = data.stage;
-				exportRoot.mcLevel.gotoAndStop(cStage);
+				console.log("cStage is: "+cStage);
+				if (cStage<21){
+					exportRoot.mcLevel.gotoAndStop(cStage);
+				} else {
+					exportRoot.mcLevel.gotoAndStop(20);
+				}
 				cLevel = data.level;
 				cLastScreen = data.last_screen;
 				cLastState = data.last_state;
@@ -240,11 +238,13 @@ function handleCompleteSub(evt,comp) {
 	}	
 	AdobeAn.compositionLoaded(libSub.properties.id);
 	fnStartAnimationSub();
-	/*
-	if (scrList[currentProgress-1].constructorName.indexOf("menu")!=-1){
-		cStage = Number(scrList[currentProgress-1].constructorName.substring(4));
+	
+	//if (scrList[currentProgress-1].constructorName.indexOf("menu")!=-1){
+	if (currentProgress>1 && currentProgress<=21){
+		//cStage = Number(scrList[currentProgress-1].constructorName.substring(4));
+		cStage = currentProgress-2;
 		exportRoot.mcLevel.gotoAndStop(cStage);
-	}*/
+	}
 	if (currentProgress>=2 && currentProgress<=22){
 		exportRoot.mcLevel.gotoAndStop(currentProgress-2);
 	} else if (currentProgress>22){
@@ -253,7 +253,7 @@ function handleCompleteSub(evt,comp) {
 	if (currentProgress==23){
 		cStage = 21;//hack for update
 	}
-	if (cStage>0 && scrList[currentProgress-1].constructorName!="splash"){
+	if (scrList[currentProgress-1].constructorName!="splash"){
 		var cData = $.post("/api/stage/update/", 
 						{	userId: cUserId, 
 							stage: cStage,

@@ -558,6 +558,9 @@ p.nominalBounds = new cjs.Rectangle(-155.8,-52.4,417.9,169);
 	this.frame_0 = function() {
 		txtAnimSpeed=18;
 	}
+	this.frame_4 = function() {
+		playSound("questionAlert");
+	}
 	this.frame_39 = function() {
 		this.stop();
 		var _this = this;
@@ -569,7 +572,7 @@ p.nominalBounds = new cjs.Rectangle(-155.8,-52.4,417.9,169);
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(39).call(this.frame_39).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(4).call(this.frame_4).wait(35).call(this.frame_39).wait(1));
 
 	// t
 	this.instance = new lib.dialogue1();
@@ -660,16 +663,17 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/outro/Bitmap1.png?1532889623269", id:"Bitmap1"},
-		{src:"images/outro/Bitmap13.png?1532889623269", id:"Bitmap13"},
-		{src:"images/outro/Bitmap2.png?1532889623269", id:"Bitmap2"},
-		{src:"images/outro/Bitmap3.png?1532889623269", id:"Bitmap3"},
-		{src:"images/outro/Bitmap4.png?1532889623269", id:"Bitmap4"},
-		{src:"images/outro/Bitmap5.png?1532889623269", id:"Bitmap5"},
-		{src:"images/outro/Bitmap6.png?1532889623269", id:"Bitmap6"},
-		{src:"images/outro/Bitmap7.png?1532889623269", id:"Bitmap7"},
-		{src:"images/outro/Bitmap8.png?1532889623269", id:"Bitmap8"},
-		{src:"images/outro/Bitmap9.png?1532889623269", id:"Bitmap9"}
+		{src:"images/outro/Bitmap1.png?1533581953717", id:"Bitmap1"},
+		{src:"images/outro/Bitmap13.png?1533581953717", id:"Bitmap13"},
+		{src:"images/outro/Bitmap2.png?1533581953717", id:"Bitmap2"},
+		{src:"images/outro/Bitmap3.png?1533581953717", id:"Bitmap3"},
+		{src:"images/outro/Bitmap4.png?1533581953717", id:"Bitmap4"},
+		{src:"images/outro/Bitmap5.png?1533581953717", id:"Bitmap5"},
+		{src:"images/outro/Bitmap6.png?1533581953717", id:"Bitmap6"},
+		{src:"images/outro/Bitmap7.png?1533581953717", id:"Bitmap7"},
+		{src:"images/outro/Bitmap8.png?1533581953717", id:"Bitmap8"},
+		{src:"images/outro/Bitmap9.png?1533581953717", id:"Bitmap9"},
+		{src:"sounds/questionAlert.mp3?1533581953717", id:"questionAlert"}
 	],
 	preloads: []
 };

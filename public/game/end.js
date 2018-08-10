@@ -1601,7 +1601,11 @@ p.nominalBounds = new cjs.Rectangle(-590.7,-247.3,178,143);
 			doc.setFont("helvetica");
 			doc.setFontSize(18);
 			doc.setFontType('bolditalic');
-			doc.text(cUserName.toUpperCase(), 99, 104, 'center');
+			doc.text(cUserName.toUpperCase(), 99, 97, 'center');
+			doc.setFontSize(14);
+			//console.log(cUserIc);
+			doc.text(cUserIc.toString(), 99, 110, 'center');
+			doc.text("PENYERTAAN DI PERINGKAT KEBANGSAAN", 99, 130, 'center');
 			doc.save(cUserName+' DCS Cert.pdf');
 		}
 		this.btnCert.addEventListener("click", doOpenCert);
@@ -1837,7 +1841,7 @@ lib.properties = {
 		{src:"images/end/promotionBg01.jpg?1530179712610", id:"promotionBg01"},
 		{src:"images/end/tapirfriendly.png?1530179712610", id:"tapirfriendly"},
 		{src:"sounds/stdClick.mp3?1530179712610", id:"stdClick"},
-		{src:"sounds/win.mp3?1530179712610", id:"win"}
+		{src:"sounds/questionComplete.mp3", id:"win"}
 	],
 	preloads: []
 };
