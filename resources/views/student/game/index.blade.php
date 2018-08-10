@@ -81,7 +81,7 @@
     <script>
 		var cUserName = "{{Auth::user()->name}}";
 		var cUserId = {{Auth::user()->id}};
-		var cUserIc = {{Auth::user()->ic_number}};
+		var cUserIc = '{{Auth::user()->ic_number}}';
 		//var currentProgress = {{Auth::user()->currentProgress}};
 		var currentProgress = 1;
         var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
