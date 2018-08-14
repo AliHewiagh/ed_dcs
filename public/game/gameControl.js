@@ -21,11 +21,11 @@ if (schoolLevel==1){//primary
 	scrList[9] = {constructorName: "y6s8", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[10] = {constructorName: "f3s7", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
 	scrList[11] = {constructorName: "y6s10", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[12] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
+	scrList[12] = {constructorName: "y6s11", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[13] = {constructorName: "f3s12", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[14] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
 	scrList[15] = {constructorName: "f3s8", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[16] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
+	scrList[16] = {constructorName: "y6s15", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[17] = {constructorName: "tempQ", compId: "14AD4E5BD360424D9833FD8D9B96713F", preloader: 1};
 	scrList[18] = {constructorName: "y6s17", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
 	scrList[19] = {constructorName: "y6s18", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
