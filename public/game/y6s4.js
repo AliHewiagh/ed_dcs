@@ -6593,7 +6593,7 @@ p.nominalBounds = new cjs.Rectangle(-136.7,302.4,274,237.4);
 	}
 	this.frame_150 = function() {
 		this.stop();
-		_this.parent.onTimeEnd();
+		this.parent.onTimeEnd();
 	}
 
 	// actions tween:
@@ -6847,7 +6847,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 			//_this.updateAll();
 		};
 		function checkAns(e){
-			var _userAns = txtAns.value + ", " + myTxtArea.value;
+			var _userAns = txtAns.value;
 			var myLength =cAns1.length;
 			var cCount = 0;
 			for (var i=1; i<=myLength; i++){
@@ -7036,7 +7036,7 @@ p.nominalBounds = new cjs.Rectangle(171.8,213.7,498.9,331.5);
 			//_this.updateAll();
 		};
 		function checkAns(e){
-			var _userAns = txtAns.value + ", " + myTxtArea.value;
+			var _userAns = txtAns.value;
 			var myLength =cAns1.length;
 			var cCount = 0;
 			for (var i=1; i<=myLength; i++){
@@ -7225,7 +7225,7 @@ p.nominalBounds = new cjs.Rectangle(171.8,213.7,498.9,331.5);
 			//_this.updateAll();
 		};
 		function checkAns(e){
-			var _userAns = txtAns.value + ", " + myTxtArea.value;
+			var _userAns = txtAns.value;
 			var myLength =cAns1.length;
 			var cCount = 0;
 			for (var i=1; i<=myLength; i++){
@@ -7414,7 +7414,7 @@ p.nominalBounds = new cjs.Rectangle(171.8,213.7,498.9,331.5);
 			//_this.updateAll();
 		};
 		function checkAns(e){
-			var _userAns = txtAns.value + ", " + myTxtArea.value;
+			var _userAns = txtAns.value;
 			var myLength =cAns1.length;
 			var cCount = 0;
 			for (var i=1; i<=myLength; i++){
@@ -7604,7 +7604,7 @@ p.nominalBounds = new cjs.Rectangle(171.8,213.7,498.9,331.5);
 			//_this.updateAll();
 		};
 		function checkAns(e){
-			var _userAns = txtAns.value + ", " + myTxtArea.value;
+			var _userAns = txtAns.value;
 			var myLength =cAns1.length;
 			var cCount = 0;
 			for (var i=1; i<=myLength; i++){
@@ -7794,7 +7794,7 @@ p.nominalBounds = new cjs.Rectangle(171.8,213.7,498.9,331.5);
 			//_this.updateAll();
 		};
 		function checkAns(e){
-			var _userAns = txtAns.value + ", " + myTxtArea.value;
+			var _userAns = txtAns.value;
 			var myLength =cAns1.length;
 			var cCount = 0;
 			for (var i=1; i<=myLength; i++){
@@ -7984,7 +7984,7 @@ p.nominalBounds = new cjs.Rectangle(171.8,213.7,498.9,331.5);
 			//_this.updateAll();
 		};
 		function checkAns(e){
-			var _userAns = txtAns.value + ", " + myTxtArea.value;
+			var _userAns = txtAns.value;
 			var myLength =cAns1.length;
 			var cCount = 0;
 			for (var i=1; i<=myLength; i++){
@@ -9433,6 +9433,7 @@ p.nominalBounds = new cjs.Rectangle(171.8,213.7,498.9,331.5);
 				_this.gotoAndPlay("finalFb");
 			} else {
 				//save data here
+				console.log(_this.myData);
 				var cData = $.post("/api/record/update/", 
 								_this.myData,
 									function(data){
@@ -9463,8 +9464,8 @@ p.nominalBounds = new cjs.Rectangle(171.8,213.7,498.9,331.5);
 			_this.myData.qItem[_this.currentQ-1].userAns = _userAns;
 			_this.myData.qItem[_this.currentQ-1].time = _this.timeGiven-_this.secRemaining;
 			_this.timeGiven = _this.secRemaining;
-				goNextQ();
-			};
+			goNextQ();
+		};
 		function randRange(min, max) {
 			return Math.floor(Math.random() * (max - min + 1)) + min;
 		}
@@ -9788,7 +9789,7 @@ p.nominalBounds = new cjs.Rectangle(171.8,213.7,498.9,331.5);
 	this.timeline.addTween(cjs.Tween.get(this.instance_15).wait(546).to({_off:false},0).to({y:0},13,cjs.Ease.cubicOut).to({_off:true},10).wait(507));
 	this.timeline.addTween(cjs.Tween.get(this.instance_16).wait(589).to({_off:false},0).to({y:0},13,cjs.Ease.cubicOut).to({_off:true},8).wait(466));
 	this.timeline.addTween(cjs.Tween.get(this.instance_17).wait(630).to({_off:false},0).to({y:0},13,cjs.Ease.cubicOut).to({_off:true},7).wait(426));
-	this.timeline.addTween(cjs.Tween.get(this.instance_18).wait(671).to({_off:false},0).to({y:0},13,cjs.Ease.cubicOut).to({_off:true},1).wait(391));
+	this.timeline.addTween(cjs.Tween.get(this.instance_18).wait(671).to({_off:false},0).to({y:0},13,cjs.Ease.cubicOut).to({_off:true},6).wait(386));
 	this.timeline.addTween(cjs.Tween.get(this.instance_19).wait(711).to({_off:false},0).to({y:0},13,cjs.Ease.cubicOut).to({_off:true},7).wait(345));
 	this.timeline.addTween(cjs.Tween.get(this.instance_20).wait(752).to({_off:false},0).to({y:0},13,cjs.Ease.cubicOut).to({_off:true},8).wait(303));
 	this.timeline.addTween(cjs.Tween.get(this.instance_21).wait(794).to({_off:false},0).to({y:0},13,cjs.Ease.cubicOut).to({_off:true},6).wait(263));
@@ -10103,19 +10104,19 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/y6s4/Bitmap22.png?1534086809695", id:"Bitmap22"},
-		{src:"images/y6s4/Bitmap3.png?1534086809695", id:"Bitmap3"},
-		{src:"images/y6s4/Bitmap8.png?1534086809695", id:"Bitmap8"},
-		{src:"images/y6s4/Bitmap9.png?1534086809695", id:"Bitmap9"},
-		{src:"sounds/mdroid_talk.mp3?1534086809695", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1534086809695", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1534086809695", id:"questionComplete"},
-		{src:"sounds/stdClick.mp3?1534086809695", id:"stdClick"},
-		{src:"sounds/submitAns.mp3?1534086809695", id:"submitAns"},
-		{src:"sounds/timeout.mp3?1534086809695", id:"timeout"},
-		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1534086809695", id:"lib/jquery-2.2.4.min.js"},
-		{src:"components/sdk/anwidget.js?1534086809695", id:"sdk/anwidget.js"},
-		{src:"components/ui/src/textinput.js?1534086809695", id:"an.TextInput"}
+		{src:"images/y6s4/Bitmap22.png?1534405391239", id:"Bitmap22"},
+		{src:"images/y6s4/Bitmap3.png?1534405391239", id:"Bitmap3"},
+		{src:"images/y6s4/Bitmap8.png?1534405391239", id:"Bitmap8"},
+		{src:"images/y6s4/Bitmap9.png?1534405391239", id:"Bitmap9"},
+		{src:"sounds/mdroid_talk.mp3?1534405391239", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1534405391239", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1534405391239", id:"questionComplete"},
+		{src:"sounds/stdClick.mp3?1534405391239", id:"stdClick"},
+		{src:"sounds/submitAns.mp3?1534405391239", id:"submitAns"},
+		{src:"sounds/timeout.mp3?1534405391239", id:"timeout"},
+		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1534405391239", id:"lib/jquery-2.2.4.min.js"},
+		{src:"components/sdk/anwidget.js?1534405391239", id:"sdk/anwidget.js"},
+		{src:"components/ui/src/textinput.js?1534405391239", id:"an.TextInput"}
 	],
 	preloads: []
 };

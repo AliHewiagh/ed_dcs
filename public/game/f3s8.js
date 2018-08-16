@@ -7427,7 +7427,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 	}
 	this.frame_86 = function() {
 		this.stop();
-		_this.parent.onTimeEnd();
+		this.parent.onTimeEnd();
 	}
 
 	// actions tween:
@@ -7488,6 +7488,8 @@ p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
 		} else {
 			if (schoolLevel==3){
 				stageNum = 10;
+			} else if (schoolLevel==1){
+				stageNum = 14;
 			}
 		}
 		this.timeGiven = 240;//time in seconds

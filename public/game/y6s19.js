@@ -1839,7 +1839,7 @@ p.nominalBounds = new cjs.Rectangle(-136.7,302.4,274,237.4);
 	}
 	this.frame_150 = function() {
 		this.stop();
-		_this.parent.onTimeEnd();
+		this.parent.onTimeEnd();
 	}
 
 	// actions tween:
@@ -3001,21 +3001,21 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/y6s19/Bitmap21.png?1533824825452", id:"Bitmap21"},
-		{src:"images/y6s19/Bitmap22.png?1533824825452", id:"Bitmap22"},
-		{src:"images/y6s19/Bitmap23.png?1533824825452", id:"Bitmap23"},
-		{src:"images/y6s19/Bitmap27.png?1533824825452", id:"Bitmap27"},
-		{src:"images/y6s19/Bitmap3.png?1533824825452", id:"Bitmap3"},
-		{src:"images/y6s19/Bitmap9.png?1533824825452", id:"Bitmap9"},
-		{src:"sounds/mdroid_talk.mp3?1533824825452", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1533824825452", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1533824825452", id:"questionComplete"},
-		{src:"sounds/submitAns.mp3?1533824825452", id:"submitAns"},
-		{src:"sounds/timeout.mp3?1533824825452", id:"timeout"},
-		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1533824825452", id:"lib/jquery-2.2.4.min.js"},
-		{src:"components/sdk/anwidget.js?1533824825452", id:"sdk/anwidget.js"},
-		{src:"components/ui/src/textinput.js?1533824825452", id:"an.TextInput"},
-		{src:"components/ui/src/combobox.js?1533824825452", id:"an.ComboBox"}
+		{src:"images/y6s19/Bitmap21.png?1534397781915", id:"Bitmap21"},
+		{src:"images/y6s19/Bitmap22.png?1534397781915", id:"Bitmap22"},
+		{src:"images/y6s19/Bitmap23.png?1534397781915", id:"Bitmap23"},
+		{src:"images/y6s19/Bitmap27.png?1534397781915", id:"Bitmap27"},
+		{src:"images/y6s19/Bitmap3.png?1534397781915", id:"Bitmap3"},
+		{src:"images/y6s19/Bitmap9.png?1534397781915", id:"Bitmap9"},
+		{src:"sounds/mdroid_talk.mp3?1534397781915", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1534397781915", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1534397781915", id:"questionComplete"},
+		{src:"sounds/submitAns.mp3?1534397781915", id:"submitAns"},
+		{src:"sounds/timeout.mp3?1534397781915", id:"timeout"},
+		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1534397781915", id:"lib/jquery-2.2.4.min.js"},
+		{src:"components/sdk/anwidget.js?1534397781915", id:"sdk/anwidget.js"},
+		{src:"components/ui/src/textinput.js?1534397781915", id:"an.TextInput"},
+		{src:"components/ui/src/combobox.js?1534397781915", id:"an.ComboBox"}
 	],
 	preloads: []
 };

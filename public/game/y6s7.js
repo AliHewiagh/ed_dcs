@@ -4684,7 +4684,7 @@ p.nominalBounds = new cjs.Rectangle(-136.7,302.4,274,237.4);
 	}
 	this.frame_150 = function() {
 		this.stop();
-		_this.parent.onTimeEnd();
+		this.parent.onTimeEnd();
 	}
 
 	// actions tween:
@@ -6288,20 +6288,20 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/y6s7/Bitmap19.png?1534006439932", id:"Bitmap19"},
-		{src:"images/y6s7/Bitmap20.png?1534006439932", id:"Bitmap20"},
-		{src:"images/y6s7/Bitmap21.png?1534006439932", id:"Bitmap21"},
-		{src:"images/y6s7/Bitmap3.png?1534006439932", id:"Bitmap3"},
-		{src:"images/y6s7/Bitmap9.png?1534006439932", id:"Bitmap9"},
-		{src:"sounds/mdroid_talk.mp3?1534006439932", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1534006439932", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1534006439932", id:"questionComplete"},
-		{src:"sounds/stdClick.mp3?1534006439932", id:"stdClick"},
-		{src:"sounds/submitAns.mp3?1534006439932", id:"submitAns"},
-		{src:"sounds/timeout.mp3?1534006439932", id:"timeout"},
-		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1534006439932", id:"lib/jquery-2.2.4.min.js"},
-		{src:"components/sdk/anwidget.js?1534006439932", id:"sdk/anwidget.js"},
-		{src:"components/ui/src/textinput.js?1534006439932", id:"an.TextInput"}
+		{src:"images/y6s7/Bitmap19.png?1534390090645", id:"Bitmap19"},
+		{src:"images/y6s7/Bitmap20.png?1534390090645", id:"Bitmap20"},
+		{src:"images/y6s7/Bitmap21.png?1534390090645", id:"Bitmap21"},
+		{src:"images/y6s7/Bitmap3.png?1534390090645", id:"Bitmap3"},
+		{src:"images/y6s7/Bitmap9.png?1534390090645", id:"Bitmap9"},
+		{src:"sounds/mdroid_talk.mp3?1534390090645", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1534390090645", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1534390090645", id:"questionComplete"},
+		{src:"sounds/stdClick.mp3?1534390090645", id:"stdClick"},
+		{src:"sounds/submitAns.mp3?1534390090645", id:"submitAns"},
+		{src:"sounds/timeout.mp3?1534390090645", id:"timeout"},
+		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1534390090645", id:"lib/jquery-2.2.4.min.js"},
+		{src:"components/sdk/anwidget.js?1534390090645", id:"sdk/anwidget.js"},
+		{src:"components/ui/src/textinput.js?1534390090645", id:"an.TextInput"}
 	],
 	preloads: []
 };

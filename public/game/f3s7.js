@@ -5528,7 +5528,7 @@ p.nominalBounds = new cjs.Rectangle(-136.7,302.4,274,237.4);
 	this.frame_150 = function() {
 		this.stop();
 		//nextScreen();
-		_this.parent.onTimeEnd();
+		this.parent.onTimeEnd();
 	}
 
 	// actions tween:
@@ -6229,6 +6229,10 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 		var stageNum = 7;
 		if (typeof cUserId === "undefined") {
 			cUserId = "";
+		} else {
+			if (schoolLevel==1){
+				stageNum = 9;
+			}
 		}
 		this.timeGiven = 240;//time in seconds
 		this.secRemaining = this.timeGiven;
