@@ -6369,7 +6369,7 @@ p.nominalBounds = new cjs.Rectangle(-136.7,302.4,274,237.4);
 	}
 	this.frame_149 = function() {
 		this.stop();
-		_this.parent.onTimeEnd();
+		this.parent.onTimeEnd();
 	}
 
 	// actions tween:
@@ -7728,17 +7728,17 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/y6s1/Bitmap12.png?1533584522109", id:"Bitmap12"},
-		{src:"images/y6s1/Bitmap3.png?1533584522109", id:"Bitmap3"},
-		{src:"images/y6s1/Bitmap6.png?1533584522109", id:"Bitmap6"},
-		{src:"images/y6s1/Bitmap8.png?1533584522109", id:"Bitmap8"},
-		{src:"images/y6s1/Bitmap9.png?1533584522109", id:"Bitmap9"},
-		{src:"sounds/mdroid_talk.mp3?1533584522109", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1533584522109", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1533584522109", id:"questionComplete"},
-		{src:"sounds/stdClick.mp3?1533584522109", id:"stdClick"},
-		{src:"sounds/submitAns.mp3?1533584522109", id:"submitAns"},
-		{src:"sounds/timeout.mp3?1533584522109", id:"timeout"}
+		{src:"images/y6s1/Bitmap12.png?1534387786059", id:"Bitmap12"},
+		{src:"images/y6s1/Bitmap3.png?1534387786059", id:"Bitmap3"},
+		{src:"images/y6s1/Bitmap6.png?1534387786059", id:"Bitmap6"},
+		{src:"images/y6s1/Bitmap8.png?1534387786059", id:"Bitmap8"},
+		{src:"images/y6s1/Bitmap9.png?1534387786059", id:"Bitmap9"},
+		{src:"sounds/mdroid_talk.mp3?1534387786059", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1534387786059", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1534387786059", id:"questionComplete"},
+		{src:"sounds/stdClick.mp3?1534387786059", id:"stdClick"},
+		{src:"sounds/submitAns.mp3?1534387786059", id:"submitAns"},
+		{src:"sounds/timeout.mp3?1534387786059", id:"timeout"}
 	],
 	preloads: []
 };

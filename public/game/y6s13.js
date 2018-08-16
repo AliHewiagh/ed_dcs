@@ -1042,6 +1042,7 @@ p.nominalBounds = new cjs.Rectangle(-5,-5,10,10);
 					clearInterval(timeInterval);
 					$("#dom_overlay_container").empty();
 					//_this.parent.onTimeEnd();
+					_this.parent.isOver = true;
 					_this.parent.mcTimesUp.play();
 				} else {
 					_this.parent.secRemaining--;
@@ -2585,7 +2586,7 @@ p.nominalBounds = new cjs.Rectangle(-136.7,302.4,274,237.4);
 	}
 	this.frame_150 = function() {
 		this.stop();
-		_this.parent.onTimeEnd();
+		this.parent.onTimeEnd();
 	}
 
 	// actions tween:
@@ -2996,7 +2997,13 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 			_this.mouseChildren = true;
 		}
 		function onKeyDown(event) {
-		    var didMove = false;
+			//--------2---------
+			try {
+				_this.parent.isOver;
+			}
+			catch(err) {
+				window.removeEventListener('keydown', onKeyDown);
+			}
 		    switch (event.keyCode) {
 		        case 37: //left
 		            onMoveLeft("");
@@ -3585,7 +3592,13 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 			_this.mouseChildren = true;
 		}
 		function onKeyDown(event) {
-		    var didMove = false;
+			//--1---
+			try {
+				_this.parent.isOver;
+			}
+			catch(err) {
+				window.removeEventListener('keydown', onKeyDown);
+			}
 		    switch (event.keyCode) {
 		        case 37: //left
 		            onMoveLeft("");
@@ -3826,6 +3839,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 		}
 		this.timeGiven = 240;//time in seconds
 		this.secRemaining = this.timeGiven;
+		this.isOver = false;
 		var maxQ = 2;
 		this.currentQ = 0;
 		this.myData = {
@@ -3866,6 +3880,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 				}
 			} else {
 				//all questions done
+				_this.isOver = true;
 				clearInterval(timeInterval);//stop time
 				saveData();
 			}
@@ -3912,7 +3927,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 			_this.myData.qItem[_this.currentQ-1].userAns = _userAns;
 			_this.myData.qItem[_this.currentQ-1].time = _this.timeGiven-_this.secRemaining;
 			_this.timeGiven = _this.secRemaining;
-				goNextQ();
+			goNextQ();
 		};
 		function randRange(min, max) {
 			return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -4173,25 +4188,25 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/y6s13/Bitmap1.png?1534217343621", id:"Bitmap1"},
-		{src:"images/y6s13/Bitmap13.png?1534217343621", id:"Bitmap13"},
-		{src:"images/y6s13/Bitmap19.png?1534217343621", id:"Bitmap19"},
-		{src:"images/y6s13/Bitmap1key.png?1534217343621", id:"Bitmap1key"},
-		{src:"images/y6s13/Bitmap2.png?1534217343621", id:"Bitmap2"},
-		{src:"images/y6s13/Bitmap20.png?1534217343621", id:"Bitmap20"},
-		{src:"images/y6s13/Bitmap22.png?1534217343621", id:"Bitmap22"},
-		{src:"images/y6s13/Bitmap3.png?1534217343621", id:"Bitmap3"},
-		{src:"images/y6s13/Bitmap3_1.png?1534217343621", id:"Bitmap3_1"},
-		{src:"images/y6s13/Bitmap4.png?1534217343621", id:"Bitmap4"},
-		{src:"images/y6s13/Bitmap5.png?1534217343621", id:"Bitmap5"},
-		{src:"images/y6s13/Bitmap5toolbox.png?1534217343621", id:"Bitmap5toolbox"},
-		{src:"images/y6s13/Bitmap9.png?1534217343621", id:"Bitmap9"},
-		{src:"sounds/mdroid_talk.mp3?1534217343621", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1534217343621", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1534217343621", id:"questionComplete"},
-		{src:"sounds/stdClick.mp3?1534217343621", id:"stdClick"},
-		{src:"sounds/submitAns.mp3?1534217343621", id:"submitAns"},
-		{src:"sounds/timeout.mp3?1534217343621", id:"timeout"}
+		{src:"images/y6s13/Bitmap1.png?1534396401996", id:"Bitmap1"},
+		{src:"images/y6s13/Bitmap13.png?1534396401996", id:"Bitmap13"},
+		{src:"images/y6s13/Bitmap19.png?1534396401996", id:"Bitmap19"},
+		{src:"images/y6s13/Bitmap1key.png?1534396401996", id:"Bitmap1key"},
+		{src:"images/y6s13/Bitmap2.png?1534396401996", id:"Bitmap2"},
+		{src:"images/y6s13/Bitmap20.png?1534396401996", id:"Bitmap20"},
+		{src:"images/y6s13/Bitmap22.png?1534396401996", id:"Bitmap22"},
+		{src:"images/y6s13/Bitmap3.png?1534396401996", id:"Bitmap3"},
+		{src:"images/y6s13/Bitmap3_1.png?1534396401996", id:"Bitmap3_1"},
+		{src:"images/y6s13/Bitmap4.png?1534396401996", id:"Bitmap4"},
+		{src:"images/y6s13/Bitmap5.png?1534396401996", id:"Bitmap5"},
+		{src:"images/y6s13/Bitmap5toolbox.png?1534396401996", id:"Bitmap5toolbox"},
+		{src:"images/y6s13/Bitmap9.png?1534396401996", id:"Bitmap9"},
+		{src:"sounds/mdroid_talk.mp3?1534396401996", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1534396401996", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1534396401996", id:"questionComplete"},
+		{src:"sounds/stdClick.mp3?1534396401996", id:"stdClick"},
+		{src:"sounds/submitAns.mp3?1534396401996", id:"submitAns"},
+		{src:"sounds/timeout.mp3?1534396401996", id:"timeout"}
 	],
 	preloads: []
 };

@@ -2007,7 +2007,7 @@ p.nominalBounds = new cjs.Rectangle(-136.7,302.4,274,237.4);
 	this.frame_150 = function() {
 		this.stop();
 		//nextScreen();
-		_this.parent.onTimeEnd();
+		this.parent.onTimeEnd();
 	}
 
 	// actions tween:

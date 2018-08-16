@@ -11847,7 +11847,7 @@ p.nominalBounds = new cjs.Rectangle(-136.7,302.4,274,237.4);
 			this.gotoAndStop(0);
 		} else {
 			//nextScreen();
-			_this.parent.onTimeEnd();
+			this.parent.onTimeEnd();
 		}
 	}
 
