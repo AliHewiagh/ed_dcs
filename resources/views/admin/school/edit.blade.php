@@ -101,41 +101,41 @@
                         </select>
                     </div>
 
-                    <div class="form-group">
-                        <label for="mypibInput">MYPIB</label>
-                        <select name="mypib" class="form-control" id="mypibInput" required>
-                            <option value="">Please Select</option>
-                            <option value="1" @if($school->mypib == 1) selected="selected" @endif>Yes</option>
-                            <option value="0" @if($school->mypib === 0) selected="selected" @endif>No</option>
-                        </select>
-                    </div>
+                    {{--<div class="form-group">--}}
+                        {{--<label for="mypibInput">MYPIB</label>--}}
+                        {{--<select name="mypib" class="form-control" id="mypibInput" required>--}}
+                            {{--<option value="">Please Select</option>--}}
+                            {{--<option value="1" @if($school->mypib == 1) selected="selected" @endif>Yes</option>--}}
+                            {{--<option value="0" @if($school->mypib === 0) selected="selected" @endif>No</option>--}}
+                        {{--</select>--}}
+                    {{--</div>--}}
 
-                    <div class="form-group">
-                        <label for="sekolahiInput">Sekolah i-THINK</label>
-                        <select name="sekolahi" class="form-control" id="sekolahiInput" required>
-                            <option value="">Please Select</option>
-                            <option value="1" @if($school->sekolahi == 1) selected="selected" @endif>Yes</option>
-                            <option value="0" @if($school->sekolahi === 0) selected="selected" @endif>No</option>
-                        </select>
-                    </div>
+                    {{--<div class="form-group">--}}
+                        {{--<label for="sekolahiInput">Sekolah i-THINK</label>--}}
+                        {{--<select name="sekolahi" class="form-control" id="sekolahiInput" required>--}}
+                            {{--<option value="">Please Select</option>--}}
+                            {{--<option value="1" @if($school->sekolahi == 1) selected="selected" @endif>Yes</option>--}}
+                            {{--<option value="0" @if($school->sekolahi === 0) selected="selected" @endif>No</option>--}}
+                        {{--</select>--}}
+                    {{--</div>--}}
 
-                    <div class="form-group">
-                        <label for="sekolahkInput">Sekolah Kluster Kecemerlangan</label>
-                        <select name="sekolahk" class="form-control" id="sekolahkInput" required>
-                            <option value="">Please Select</option>
-                            <option value="1" @if($school->sekolahk == 1) selected="selected" @endif>Yes</option>
-                            <option value="0" @if($school->sekolahk === 0) selected="selected" @endif>No</option>
-                        </select>
-                    </div>
+                    {{--<div class="form-group">--}}
+                        {{--<label for="sekolahkInput">Sekolah Kluster Kecemerlangan</label>--}}
+                        {{--<select name="sekolahk" class="form-control" id="sekolahkInput" required>--}}
+                            {{--<option value="">Please Select</option>--}}
+                            {{--<option value="1" @if($school->sekolahk == 1) selected="selected" @endif>Yes</option>--}}
+                            {{--<option value="0" @if($school->sekolahk === 0) selected="selected" @endif>No</option>--}}
+                        {{--</select>--}}
+                    {{--</div>--}}
 
-                    <div class="form-group">
-                        <label for="sbtInput">Sekolah Berprestasi Tinggi (SBT)</label>
-                        <select name="sbt" class="form-control" id="sbtInput" required>
-                            <option value="">Please Select</option>
-                            <option value="1" @if($school->sbt == 1) selected="selected" @endif>Yes</option>
-                            <option value="0" @if($school->sbt === 0) selected="selected" @endif>No</option>
-                        </select>
-                    </div>
+                    {{--<div class="form-group">--}}
+                        {{--<label for="sbtInput">Sekolah Berprestasi Tinggi (SBT)</label>--}}
+                        {{--<select name="sbt" class="form-control" id="sbtInput" required>--}}
+                            {{--<option value="">Please Select</option>--}}
+                            {{--<option value="1" @if($school->sbt == 1) selected="selected" @endif>Yes</option>--}}
+                            {{--<option value="0" @if($school->sbt === 0) selected="selected" @endif>No</option>--}}
+                        {{--</select>--}}
+                    {{--</div>--}}
 
                     <div class="form-group">
                         <label for="manager_nameInput">School Manager Name</label>

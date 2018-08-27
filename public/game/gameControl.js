@@ -1,4 +1,4 @@
-var debugMode = true;
+var debugMode = false;
 var schoolLevel;
 //----turn this on for final to disable all console.log 
 //console.log = function() {};
@@ -10,71 +10,72 @@ var scrList = [{constructorName: "splash", compId: "B80CE73EAFE3CF40BDB98EF8906F
 				{constructorName: "end", compId: "134DC6FF3421C64FBDE34F1D4B89988D", preloader: 1}
 				];
 function doOnce(){
-if (schoolLevel==1){//primary
-	scrList[2] = {constructorName: "y6s1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[3] = {constructorName: "y6s2", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
-	scrList[4] = {constructorName: "y6s3", compId: "0531B783B312A2449858C08B8DC0FA38", preloader: 1};
-	scrList[5] = {constructorName: "y6s4", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[6] = {constructorName: "y6s5", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[7] = {constructorName: "y6s6", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[8] = {constructorName: "y6s7", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[9] = {constructorName: "y6s8", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[10] = {constructorName: "f3s7", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
-	scrList[11] = {constructorName: "y6s10", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[12] = {constructorName: "y6s11", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[13] = {constructorName: "f3s12", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[14] = {constructorName: "y6s13", compId: "A1A09E2AAACE1249A263487D008D71D8", preloader: 1};
-	scrList[15] = {constructorName: "f3s8", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[16] = {constructorName: "y6s15", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[17] = {constructorName: "y6s16", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[18] = {constructorName: "y6s17", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[19] = {constructorName: "y6s18", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[20] = {constructorName: "y6s19", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[21] = {constructorName: "y6s20", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
-} else if (schoolLevel==2){//f3
-	scrList[2] = {constructorName: "f3s1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[3] = {constructorName: "f3s2", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[4] = {constructorName: "f3s3", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[5] = {constructorName: "f3s4", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[6] = {constructorName: "f3s5", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[7] = {constructorName: "f3s6", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[8] = {constructorName: "f3s7", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
-	scrList[9] = {constructorName: "f3s8", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[10] = {constructorName: "f3s9", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[11] = {constructorName: "f3s10", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[12] = {constructorName: "f3s11", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[13] = {constructorName: "f3s12", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[14] = {constructorName: "f3s13", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[15] = {constructorName: "f3s14", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[16] = {constructorName: "y6s2", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
-	scrList[17] = {constructorName: "f3s16", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[18] = {constructorName: "f3s17", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[19] = {constructorName: "f3s18", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[20] = {constructorName: "f3s19", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[21] = {constructorName: "f3s20", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-} else {
-	//f5
-	scrList[2] = {constructorName: "f5s1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[3] = {constructorName: "f3s11", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[4] = {constructorName: "f5s3", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[5] = {constructorName: "f5s4", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[6] = {constructorName: "f3s1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[7] = {constructorName: "f5s6", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
-	scrList[8] = {constructorName: "f5s7", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[9] = {constructorName: "f3s6", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[10] = {constructorName: "f3s2", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[11] = {constructorName: "f3s8", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[12] = {constructorName: "f3s9", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[13] = {constructorName: "f3s12", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[14] = {constructorName: "f5s13", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[15] = {constructorName: "f5s14", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[16] = {constructorName: "f5s15", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[17] = {constructorName: "y6s2", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
-	scrList[18] = {constructorName: "f5s17", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[19] = {constructorName: "f5s18", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[20] = {constructorName: "f5s19", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-	scrList[21] = {constructorName: "f5s20", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
-}
+	if (schoolLevel==1){//primary
+		scrList[2] = {constructorName: "y6s1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[3] = {constructorName: "y6s2", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
+		scrList[4] = {constructorName: "y6s3", compId: "0531B783B312A2449858C08B8DC0FA38", preloader: 1};
+		scrList[5] = {constructorName: "y6s4", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[6] = {constructorName: "y6s5", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[7] = {constructorName: "y6s6", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[8] = {constructorName: "y6s7", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[9] = {constructorName: "y6s8", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[10] = {constructorName: "f3s7", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
+		scrList[11] = {constructorName: "y6s10", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[12] = {constructorName: "y6s11", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[13] = {constructorName: "f3s12", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[14] = {constructorName: "y6s13", compId: "A1A09E2AAACE1249A263487D008D71D8", preloader: 1};
+		scrList[15] = {constructorName: "f3s8", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[16] = {constructorName: "y6s15", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[17] = {constructorName: "y6s16", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[18] = {constructorName: "y6s17", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[19] = {constructorName: "y6s18", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[20] = {constructorName: "y6s19", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[21] = {constructorName: "y6s20", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
+	} else if (schoolLevel==2){//f3
+		scrList[2] = {constructorName: "f3s1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[3] = {constructorName: "f3s2", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[4] = {constructorName: "f3s3", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[5] = {constructorName: "f3s4", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[6] = {constructorName: "f3s5", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[7] = {constructorName: "f3s6", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[8] = {constructorName: "f3s7", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
+		scrList[9] = {constructorName: "f3s8", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[10] = {constructorName: "f3s9", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[11] = {constructorName: "f3s10", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[12] = {constructorName: "f3s11", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[13] = {constructorName: "f3s12", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[14] = {constructorName: "f3s13", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[15] = {constructorName: "f3s14", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[16] = {constructorName: "y6s2", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
+		scrList[17] = {constructorName: "f3s16", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[18] = {constructorName: "f3s17", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[19] = {constructorName: "f3s18", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[20] = {constructorName: "f3s19", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[21] = {constructorName: "f3s20", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	} else {
+		//f5
+		scrList[2] = {constructorName: "f5s1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[3] = {constructorName: "f3s11", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[4] = {constructorName: "f5s3", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[5] = {constructorName: "f5s4", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[6] = {constructorName: "f3s1", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[7] = {constructorName: "f5s6", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
+		scrList[8] = {constructorName: "f5s7", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[9] = {constructorName: "f3s6", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[10] = {constructorName: "f3s2", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[11] = {constructorName: "f3s8", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[12] = {constructorName: "f3s9", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[13] = {constructorName: "f3s12", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[14] = {constructorName: "f5s13", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[15] = {constructorName: "f5s14", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[16] = {constructorName: "f5s15", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[17] = {constructorName: "y6s2", compId: "6177E91A890DB6448AFB18F3AC99DAC5", preloader: 1};
+		scrList[18] = {constructorName: "f5s17", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[19] = {constructorName: "f5s18", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[20] = {constructorName: "f5s19", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+		scrList[21] = {constructorName: "f5s20", compId: "97C298EB0FE8B14591D54AA479C6ADCF", preloader: 1};
+	}
+	loadScreen();
 }
 if (currentProgress==undefined){
 	var currentProgress = 1;
@@ -145,30 +146,47 @@ function initTapir(){
 			exportRoot.txtPlayerName.text = truncate(cUserName, 30);
 			//get the current stage
 			var cData = $.get("/api/stage/get/"+cUserId, function (data) {
-			if(data.status == 100){
-				//success api call
-				cStage = data.stage;
-				console.log("cStage is: "+cStage);
-				if (cStage<21){
-					exportRoot.mcLevel.gotoAndStop(cStage);
-				} else {
-					exportRoot.mcLevel.gotoAndStop(20);
+			})
+			.done(function(data) {
+					if(data.status == 100){
+					//success api call
+					cStage = data.stage;
+					cLevel = data.level;
+					cLastScreen = data.last_screen;
+					cLastState = data.last_state;
+					cTimeLeft = data.time_left;
+					console.log("cStage is: "+cStage);
+					
+					if (cStage==0){
+						//do nothing, user has not started
+					} else if (cStage<21){
+						if (cLastScreen.indexOf("outro") !== -1){
+							//old outro, promote 1 stage
+							exportRoot.mcLevel.gotoAndStop(Number(cStage)+1);
+						} else {
+							exportRoot.mcLevel.gotoAndStop(cStage);
+						}
+					} else {
+						exportRoot.mcLevel.gotoAndStop(20);
+					}
+					
+					if (cLevel=="Year 6"){
+						schoolLevel = 1;
+					} else if (cLevel=="Form 3"){
+						schoolLevel = 2;
+					} else {
+						schoolLevel = 3;
+					}
+					var setList = doOnce();
+				}else{
+					//failed
+					alert("Ooppss... we're unable to get your data. Please refresh the browser and try again.");
+					return;
 				}
-				cLevel = data.level;
-				cLastScreen = data.last_screen;
-				cLastState = data.last_state;
-				cTimeLeft = data.time_left;
-				if (cLevel=="Year 6"){
-					schoolLevel = 1;
-				} else if (cLevel=="Form 3"){
-					schoolLevel = 2;
-				} else {
-					schoolLevel = 3;
-				}
-				var setList = doOnce();
-			}else{
-				//failed
-			}
+			})
+			.fail(function() {
+				//failed to get info
+				alert("Ooppss... we're unable to get your data. Please refresh the browser and try again.");
 			});
 		}
 		if (debugMode){
@@ -176,7 +194,12 @@ function initTapir(){
 		}
 		currentProgress = 1;//to always load the splash screen
 		didOnce = true;
+	} else {
+		loadScreen();
 	}
+}
+function loadScreen(){
+	console.log("currentProgress = " + currentProgress);
 	console.log(scrList[currentProgress-1].constructorName + ".js");
 	var fileUrl = scrList[currentProgress-1].constructorName + ".js";
 	loadScript(fileUrl, function(){
@@ -261,8 +284,16 @@ function handleCompleteSub(evt,comp) {
 							last_state: "",
 							time_left: 0},
 							function(data){
-								console.log(data.message);
-							});
+							})
+		.done(function(data) {
+			console.log("set stage: "+data.message);
+		})
+		.fail(function() {
+			console.log("set stage failed");
+		})
+		.always(function() {
+			console.log("continue");
+		 });
 	}
 }
 function nextScreen(){
@@ -275,11 +306,23 @@ function startScreen(){
 		currentProgress = 2;
 	} else {
 		var scrLength = scrList.length;
+		var screenFound = false;
 		for (var i=0; i<scrLength; i++){
 			if (scrList[i].constructorName==cLastScreen){
+				screenFound = true;
 				currentProgress = i+1;
 				break;
 			}
+		}
+		if (!screenFound && cStage<21){
+			//if we can't find the last screen, must have been the old version, so check cStage
+			if (cLastScreen.indexOf("outro") !== -1){
+				currentProgress = Number(cStage) + 3;//if outro, promote 1 stage
+			} else {
+				currentProgress = Number(cStage) + 2;
+			}
+		} else if (!screenFound){
+			currentProgress = scrList.length;
 		}
 	}
 	initTapir();

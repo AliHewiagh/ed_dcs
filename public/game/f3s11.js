@@ -1711,7 +1711,7 @@ p.nominalBounds = new cjs.Rectangle(-146.7,-24.9,293.4,49.8);
 		
 				if (_this.parent.secRemaining <= 0) {
 					clearInterval(timeInterval);
-					//$("#dom_overlay_container").empty();
+					$("#dom_overlay_container").empty();
 					//_this.parent.onTimeEnd();
 					_this.parent.mcTimesUp.play();
 				} else {
@@ -3624,24 +3624,35 @@ p.nominalBounds = new cjs.Rectangle(145.5,241,561.5,221);
 			isTimeOut = true;
 			saveData();
 		};
+		var saveAttempt=0;
 		function saveData(){
 			if (cUserId == ""){//not online
 				_this.gotoAndPlay("finalFb");
 			} else {
+				_this.mouseChildren=false;
+				saveAttempt++;
 				//save data here
-				var cData = $.post("/api/record/update/", 
-								_this.myData,
-									function(data){
-										console.log("set score"+data.message);
-										if (data.message=="success" && !isTimeOut){
-											_this.gotoAndPlay("finalFb");
-										} else if (data.message=="success"){
-											//nothing
-											nextScreen();
-										} else {
-											alert("Oppss... something went wrong. Please refresh your browser and try again.");
-										}
-									});
+				var cData = $.post("/api/record/update/", _this.myData, function(data) {
+				})
+				.done(function(data) {
+					console.log("set score: "+data.message);
+					if (data.message=="success" && !isTimeOut){
+						_this.gotoAndPlay("finalFb");
+					} else if (data.message=="success"){
+						//nothing
+						nextScreen();
+					} else {
+						console.log("Error encountered when writing to database.");
+					}
+				})
+				.fail(function() {
+					if (saveAttempt<=3){
+						alert("Oppss... something went wrong. We'll try saving your data again.");
+						saveData();
+					} else {
+						alert("Hmmm... we've tried 3 times and it's just NOT working. Please refresh your browser and try again.");
+					}
+				});
 			}
 		}
 		function doPlay(e){

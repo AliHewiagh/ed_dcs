@@ -27,6 +27,7 @@
                                         <th>School code</th>
                                         <th>PKG</th>
                                         <th>Completion by class</th>
+                                        <th>Students Completion</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -34,12 +35,15 @@
                                         <?php
                                         $classes = \App\SchoolClass::where('school_id', $school->id)->count();
                                         $done = \App\SchoolClass::where([['school_id', $school->id], ['done', 1]])->count();
+                                        $studentDone = \App\User::where([['school_id', $school->id], ['done', 1], ['type', 4]])->count();
+                                        $totalStudents = \App\User::where([['school_id', $school->id], ['type', 4]])->count();
                                         ?>
                                         <tr>
                                             <td><a href="{{url('/state/progress/'.$school->id)}}">{{$school->name}}</a></td>
                                             <td>{{$school->school_code}}</td>
                                             <td>{{$school->pkg}}</td>
                                             <td>{{$done}}/{{$classes}}</td>
+                                            <td>{{$studentDone}}/{{$totalStudents}}</td>
                                         </tr>
                                     @endforeach
                                     </tbody>

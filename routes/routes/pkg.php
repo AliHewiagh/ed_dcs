@@ -24,6 +24,9 @@ Route::get('/progress/{schoolId}/{classId}/{studentId}/detail', 'PKG\ProgressCon
 
 // Student
 Route::PATCH('/student/done/update/{id}', 'PKG\StudentController@doneUpdate');
+Route::get('/student/edit/{id}', 'PKG\StudentController@edit');
+Route::post('/student/edit/{id}', 'PKG\StudentController@store');
+Route::delete('/student/delete/{id}', 'PKG\StudentController@destroy');
 
 // Leader Board
 Route::get('/top/school/{type}', 'PKG\LeaderBoardController@index');

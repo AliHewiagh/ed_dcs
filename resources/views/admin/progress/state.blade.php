@@ -29,6 +29,7 @@
                                         <th>Action</th>
                                         <th>PKG</th>
                                         <th>Completion by class</th>
+                                        <th>Students Completion</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -36,6 +37,8 @@
                                         <?php
                                         $classes = \App\SchoolClass::where('school_id', $school->id)->count();
                                         $done = \App\SchoolClass::where([['school_id', $school->id], ['done', 1]])->count();
+                                        $studentDone = \App\User::where([['school_id', $school->id], ['done', 1], ['type', 4]])->count();
+                                        $totalStudents = \App\User::where([['school_id', $school->id], ['type', 4]])->count();
                                         ?>
                                         <tr>
                                             <td><a href="{{url('/admin/progress/'.$state.'/'.$school->id)}}">{{$school->name}}</a></td>
@@ -43,6 +46,7 @@
                                             <td><a href="{{url('/admin/school/'.$school->user_id.'/edit')}}" class="btn btn-warning">Edit</a></td>
                                             <td>{{$school->pkg}}</td>
                                             <td>{{$done}}/{{$classes}}</td>
+                                            <td>{{$studentDone}}/{{$totalStudents}}</td>
                                         </tr>
                                     @endforeach
                                     </tbody>

@@ -5776,13 +5776,13 @@ p.nominalBounds = new cjs.Rectangle(-136.7,302.4,274,237.4);
 		this.addEventListener("click", onClick);
 		playSound("timeout");
 	}
-	this.frame_149 = function() {
+	this.frame_89 = function() {
 		this.stop();
 		this.parent.onTimeEnd();
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(148).call(this.frame_149).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(88).call(this.frame_89).wait(1));
 
 	// anim
 	this.instance = new lib.timesUpAnim("synched",0,false);
@@ -5790,7 +5790,7 @@ p.nominalBounds = new cjs.Rectangle(-136.7,302.4,274,237.4);
 	this.instance.setTransform(400,300);
 	this.instance._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1).to({_off:false},0).wait(149));
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1).to({_off:false},0).wait(89));
 
 	// black
 	this.shape = new cjs.Shape();
@@ -5801,7 +5801,7 @@ p.nominalBounds = new cjs.Rectangle(-136.7,302.4,274,237.4);
 	this.shape_1.graphics.f("rgba(0,0,0,0.698)").s().p("EhBvAyxMAAAhlhMCDgAAAMAAABlhg");
 	this.shape_1.setTransform(402.9,308.9);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape}]}).to({state:[{t:this.shape_1}]},1).wait(149));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape}]}).to({state:[{t:this.shape_1}]},1).wait(89));
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
@@ -6721,29 +6721,40 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 			console.log(_this.myData);
 		}
 		var isTimeOut = false;
-		_this.onTimeEnd = function (){
+		this.onTimeEnd = function (){
 			_this.myData.qItem[_this.currentQ-1].time = _this.timeGiven;
 			isTimeOut = true;
 			saveData();
 		};
+		var saveAttempt=0;
 		function saveData(){
 			if (cUserId == ""){//not online
 				_this.gotoAndPlay("finalFb");
 			} else {
+				_this.mouseChildren=false;
+				saveAttempt++;
 				//save data here
-				var cData = $.post("/api/record/update/", 
-								_this.myData,
-									function(data){
-										console.log("set score"+data.message);
-										if (data.message=="success" && !isTimeOut){
-											_this.gotoAndPlay("finalFb");
-										} else if (data.message=="success"){
-											//nothing
-											nextScreen();
-										} else {
-											alert("Oppss... something went wrong. Please refresh your browser and try again.");
-										}
-									});
+				var cData = $.post("/api/record/update/", _this.myData, function(data) {
+				})
+				.done(function(data) {
+					console.log("set score: "+data.message);
+					if (data.message=="success" && !isTimeOut){
+						_this.gotoAndPlay("finalFb");
+					} else if (data.message=="success"){
+						//nothing
+						nextScreen();
+					} else {
+						console.log("Error encountered when writing to database.");
+					}
+				})
+				.fail(function() {
+					if (saveAttempt<=3){
+						alert("Oppss... something went wrong. We'll try saving your data again.");
+						saveData();
+					} else {
+						alert("Hmmm... we've tried 3 times and it's just NOT working. Please refresh your browser and try again.");
+					}
+				});
 			}
 		}
 		function doPlay(e){
@@ -7100,21 +7111,21 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/y6s20/Bitmap10.png?1534398021481", id:"Bitmap10"},
-		{src:"images/y6s20/Bitmap18.png?1534398021481", id:"Bitmap18"},
-		{src:"images/y6s20/Bitmap21.png?1534398021481", id:"Bitmap21"},
-		{src:"images/y6s20/Bitmap22.png?1534398021481", id:"Bitmap22"},
-		{src:"images/y6s20/Bitmap23.png?1534398021481", id:"Bitmap23"},
-		{src:"images/y6s20/Bitmap24.png?1534398021481", id:"Bitmap24"},
-		{src:"images/y6s20/Bitmap25.png?1534398021481", id:"Bitmap25"},
-		{src:"images/y6s20/Bitmap26.png?1534398021481", id:"Bitmap26"},
-		{src:"images/y6s20/Bitmap3.png?1534398021481", id:"Bitmap3"},
-		{src:"images/y6s20/Bitmap9.png?1534398021481", id:"Bitmap9"},
-		{src:"sounds/mdroid_talk.mp3?1534398021481", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1534398021481", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1534398021481", id:"questionComplete"},
-		{src:"sounds/submitAns.mp3?1534398021481", id:"submitAns"},
-		{src:"sounds/timeout.mp3?1534398021481", id:"timeout"}
+		{src:"images/y6s20/Bitmap10.png?1534915397432", id:"Bitmap10"},
+		{src:"images/y6s20/Bitmap18.png?1534915397432", id:"Bitmap18"},
+		{src:"images/y6s20/Bitmap21.png?1534915397432", id:"Bitmap21"},
+		{src:"images/y6s20/Bitmap22.png?1534915397432", id:"Bitmap22"},
+		{src:"images/y6s20/Bitmap23.png?1534915397432", id:"Bitmap23"},
+		{src:"images/y6s20/Bitmap24.png?1534915397432", id:"Bitmap24"},
+		{src:"images/y6s20/Bitmap25.png?1534915397432", id:"Bitmap25"},
+		{src:"images/y6s20/Bitmap26.png?1534915397432", id:"Bitmap26"},
+		{src:"images/y6s20/Bitmap3.png?1534915397432", id:"Bitmap3"},
+		{src:"images/y6s20/Bitmap9.png?1534915397432", id:"Bitmap9"},
+		{src:"sounds/mdroid_talk.mp3?1534915397432", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1534915397432", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1534915397432", id:"questionComplete"},
+		{src:"sounds/submitAns.mp3?1534915397432", id:"submitAns"},
+		{src:"sounds/timeout.mp3?1534915397432", id:"timeout"}
 	],
 	preloads: []
 };

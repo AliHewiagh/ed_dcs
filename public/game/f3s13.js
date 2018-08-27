@@ -4213,6 +4213,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 				"qDomain": 2,
 				"qParam": 4,
 				"qSkill": 16,
+				"userAns": "",
 				"qResult": 9,
 				"time": 0,
 				"score": 1
@@ -4222,6 +4223,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 				"qDomain": 2,
 				"qParam": 4,
 				"qSkill": 16,
+				"userAns": "",
 				"qResult": 9,
 				"time": 0,
 				"score": 1
@@ -4231,6 +4233,7 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 				"qDomain": 2,
 				"qParam": 4,
 				"qSkill": 16,
+				"userAns": "",
 				"qResult": 9,
 				"time": 0,
 				"score": 1
@@ -4261,29 +4264,40 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 			console.log(_this.myData);
 		}
 		var isTimeOut = false;
-		_this.onTimeEnd = function (){
+		this.onTimeEnd = function (){
 			_this.myData.qItem[_this.currentQ-1].time = _this.timeGiven;
 			isTimeOut = true;
 			saveData();
 		};
+		var saveAttempt=0;
 		function saveData(){
 			if (cUserId == ""){//not online
 				_this.gotoAndPlay("finalFb");
 			} else {
+				_this.mouseChildren=false;
+				saveAttempt++;
 				//save data here
-				var cData = $.post("/api/record/update/", 
-								_this.myData,
-									function(data){
-										console.log("set score"+data.message);
-										if (data.message=="success" && !isTimeOut){
-											_this.gotoAndPlay("finalFb");
-										} else if (data.message=="success"){
-											//nothing
-											nextScreen();
-										} else {
-											alert("Oppss... something went wrong. Please refresh your browser and try again.");
-										}
-									});
+				var cData = $.post("/api/record/update/", _this.myData, function(data) {
+				})
+				.done(function(data) {
+					console.log("set score: "+data.message);
+					if (data.message=="success" && !isTimeOut){
+						_this.gotoAndPlay("finalFb");
+					} else if (data.message=="success"){
+						//nothing
+						nextScreen();
+					} else {
+						console.log("Error encountered when writing to database.");
+					}
+				})
+				.fail(function() {
+					if (saveAttempt<=3){
+						alert("Oppss... something went wrong. We'll try saving your data again.");
+						saveData();
+					} else {
+						alert("Hmmm... we've tried 3 times and it's just NOT working. Please refresh your browser and try again.");
+					}
+				});
 			}
 		}
 		function doPlay(e){

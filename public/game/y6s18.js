@@ -5334,29 +5334,40 @@ p.nominalBounds = new cjs.Rectangle(85.8,181,639.8,366);
 			console.log(_this.myData);
 		}
 		var isTimeOut = false;
-		_this.onTimeEnd = function (){
+		this.onTimeEnd = function (){
 			_this.myData.qItem[_this.currentQ-1].time = _this.timeGiven;
 			isTimeOut = true;
 			saveData();
 		};
+		var saveAttempt=0;
 		function saveData(){
 			if (cUserId == ""){//not online
 				_this.gotoAndPlay("finalFb");
 			} else {
+				_this.mouseChildren=false;
+				saveAttempt++;
 				//save data here
-				var cData = $.post("/api/record/update/", 
-								_this.myData,
-									function(data){
-										console.log("set score"+data.message);
-										if (data.message=="success" && !isTimeOut){
-											_this.gotoAndPlay("finalFb");
-										} else if (data.message=="success"){
-											//nothing
-											nextScreen();
-										} else {
-											alert("Oppss... something went wrong. Please refresh your browser and try again.");
-										}
-									});
+				var cData = $.post("/api/record/update/", _this.myData, function(data) {
+				})
+				.done(function(data) {
+					console.log("set score: "+data.message);
+					if (data.message=="success" && !isTimeOut){
+						_this.gotoAndPlay("finalFb");
+					} else if (data.message=="success"){
+						//nothing
+						nextScreen();
+					} else {
+						console.log("Error encountered when writing to database.");
+					}
+				})
+				.fail(function() {
+					if (saveAttempt<=3){
+						alert("Oppss... something went wrong. We'll try saving your data again.");
+						saveData();
+					} else {
+						alert("Hmmm... we've tried 3 times and it's just NOT working. Please refresh your browser and try again.");
+					}
+				});
 			}
 		}
 		function doPlay(e){
@@ -5708,23 +5719,23 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/y6s18/Bitmap21.png?1534397637779", id:"Bitmap21"},
-		{src:"images/y6s18/Bitmap22.png?1534397637779", id:"Bitmap22"},
-		{src:"images/y6s18/Bitmap28.png?1534397637779", id:"Bitmap28"},
-		{src:"images/y6s18/Bitmap3.png?1534397637779", id:"Bitmap3"},
-		{src:"images/y6s18/Bitmap30.png?1534397637779", id:"Bitmap30"},
-		{src:"images/y6s18/Bitmap31.png?1534397637779", id:"Bitmap31"},
-		{src:"images/y6s18/Bitmap32.png?1534397637779", id:"Bitmap32"},
-		{src:"images/y6s18/Bitmap9.png?1534397637779", id:"Bitmap9"},
-		{src:"sounds/mdroid_talk.mp3?1534397637779", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1534397637779", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1534397637779", id:"questionComplete"},
-		{src:"sounds/stdClick.mp3?1534397637779", id:"stdClick"},
-		{src:"sounds/submitAns.mp3?1534397637779", id:"submitAns"},
-		{src:"sounds/timeout.mp3?1534397637779", id:"timeout"},
-		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1534397637779", id:"lib/jquery-2.2.4.min.js"},
-		{src:"components/sdk/anwidget.js?1534397637779", id:"sdk/anwidget.js"},
-		{src:"components/ui/src/textinput.js?1534397637779", id:"an.TextInput"}
+		{src:"images/y6s18/Bitmap21.png?1534913676547", id:"Bitmap21"},
+		{src:"images/y6s18/Bitmap22.png?1534913676547", id:"Bitmap22"},
+		{src:"images/y6s18/Bitmap28.png?1534913676547", id:"Bitmap28"},
+		{src:"images/y6s18/Bitmap3.png?1534913676547", id:"Bitmap3"},
+		{src:"images/y6s18/Bitmap30.png?1534913676547", id:"Bitmap30"},
+		{src:"images/y6s18/Bitmap31.png?1534913676547", id:"Bitmap31"},
+		{src:"images/y6s18/Bitmap32.png?1534913676547", id:"Bitmap32"},
+		{src:"images/y6s18/Bitmap9.png?1534913676547", id:"Bitmap9"},
+		{src:"sounds/mdroid_talk.mp3?1534913676547", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1534913676547", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1534913676547", id:"questionComplete"},
+		{src:"sounds/stdClick.mp3?1534913676547", id:"stdClick"},
+		{src:"sounds/submitAns.mp3?1534913676547", id:"submitAns"},
+		{src:"sounds/timeout.mp3?1534913676547", id:"timeout"},
+		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1534913676547", id:"lib/jquery-2.2.4.min.js"},
+		{src:"components/sdk/anwidget.js?1534913676547", id:"sdk/anwidget.js"},
+		{src:"components/ui/src/textinput.js?1534913676547", id:"an.TextInput"}
 	],
 	preloads: []
 };
