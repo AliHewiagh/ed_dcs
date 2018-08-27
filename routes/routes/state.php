@@ -29,3 +29,6 @@ Route::get('/top/student/{type}', 'State\LeaderBoardController@topStudents');
 
 // Student
 Route::PATCH('/student/done/update/{id}', 'State\StudentController@doneUpdate');
+Route::get('/student/edit/{id}', 'State\StudentController@edit');
+Route::post('/student/edit/{id}', 'State\StudentController@store');
+Route::delete('/student/delete/{id}', 'State\StudentController@destroy');

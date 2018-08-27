@@ -6901,6 +6901,7 @@ p.nominalBounds = new cjs.Rectangle(447.9,299,310.2,218);
 		if (typeof cUserId === "undefined") {
 			cUserId = "";
 		}
+		//this.timeGiven = 10;//time in seconds
 		this.timeGiven = 300;//time in seconds
 		this.secRemaining = this.timeGiven;
 		this.timeTaken = 0;
@@ -7000,24 +7001,35 @@ p.nominalBounds = new cjs.Rectangle(447.9,299,310.2,218);
 			isTimeOut = true;
 			saveData();
 		};
+		var saveAttempt=0;
 		function saveData(){
 			if (cUserId == ""){//not online
 				_this.gotoAndPlay("finalFb");
 			} else {
+				_this.mouseChildren=false;
+				saveAttempt++;
 				//save data here
-				var cData = $.post("/api/record/update/", 
-								_this.myData,
-									function(data){
-										console.log("set score"+data.message);
-										if (data.message=="success" && !isTimeOut){
-											_this.gotoAndPlay("finalFb");
-										} else if (data.message=="success"){
-											//nothing
-											nextScreen();
-										} else {
-											alert("Oppss... something went wrong. Please refresh your browser and try again.");
-										}
-									});
+				var cData = $.post("/api/record/update/", _this.myData, function(data) {
+				})
+				.done(function(data) {
+					console.log("set score: "+data.message);
+					if (data.message=="success" && !isTimeOut){
+						_this.gotoAndPlay("finalFb");
+					} else if (data.message=="success"){
+						//nothing
+						nextScreen();
+					} else {
+						console.log("Error encountered when writing to database.");
+					}
+				})
+				.fail(function() {
+					if (saveAttempt<=3){
+						alert("Oppss... something went wrong. We'll try saving your data again.");
+						saveData();
+					} else {
+						alert("Hmmm... we've tried 3 times and it's just NOT working. Please refresh your browser and try again.");
+					}
+				});
 			}
 		}
 		function doPlay(e){
@@ -7397,10 +7409,9 @@ lib.properties = {
 		{src:"images/f5s15/Integratedcircuit.jpg", id:"Integratedcircuit"},
 		{src:"sounds/mdroid_talk.mp3", id:"mdroid_talk"},
 		{src:"sounds/questionAlert.mp3", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp", id:"questionComplete"},
+		{src:"sounds/questionComplete.mp3", id:"questionComplete"},
 		{src:"sounds/stdClick.mp3", id:"stdClick"},
 		{src:"sounds/submitAns.mp3", id:"submitAns"},
-		{src:"sounds/suspense.mp3", id:"suspense"},
 		{src:"sounds/timeout.mp3", id:"timeout"},
 		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1529741297802", id:"lib/jquery-2.2.4.min.js"},
 		{src:"components/sdk/anwidget.js", id:"sdk/anwidget.js"},

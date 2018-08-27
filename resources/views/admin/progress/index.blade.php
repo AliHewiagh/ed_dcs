@@ -5,6 +5,7 @@
     <div class="content-wrapper">
         <section class="content-header">
             <h1>Nationwide Progress</h1>
+            <!--a href="{{url('/admin/export/cvs/report')}}" class="btn btn-primary">Export Report</a-->
         </section>
         <section class="content">
             <div class="row">

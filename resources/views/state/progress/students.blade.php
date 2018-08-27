@@ -50,7 +50,7 @@
                                             <td>{{count($stages)}}/20</td>
                                             <td>@if($student->done == 1) <span class="badge label-success">Yes</span> @else <span class="badge label-danger">No</span> @endif</td>
                                             <td>
-                                                <form method="post" action="{{url('/state/student/done/update/'.$student->id)}}">
+                                                <form method="post" action="{{url('/state/student/done/update/'.$student->id)}}" style="margin-bottom:5px">
                                                     @csrf @method('PATCH')
                                                     @if($student->done == 1 && count($stages) == 20)
                                                     @elseif($student->done == 1)
@@ -59,8 +59,22 @@
                                                         <button type="submit" class="btn btn-success">Mark As Done</button>
                                                     @endif
                                                 </form>
+                                                <a href="{{url('/state/student/edit/'.$student->id)}}" class="btn btn-warning">Edit</a>
+                                                <a href="#modalDelete{{$student->id}}" class="btn btn-danger">Delete</a>
                                             </td>
                                         </tr>
+                                        <div data-remodal-id="modalDelete{{$student->id}}" role="dialog" class="delete_model_c">
+                                            <div>
+                                                <h2>Delete Student</h2>
+                                                <p>All records of this student will be DELETED. This action CANNOT be reversed. Are you sure?</p>
+                                            </div>
+                                            <br>
+                                            <form method="post" action="{{url('/state/student/delete/'.$student->id)}}">
+                                                @csrf @method('DELETE')
+                                                <button data-remodal-action="cancel" class="remodal-confirm">No</button>
+                                                <button type="submit" class="remodal-cancel">Yes</button>
+                                            </form>
+                                        </div>
                                     @endforeach
                                     </tbody>
                                 </table>
@@ -74,6 +88,7 @@
     @include('state.partial.footer')
     @include('partial.scripts')
     <script>
+        $('.delete_model_c').remodal();
         $(function () {
             $("#example1").DataTable();
             $('#example2').DataTable();

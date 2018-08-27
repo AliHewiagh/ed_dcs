@@ -57,7 +57,6 @@
 	<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
 	
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-	<script src="http://malsup.github.com/jquery.form.js"></script>
     <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
 	<script src="{{asset('game/phaser.min.js')}}"></script>
 	<script src="{{asset('game/nine-patch-phaser-plugin.min.js')}}"></script>

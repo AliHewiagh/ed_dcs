@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit1b7f94d600968eb1100fddc05b67138c
+class ComposerStaticInit4abdfced7bf8db4351a19cf4217bb04a
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -366,6 +366,7 @@ class ComposerStaticInit1b7f94d600968eb1100fddc05b67138c
         'App\\Http\\Controllers\\API\\RecordController' => __DIR__ . '/../..' . '/app/Http/Controllers/API/RecordController.php',
         'App\\Http\\Controllers\\API\\StageController' => __DIR__ . '/../..' . '/app/Http/Controllers/API/StageController.php',
         'App\\Http\\Controllers\\Admin\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/DashboardController.php',
+        'App\\Http\\Controllers\\Admin\\ExportReportController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ExportReportController.php',
         'App\\Http\\Controllers\\Admin\\LeaderBoardController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/LeaderBoardController.php',
         'App\\Http\\Controllers\\Admin\\PkgAdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/PkgAdminController.php',
         'App\\Http\\Controllers\\Admin\\ProgressController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ProgressController.php',
@@ -416,6 +417,7 @@ class ComposerStaticInit1b7f94d600968eb1100fddc05b67138c
         'App\\State' => __DIR__ . '/../..' . '/app/State.php',
         'App\\StudentRecord' => __DIR__ . '/../..' . '/app/StudentRecord.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
+        'App\\export\\SchoolReportExport' => __DIR__ . '/../..' . '/app/export/SchoolReportExport.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
         'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
@@ -4128,10 +4130,10 @@ class ComposerStaticInit1b7f94d600968eb1100fddc05b67138c
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit1b7f94d600968eb1100fddc05b67138c::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit1b7f94d600968eb1100fddc05b67138c::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit1b7f94d600968eb1100fddc05b67138c::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit1b7f94d600968eb1100fddc05b67138c::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit4abdfced7bf8db4351a19cf4217bb04a::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit4abdfced7bf8db4351a19cf4217bb04a::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit4abdfced7bf8db4351a19cf4217bb04a::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit4abdfced7bf8db4351a19cf4217bb04a::$classMap;
 
         }, null, ClassLoader::class);
     }

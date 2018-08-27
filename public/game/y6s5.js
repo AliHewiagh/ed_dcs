@@ -3715,29 +3715,40 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 			console.log(_this.myData);
 		}
 		var isTimeOut = false;
-		_this.onTimeEnd = function (){
+		this.onTimeEnd = function (){
 			_this.myData.qItem[_this.currentQ-1].time = _this.timeGiven;
 			isTimeOut = true;
 			saveData();
 		};
+		var saveAttempt=0;
 		function saveData(){
 			if (cUserId == ""){//not online
 				_this.gotoAndPlay("finalFb");
 			} else {
+				_this.mouseChildren=false;
+				saveAttempt++;
 				//save data here
-				var cData = $.post("/api/record/update/", 
-								_this.myData,
-									function(data){
-										console.log("set score"+data.message);
-										if (data.message=="success" && !isTimeOut){
-											_this.gotoAndPlay("finalFb");
-										} else if (data.message=="success"){
-											//nothing
-											nextScreen();
-										} else {
-											alert("Oppss... something went wrong. Please refresh your browser and try again.");
-										}
-									});
+				var cData = $.post("/api/record/update/", _this.myData, function(data) {
+				})
+				.done(function(data) {
+					console.log("set score: "+data.message);
+					if (data.message=="success" && !isTimeOut){
+						_this.gotoAndPlay("finalFb");
+					} else if (data.message=="success"){
+						//nothing
+						nextScreen();
+					} else {
+						console.log("Error encountered when writing to database.");
+					}
+				})
+				.fail(function() {
+					if (saveAttempt<=3){
+						alert("Oppss... something went wrong. We'll try saving your data again.");
+						saveData();
+					} else {
+						alert("Hmmm... we've tried 3 times and it's just NOT working. Please refresh your browser and try again.");
+					}
+				});
 			}
 		}
 		function doPlay(e){
@@ -4101,37 +4112,37 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/y6s5/Bitmap21.png?1534389321365", id:"Bitmap21"},
-		{src:"images/y6s5/Bitmap22.png?1534389321365", id:"Bitmap22"},
-		{src:"images/y6s5/Bitmap23.png?1534389321365", id:"Bitmap23"},
-		{src:"images/y6s5/Bitmap27.png?1534389321365", id:"Bitmap27"},
-		{src:"images/y6s5/Bitmap29.png?1534389321365", id:"Bitmap29"},
-		{src:"images/y6s5/Bitmap3.png?1534389321365", id:"Bitmap3"},
-		{src:"images/y6s5/Bitmap30.png?1534389321365", id:"Bitmap30"},
-		{src:"images/y6s5/Bitmap31.png?1534389321365", id:"Bitmap31"},
-		{src:"images/y6s5/Bitmap32.png?1534389321365", id:"Bitmap32"},
-		{src:"images/y6s5/Bitmap33.png?1534389321365", id:"Bitmap33"},
-		{src:"images/y6s5/Bitmap34.png?1534389321365", id:"Bitmap34"},
-		{src:"images/y6s5/Bitmap35.png?1534389321365", id:"Bitmap35"},
-		{src:"images/y6s5/Bitmap36.png?1534389321365", id:"Bitmap36"},
-		{src:"images/y6s5/Bitmap37.png?1534389321365", id:"Bitmap37"},
-		{src:"images/y6s5/Bitmap38.png?1534389321365", id:"Bitmap38"},
-		{src:"images/y6s5/Bitmap39.png?1534389321365", id:"Bitmap39"},
-		{src:"images/y6s5/Bitmap40.png?1534389321365", id:"Bitmap40"},
-		{src:"images/y6s5/Bitmap41.png?1534389321365", id:"Bitmap41"},
-		{src:"images/y6s5/Bitmap42.png?1534389321365", id:"Bitmap42"},
-		{src:"images/y6s5/Bitmap43.png?1534389321365", id:"Bitmap43"},
-		{src:"images/y6s5/Bitmap44.png?1534389321365", id:"Bitmap44"},
-		{src:"images/y6s5/Bitmap45.png?1534389321365", id:"Bitmap45"},
-		{src:"images/y6s5/Bitmap8.png?1534389321365", id:"Bitmap8"},
-		{src:"images/y6s5/Bitmap9.png?1534389321365", id:"Bitmap9"},
-		{src:"images/y6s5/Bitmap22_1.png?1534389321365", id:"Bitmap22_1"},
-		{src:"sounds/mdroid_talk.mp3?1534389321366", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1534389321366", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1534389321366", id:"questionComplete"},
-		{src:"sounds/stdClick.mp3?1534389321366", id:"stdClick"},
-		{src:"sounds/submitAns.mp3?1534389321366", id:"submitAns"},
-		{src:"sounds/timeout.mp3?1534389321366", id:"timeout"}
+		{src:"images/y6s5/Bitmap21.png?1534907436603", id:"Bitmap21"},
+		{src:"images/y6s5/Bitmap22.png?1534907436603", id:"Bitmap22"},
+		{src:"images/y6s5/Bitmap23.png?1534907436603", id:"Bitmap23"},
+		{src:"images/y6s5/Bitmap27.png?1534907436603", id:"Bitmap27"},
+		{src:"images/y6s5/Bitmap29.png?1534907436603", id:"Bitmap29"},
+		{src:"images/y6s5/Bitmap3.png?1534907436603", id:"Bitmap3"},
+		{src:"images/y6s5/Bitmap30.png?1534907436603", id:"Bitmap30"},
+		{src:"images/y6s5/Bitmap31.png?1534907436603", id:"Bitmap31"},
+		{src:"images/y6s5/Bitmap32.png?1534907436603", id:"Bitmap32"},
+		{src:"images/y6s5/Bitmap33.png?1534907436603", id:"Bitmap33"},
+		{src:"images/y6s5/Bitmap34.png?1534907436603", id:"Bitmap34"},
+		{src:"images/y6s5/Bitmap35.png?1534907436603", id:"Bitmap35"},
+		{src:"images/y6s5/Bitmap36.png?1534907436603", id:"Bitmap36"},
+		{src:"images/y6s5/Bitmap37.png?1534907436603", id:"Bitmap37"},
+		{src:"images/y6s5/Bitmap38.png?1534907436603", id:"Bitmap38"},
+		{src:"images/y6s5/Bitmap39.png?1534907436603", id:"Bitmap39"},
+		{src:"images/y6s5/Bitmap40.png?1534907436603", id:"Bitmap40"},
+		{src:"images/y6s5/Bitmap41.png?1534907436603", id:"Bitmap41"},
+		{src:"images/y6s5/Bitmap42.png?1534907436603", id:"Bitmap42"},
+		{src:"images/y6s5/Bitmap43.png?1534907436603", id:"Bitmap43"},
+		{src:"images/y6s5/Bitmap44.png?1534907436603", id:"Bitmap44"},
+		{src:"images/y6s5/Bitmap45.png?1534907436603", id:"Bitmap45"},
+		{src:"images/y6s5/Bitmap8.png?1534907436603", id:"Bitmap8"},
+		{src:"images/y6s5/Bitmap9.png?1534907436603", id:"Bitmap9"},
+		{src:"images/y6s5/Bitmap22_1.png?1534907436603", id:"Bitmap22_1"},
+		{src:"sounds/mdroid_talk.mp3?1534907436603", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1534907436603", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1534907436603", id:"questionComplete"},
+		{src:"sounds/stdClick.mp3?1534907436603", id:"stdClick"},
+		{src:"sounds/submitAns.mp3?1534907436603", id:"submitAns"},
+		{src:"sounds/timeout.mp3?1534907436603", id:"timeout"}
 	],
 	preloads: []
 };

@@ -8389,13 +8389,13 @@ p.nominalBounds = new cjs.Rectangle(-136.7,302.4,274,237.4);
 		this.addEventListener("click", onClick);
 		playSound("timeout");
 	}
-	this.frame_149 = function() {
+	this.frame_89 = function() {
 		this.stop();
 		this.parent.onTimeEnd();
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(148).call(this.frame_149).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(88).call(this.frame_89).wait(1));
 
 	// anim
 	this.instance = new lib.timesUpAnim("synched",0,false);
@@ -8403,7 +8403,7 @@ p.nominalBounds = new cjs.Rectangle(-136.7,302.4,274,237.4);
 	this.instance.setTransform(400,300);
 	this.instance._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1).to({_off:false},0).wait(149));
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1).to({_off:false},0).wait(89));
 
 	// black
 	this.shape = new cjs.Shape();
@@ -8414,7 +8414,7 @@ p.nominalBounds = new cjs.Rectangle(-136.7,302.4,274,237.4);
 	this.shape_1.graphics.f("rgba(0,0,0,0.698)").s().p("EhBvAyxMAAAhlhMCDgAAAMAAABlhg");
 	this.shape_1.setTransform(402.9,308.9);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape}]}).to({state:[{t:this.shape_1}]},1).wait(149));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape}]}).to({state:[{t:this.shape_1}]},1).wait(89));
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(-85.5,78.7,24,28);
@@ -8600,6 +8600,11 @@ p.nominalBounds = new cjs.Rectangle(-58.5,-62.4,129.9,129.9);
 		txtAns.onkeyup = function (e){
 			_this.updateAll();
 		};
+		txtAns.onpaste = function (e){
+			setTimeout(function(){
+				_this.updateAll();
+			}, 500);
+		};
 		this.updateAll = function (){
 			if (txtAns.value!=""){
 				_this.btnSubmit.mouseEnabled = true;
@@ -8692,6 +8697,11 @@ p.nominalBounds = new cjs.Rectangle(229,262.1,343.2,277.6);
 		});
 		txtAns.onkeyup = function (e){
 			_this.updateAll();
+		};
+		txtAns.onpaste = function (e){
+			setTimeout(function(){
+				_this.updateAll();
+			}, 500);
 		};
 		this.updateAll = function (){
 			if (txtAns.value!=""){
@@ -8786,6 +8796,11 @@ p.nominalBounds = new cjs.Rectangle(229,262.1,343.2,277.6);
 		txtAns.onkeyup = function (e){
 			_this.updateAll();
 		};
+		txtAns.onpaste = function (e){
+			setTimeout(function(){
+				_this.updateAll();
+			}, 500);
+		};
 		this.updateAll = function (){
 			if (txtAns.value!=""){
 				_this.btnSubmit.mouseEnabled = true;
@@ -8878,6 +8893,11 @@ p.nominalBounds = new cjs.Rectangle(229,262.1,343.2,277.6);
 		});
 		txtAns.onkeyup = function (e){
 			_this.updateAll();
+		};
+		txtAns.onpaste = function (e){
+			setTimeout(function(){
+				_this.updateAll();
+			}, 500);
 		};
 		this.updateAll = function (){
 			if (txtAns.value!=""){
@@ -8972,6 +8992,11 @@ p.nominalBounds = new cjs.Rectangle(229,262.1,343.2,277.6);
 		txtAns.onkeyup = function (e){
 			_this.updateAll();
 		};
+		txtAns.onpaste = function (e){
+			setTimeout(function(){
+				_this.updateAll();
+			}, 500);
+		};
 		this.updateAll = function (){
 			if (txtAns.value!=""){
 				_this.btnSubmit.mouseEnabled = true;
@@ -9064,6 +9089,11 @@ p.nominalBounds = new cjs.Rectangle(229,262.1,343.2,277.6);
 		});
 		txtAns.onkeyup = function (e){
 			_this.updateAll();
+		};
+		txtAns.onpaste = function (e){
+			setTimeout(function(){
+				_this.updateAll();
+			}, 500);
 		};
 		this.updateAll = function (){
 			if (txtAns.value!=""){
@@ -9158,6 +9188,11 @@ p.nominalBounds = new cjs.Rectangle(229,262.1,343.2,277.6);
 		txtAns.onkeyup = function (e){
 			_this.updateAll();
 		};
+		txtAns.onpaste = function (e){
+			setTimeout(function(){
+				_this.updateAll();
+			}, 500);
+		};
 		this.updateAll = function (){
 			if (txtAns.value!=""){
 				_this.btnSubmit.mouseEnabled = true;
@@ -9250,6 +9285,11 @@ p.nominalBounds = new cjs.Rectangle(229,262.1,343.2,277.6);
 		});
 		txtAns.onkeyup = function (e){
 			_this.updateAll();
+		};
+		txtAns.onpaste = function (e){
+			setTimeout(function(){
+				_this.updateAll();
+			}, 500);
 		};
 		this.updateAll = function (){
 			if (txtAns.value!=""){
@@ -9344,6 +9384,11 @@ p.nominalBounds = new cjs.Rectangle(229,262.1,343.2,277.6);
 		txtAns.onkeyup = function (e){
 			_this.updateAll();
 		};
+		txtAns.onpaste = function (e){
+			setTimeout(function(){
+				_this.updateAll();
+			}, 500);
+		};
 		this.updateAll = function (){
 			if (txtAns.value!=""){
 				_this.btnSubmit.mouseEnabled = true;
@@ -9437,6 +9482,11 @@ p.nominalBounds = new cjs.Rectangle(229,262.1,343.2,277.6);
 		txtAns.onkeyup = function (e){
 			_this.updateAll();
 		};
+		txtAns.onpaste = function (e){
+			setTimeout(function(){
+				_this.updateAll();
+			}, 500);
+		};
 		this.updateAll = function (){
 			if (txtAns.value!=""){
 				_this.btnSubmit.mouseEnabled = true;
@@ -9529,6 +9579,11 @@ p.nominalBounds = new cjs.Rectangle(229,262.1,343.2,277.6);
 		});
 		txtAns.onkeyup = function (e){
 			_this.updateAll();
+		};
+		txtAns.onpaste = function (e){
+			setTimeout(function(){
+				_this.updateAll();
+			}, 500);
 		};
 		this.updateAll = function (){
 			if (txtAns.value!=""){
@@ -9631,6 +9686,16 @@ p.nominalBounds = new cjs.Rectangle(229,262.1,343.2,277.6);
 		};
 		txtAns2.onkeyup = function (e){
 			_this.updateAll();
+		};
+		txtAns1.onpaste = function (e){
+			setTimeout(function(){
+				_this.updateAll();
+			}, 500);
+		};
+		txtAns2.onpaste = function (e){
+			setTimeout(function(){
+				_this.updateAll();
+			}, 500);
 		};
 		this.updateAll = function (){
 			if (txtAns1.value!="" && txtAns2.value!=""){
@@ -9767,6 +9832,11 @@ p.nominalBounds = new cjs.Rectangle(229,262.1,343.2,277.6);
 		txtAns.onkeyup = function (e){
 			_this.updateAll();
 		};
+		txtAns.onpaste = function (e){
+			setTimeout(function(){
+				_this.updateAll();
+			}, 500);
+		};
 		this.updateAll = function (){
 			if (txtAns.value!=""){
 				_this.btnSubmit.mouseEnabled = true;
@@ -9859,6 +9929,11 @@ p.nominalBounds = new cjs.Rectangle(229,262.1,343.2,277.6);
 		});
 		txtAns.onkeyup = function (e){
 			_this.updateAll();
+		};
+		txtAns.onpaste = function (e){
+			setTimeout(function(){
+				_this.updateAll();
+			}, 500);
 		};
 		this.updateAll = function (){
 			if (txtAns.value!=""){
@@ -9954,6 +10029,11 @@ p.nominalBounds = new cjs.Rectangle(229,262.1,343.2,277.6);
 		txtAns.onkeyup = function (e){
 			_this.updateAll();
 		};
+		txtAns.onpaste = function (e){
+			setTimeout(function(){
+				_this.updateAll();
+			}, 500);
+		};
 		this.updateAll = function (){
 			if (txtAns.value!=""){
 				_this.btnSubmit.mouseEnabled = true;
@@ -10046,6 +10126,11 @@ p.nominalBounds = new cjs.Rectangle(229,262.1,343.2,277.6);
 		});
 		txtAns.onkeyup = function (e){
 			_this.updateAll();
+		};
+		txtAns.onpaste = function (e){
+			setTimeout(function(){
+				_this.updateAll();
+			}, 500);
 		};
 		this.updateAll = function (){
 			if (txtAns.value!=""){
@@ -10349,29 +10434,40 @@ p.nominalBounds = new cjs.Rectangle(175.7,262.1,449,277.6);
 			console.log(_this.myData);
 		}
 		var isTimeOut = false;
-		_this.onTimeEnd = function (){
+		this.onTimeEnd = function (){
 			_this.myData.qItem[_this.currentQ-1].time = _this.timeGiven;
 			isTimeOut = true;
 			saveData();
 		};
+		var saveAttempt=0;
 		function saveData(){
 			if (cUserId == ""){//not online
 				_this.gotoAndPlay("finalFb");
 			} else {
+				_this.mouseChildren=false;
+				saveAttempt++;
 				//save data here
-				var cData = $.post("/api/record/update/", 
-								_this.myData,
-									function(data){
-										console.log("set score"+data.message);
-										if (data.message=="success" && !isTimeOut){
-											_this.gotoAndPlay("finalFb");
-										} else if (data.message=="success"){
-											//nothing
-											nextScreen();
-										} else {
-											alert("Oppss... something went wrong. Please refresh your browser and try again.");
-										}
-									});
+				var cData = $.post("/api/record/update/", _this.myData, function(data) {
+				})
+				.done(function(data) {
+					console.log("set score: "+data.message);
+					if (data.message=="success" && !isTimeOut){
+						_this.gotoAndPlay("finalFb");
+					} else if (data.message=="success"){
+						//nothing
+						nextScreen();
+					} else {
+						console.log("Error encountered when writing to database.");
+					}
+				})
+				.fail(function() {
+					if (saveAttempt<=3){
+						alert("Oppss... something went wrong. We'll try saving your data again.");
+						saveData();
+					} else {
+						alert("Hmmm... we've tried 3 times and it's just NOT working. Please refresh your browser and try again.");
+					}
+				});
 			}
 		}
 		function doPlay(e){
@@ -10598,9 +10694,13 @@ p.nominalBounds = new cjs.Rectangle(175.7,262.1,449,277.6);
 
 	this.instance_9 = new lib.actMc5_2();
 	this.instance_9.parent = this;
+	this.instance_9.setTransform(0,310);
+	this.instance_9._off = true;
 
 	this.instance_10 = new lib.actMc7();
 	this.instance_10.parent = this;
+	this.instance_10.setTransform(0,310);
+	this.instance_10._off = true;
 
 	this.instance_11 = new lib.actMc8();
 	this.instance_11.parent = this;
@@ -10653,12 +10753,13 @@ p.nominalBounds = new cjs.Rectangle(175.7,262.1,449,277.6);
 		maskedShapeInstanceList[shapedInstanceItr].mask = mask;
 	}
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_4}]},95).to({state:[{t:this.instance_4}]},13).to({state:[]},6).to({state:[{t:this.instance_5}]},22).to({state:[{t:this.instance_5}]},13).to({state:[]},6).to({state:[{t:this.instance_6}]},22).to({state:[{t:this.instance_6}]},13).to({state:[]},6).to({state:[{t:this.instance_7}]},22).to({state:[{t:this.instance_7}]},13).to({state:[]},6).to({state:[{t:this.instance_8}]},22).to({state:[{t:this.instance_8}]},13).to({state:[]},2).to({state:[{t:this.instance_8}]},28).to({state:[{t:this.instance_9}]},13).to({state:[]},2).to({state:[{t:this.instance_7}]},29).to({state:[{t:this.instance_10}]},13).to({state:[]},3).to({state:[{t:this.instance_11}]},28).to({state:[{t:this.instance_11}]},13).to({state:[]},2).to({state:[{t:this.instance_12}]},29).to({state:[{t:this.instance_12}]},13).to({state:[]},2).to({state:[{t:this.instance_13}]},32).to({state:[{t:this.instance_13}]},13).to({state:[]},2).to({state:[{t:this.instance_14}]},29).to({state:[{t:this.instance_14}]},13).to({state:[]},2).to({state:[{t:this.instance_15}]},30).to({state:[{t:this.instance_15}]},13).to({state:[]},2).to({state:[{t:this.instance_16}]},27).to({state:[{t:this.instance_16}]},13).to({state:[]},2).to({state:[{t:this.instance_17}]},30).to({state:[{t:this.instance_17}]},13).to({state:[]},2).to({state:[{t:this.instance_18}]},25).to({state:[{t:this.instance_18}]},13).to({state:[]},2).to({state:[{t:this.instance_19}]},30).to({state:[{t:this.instance_19}]},13).to({state:[]},2).wait(189));
 	this.timeline.addTween(cjs.Tween.get(this.instance_4).wait(95).to({_off:false},0).to({y:0},13,cjs.Ease.cubicOut).to({_off:true},6).wait(832));
 	this.timeline.addTween(cjs.Tween.get(this.instance_5).wait(136).to({_off:false},0).to({y:0},13,cjs.Ease.cubicOut).to({_off:true},6).wait(791));
 	this.timeline.addTween(cjs.Tween.get(this.instance_6).wait(177).to({_off:false},0).to({y:0},13,cjs.Ease.cubicOut).to({_off:true},6).wait(750));
-	this.timeline.addTween(cjs.Tween.get(this.instance_7).wait(218).to({_off:false},0).to({y:0},13,cjs.Ease.cubicOut).to({_off:true},6).wait(109).to({_off:false,y:310},0).to({_off:true,y:0},13,cjs.Ease.cubicOut).wait(587));
-	this.timeline.addTween(cjs.Tween.get(this.instance_8).wait(259).to({_off:false},0).to({y:0},13,cjs.Ease.cubicOut).to({_off:true},2).wait(28).to({_off:false,y:310},0).to({_off:true,y:0},13,cjs.Ease.cubicOut).wait(631));
+	this.timeline.addTween(cjs.Tween.get(this.instance_7).wait(218).to({_off:false},0).to({y:0},13,cjs.Ease.cubicOut).to({_off:true},6).wait(709));
+	this.timeline.addTween(cjs.Tween.get(this.instance_8).wait(259).to({_off:false},0).to({y:0},13,cjs.Ease.cubicOut).to({_off:true},2).wait(672));
+	this.timeline.addTween(cjs.Tween.get(this.instance_9).wait(302).to({_off:false},0).to({y:0},13,cjs.Ease.cubicOut).to({_off:true},2).wait(629));
+	this.timeline.addTween(cjs.Tween.get(this.instance_10).wait(346).to({_off:false},0).to({y:0},13,cjs.Ease.cubicOut).to({_off:true},3).wait(584));
 	this.timeline.addTween(cjs.Tween.get(this.instance_11).wait(390).to({_off:false},0).to({y:0},13,cjs.Ease.cubicOut).to({_off:true},2).wait(541));
 	this.timeline.addTween(cjs.Tween.get(this.instance_12).wait(434).to({_off:false},0).to({y:0},13,cjs.Ease.cubicOut).to({_off:true},2).wait(497));
 	this.timeline.addTween(cjs.Tween.get(this.instance_13).wait(481).to({_off:false},0).to({y:0},13,cjs.Ease.cubicOut).to({_off:true},2).wait(450));
@@ -10923,18 +11024,18 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/y6s10/Bitmap19.png?1534391098750", id:"Bitmap19"},
-		{src:"images/y6s10/Bitmap22.png?1534391098750", id:"Bitmap22"},
-		{src:"images/y6s10/Bitmap3.png?1534391098750", id:"Bitmap3"},
-		{src:"images/y6s10/Bitmap9.png?1534391098750", id:"Bitmap9"},
-		{src:"sounds/mdroid_talk.mp3?1534391098750", id:"mdroid_talk"},
-		{src:"sounds/questionAlert.mp3?1534391098750", id:"questionAlert"},
-		{src:"sounds/questionComplete.mp3?1534391098750", id:"questionComplete"},
-		{src:"sounds/submitAns.mp3?1534391098750", id:"submitAns"},
-		{src:"sounds/timeout.mp3?1534391098750", id:"timeout"},
-		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1534391098750", id:"lib/jquery-2.2.4.min.js"},
-		{src:"components/sdk/anwidget.js?1534391098750", id:"sdk/anwidget.js"},
-		{src:"components/ui/src/textinput.js?1534391098750", id:"an.TextInput"}
+		{src:"images/y6s10/Bitmap19.png?1534920482595", id:"Bitmap19"},
+		{src:"images/y6s10/Bitmap22.png?1534920482595", id:"Bitmap22"},
+		{src:"images/y6s10/Bitmap3.png?1534920482595", id:"Bitmap3"},
+		{src:"images/y6s10/Bitmap9.png?1534920482595", id:"Bitmap9"},
+		{src:"sounds/mdroid_talk.mp3?1534920482595", id:"mdroid_talk"},
+		{src:"sounds/questionAlert.mp3?1534920482595", id:"questionAlert"},
+		{src:"sounds/questionComplete.mp3?1534920482595", id:"questionComplete"},
+		{src:"sounds/submitAns.mp3?1534920482595", id:"submitAns"},
+		{src:"sounds/timeout.mp3?1534920482595", id:"timeout"},
+		{src:"https://code.jquery.com/jquery-2.2.4.min.js?1534920482595", id:"lib/jquery-2.2.4.min.js"},
+		{src:"components/sdk/anwidget.js?1534920482595", id:"sdk/anwidget.js"},
+		{src:"components/ui/src/textinput.js?1534920482595", id:"an.TextInput"}
 	],
 	preloads: []
 };

@@ -28,6 +28,10 @@ Route::get('/progress/{state}/{schoolId}/{classId}/{studentId}/detail', 'Admin\P
 
 // Student
 Route::PATCH('/student/done/update/{id}', 'Admin\StudentController@doneUpdate');
+Route::get('/student/edit/{id}', 'Admin\StudentController@edit');
+Route::PUT('/student/edit/{id}', 'Admin\StudentController@store');
+Route::delete('/student/delete/{id}', 'Admin\StudentController@destroy');
+
 
 // Leader Board
 Route::get('/top/school/{type}', 'Admin\LeaderBoardController@index');
@@ -38,3 +42,6 @@ Route::resource('/manage/admin/state', 'Admin\StateAdminController');
 
 // Manage pkg admin
 Route::resource('/manage/admin/pkg', 'Admin\PkgAdminController');
+
+//export the cvs report
+Route::get('/export/cvs/report', 'Admin\ExportReportController@schoolReport');

@@ -20,11 +20,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if(empty(Auth::user()->ic_number)){
-            return view("manager.home.insertIC");
-        }elseif(empty(Auth::user()->email)){
-            return redirect("/manager/info/update");
-        }
+//        if(empty(Auth::user()->ic_number)){
+//            return view("manager.home.insertIC");
+//        }elseif(empty(Auth::user()->email)){
+//            return redirect("/manager/info/update");
+//        }
         return view("manager.home.index");
     }
 
